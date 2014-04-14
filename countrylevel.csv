@@ -1,0 +1,27 @@
+ccode,classifier,class_income,reg_byprod,min_eishare,max_eishare,reg_byrent
+AGO,Oil,"Upper middle income",0,96.7158,99.7753,0
+ARE,Oil,"High income",0,69.6679,78.1695,1
+AUS,Minerals,"High income",1,43.7833,66.3914,1
+AZE,Oil,"Upper middle income",1,80.183,95.9448,0
+BHR,Oil,"High income",0,64.2873,76.3202,0
+BOL,Gas,"Lower middle income",0,69.3854,81.8006,0
+DZA,Oil,"Upper middle income",1,97.2704,98.89,0
+ECU,Oil,"Upper middle income",1,41.2682,63.4145,0
+GBR,Oil,"High income",1,11.2149,19.6099,0
+GNQ,Oil,"High income",1,87.8964,96.8639,0
+IDN,Oil,"Lower middle income",0,30.0989,42.7314,0
+IRN,Oil,"Upper middle income",0,85.5106,88.9557,0
+IRQ,Oil,"Upper middle income",1,97.1097,99.1094,0
+KAZ,Oil,"Upper middle income",0,75.5328,85.9963,1
+NGA,Oil,"Lower middle income",1,92.9521,97.4423,1
+NOR,Oil,"High income",1,67.3884,74.5305,0
+OMN,Oil,"High income",0,76.6851,87.4845,0
+PHL,Minerals,"Lower middle income",0,6.38269,9.57031,0
+QAT,Oil,"High income",0,84.9831,90.3632,0
+RUS,Oil,"High income",1,59.3208,72.2344,1
+TTO,Gas,"High income",1,54.9672,72.3008,0
+TZA,Minerals,"Low income",0,32.0267,45.0507,0
+UZB,Gas,"Lower middle income",0,28.4657,55.9738,1
+VEN,Oil,"Upper middle income",0,84.8322,91.6617,0
+VNM,Oil,"Lower middle income",1,12.0474,27.0788,1
+YEM,Oil,"Lower middle income",0,88.025,94.791,0

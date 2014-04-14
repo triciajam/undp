@@ -1,0 +1,404 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="c3mod.css" />
+  <script src="http://c3js.org/js/c3.min-631d1d50.js"></script>
+
+    <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
+    <script src='http://datamaps.github.io/scripts/datamaps.all.min.js' type='text/javascript'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js' type='text/javascript'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js' type='text/javascript'></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js"></script>
+    <style>
+
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 1400px;
+      height: 500px;
+    }
+
+    #buttonz {
+      margin-left: auto; 
+      margin-right: auto;
+      margin-top: 100px auto;
+      float:none;
+      font-size: 32px;
+      font-family: Futura, Verdana, Sans-Serif;
+      color:white;
+      display:block;
+      text-align:center;
+    }
+
+    #button_item {
+      font-size: 17px;
+      font-family: Futura, Verdana, Sans-Serif;
+    }
+
+    .center-element{
+      width: 100px;
+      text-align: center;
+    }
+
+    #chartcontainer {
+      
+      margin-left: auto; 
+      margin-right: auto;
+      width: 800px;
+      height: 400px;
+    }
+    .datamaps-legend dt, .datamaps-legend dd, .datamaps-legend dl  {
+        float: none;
+        color: black;
+        background-color: white;
+        opacity:.9;
+        font-size: 14px;
+    }
+    .datamaps-legend {
+        right: -50px;
+        top: 0;
+    }
+
+    body {
+      background-color: #1F283B;
+    }
+
+    </style>
+    
+  </head>
+  <body ng-app ng-controller='rChartsCtrl'>
+
+<div id='chart23b225d997a1' class='rChart datamaps'></div>  
+      
+      <div class='container'>
+      
+      <div class="pagination-centered">
+        <div class="btn-group" id="buttonz">
+          Select a resource type to view national data for that type's extractors </br>
+          <button ng-repeat="value in years" ng-click='updateYear(value)'
+            class="btn btn-default" type="button" 
+            ng-model="value" btn-radio="value" id="button_item">
+            {{ value }}
+          </button>
+        </div>
+      </div>
+<div id = 'chartcontainer'>
+    <div class='chart'>
+      <div id='chart'></div>
+  </div>
+</div>
+      </div>
+
+      <script>
+        function rChartsCtrl($scope){
+          $scope.years = ["Gas", "Oil", "Minerals"]
+          $scope.year = $scope.years[0]
+          $scope.updateYear = function(x){
+            $scope.year = x
+          }
+          $scope.$watch('year', function(newYear){
+            mapchart23b225d997a1.updateChoropleth(chartParams.newData[newYear]);
+            chartcall(newYear);
+          })
+        }
+      </script>    
+   
+
+   
+    
+    <script id='popup-template' type='text/x-handlebars-template'>
+    
+</script>
+<script>
+  var chartParams = {
+ "dom": "chart23b225d997a1",
+"width":    1200,
+"height":    500,
+"scope": "world",
+"fills": { "Extremely Regressive": "#BA9336",
+"Regressive": "#CCDE68",
+"Potentially Regressive": "#FEE373",
+"Neutral": "#F5F6CE",
+"Progressive": "#86CCB1",
+  "Highlighted Group": "#09EBE3",
+defaultFill:  '#d3d3d3'
+},
+"legend": true,
+"labels": true,
+"bodyattrs": "ng-app ng-controller='rChartsCtrl'",
+"newData": {"Oil": {"AGO": {"fillKey": "Highlighted Group", "ccode": "AGO", "value": -0.070223, "classifier": "Oil"}, "DZA": {"fillKey": "Highlighted Group", "ccode": "DZA", "value": -1.7872, "classifier": "Oil"}, "GNQ": {"fillKey": "Highlighted Group", "ccode": "GNQ", "value": -0.23025, "classifier": "Oil"}, "NGA": {"fillKey": "Highlighted Group", "ccode": "NGA", "value": 0.818, "classifier": "Oil"}, "KAZ": {"fillKey": "Highlighted Group", "ccode": "KAZ", "value": 0.0083417, "classifier": "Oil"}, "QAT": {"fillKey": "Highlighted Group", "ccode": "QAT", "value": -3.8014, "classifier": "Oil"}, "AZE": {"fillKey": "Highlighted Group", "ccode": "AZE", "value": -1.1464, "classifier": "Oil"}, "IDN": {"fillKey": "Highlighted Group", "ccode": "IDN", "value": -5.6393, "classifier": "Oil"}, "BOL": {"fillKey": "Extremely Regressive", "ccode": "BOL", "value": -4.0461, "classifier": "Gas"}, "COD": {"fillKey": "Extremely Regressive", "ccode": "COD", "value": -4.9535, "classifier": "Minerals"}, "VNM": {"fillKey": "Highlighted Group", "ccode": "VNM", "value": 0.47245, "classifier": "Oil"}, "UZB": {"fillKey": "Neutral", "ccode": "UZB", "value": 0.023323, "classifier": "Gas"}, "TZA": {"fillKey": "Regressive", "ccode": "TZA", "value": -1.165, "classifier": "Minerals"}, "ECU": {"fillKey": "Highlighted Group", "ccode": "ECU", "value": -0.83486, "classifier": "Oil"}, "TTO": {"fillKey": "Potentially Regressive", "ccode": "TTO", "value": -0.5714, "classifier": "Gas"}, "KWT": {"fillKey": "Highlighted Group", "ccode": "KWT", "value": 0.1412, "classifier": "Oil"}, "IRQ": {"fillKey": "Highlighted Group", "ccode": "IRQ", "value": -0.43573, "classifier": "Oil"}, "AUS": {"fillKey": "Progressive", "ccode": "AUS", "value": 2.9749, "classifier": "Minerals"}, "IRN": {"fillKey": "Highlighted Group", "ccode": "IRN", "value": -0.66016, "classifier": "Oil"}, "RUS": {"fillKey": "Highlighted Group", "ccode": "RUS", "value": 1.7184, "classifier": "Oil"}, "VEN": {"fillKey": "Highlighted Group", "ccode": "VEN", "value": -0.42116, "classifier": "Oil"}, "YEM": {"fillKey": "Highlighted Group", "ccode": "YEM", "value": -0.27124, "classifier": "Oil"}, "PHL": {"fillKey": "Regressive", "ccode": "PHL", "value": -3.3625, "classifier": "Minerals"}, "OMN": {"fillKey": "Highlighted Group", "ccode": "OMN", "value": -1.0143, "classifier": "Oil"}, "ARE": {"fillKey": "Highlighted Group", "ccode": "ARE", "value": 0.47413, "classifier": "Oil"}, "GBR": {"fillKey": "Highlighted Group", "ccode": "GBR", "value": -11.811, "classifier": "Oil"}, "BHR": {"fillKey": "Highlighted Group", "ccode": "BHR", "value": -2.7482, "classifier": "Oil"}, "NOR": {"fillKey": "Highlighted Group", "ccode": "NOR", "value": -9.7562, "classifier": "Oil"}}, "Gas": {"AGO": {"fillKey": "Neutral", "ccode": "AGO", "value": -0.070223, "classifier": "Oil"}, "DZA": {"fillKey": "Regressive", "ccode": "DZA", "value": -1.7872, "classifier": "Oil"}, "GBR": {"fillKey": null, "ccode": "GBR", "value": -11.811, "classifier": "Oil"}, "GNQ": {"fillKey": "Neutral", "ccode": "GNQ", "value": -0.23025, "classifier": "Oil"}, "NGA": {"fillKey": "Progressive", "ccode": "NGA", "value": 0.818, "classifier": "Oil"}, "QAT": {"fillKey": "Extremely Regressive", "ccode": "QAT", "value": -3.8014, "classifier": "Oil"}, "AZE": {"fillKey": "Regressive", "ccode": "AZE", "value": -1.1464, "classifier": "Oil"}, "IDN": {"fillKey": "Extremely Regressive", "ccode": "IDN", "value": -5.6393, "classifier": "Oil"}, "BOL": {"fillKey": "Highlighted Group", "ccode": "BOL", "value": -4.0461, "classifier": "Gas"}, "COD": {"fillKey": "Extremely Regressive", "ccode": "COD", "value": -4.9535, "classifier": "Minerals"}, "VNM": {"fillKey": "Progressive", "ccode": "VNM", "value": 0.47245, "classifier": "Oil"}, "UZB": {"fillKey": "Highlighted Group", "ccode": "UZB", "value": 0.023323, "classifier": "Gas"}, "TZA": {"fillKey": "Regressive", "ccode": "TZA", "value": -1.165, "classifier": "Minerals"}, "ECU": {"fillKey": "Potentially Regressive", "ccode": "ECU", "value": -0.83486, "classifier": "Oil"}, "TTO": {"fillKey": "Highlighted Group", "ccode": "TTO", "value": -0.5714, "classifier": "Gas"}, "KWT": {"fillKey": "Progressive", "ccode": "KWT", "value": 0.1412, "classifier": "Oil"}, "IRQ": {"fillKey": "Potentially Regressive", "ccode": "IRQ", "value": -0.43573, "classifier": "Oil"}, "AUS": {"fillKey": "Progressive", "ccode": "AUS", "value": 2.9749, "classifier": "Minerals"}, "IRN": {"fillKey": "Potentially Regressive", "ccode": "IRN", "value": -0.66016, "classifier": "Oil"}, "KAZ": {"fillKey": "Neutral", "ccode": "KAZ", "value": 0.0083417, "classifier": "Oil"}, "VEN": {"fillKey": "Potentially Regressive", "ccode": "VEN", "value": -0.42116, "classifier": "Oil"}, "YEM": {"fillKey": "Neutral", "ccode": "YEM", "value": -0.27124, "classifier": "Oil"}, "PHL": {"fillKey": "Regressive", "ccode": "PHL", "value": -3.3625, "classifier": "Minerals"}, "OMN": {"fillKey": "Potentially Regressive", "ccode": "OMN", "value": -1.0143, "classifier": "Oil"}, "ARE": {"fillKey": "Progressive", "ccode": "ARE", "value": 0.47413, "classifier": "Oil"}, "RUS": {"fillKey": "Progressive", "ccode": "RUS", "value": 1.7184, "classifier": "Oil"}, "BHR": {"fillKey": "Regressive", "ccode": "BHR", "value": -2.7482, "classifier": "Oil"}, "NOR": {"fillKey": "Extremely Regressive", "ccode": "NOR", "value": -9.7562, "classifier": "Oil"}}, "Minerals": {"AGO": {"fillKey": "Neutral", "ccode": "AGO", "value": -0.070223, "classifier": "Oil"}, "DZA": {"fillKey": "Regressive", "ccode": "DZA", "value": -1.7872, "classifier": "Oil"}, "GNQ": {"fillKey": "Neutral", "ccode": "GNQ", "value": -0.23025, "classifier": "Oil"}, "NGA": {"fillKey": "Progressive", "ccode": "NGA", "value": 0.818, "classifier": "Oil"}, "QAT": {"fillKey": "Extremely Regressive", "ccode": "QAT", "value": -3.8014, "classifier": "Oil"}, "AZE": {"fillKey": "Regressive", "ccode": "AZE", "value": -1.1464, "classifier": "Oil"}, "IDN": {"fillKey": "Extremely Regressive", "ccode": "IDN", "value": -5.6393, "classifier": "Oil"}, "GBR": {"fillKey": null, "ccode": "GBR", "value": -11.811, "classifier": "Oil"}, "COD": {"fillKey": "Highlighted Group", "ccode": "COD", "value": -4.9535, "classifier": "Minerals"}, "VNM": {"fillKey": "Progressive", "ccode": "VNM", "value": 0.47245, "classifier": "Oil"}, "UZB": {"fillKey": "Neutral", "ccode": "UZB", "value": 0.023323, "classifier": "Gas"}, "TZA": {"fillKey": "Highlighted Group", "ccode": "TZA", "value": -1.165, "classifier": "Minerals"}, "ECU": {"fillKey": "Potentially Regressive", "ccode": "ECU", "value": -0.83486, "classifier": "Oil"}, "TTO": {"fillKey": "Potentially Regressive", "ccode": "TTO", "value": -0.5714, "classifier": "Gas"}, "KWT": {"fillKey": "Progressive", "ccode": "KWT", "value": 0.1412, "classifier": "Oil"}, "IRQ": {"fillKey": "Potentially Regressive", "ccode": "IRQ", "value": -0.43573, "classifier": "Oil"}, "BOL": {"fillKey": "Extremely Regressive", "ccode": "BOL", "value": -4.0461, "classifier": "Gas"}, "AUS": {"fillKey": "Highlighted Group", "ccode": "AUS", "value": 2.9749, "classifier": "Minerals"}, "IRN": {"fillKey": "Potentially Regressive", "ccode": "IRN", "value": -0.66016, "classifier": "Oil"}, "KAZ": {"fillKey": "Neutral", "ccode": "KAZ", "value": 0.0083417, "classifier": "Oil"}, "VEN": {"fillKey": "Potentially Regressive", "ccode": "VEN", "value": -0.42116, "classifier": "Oil"}, "YEM": {"fillKey": "Neutral", "ccode": "YEM", "value": -0.27124, "classifier": "Oil"}, "PHL": {"fillKey": "Highlighted Group", "ccode": "PHL", "value": -3.3625, "classifier": "Minerals"}, "OMN": {"fillKey": "Potentially Regressive", "ccode": "OMN", "value": -1.0143, "classifier": "Oil"}, "ARE": {"fillKey": "Progressive", "ccode": "ARE", "value": 0.47413, "classifier": "Oil"}, "RUS": {"fillKey": "Progressive", "ccode": "RUS", "value": 1.7184, "classifier": "Oil"}, "BHR": {"fillKey": "Regressive", "ccode": "BHR", "value": -2.7482, "classifier": "Oil"}, "NOR": {"fillKey": "Extremely Regressive", "ccode": "NOR", "value": -9.7562, "classifier": "Oil"}
+}
+}
+  ,
+"data": {
+ "AGO": {
+ "ccode": "AGO",
+"classifier": "Oil",
+"value": -0.070223,
+"fillKey": "Neutral" 
+},
+"ARE": {
+ "ccode": "ARE",
+"classifier": "Oil",
+"value": 0.47413,
+"fillKey": "Progressive" 
+},
+"AUS": {
+ "ccode": "AUS",
+"classifier": "Minerals",
+"value": 2.9749,
+"fillKey": "Progressive" 
+},
+"AZE": {
+ "ccode": "AZE",
+"classifier": "Oil",
+"value": -1.1464,
+"fillKey": "Regressive" 
+},
+"BHR": {
+ "ccode": "BHR",
+"classifier": "Oil",
+"value": -2.7482,
+"fillKey": "Regressive" 
+},
+"BOL": {
+ "ccode": "BOL",
+"classifier": "Gas",
+"value": -4.0461,
+"fillKey": "Extremely Regressive" 
+},
+"COD": {
+ "ccode": "COD",
+"classifier": "Minerals",
+"value": -4.9535,
+"fillKey": "Extremely Regressive" 
+},
+"DZA": {
+ "ccode": "DZA",
+"classifier": "Oil",
+"value": -1.7872,
+"fillKey": "Regressive" 
+},
+"ECU": {
+ "ccode": "ECU",
+"classifier": "Oil",
+"value": -0.83486,
+"fillKey": "Potentially Regressive" 
+},
+"GBR": {
+ "ccode": "GBR",
+"classifier": "Oil",
+"value": -11.811,
+"fillKey": null 
+},
+"GNQ": {
+ "ccode": "GNQ",
+"classifier": "Oil",
+"value": -0.23025,
+"fillKey": "Neutral" 
+},
+"IDN": {
+ "ccode": "IDN",
+"classifier": "Oil",
+"value": -5.6393,
+"fillKey": "Extremely Regressive" 
+},
+"IRN": {
+ "ccode": "IRN",
+"classifier": "Oil",
+"value": -0.66016,
+"fillKey": "Potentially Regressive" 
+},
+"IRQ": {
+ "ccode": "IRQ",
+"classifier": "Oil",
+"value": -0.43573,
+"fillKey": "Potentially Regressive" 
+},
+"KAZ": {
+ "ccode": "KAZ",
+"classifier": "Oil",
+"value": 0.0083417,
+"fillKey": "Neutral" 
+},
+"KWT": {
+ "ccode": "KWT",
+"classifier": "Oil",
+"value": 0.1412,
+"fillKey": "Progressive" 
+},
+"NGA": {
+ "ccode": "NGA",
+"classifier": "Oil",
+"value":  0.818,
+"fillKey": "Progressive" 
+},
+"NOR": {
+ "ccode": "NOR",
+"classifier": "Oil",
+"value": -9.7562,
+"fillKey": "Extremely Regressive" 
+},
+"OMN": {
+ "ccode": "OMN",
+"classifier": "Oil",
+"value": -1.0143,
+"fillKey": "Potentially Regressive" 
+},
+"PHL": {
+ "ccode": "PHL",
+"classifier": "Minerals",
+"value": -3.3625,
+"fillKey": "Regressive" 
+},
+"QAT": {
+ "ccode": "QAT",
+"classifier": "Oil",
+"value": -3.8014,
+"fillKey": "Extremely Regressive" 
+},
+"RUS": {
+ "ccode": "RUS",
+"classifier": "Oil",
+"value": 1.7184,
+"fillKey": "Progressive" 
+},
+"TTO": {
+ "ccode": "TTO",
+"classifier": "Gas",
+"value": -0.5714,
+"fillKey": "Potentially Regressive" 
+},
+"TZA": {
+ "ccode": "TZA",
+"classifier": "Minerals",
+"value": -1.165,
+"fillKey": "Regressive" 
+},
+"UZB": {
+ "ccode": "UZB",
+"classifier": "Gas",
+"value": 0.023323,
+"fillKey": "Neutral" 
+},
+"VEN": {
+ "ccode": "VEN",
+"classifier": "Oil",
+"value": -0.42116,
+"fillKey": "Potentially Regressive" 
+},
+"VNM": {
+ "ccode": "VNM",
+"classifier": "Oil",
+"value": 0.47245,
+"fillKey": "Progressive" 
+},
+"YEM": {
+ "ccode": "YEM",
+"classifier": "Oil",
+"value": -0.27124,
+"fillKey": "Neutral" 
+}  
+},
+"id": "chart23b225d997a1" 
+}
+  chartParams.element = document.getElementById('chart23b225d997a1')
+  
+  
+  var mapchart23b225d997a1 = new Datamap(chartParams);
+  mapchart23b225d997a1.legend();
+  
+    
+  // draw a bubble map if specified
+  if (chartParams.bubbles) {
+    var bubbles = chartParams.bubbles
+    mapchart23b225d997a1.bubbles(bubbles.data, bubbles.config)
+  }
+
+  var resource_prices = {
+    "Oil":"Average of Oil Benchmarks",
+    "Minerals":"UNCTAD Minerals, Ores, Metals Index",
+    "Gas":"Average of Gas Benchmarks"
+  }
+
+  var chart = c3.generate({
+    size: {
+        height: 380,
+        width: 700
+    },
+    data: {
+
+        xs: {
+            'data1': 'x1',
+            'data2': 'x2',
+            'data3': 'x3',
+            'data4': 'x4'
+
+        },
+        columns: [
+            ['x1', 2007,2008,2009,2010,2011],
+            ['x2', 2007,2008,2009,2010,2011],
+            ['x3',2007,2008,2009,2010,2011],
+            ['x4',2007,2008,2009,2010,2011],
+            ["data1",52.91, 52.47, 57.25, 59.84, 57.47],
+            ["data2",30, 30.77, 31.04, 32.82, 34.68],
+            ["data3",50, 68.42, 43.22, 55.36, 74.17],
+            ["data4",37.74, 41.91, 27.46, 28.79, 32.27]            
+        ],
+
+        names : 
+        {
+            data1: "Government Take Ratio",
+            data2: "Total Production (Normalized to 2007)",
+            data3: resource_prices["Oil"],
+            data4: "Extractive Industries Rents (% GDP)"
+        }
+    }
+});
+
+
+chartcall = function(classifier) {
+  
+   chart.data.names({data1: "Government Take Ratio", data2: "Total Production (Normalized to 2007)", data3:resource_prices[classifier],
+   // data4: "Government Take (Normalized to 2007)",
+    data4:"Extractive Industries Rents (% GDP)" });
+  var class_data = {
+      "Oil": [
+          ["data1",52.91, 52.47, 57.25, 59.84, 57.47],
+          ["data2",30, 30.77, 31.04, 32.82, 34.68],
+          ["data3",50, 68.42, 43.22, 55.36, 74.17],
+          ["data4",37.74, 41.91, 27.46, 28.79, 32.27]
+          ]
+      ,
+      "Gas": [
+          ["data1",21.79, 26.45, 44.2, 41.44, 44.39],
+          ["data2",30, 30.68, 30.34, 31.03, 31.12],
+          ["data3",50, 72.22, 31.68, 38.26, 43.18],
+          ["data4",54.45, 62.73, 29.23, 27.45, 28.61]
+          ]
+      ,
+      "Minerals": [
+          ["data1",6, 5.68, 8.73, 3.85, 3.04],
+          ["data2",30, 33.47, 44.47, 59.21, 64.1],
+          ["data3",50, 53.08, 36.98, 52.21, 59.87],
+          ["data4",4.93, 5.65, 4.69, 4.26, 4.77]
+          ]
+      };
+      
+    chart.load({columns:class_data[classifier]});
+}
+
+</script>
+
+<style>
+.datamaps {
+  position: relative;
+}
+</style>
+    
+
+  </body>
+</html>

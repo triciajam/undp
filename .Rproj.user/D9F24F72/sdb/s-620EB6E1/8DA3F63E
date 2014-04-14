@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1397351430027.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8DA3F63E",
+    "lastKnownWriteTime" : 140579468872120,
+    "path" : null,
+    "properties" : {
+        "caption" : "k_wide",
+        "contentUrl" : "content?title=k_wide&file=65d32c23ead34a5cb2cc5b3dabbbe9ca.htm",
+        "displayedObservations" : "269",
+        "displayedVariables" : 21,
+        "totalObservations" : "269",
+        "variables" : "21"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

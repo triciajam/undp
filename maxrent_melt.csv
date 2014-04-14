@@ -1,0 +1,288 @@
+"","ccode","class_income","classifier","class_reg","class_subreg","year","variable","value"
+"2010","AGO","Upper middle income","Oil","Africa","Middle Africa","2000","max_rent",139.1454684
+"2011","AGO","Upper middle income","Oil","Africa","Middle Africa","2001","max_rent",100.3571926
+"2012","AGO","Upper middle income","Oil","Africa","Middle Africa","2002","max_rent",83.76639562
+"2013","AGO","Upper middle income","Oil","Africa","Middle Africa","2003","max_rent",54.0998337
+"2014","AGO","Upper middle income","Oil","Africa","Middle Africa","2004","max_rent",56.13048739
+"2015","AGO","Upper middle income","Oil","Africa","Middle Africa","2005","max_rent",65.13416211
+"2016","AGO","Upper middle income","Oil","Africa","Middle Africa","2006","max_rent",62.61716875
+"2017","AGO","Upper middle income","Oil","Africa","Middle Africa","2007","max_rent",58.65732702
+"2018","AGO","Upper middle income","Oil","Africa","Middle Africa","2008","max_rent",70.66782864
+"2019","AGO","Upper middle income","Oil","Africa","Middle Africa","2009","max_rent",44.33736847
+"2020","AGO","Upper middle income","Oil","Africa","Middle Africa","2010","max_rent",46.63311704
+"2021","AGO","Upper middle income","Oil","Africa","Middle Africa","2011","max_rent",46.34450134
+"2022","ARE","High income","Oil","Asia","Western Asia","2000","max_rent",18.2237892
+"2023","ARE","High income","Oil","Asia","Western Asia","2001","max_rent",14.54288926
+"2024","ARE","High income","Oil","Asia","Western Asia","2002","max_rent",13.05891062
+"2025","ARE","High income","Oil","Asia","Western Asia","2003","max_rent",15.3968824
+"2026","ARE","High income","Oil","Asia","Western Asia","2004","max_rent",18.31379511
+"2027","ARE","High income","Oil","Asia","Western Asia","2005","max_rent",22.05244002
+"2028","ARE","High income","Oil","Asia","Western Asia","2006","max_rent",23.43680341
+"2029","ARE","High income","Oil","Asia","Western Asia","2007","max_rent",21.87369429
+"2030","AUS","High income","Minerals","Oceania","Australia and New Zealand","2001","max_rent",1.466751891
+"2031","AUS","High income","Minerals","Oceania","Australia and New Zealand","2002","max_rent",1.479400843
+"2032","AUS","High income","Minerals","Oceania","Australia and New Zealand","2003","max_rent",1.546299313
+"2033","AUS","High income","Minerals","Oceania","Australia and New Zealand","2004","max_rent",1.894671095
+"2034","AUS","High income","Minerals","Oceania","Australia and New Zealand","2005","max_rent",3.074004059
+"2035","AUS","High income","Minerals","Oceania","Australia and New Zealand","2006","max_rent",4.50338535
+"2036","AUS","High income","Minerals","Oceania","Australia and New Zealand","2007","max_rent",4.882686826
+"2037","AUS","High income","Minerals","Oceania","Australia and New Zealand","2008","max_rent",5.604830423
+"2038","AUS","High income","Minerals","Oceania","Australia and New Zealand","2009","max_rent",5.14230062
+"2039","AZE","Upper middle income","Oil","Asia","Western Asia","2000","max_rent",43.9315767
+"2040","AZE","Upper middle income","Oil","Asia","Western Asia","2001","max_rent",35.05896365
+"2041","AZE","Upper middle income","Oil","Asia","Western Asia","2002","max_rent",33.66378878
+"2042","AZE","Upper middle income","Oil","Asia","Western Asia","2003","max_rent",34.73765037
+"2043","AZE","Upper middle income","Oil","Asia","Western Asia","2004","max_rent",40.21977295
+"2044","AZE","Upper middle income","Oil","Asia","Western Asia","2005","max_rent",55.65889798
+"2045","AZE","Upper middle income","Oil","Asia","Western Asia","2006","max_rent",61.80049585
+"2046","AZE","Upper middle income","Oil","Asia","Western Asia","2007","max_rent",55.76653097
+"2047","AZE","Upper middle income","Oil","Asia","Western Asia","2008","max_rent",53.07226077
+"2048","AZE","Upper middle income","Oil","Asia","Western Asia","2009","max_rent",37.78422986
+"2049","AZE","Upper middle income","Oil","Asia","Western Asia","2010","max_rent",42.1619427
+"2050","BHR","High income","Oil","Asia","Western Asia","2000","max_rent",20.59789362
+"2051","BHR","High income","Oil","Asia","Western Asia","2001","max_rent",16.63961756
+"2052","BHR","High income","Oil","Asia","Western Asia","2002","max_rent",16.0661095
+"2053","BHR","High income","Oil","Asia","Western Asia","2003","max_rent",16.99113827
+"2054","BHR","High income","Oil","Asia","Western Asia","2004","max_rent",19.936025
+"2055","BHR","High income","Oil","Asia","Western Asia","2005","max_rent",23.98943832
+"2056","BHR","High income","Oil","Asia","Western Asia","2006","max_rent",24.22003651
+"2057","BHR","High income","Oil","Asia","Western Asia","2007","max_rent",23.01609225
+"2058","BHR","High income","Oil","Asia","Western Asia","2008","max_rent",26.53038008
+"2059","BHR","High income","Oil","Asia","Western Asia","2009","max_rent",17.43049059
+"2060","BHR","High income","Oil","Asia","Western Asia","2010","max_rent",19.20932707
+"2061","BOL","Lower middle income","Gas","Latin America and the Caribbean","South America","2006","max_rent",24.76659219
+"2062","BOL","Lower middle income","Gas","Latin America and the Caribbean","South America","2007","max_rent",22.98623211
+"2063","BOL","Lower middle income","Gas","Latin America and the Caribbean","South America","2008","max_rent",28.05789595
+"2064","BOL","Lower middle income","Gas","Latin America and the Caribbean","South America","2009","max_rent",9.60235734
+"2065","BOL","Lower middle income","Gas","Latin America and the Caribbean","South America","2010","max_rent",8.940715754
+"2066","BOL","Lower middle income","Gas","Latin America and the Caribbean","South America","2011","max_rent",8.589304597
+"2067","COD","Low income","Minerals","Africa","Middle Africa","2000","max_rent",4.793687909
+"2068","COD","Low income","Minerals","Africa","Middle Africa","2001","max_rent",3.847334111
+"2069","COD","Low income","Minerals","Africa","Middle Africa","2002","max_rent",3.121970212
+"2070","COD","Low income","Minerals","Africa","Middle Africa","2003","max_rent",4.008346817
+"2071","COD","Low income","Minerals","Africa","Middle Africa","2004","max_rent",5.135981144
+"2072","COD","Low income","Minerals","Africa","Middle Africa","2005","max_rent",6.140107754
+"2073","COD","Low income","Minerals","Africa","Middle Africa","2006","max_rent",10.65678361
+"2074","COD","Low income","Minerals","Africa","Middle Africa","2007","max_rent",9.873002036
+"2075","COD","Low income","Minerals","Africa","Middle Africa","2008","max_rent",12.38949107
+"2076","COD","Low income","Minerals","Africa","Middle Africa","2009","max_rent",11.71934091
+"2077","COD","Low income","Minerals","Africa","Middle Africa","2010","max_rent",17.72098439
+"2078","COD","Low income","Minerals","Africa","Middle Africa","2011","max_rent",21.96592142
+"2079","DZA","Upper middle income","Oil","Africa","Northern Africa","2000","max_rent",18.47399628
+"2080","DZA","Upper middle income","Oil","Africa","Northern Africa","2001","max_rent",16.51887458
+"2081","DZA","Upper middle income","Oil","Africa","Northern Africa","2002","max_rent",12.21771988
+"2082","DZA","Upper middle income","Oil","Africa","Northern Africa","2003","max_rent",17.49918861
+"2083","DZA","Upper middle income","Oil","Africa","Northern Africa","2004","max_rent",17.04515043
+"2084","DZA","Upper middle income","Oil","Africa","Northern Africa","2005","max_rent",21.60786842
+"2085","DZA","Upper middle income","Oil","Africa","Northern Africa","2006","max_rent",23.07750843
+"2086","DZA","Upper middle income","Oil","Africa","Northern Africa","2007","max_rent",22.01059657
+"2087","DZA","Upper middle income","Oil","Africa","Northern Africa","2008","max_rent",23.08234119
+"2088","DZA","Upper middle income","Oil","Africa","Northern Africa","2009","max_rent",15.51521008
+"2089","DZA","Upper middle income","Oil","Africa","Northern Africa","2010","max_rent",16.91673044
+"2090","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2000","max_rent",22.13110995
+"2091","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2001","max_rent",13.76260976
+"2092","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2002","max_rent",11.65020604
+"2093","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2003","max_rent",12.99196895
+"2094","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2004","max_rent",19.40263679
+"2095","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2005","max_rent",25.36576355
+"2096","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2006","max_rent",27.44249437
+"2097","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2007","max_rent",26.39807791
+"2098","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2008","max_rent",30.226846
+"2099","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2009","max_rent",17.18878078
+"2100","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2010","max_rent",20.40730023
+"2101","ECU","Upper middle income","Oil","Latin America and the Caribbean","South America","2011","max_rent",25.59743028
+"2102","GBR","High income","Oil","Europe","Northern Europe","2000","max_rent",1.334152821
+"2103","GBR","High income","Oil","Europe","Northern Europe","2001","max_rent",0.999659844
+"2104","GBR","High income","Oil","Europe","Northern Europe","2002","max_rent",0.925903197
+"2105","GBR","High income","Oil","Europe","Northern Europe","2003","max_rent",0.873725614
+"2106","GBR","High income","Oil","Europe","Northern Europe","2004","max_rent",0.906187857
+"2107","GBR","High income","Oil","Europe","Northern Europe","2005","max_rent",1.123902784
+"2108","GBR","High income","Oil","Europe","Northern Europe","2006","max_rent",1.151349078
+"2109","GBR","High income","Oil","Europe","Northern Europe","2007","max_rent",1.110077788
+"2110","GBR","High income","Oil","Europe","Northern Europe","2008","max_rent",1.519478934
+"2111","GBR","High income","Oil","Europe","Northern Europe","2009","max_rent",0.995568283
+"2112","GBR","High income","Oil","Europe","Northern Europe","2010","max_rent",1.181271476
+"2113","GNQ","High income","Oil","Africa","Middle Africa","2000","max_rent",64.19408067
+"2114","GNQ","High income","Oil","Africa","Middle Africa","2001","max_rent",73.56131708
+"2115","GNQ","High income","Oil","Africa","Middle Africa","2002","max_rent",79.01800512
+"2116","GNQ","High income","Oil","Africa","Middle Africa","2003","max_rent",78.89792022
+"2117","GNQ","High income","Oil","Africa","Middle Africa","2004","max_rent",79.51369636
+"2118","GNQ","High income","Oil","Africa","Middle Africa","2005","max_rent",75.07370837
+"2119","GNQ","High income","Oil","Africa","Middle Africa","2006","max_rent",74.27804397
+"2120","GNQ","High income","Oil","Africa","Middle Africa","2007","max_rent",63.9897362
+"2121","GNQ","High income","Oil","Africa","Middle Africa","2008","max_rent",59.61883487
+"2122","GNQ","High income","Oil","Africa","Middle Africa","2009","max_rent",46.24574345
+"2123","GNQ","High income","Oil","Africa","Middle Africa","2010","max_rent",45.643482
+"2124","GNQ","High income","Oil","Africa","Middle Africa","2011","max_rent",41.05321505
+"2125","IDN","Lower middle income","Oil","Asia","Southeast Asia","2000","max_rent",6.429433202
+"2126","IDN","Lower middle income","Oil","Asia","Southeast Asia","2001","max_rent",4.928176218
+"2127","IDN","Lower middle income","Oil","Asia","Southeast Asia","2002","max_rent",3.823770959
+"2128","IDN","Lower middle income","Oil","Asia","Southeast Asia","2003","max_rent",3.851684119
+"2129","IDN","Lower middle income","Oil","Asia","Southeast Asia","2004","max_rent",4.305830512
+"2130","IDN","Lower middle income","Oil","Asia","Southeast Asia","2005","max_rent",5.68023621
+"2131","IDN","Lower middle income","Oil","Asia","Southeast Asia","2006","max_rent",5.126246285
+"2132","IDN","Lower middle income","Oil","Asia","Southeast Asia","2007","max_rent",4.499853943
+"2133","IDN","Lower middle income","Oil","Asia","Southeast Asia","2008","max_rent",5.413708932
+"2134","IDN","Lower middle income","Oil","Asia","Southeast Asia","2009","max_rent",2.645277625
+"2135","IDN","Lower middle income","Oil","Asia","Southeast Asia","2010","max_rent",3.249489816
+"2136","IDN","Lower middle income","Oil","Asia","Southeast Asia","2011","max_rent",3.980029391
+"2137","IRN","Upper middle income","Oil","Asia","Southern Asia","2000","max_rent",34.41498931
+"2138","IRN","Upper middle income","Oil","Asia","Southern Asia","2001","max_rent",23.89305793
+"2139","IRN","Upper middle income","Oil","Asia","Southern Asia","2002","max_rent",23.7424541
+"2140","IRN","Upper middle income","Oil","Asia","Southern Asia","2003","max_rent",26.46864473
+"2141","IRN","Upper middle income","Oil","Asia","Southern Asia","2004","max_rent",29.74163604
+"2142","IRN","Upper middle income","Oil","Asia","Southern Asia","2005","max_rent",38.32612745
+"2143","IRN","Upper middle income","Oil","Asia","Southern Asia","2006","max_rent",40.28698604
+"2144","IRN","Upper middle income","Oil","Asia","Southern Asia","2007","max_rent",34.99250944
+"2145","IRN","Upper middle income","Oil","Asia","Southern Asia","2008","max_rent",39.88777448
+"2146","IRN","Upper middle income","Oil","Asia","Southern Asia","2009","max_rent",23.45801663
+"2147","IRQ","Upper middle income","Oil","Asia","Western Asia","2004","max_rent",96.59976089
+"2148","IRQ","Upper middle income","Oil","Asia","Western Asia","2005","max_rent",105.950004
+"2149","IRQ","Upper middle income","Oil","Asia","Western Asia","2006","max_rent",92.51848724
+"2150","IRQ","Upper middle income","Oil","Asia","Western Asia","2007","max_rent",83.95839624
+"2151","IRQ","Upper middle income","Oil","Asia","Western Asia","2008","max_rent",85.39357086
+"2152","IRQ","Upper middle income","Oil","Asia","Western Asia","2009","max_rent",70.55025598
+"2153","IRQ","Upper middle income","Oil","Asia","Western Asia","2010","max_rent",73.59282102
+"2154","IRQ","Upper middle income","Oil","Asia","Western Asia","2011","max_rent",77.69626655
+"2155","KAZ","Upper middle income","Oil","Asia","Central Asia","2002","max_rent",28.62684648
+"2156","KAZ","Upper middle income","Oil","Asia","Central Asia","2003","max_rent",29.57593079
+"2157","KAZ","Upper middle income","Oil","Asia","Central Asia","2004","max_rent",33.04881783
+"2158","KAZ","Upper middle income","Oil","Asia","Central Asia","2005","max_rent",37.5192917
+"2159","KAZ","Upper middle income","Oil","Asia","Central Asia","2006","max_rent",34.13873176
+"2160","KAZ","Upper middle income","Oil","Asia","Central Asia","2007","max_rent",29.74760934
+"2161","KAZ","Upper middle income","Oil","Asia","Central Asia","2008","max_rent",33.82122188
+"2162","KAZ","Upper middle income","Oil","Asia","Central Asia","2009","max_rent",24.72224504
+"2163","KAZ","Upper middle income","Oil","Asia","Central Asia","2010","max_rent",26.32866471
+"2164","KAZ","Upper middle income","Oil","Asia","Central Asia","2011","max_rent",27.4884312
+"2165","KGZ","Low income","Oil","Asia","Central Asia","2000","max_rent",0.938913761
+"2166","KWT","High income","Oil","Asia","Western Asia","2003","max_rent",41.56466404
+"2167","KWT","High income","Oil","Asia","Western Asia","2004","max_rent",48.80201075
+"2168","KWT","High income","Oil","Asia","Western Asia","2005","max_rent",58.07896329
+"2169","KWT","High income","Oil","Asia","Western Asia","2006","max_rent",57.38189384
+"2170","KWT","High income","Oil","Asia","Western Asia","2008","max_rent",60.67307899
+"2171","NGA","Lower middle income","Oil","Africa","Western Africa","2000","max_rent",41.8455142
+"2172","NGA","Lower middle income","Oil","Africa","Western Africa","2001","max_rent",34.39860225
+"2173","NGA","Lower middle income","Oil","Africa","Western Africa","2002","max_rent",24.39969686
+"2174","NGA","Lower middle income","Oil","Africa","Western Africa","2003","max_rent",28.94637686
+"2175","NGA","Lower middle income","Oil","Africa","Western Africa","2004","max_rent",32.64212611
+"2176","NGA","Lower middle income","Oil","Africa","Western Africa","2005","max_rent",37.59949329
+"2177","NGA","Lower middle income","Oil","Africa","Western Africa","2006","max_rent",33.24831041
+"2178","NGA","Lower middle income","Oil","Africa","Western Africa","2007","max_rent",29.64153798
+"2179","NGA","Lower middle income","Oil","Africa","Western Africa","2008","max_rent",31.26869251
+"2180","NGA","Lower middle income","Oil","Africa","Western Africa","2009","max_rent",22.54044139
+"2181","NGA","Lower middle income","Oil","Africa","Western Africa","2010","max_rent",25.11998625
+"2182","NGA","Lower middle income","Oil","Africa","Western Africa","2011","max_rent",32.91652679
+"2183","NOR","High income","Oil","Europe","Northern Europe","2000","max_rent",15.63308104
+"2184","NOR","High income","Oil","Europe","Northern Europe","2001","max_rent",12.48044234
+"2185","NOR","High income","Oil","Europe","Northern Europe","2003","max_rent",10.83373762
+"2186","NOR","High income","Oil","Europe","Northern Europe","2004","max_rent",11.96146961
+"2187","NOR","High income","Oil","Europe","Northern Europe","2005","max_rent",13.68217909
+"2188","NOR","High income","Oil","Europe","Northern Europe","2006","max_rent",13.67760726
+"2189","NOR","High income","Oil","Europe","Northern Europe","2007","max_rent",12.53737322
+"2190","NOR","High income","Oil","Europe","Northern Europe","2008","max_rent",14.3566056
+"2191","NOR","High income","Oil","Europe","Northern Europe","2009","max_rent",9.162372111
+"2192","NOR","High income","Oil","Europe","Northern Europe","2010","max_rent",10.03726253
+"2193","NOR","High income","Oil","Europe","Northern Europe","2011","max_rent",10.77507422
+"2194","OMN","High income","Oil","Asia","Western Asia","2000","max_rent",42.31300985
+"2195","OMN","High income","Oil","Asia","Western Asia","2001","max_rent",34.12441
+"2196","OMN","High income","Oil","Asia","Western Asia","2002","max_rent",32.49472044
+"2197","OMN","High income","Oil","Asia","Western Asia","2003","max_rent",33.14819309
+"2198","OMN","High income","Oil","Asia","Western Asia","2004","max_rent",37.88780063
+"2199","OMN","High income","Oil","Asia","Western Asia","2005","max_rent",44.03679338
+"2200","OMN","High income","Oil","Asia","Western Asia","2006","max_rent",42.68125867
+"2201","OMN","High income","Oil","Asia","Western Asia","2007","max_rent",39.69651185
+"2202","OMN","High income","Oil","Asia","Western Asia","2008","max_rent",40.4373586
+"2203","OMN","High income","Oil","Asia","Western Asia","2009","max_rent",31.60433861
+"2204","OMN","High income","Oil","Asia","Western Asia","2010","max_rent",36.12800228
+"2205","OMN","High income","Oil","Asia","Western Asia","2011","max_rent",40.21141584
+"2206","PHL","Lower middle income","Minerals","Asia","Southeast Asia","2007","max_rent",2.413898278
+"2207","PHL","Lower middle income","Minerals","Asia","Southeast Asia","2008","max_rent",1.172268618
+"2208","PHL","Lower middle income","Minerals","Asia","Southeast Asia","2009","max_rent",1.379872929
+"2209","PHL","Lower middle income","Minerals","Asia","Southeast Asia","2010","max_rent",2.210313569
+"2210","PHL","Lower middle income","Minerals","Asia","Southeast Asia","2011","max_rent",2.630274696
+"2211","QAT","High income","Oil","Asia","Western Asia","2000","max_rent",30.52305008
+"2212","QAT","High income","Oil","Asia","Western Asia","2001","max_rent",26.32902135
+"2213","QAT","High income","Oil","Asia","Western Asia","2002","max_rent",25.4748992
+"2214","QAT","High income","Oil","Asia","Western Asia","2003","max_rent",24.20467253
+"2215","QAT","High income","Oil","Asia","Western Asia","2004","max_rent",27.74958126
+"2216","QAT","High income","Oil","Asia","Western Asia","2005","max_rent",29.99252388
+"2217","QAT","High income","Oil","Asia","Western Asia","2006","max_rent",27.5640281
+"2218","QAT","High income","Oil","Asia","Western Asia","2007","max_rent",22.42061091
+"2219","QAT","High income","Oil","Asia","Western Asia","2008","max_rent",24.24133407
+"2220","QAT","High income","Oil","Asia","Western Asia","2009","max_rent",14.57706332
+"2221","QAT","High income","Oil","Asia","Western Asia","2010","max_rent",14.62300129
+"2222","QAT","High income","Oil","Asia","Western Asia","2011","max_rent",14.35673776
+"2223","RUS","High income","Oil","Europe","Eastern Europe","2000","max_rent",22.01061857
+"2224","RUS","High income","Oil","Europe","Eastern Europe","2001","max_rent",17.33177094
+"2225","RUS","High income","Oil","Europe","Eastern Europe","2002","max_rent",13.58567718
+"2226","RUS","High income","Oil","Europe","Eastern Europe","2003","max_rent",16.20118232
+"2227","RUS","High income","Oil","Europe","Eastern Europe","2004","max_rent",16.1658149
+"2228","RUS","High income","Oil","Europe","Eastern Europe","2005","max_rent",18.94772969
+"2229","RUS","High income","Oil","Europe","Eastern Europe","2006","max_rent",18.10314314
+"2230","RUS","High income","Oil","Europe","Eastern Europe","2007","max_rent",15.48423904
+"2231","RUS","High income","Oil","Europe","Eastern Europe","2008","max_rent",16.79524014
+"2232","RUS","High income","Oil","Europe","Eastern Europe","2009","max_rent",12.61643072
+"2233","RUS","High income","Oil","Europe","Eastern Europe","2010","max_rent",14.13346813
+"2234","RUS","High income","Oil","Europe","Eastern Europe","2011","max_rent",15.42290733
+"2235","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2000","max_rent",21.38210582
+"2236","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2001","max_rent",20.02636375
+"2237","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2002","max_rent",16.15553605
+"2238","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2003","max_rent",31.09846053
+"2239","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2004","max_rent",32.9216684
+"2240","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2005","max_rent",46.5887654
+"2241","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2006","max_rent",47.26696596
+"2242","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2007","max_rent",41.67924236
+"2243","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2008","max_rent",47.62187022
+"2244","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2009","max_rent",28.88994554
+"2245","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2010","max_rent",25.45441942
+"2246","TTO","High income","Gas","Latin America and the Caribbean","Caribbean","2011","max_rent",24.4794635
+"2247","TZA","Low income","Minerals","Africa","Easten Africa","2004","max_rent",1.184078509
+"2248","TZA","Low income","Minerals","Africa","Easten Africa","2005","max_rent",1.487741128
+"2249","TZA","Low income","Minerals","Africa","Easten Africa","2006","max_rent",2.99671369
+"2250","TZA","Low income","Minerals","Africa","Easten Africa","2007","max_rent",2.754668444
+"2251","TZA","Low income","Minerals","Africa","Easten Africa","2008","max_rent",2.895079819
+"2252","TZA","Low income","Minerals","Africa","Easten Africa","2009","max_rent",3.684867625
+"2253","TZA","Low income","Minerals","Africa","Easten Africa","2010","max_rent",5.202365212
+"2254","TZA","Low income","Minerals","Africa","Easten Africa","2011","max_rent",5.646251922
+"2255","UZB","Lower middle income","Gas","Asia","Central Asia","2006","max_rent",76.32850286
+"2256","UZB","Lower middle income","Gas","Asia","Central Asia","2007","max_rent",59.57629729
+"2257","UZB","Lower middle income","Gas","Asia","Central Asia","2008","max_rent",73.55188454
+"2258","UZB","Lower middle income","Gas","Asia","Central Asia","2009","max_rent",22.78364216
+"2259","UZB","Lower middle income","Gas","Asia","Central Asia","2010","max_rent",16.58894378
+"2260","UZB","Lower middle income","Gas","Asia","Central Asia","2011","max_rent",15.08956301
+"2261","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2000","max_rent",24.5830378
+"2262","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2001","max_rent",19.23679722
+"2263","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2002","max_rent",23.92732242
+"2264","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2003","max_rent",27.85553474
+"2265","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2004","max_rent",35.39601738
+"2266","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2005","max_rent",41.24505621
+"2267","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2006","max_rent",39.529527
+"2268","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2007","max_rent",30.67968008
+"2269","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2008","max_rent",31.65288727
+"2270","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2009","max_rent",17.30992957
+"2271","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2010","max_rent",18.30369311
+"2272","VEN","Upper middle income","Oil","Latin America and the Caribbean","South America","2011","max_rent",29.97722984
+"2273","VNM","Lower middle income","Oil","Asia","Southeast Asia","2000","max_rent",9.277294207
+"2274","VNM","Lower middle income","Oil","Asia","Southeast Asia","2001","max_rent",7.523932202
+"2275","VNM","Lower middle income","Oil","Asia","Southeast Asia","2002","max_rent",7.104472267
+"2276","VNM","Lower middle income","Oil","Asia","Southeast Asia","2003","max_rent",7.474254327
+"2277","VNM","Lower middle income","Oil","Asia","Southeast Asia","2004","max_rent",10.62266483
+"2278","VNM","Lower middle income","Oil","Asia","Southeast Asia","2005","max_rent",12.36849479
+"2279","VNM","Lower middle income","Oil","Asia","Southeast Asia","2006","max_rent",11.80768943
+"2280","VNM","Lower middle income","Oil","Asia","Southeast Asia","2007","max_rent",10.63683922
+"2281","VNM","Lower middle income","Oil","Asia","Southeast Asia","2008","max_rent",10.71933882
+"2282","VNM","Lower middle income","Oil","Asia","Southeast Asia","2009","max_rent",6.45501078
+"2283","VNM","Lower middle income","Oil","Asia","Southeast Asia","2010","max_rent",7.133016849
+"2284","VNM","Lower middle income","Oil","Asia","Southeast Asia","2011","max_rent",7.840935637
+"2285","YEM","Lower middle income","Oil","Asia","Western Asia","2000","max_rent",38.28194129
+"2286","YEM","Lower middle income","Oil","Asia","Western Asia","2001","max_rent",30.91685408
+"2287","YEM","Lower middle income","Oil","Asia","Western Asia","2002","max_rent",29.05514768
+"2288","YEM","Lower middle income","Oil","Asia","Western Asia","2003","max_rent",30.84952621
+"2289","YEM","Lower middle income","Oil","Asia","Western Asia","2004","max_rent",33.27076682
+"2290","YEM","Lower middle income","Oil","Asia","Western Asia","2005","max_rent",39.71942441
+"2291","YEM","Lower middle income","Oil","Asia","Western Asia","2006","max_rent",38.52485849
+"2292","YEM","Lower middle income","Oil","Asia","Western Asia","2007","max_rent",32.71277196
+"2293","YEM","Lower middle income","Oil","Asia","Western Asia","2008","max_rent",33.41827195
+"2294","YEM","Lower middle income","Oil","Asia","Western Asia","2009","max_rent",20.04660583
+"2295","YEM","Lower middle income","Oil","Asia","Western Asia","2010","max_rent",20.56683784
+"2296","YEM","Lower middle income","Oil","Asia","Western Asia","2011","max_rent",18.70816838
