@@ -1,0 +1,215 @@
+ccode,country,"Revenue data","Rent data"
+ABW,Aruba,NULL,NULL
+AFG,Afghanistan,NULL,NULL
+AGO,Angola,AGO,AGO
+ALB,Albania,NULL,NULL
+AND,Andorra,NULL,NULL
+ARE,"United Arab Emirates",ARE,ARE
+ARG,Argentina,ARG,NULL
+ARM,Armenia,NULL,NULL
+ASM,"American Samoa",NULL,NULL
+ATG,"Antigua and Barbuda",NULL,NULL
+AUS,Australia,NULL,AUS
+AUT,Austria,NULL,NULL
+AZE,Azerbaijan,NULL,AZE
+BDI,Burundi,NULL,NULL
+BEL,Belgium,NULL,NULL
+BEN,Benin,NULL,NULL
+BFA,"Burkina Faso",NULL,NULL
+BGD,Bangladesh,NULL,NULL
+BGR,Bulgaria,NULL,NULL
+BHR,Bahrain,BHR,BHR
+BHS,"Bahamas, The",NULL,NULL
+BIH,"Bosnia and Herzegovina",NULL,NULL
+BLR,Belarus,NULL,NULL
+BLZ,Belize,NULL,NULL
+BMU,Bermuda,NULL,NULL
+BOL,Bolivia,NULL,BOL
+BRA,Brazil,NULL,BRA
+BRB,Barbados,NULL,NULL
+BRN,Brunei,BRN,BRN
+BTN,Bhutan,NULL,NULL
+BWA,Botswana,BWA,NULL
+CAF,"Central African Republic",NULL,NULL
+CAN,Canada,NULL,CAN
+CHE,Switzerland,NULL,NULL
+CHI,"Channel Islands",NULL,NULL
+CHL,Chile,NULL,NULL
+CHN,China,NULL,NULL
+CIV,"Cote d'Ivoire",CIV,CIV
+CMR,Cameroon,CMR,CMR
+COD,"Congo, Dem. Rep.",NULL,COD
+COG,"Congo, Rep.",COG,COG
+COL,Colombia,COL,COL
+COM,Comoros,NULL,NULL
+CPV,"Cabo Verde",NULL,NULL
+CRI,"Costa Rica",NULL,NULL
+CUB,Cuba,NULL,NULL
+CUW,Curacao,NULL,NULL
+CYM,"Cayman Islands",NULL,NULL
+CYP,Cyprus,NULL,NULL
+CZE,"Czech Republic",NULL,NULL
+DEU,Germany,NULL,NULL
+DJI,Djibouti,NULL,NULL
+DMA,Dominica,NULL,NULL
+DNK,Denmark,NULL,NULL
+DOM,"Dominican Republic",NULL,NULL
+DZA,Algeria,DZA,DZA
+ECU,Ecuador,NULL,ECU
+EGY,"Egypt, Arab Rep.",NULL,NULL
+ERI,Eritrea,NULL,NULL
+ESP,Spain,NULL,NULL
+EST,Estonia,NULL,NULL
+ETH,Ethiopia,NULL,NULL
+FIN,Finland,NULL,NULL
+FJI,Fiji,NULL,NULL
+FRA,France,NULL,NULL
+FRO,"Faeroe Islands",NULL,NULL
+FSM,"Micronesia, Fed. Sts.",NULL,NULL
+GAB,Gabon,GAB,NULL
+GBR,"United Kingdom",NULL,GBR
+GEO,Georgia,NULL,NULL
+GHA,Ghana,GHA,NULL
+GIN,Guinea,GIN,NULL
+GMB,"Gambia, The",GMB,NULL
+GNB,Guinea-Bissau,GNB,NULL
+GNQ,"Equatorial Guinea",GNQ,GNQ
+GRC,Greece,NULL,NULL
+GRD,Grenada,NULL,NULL
+GRL,Greenland,NULL,NULL
+GTM,Guatemala,NULL,NULL
+GUF,"French Guiana",NULL,NULL
+GUM,Guam,NULL,NULL
+GUY,Guyana,GUY,NULL
+HKG,"Hong Kong SAR, China",NULL,NULL
+HND,Honduras,NULL,NULL
+HRV,Croatia,NULL,NULL
+HTI,Haiti,NULL,NULL
+HUN,Hungary,NULL,NULL
+IDN,Indonesia,IDN,IDN
+IMN,"Isle of Man",NULL,NULL
+IND,India,NULL,NULL
+IRL,Ireland,NULL,NULL
+IRN,"Iran, Islamic Rep.",IRN,IRN
+IRQ,Iraq,NULL,IRQ
+ISL,Iceland,NULL,NULL
+ISR,Israel,NULL,NULL
+ITA,Italy,NULL,NULL
+JAM,Jamaica,NULL,NULL
+JOR,Jordan,NULL,NULL
+JPN,Japan,NULL,NULL
+KAZ,Kazakhstan,KAZ,KAZ
+KEN,Kenya,NULL,NULL
+KGZ,"Kyrgyz Republic",NULL,KGZ
+KHM,Cambodia,NULL,NULL
+KIR,Kiribati,NULL,NULL
+KNA,"St. Kitts and Nevis",NULL,NULL
+KOR,"Korea, Rep.",NULL,NULL
+KWT,Kuwait,KWT,KWT
+LAO,"Lao PDR",NULL,NULL
+LBN,Lebanon,NULL,NULL
+LBR,Liberia,NULL,NULL
+LBY,Libya,NULL,LBY
+LCA,"St. Lucia",NULL,NULL
+LIE,Liechtenstein,NULL,NULL
+LKA,"Sri Lanka",NULL,NULL
+LSO,Lesotho,NULL,NULL
+LTU,Lithuania,NULL,NULL
+LUX,Luxembourg,NULL,NULL
+LVA,Latvia,NULL,NULL
+MAC,"Macao SAR, China",NULL,NULL
+MAF,"St. Martin (French part)",NULL,NULL
+MAR,Morocco,NULL,NULL
+MCO,Monaco,NULL,NULL
+MDA,Moldova,NULL,NULL
+MDG,Madagascar,NULL,NULL
+MDV,Maldives,NULL,NULL
+MEX,Mexico,MEX,MEX
+MHL,"Marshall Islands",NULL,NULL
+MKD,"Macedonia, FYR",NULL,NULL
+MLI,Mali,MLI,NULL
+MLT,Malta,NULL,NULL
+MMR,Myanmar,NULL,NULL
+MNE,Montenegro,NULL,NULL
+MNG,Mongolia,NULL,MNG
+MNP,"N. Mariana Islands",NULL,NULL
+MOZ,Mozambique,NULL,NULL
+MRT,Mauritania,NULL,MRT
+MUS,Mauritius,NULL,NULL
+MWI,Malawi,NULL,NULL
+MYS,Malaysia,NULL,MYS
+NAM,Namibia,NULL,NULL
+NCL,"New Caledonia",NULL,NULL
+NER,Niger,NULL,NULL
+NGA,Nigeria,NGA,NGA
+NIC,Nicaragua,NULL,NULL
+NLD,Netherlands,NULL,NULL
+NOR,Norway,NOR,NOR
+NPL,Nepal,NULL,NULL
+NZL,"New Zealand",NULL,NULL
+OMN,Oman,OMN,OMN
+PAK,Pakistan,NULL,NULL
+PAN,Panama,NULL,NULL
+PER,Peru,PER,NULL
+PHL,Philippines,NULL,PHL
+PLW,Palau,NULL,NULL
+PNG,"Papua New Guinea",NULL,NULL
+POL,Poland,NULL,NULL
+PRI,"Puerto Rico",NULL,NULL
+PRT,Portugal,NULL,NULL
+PRY,Paraguay,NULL,NULL
+PSE,"West Bank and Gaza",NULL,NULL
+PYF,"French Polynesia",NULL,NULL
+QAT,Qatar,NULL,QAT
+ROU,Romania,NULL,NULL
+RUS,"Russian Federation",RUS,RUS
+RWA,Rwanda,NULL,NULL
+SAU,"Saudi Arabia",SAU,SAU
+SDN,Sudan,NULL,SDN
+SEN,Senegal,SEN,NULL
+SGP,Singapore,NULL,NULL
+SLB,"Solomon Islands",NULL,NULL
+SLE,"Sierra Leone",SLE,NULL
+SLV,"El Salvador",NULL,NULL
+SMR,"San Marino",NULL,NULL
+SOM,Somalia,NULL,NULL
+SRB,Serbia,NULL,NULL
+SSD,"South Sudan",NULL,NULL
+STP,"Sao Tome and Principe",NULL,NULL
+SUR,Suriname,NULL,NULL
+SVK,"Slovak Republic",NULL,NULL
+SVN,Slovenia,NULL,NULL
+SWE,Sweden,NULL,NULL
+SWZ,Swaziland,SWZ,NULL
+SXM,"Sint Maarten (Dutch part)",NULL,NULL
+SYC,Seychelles,NULL,NULL
+SYR,"Syrian Arab Republic",SYR,SYR
+TCA,"Turks and Caicos Islands",NULL,NULL
+TCD,Chad,NULL,TCD
+TGO,Togo,NULL,NULL
+THA,Thailand,NULL,NULL
+TJK,Tajikistan,NULL,NULL
+TKM,Turkmenistan,NULL,NULL
+TLS,Timor-Leste,NULL,NULL
+TON,Tonga,NULL,NULL
+TTO,"Trinidad and Tobago",TTO,TTO
+TUN,Tunisia,NULL,NULL
+TUR,Turkey,NULL,NULL
+TUV,Tuvalu,NULL,NULL
+TWN,"Taiwan, China",NULL,NULL
+TZA,Tanzania,NULL,TZA
+UGA,Uganda,NULL,NULL
+UKR,Ukraine,NULL,NULL
+URY,Uruguay,NULL,NULL
+USA,"United States",NULL,NULL
+UZB,Uzbekistan,NULL,UZB
+VCT,"St. Vincent and the Grenadines",NULL,NULL
+VEN,"Venezuela, RB",NULL,VEN
+VIR,"Virgin Islands (U.S.)",NULL,NULL
+VNM,Vietnam,VNM,VNM
+VUT,Vanuatu,NULL,NULL
+WSM,Samoa,NULL,NULL
+YEM,"Yemen, Rep.",YEM,YEM
+ZAF,"South Africa",NULL,NULL
+ZMB,Zambia,NULL,NULL
+ZWE,Zimbabwe,NULL,NULL
