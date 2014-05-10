@@ -2,6 +2,7 @@
 <meta charset = 'utf-8'>
 <html>
   <head>
+    <title>Extractive Industries</title>
     <link rel="stylesheet" type="text/css" href="c3mod.css" />
   <script src="http://c3js.org/js/c3.min-631d1d50.js"></script>
 
@@ -11,6 +12,7 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js' type='text/javascript'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js' type='text/javascript'></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js"></script>
+    
     <style>
 
     .rChart {
@@ -19,6 +21,10 @@
       margin-right: auto;
       width: 1400px;
       height: 700px;
+    }
+
+    p {
+      font-size: 15px;
     }
 
     #buttonz {
@@ -47,8 +53,8 @@
       
       margin-left: auto; 
       margin-right: auto;
-      width: 800px;
-      height: 400px;
+      width: 1400px;
+      height: 500px;
     }
     .datamaps-legend dt, .datamaps-legend dd, .datamaps-legend dl  {
         float: none;
@@ -56,23 +62,41 @@
         background-color: white;
         opacity:.9;
         font-size: 12px;
-        bottom:0px;
+        bottom:400px;
     }
     .datamaps-legend {
         right: -50px;
         bottom: 0;
     }
 
+    #chart {
+      float:right;
+    }
+
+    #charttext {
+      text-align: right;
+      float:left;
+      font-size: 14px;
+      font-family: Futura, Verdana, Sans-Serif;
+      color:white;
+    }
+    
     .bluepaths {
       stroke: #3399ff !important;
-      stroke-width: 10 !important;
+      stroke-width: 7 !important;
       stroke-opacity: .7 !important;
     }
 
     .greenpaths {
       stroke: #00ff33 !important;
-      stroke-width: 10 !important;
+      stroke-width: 7 !important;
       stroke-opacity: .7 !important;
+    }
+
+    .plainpaths {
+      stroke: #ffffff !important;
+      stroke-width: 1.4 !important;
+      stroke-opacity: 1 !important;
     }
 
     body {
@@ -90,7 +114,8 @@
       
       <div class="pagination-centered">
         <div class="btn-group" id="buttonz">
-          Select a resource type to view national data for that type's extractors </br>
+          Compare trends in resource extraction profits and government revenue around the world.  </br>
+                   
           <select ng-model='set1' class='form-control'
              ng-options="set for set in ['Gas','Oil','Minerals','High income', 'Low income', 'Lower middle income', 'Upper middle income']">
             {{ set }}
@@ -104,6 +129,29 @@
 <div id = 'chartcontainer'>
     <div class='chart'>
       <div id='chart'></div>
+        <div id='charttext'>
+          </br></br></br>
+            Countries are filled according to a simple </br>
+             correlation coefficient expressing </br>
+             each country's taxation tendency. </br>
+              A "progressive" regime is one where </br> 
+              relative tax rates increase with profitability.  </br>
+              Taxation and profit for countries' </br> 
+              resource extraction industries are shown </br> 
+              as "government take" and "extractive rents" </br>          
+              The chart presents averages for the  <br/>
+              groups of countries selected. Extractive <br/>
+              rents and government resource revenues </br> 
+              are measured for each country as % GDP. <br/>
+              Government take is a ratio, while resource prices</br> 
+              are an index, showing relative price changes.</br> 
+              Click on the legend to turn factors on and off. </br>  </br> 
+              </br> 
+              The two-control feature is a  </br> 
+              work-in-progress and sometimes gets stuck. <br/>
+              Try switching around the selection</br> 
+              and then returning to your desired comparison.
+        </div>          
   </div>
 </div>
       </div>
@@ -111,6 +159,9 @@
       <script>
         function rChartsCtrl($scope){          
           
+          $scope.set1 = 'Gas'
+          $scope.set2 = 'High income'
+
           $scope.updateSet1 = function(x){
             $scope.set1 = x
           }
@@ -124,7 +175,7 @@
             var set1ids = getCountryIDs($scope.set1)
             var set2ids = getCountryIDs($scope.set2)
             updateHighlight(set1ids,set2ids);
-            chartcall(newYear);
+            chartcall(set1ids,set2ids);
           })
           
           $scope.$watch('set2', function(newYear){
@@ -133,9 +184,11 @@
             var set1ids = getCountryIDs($scope.set1)
             var set2ids = getCountryIDs($scope.set2)
             updateHighlight(set1ids,set2ids);
-            chartcall(newYear);
+            chartcall(set1ids,set2ids,$scope.set1,$scope.set2);
           }
+
           )
+          
         }
       </script>    
    
@@ -197,8 +250,8 @@ var dataPack = {"AGO": {"name": "Angola", "class_income": "Upper middle income",
 
   var chart = c3.generate({
     size: {
-        height: 380,
-        width: 700
+        height: 480,
+        width: 900
     },
     data: {
 
@@ -206,28 +259,46 @@ var dataPack = {"AGO": {"name": "Angola", "class_income": "Upper middle income",
             'data1': 'x1',
             'data2': 'x2',
             'data3': 'x3',
-            'data4': 'x4'
-
+            'data4': 'x4',
+            'data5': 'x5',
+            'data6': 'x6',
+            'data7': 'x7'
         },
+
         columns: [
             ['x1', 2007,2008,2009,2010,2011],
             ['x2', 2007,2008,2009,2010,2011],
             ['x3',2007,2008,2009,2010,2011],
             ['x4',2007,2008,2009,2010,2011],
-            ["data1",52.91, 52.47, 57.25, 59.84, 57.47],
-            ["data2",30, 30.77, 31.04, 32.82, 34.68],
-            ["data3",50, 68.42, 43.22, 55.36, 74.17],
-            ["data4",37.74, 41.91, 27.46, 28.79, 32.27]            
+            ['x5',2007,2008,2009,2010,2011],
+            ['x6',2007,2008,2009,2010,2011],
+            ['x7',2007,2008,2009,2010,2011],
+            ["data1",41.41,49.74,20.43,16.99,16.05],
+            ["data2",10.46,14.22,10.46,10.9,12.55],
+            ["data3",21.79,26.45,44.2,41.44,44.39],
+            ["data4",24.98,26.3,18.52,20.8,24.38],
+            ["data5",17.29,18.58,16.01,17.21,19.95],
+            ["data6",45.89,44.42,58.82,61.13,62],
+            ["data7",50,68.42,43.22,55.36,74.17]
         ],
 
         names : 
         {
-            data1: "Government Take Ratio",
-            data2: "Total Production (Normalized to 2007)",
-            data3: resource_prices["Oil"],
-            data4: "Extractive Industries Rents (% GDP)"
+      
+      data1:  "Oil Countries' Average Main Extractive Industry Rents",
+      data2:  "Oil Countries' Average Goverment Resource Revenue",
+      data3:  "Oil Countries' Average Government Take Ratio", 
+      data4:  "High Income Countries' Average Main Extractive Industry Rents",
+      data5:  "High Income Countries' Average Goverment Resource Revenue",
+      data6:  "High Income Countries' Average Government Take Ratio", 
+      data7:resource_prices['Gas']    
         }
     }
+    ,
+    legend: {
+        position: 'right'
+    }
+        
 });
 
 //sets the path class appropriately for the highlighted subsets
@@ -242,33 +313,24 @@ updateHighlight = function(greens,blues) {
       
           if ( ! subunitData.fillKey) {
               continue }  
-        console.log(subunit);
-
-        console.log(
+       
         svg
           .selectAll('.' + subunit)
-          .classed('greenpaths'));
-
-
-        svg
-          .selectAll('.' + subunit)
-          .classed({'greenpaths':false, 'bluepaths':false})
+          .classed({'plainpaths':true,'greenpaths':false, 'bluepaths':false})
         }
 
     for (var i = 0; i < greens.length; i++) {
- 
 
-      console.log(greens[i]);
         svg
           .selectAll('.' + greens[i])
-            .classed({'greenpaths':true})
+            .classed({'greenpaths':true,'plainpaths':false})
       }
 
     for (var i = 0; i < blues.length; i++) {
-      console.log(blues[i]);
+
         svg
           .selectAll('.' + blues[i])
-            .classed({'bluepaths':true})
+            .classed({'bluepaths':true,'plainpaths':false})
 
       }
 
@@ -311,36 +373,254 @@ getCountryIDs = function(setname){
 }
 
 
+arravg = function(somearray) {
 
-chartcall = function(classifier) {
-  
-   chart.data.names({data1: "Government Take Ratio", data2: "Total Production (Normalized to 2007)", data3:resource_prices[classifier],
-   // data4: "Government Take (Normalized to 2007)",
-    data4:"Extractive Industries Rents (% GDP)" });
-  var class_data = {
-      "Oil": [
-          ["data1",52.91, 52.47, 57.25, 59.84, 57.47],
-          ["data2",30, 30.77, 31.04, 32.82, 34.68],
-          ["data3",50, 68.42, 43.22, 55.36, 74.17],
-          ["data4",37.74, 41.91, 27.46, 28.79, 32.27]
-          ]
-      ,
-      "Gas": [
-          ["data1",21.79, 26.45, 44.2, 41.44, 44.39],
-          ["data2",30, 30.68, 30.34, 31.03, 31.12],
-          ["data3",50, 72.22, 31.68, 38.26, 43.18],
-          ["data4",54.45, 62.73, 29.23, 27.45, 28.61]
-          ]
-      ,
-      "Minerals": [
-          ["data1",6, 5.68, 8.73, 3.85, 3.04],
-          ["data2",30, 33.47, 44.47, 59.21, 64.1],
-          ["data3",50, 53.08, 36.98, 52.21, 59.87],
-          ["data4",4.93, 5.65, 4.69, 4.26, 4.77]
-          ]
-      };
+
+
+var sum = 0;
+  for (var i = 0; i < somearray.length; i++) {
+      sum += somearray[i];
+  }
+
+return sum/somearray.length;
+}
+
+maxKey = function(someobject) {
+
+var max = 0;
+var maxkey = '';
+
+for (var key in someobject)
+{ 
+  if (someobject[key] > max)
+  {
+    max = someobject[key];
+    maxkey = key;
+  }
+
+}
+
+return maxkey;
+}
+
+columnsToRows = function(aggcolumns) {
+  var len = aggcolumns[0].length;
+
+  var rows = []
+
+  for (var i = 0; i < len; i ++) {
+    tmparr = [];
+    for (var j = 0; j < aggcolumns.length; j++) {
+      tmparr.push(aggcolumns[j][i])
+    }
+    rows.push(tmparr);
+  }
+ return rows;
+}
+
+chartcall = function(blues,greens,bluelabel,greenlabel) {
+
+  var names= { 
+      data1: bluelabel + " Countries' Main Extractive Industry Rent (% GDP)",
+      data2: bluelabel + " Countries' Goverment Resource Revenue",
+      data3: bluelabel + " Countries' Government Take Ratio"
+    }
+
+    
+ /*       Example Record
+    "IRQ": {
+        "name": "Iraq",
+        "class_income": "Upper middle income",
+        "coef": "-0.555204763787504",
+        "timedata": [{
+            "max_rent": "83.95839624",
+            "normalized_total_prod": "1",
+            "gov_take": "77.6406007781417",
+            "rev_resrevgdp": "65.9427",
+            "year": "2007"
+        }, {
+            "max_rent": "85.39357086",
+            "normalized_total_prod": "1.13399276724797",
+            "gov_take": "82.5771897191286",
+            "rev_resrevgdp": "71.6087",
+            "year": "2008"
+        }, {
+            "max_rent": "70.55025598",
+            "normalized_total_prod": "1.15191980243985",
+            "gov_take": "84.5123256381884",
+            "rev_resrevgdp": "60.658",
+            "year": "2009"
+        }, {
+            "max_rent": "73.59282102",
+            "normalized_total_prod": "1.1642019513082",
+            "gov_take": "82.7636445929733",
+            "rev_resrevgdp": "61.7372",
+            "year": "2010"
+        }, {
+            "max_rent": "77.69626655",
+            "normalized_total_prod": "1.29931369911326",
+            "gov_take": "78.6532395501804",
+            "rev_resrevgdp": "61.7468",
+            "year": "2011"
+        }],
+        "class_reg": "Asia",
+        "datapoints": "5",
+        "classifier": "Oil",
+        "fillKey": "Potentially Regressive (-0.68 to -0.46)"
+    },
+  */
+
+    
+    // we're going to count the number of each classifier so that we can show world prices for whatever resource type is most common in the selections
+    
+    var classifier_counts = {'Oil':0,'Gas':0,'Minerals':0}
+
+    // we're going to graph max_rent, gov_take, and rev_resrevgdp
+    
+    var bluedata = {'max_rent':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
+                    'gov_take':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
+                    'rev_resrevgdp':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]}
+                  }
+
+    // variables for aggregation are initialized here if they don't depend on blue != green
       
-    chart.load({columns:class_data[classifier]});
+      var aggregator_variables = ['max_rent','rev_resrevgdp','gov_take'];
+      var years = ['2007','2008','2009','2010','2011'];
+
+      
+  for (var i = 0; i < blues.length; i++) { 
+
+    var subunitData = dataPack[blues[i]]
+
+    
+        //tally the resource class
+        classifier_counts[subunitData['classifier']]++;
+
+      for (var j = 0; j < subunitData['timedata'].length; j++) {
+      
+        var tmpyear = subunitData['timedata'][j]['year'];
+
+        //go through the timedata and push the values to the proper array
+          
+        bluedata['max_rent'][tmpyear].push(Number(subunitData['timedata'][j]["max_rent"]));
+        bluedata['gov_take'][tmpyear].push(Number(subunitData['timedata'][j]["gov_take"]));
+        bluedata['rev_resrevgdp'][tmpyear].push(Number(subunitData['timedata'][j]["rev_resrevgdp"]));
+      }
+    }
+
+ 
+    var greendata = {'max_rent':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
+                    'gov_take':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
+                    'rev_resrevgdp':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]}
+                  }
+
+namearray = [bluelabel + " Countries'",greenlabel + " Countries'"];
+
+
+ if ((namearray[0] != namearray[1]) | (namearray[0] == "undefined Countries'")) {
+  for (var i = 0; i < greens.length; i++) { 
+
+    var subunitData = dataPack[greens[i]]
+
+    
+        //tally the resource class
+        classifier_counts[subunitData['classifier']]++;
+
+      for (var j = 0; j < subunitData['timedata'].length; j++) {
+      
+        var tmpyear = subunitData['timedata'][j]['year'];
+
+        //go through the timedata and push the values to the proper array
+          
+        greendata['max_rent'][tmpyear].push(Number(subunitData['timedata'][j]["max_rent"]));
+        greendata['gov_take'][tmpyear].push(Number(subunitData['timedata'][j]["gov_take"]));
+        greendata['rev_resrevgdp'][tmpyear].push(Number(subunitData['timedata'][j]["rev_resrevgdp"]));
+      }
+    }
+      //call c3 chart update API
+      chart.data.names({ 
+      data1: bluelabel + " Countries'\n Extractive Rent",
+      data2: bluelabel + " Countries'\n Gov. Resource Revenue",
+      data3: bluelabel + " Countries'\n Government Take Ratio", 
+      data4: greenlabel + " Countries'\n Extractive Rent",
+      data5: greenlabel + " Countries'\n Gov. Resource Revenue",
+      data6: greenlabel + " Countries'\n Government Take Ratio", 
+      data7:resource_prices[maxKey(classifier_counts)]    // use the most frequent resource type to determine price to show
+      })
+        
+        var aggregator_subsets = [bluedata,greendata];
+        var aggregated_columns = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [],
+                                []
+                                ]
+
+      for (var i =0; i < aggregator_subsets.length;i++) {
+        for (var j = 0; j < aggregator_variables.length; j++){
+          columnidx = Number(((i)*3)+j);
+          columnlabel = columnidx + 1;
+          aggregated_columns[columnidx].push("data"+columnlabel.toString());
+          for (var k = 0; k < years.length; k++) {
+            aggregated_columns[columnidx]
+              .push(Math.round(arravg(aggregator_subsets[i][aggregator_variables[j]][years[k]])*100)/100)
+          }
+        }
+      }
+
+      var resource_data = {
+        'Oil':["data7",50, 68.42, 43.22, 55.36, 74.17],
+        'Gas':["data7",50, 72.22, 31.68, 38.26, 43.18],
+        'Minerals':["data7",50, 53.08, 36.98, 52.21, 59.87]     
+        }
+
+        aggregated_columns[6] = resource_data[maxKey(classifier_counts)];
+
+        var agg_rows = columnsToRows(aggregated_columns);
+        
+      var row_load = {xs: {
+            'data1': 'x1',
+            'data2': 'x2',
+            'data3': 'x3',
+            'data4': 'x4',
+            'data5': 'x1',
+            'data6': 'x1',
+            'data7': 'x1'
+        },rows:[],type:'line'};
+        row_load['rows'] = agg_rows;
+    
+        chart.load(row_load);
+        
+ }
+    // now we describe the case where blue == green
+
+ else { 
+  
+     var aggregator_subsets = [bluedata];
+     var aggregated_columns = [ [],
+                                [],
+                                [],
+                                []
+                                ]
+
+      for (var i =0; i < aggregator_subsets.length;i++) {
+        for (var j = 0; j < aggregator_variables.length; j++){
+          columnidx = Number(((i)*3)+j);
+          columnlabel = columnidx + 1;
+          aggregated_columns[columnidx].push("data"+columnlabel.toString());
+          for (var k = 0; k < years.length; k++) {
+            aggregated_columns[columnidx]
+              .push(Math.round(arravg(aggregator_subsets[i][aggregator_variables[j]][years[k]])*100)/100)
+          }
+        }
+      }
+       var column_load = {columns:[],unload:['data5','data6','data7']};
+        column_load['columns'] = aggregated_columns;
+    
+        chart.load(column_load);
+ }
 }
 
 </script>
