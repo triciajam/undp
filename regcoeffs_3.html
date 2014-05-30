@@ -4,7 +4,8 @@
   <head>
     <title>Extractive Industries</title>
     <link rel="stylesheet" type="text/css" href="c3mod.css" />
-  <script src="http://c3js.org/js/c3.min-631d1d50.js"></script>
+    
+    <script src="http://c3js.org/js/c3.min-631d1d50.js"></script>
 
     <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
     <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
@@ -13,14 +14,14 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js' type='text/javascript'></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js"></script>
     
-    <style>
+<style>
 
     .rChart {
-      display: block;
       margin-left: auto; 
       margin-right: auto;
-      width: 1400px;
-      height: 700px;
+      width: 800px;
+      height: 400px;
+      float: left;
     }
 
     p {
@@ -53,8 +54,10 @@
       
       margin-left: auto; 
       margin-right: auto;
-      width: 1400px;
-      height: 500px;
+      width: 800px;
+      height: 400px;
+      float: left;
+
     }
     .datamaps-legend dt, .datamaps-legend dd, .datamaps-legend dl  {
         float: none;
@@ -103,32 +106,17 @@
       background-color: #1F283B;
     }
 
-    </style>
+</style>
     
-  </head>
-  <body ng-app ng-controller='rChartsCtrl'>
+</head>
+
+<body ng-app ng-controller='rChartsCtrl'>
+<div>
 
 <div id='chart23b225d997a1' class='rChart datamaps'></div>  
-      
-      <div class='container'>
-      
-      <div class="pagination-centered">
-        <div class="btn-group" id="buttonz">
-          Compare trends in resource extraction profits and government revenue around the world.  </br>
-                   
-          <select ng-model='set1' class='form-control'
-             ng-options="set for set in ['Gas','Oil','Minerals','High income', 'Low income', 'Lower middle income', 'Upper middle income']">
-            {{ set }}
-        </select>
-        <select ng-model='set2' class='form-control'
-             ng-options="set for set in ['Gas','Oil','Minerals','High income', 'Low income', 'Lower middle income', 'Upper middle income']">
-            {{ set }}
-        </select>
-        </div>
-      </div>
 <div id = 'chartcontainer'>
-    <div class='chart'>
-      <div id='chart'></div>
+<div class='chart'>
+        <div id='chart'></div>
         <div id='charttext'>
           </br></br></br>
             Countries are filled according to a simple </br>
@@ -152,53 +140,24 @@
               Try switching around the selection</br> 
               and then returning to your desired comparison.
         </div>          
-  </div>
 </div>
-      </div>
+</div>
 
-      <script>
-        function rChartsCtrl($scope){          
-          
-          $scope.set1 = 'Gas'
-          $scope.set2 = 'High income'
+  
+</div>
 
-          $scope.updateSet1 = function(x){
-            $scope.set1 = x
-          }
-          $scope.updateSet2 = function(x){
-            $scope.set2 = x
-          }
-          
-          $scope.$watch('set1', function(newSet){
-            console.log($scope.set1)
-            console.log($scope.set2)
-            var set1ids = getCountryIDs($scope.set1)
-            var set2ids = getCountryIDs($scope.set2)
-            updateHighlight(set1ids,set2ids);
-            chartcall(set1ids,set2ids);
-          })
-          
-          $scope.$watch('set2', function(newYear){
-            console.log($scope.set1)
-            console.log($scope.set2)
-            var set1ids = getCountryIDs($scope.set1)
-            var set2ids = getCountryIDs($scope.set2)
-            updateHighlight(set1ids,set2ids);
-            chartcall(set1ids,set2ids,$scope.set1,$scope.set2);
-          }
-
-          )
-          
-        }
-      </script>    
-   
-
-   
-    
-    <script id='popup-template' type='text/x-handlebars-template'>
-    
-</script>
 <script>
+
+function rChartsCtrl($scope){          
+          
+}
+
+</script>
+
+<script id='popup-template' type='text/x-handlebars-template'></script>
+
+<script>
+
 
 var width = $( window ).width();
 var height = $( window ).height();
@@ -206,12 +165,20 @@ var height = $( window ).height();
 
 var dataPack = {"AGO": {"name": "Angola", "class_income": "Upper middle income", "coef": "-0.390057847283248", "timedata": [{"max_rent": "58.65732702", "normalized_total_prod": "1", "gov_take": "63.3853846573325", "rev_resrevgdp": "37.3388", "year": "2007"}, {"max_rent": "44.33736847", "normalized_total_prod": "1.07826916235129", "gov_take": "54.6499267796418", "rev_resrevgdp": "24.2859", "year": "2009"}, {"max_rent": "46.63311704", "normalized_total_prod": "1.1147042683496", "gov_take": "70.8854962585663", "rev_resrevgdp": "33.1069", "year": "2010"}, {"max_rent": "46.34450134", "normalized_total_prod": "1.03446725226657", "gov_take": "85.546013127096", "rev_resrevgdp": "39.6968", "year": "2011"}, {"max_rent": "70.66782864", "normalized_total_prod": "1.12996525329739", "gov_take": "58.3239308511598", "rev_resrevgdp": "41.3565", "year": "2008"}], "class_reg": "Africa", "datapoints": "5", "classifier": "Oil", "fillKey": "Neutral (-0.46 to -0.17)"}, "DZA": {"name": "Algeria", "class_income": "Upper middle income", "coef": "-0.744340822931554", "timedata": [{"max_rent": "22.01059657", "normalized_total_prod": "1", "gov_take": "80.9920764714326", "rev_resrevgdp": "30.0531", "year": "2007"}, {"max_rent": "23.08234119", "normalized_total_prod": "1.00471023871777", "gov_take": "90.5580196177496", "rev_resrevgdp": "37.1901", "year": "2008"}, {"max_rent": "15.51521008", "normalized_total_prod": "0.920503491954755", "gov_take": "95.48219573878", "rev_resrevgdp": "24.0447", "year": "2009"}, {"max_rent": "16.91673044", "normalized_total_prod": "0.910581326685802", "gov_take": "97.0319783591955", "rev_resrevgdp": "24.1091", "year": "2010"}], "class_reg": "Africa", "datapoints": "4", "classifier": "Oil", "fillKey": "Regressive (-0.79 to -0.68)"}, "EGY": {"name": "Egypt", "fillKey": "Insufficient Data"}, "BGD": {"name": "Bangladesh", "fillKey": "Insufficient Data"}, "QAT": {"name": "Qatar", "class_income": "High income", "coef": "-0.904559924131336", "timedata": [{"max_rent": "22.42061091", "normalized_total_prod": "1", "gov_take": "53.3363553992601", "rev_resrevgdp": "21.9829", "year": "2007"}, {"max_rent": "24.24133407", "normalized_total_prod": "1.17507356109455", "gov_take": "42.2732624978174", "rev_resrevgdp": "19.863", "year": "2008"}, {"max_rent": "14.57706332", "normalized_total_prod": "1.24171217400526", "gov_take": "77.0836492359642", "rev_resrevgdp": "21.6616", "year": "2009"}, {"max_rent": "14.62300129", "normalized_total_prod": "1.53207815943922", "gov_take": "66.8747162793459", "rev_resrevgdp": "19.1483", "year": "2010"}, {"max_rent": "14.35673776", "normalized_total_prod": "1.82096204096568", "gov_take": "63.4242012007712", "rev_resrevgdp": "18.1307", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Oil", "fillKey": "Extremely Regressive (below -0.79)"}, "NAM": {"name": "Namibia", "fillKey": "Insufficient Data"}, "BGR": {"name": "Bulgaria", "fillKey": "Insufficient Data"}, "BOL": {"name": "Bolivia", "class_income": "Lower middle income", "coef": "-0.82037442217601", "timedata": [{"max_rent": "22.98623211", "normalized_total_prod": "1", "gov_take": "27.8556429557658", "rev_resrevgdp": "9.89498", "year": "2007"}, {"max_rent": "28.05789595", "normalized_total_prod": "1.04673759940563", "gov_take": "35.7151070733506", "rev_resrevgdp": "14.0082", "year": "2008"}, {"max_rent": "9.60235734", "normalized_total_prod": "1.01044981555832", "gov_take": "84.9306770583518", "rev_resrevgdp": "13.5379", "year": "2009"}, {"max_rent": "8.940715754", "normalized_total_prod": "1.08014775607613", "gov_take": "60.5597562341545", "rev_resrevgdp": "10.7747", "year": "2010"}, {"max_rent": "8.589304597", "normalized_total_prod": "1.1679802015367", "gov_take": "58.5610734492774", "rev_resrevgdp": "11.8836", "year": "2011"}], "class_reg": "Latin America and the Caribbean", "datapoints": "5", "classifier": "Gas", "fillKey": "Extremely Regressive (below -0.79)"}, "GHA": {"name": "Ghana", "fillKey": "Insufficient Data"}, "PAK": {"name": "Pakistan", "fillKey": "Insufficient Data"}, "PAN": {"name": "Panama", "fillKey": "Insufficient Data"}, "JOR": {"name": "Jordan", "fillKey": "Insufficient Data"}, "LBR": {"name": "Liberia", "fillKey": "Insufficient Data"}, "LBY": {"name": "Libya", "fillKey": "Insufficient Data"}, "VNM": {"name": "Vietnam", "class_income": "Lower middle income", "coef": "0.370225035918858", "timedata": [{"max_rent": "10.63683922", "normalized_total_prod": "1", "gov_take": "44.4230257400568", "rev_resrevgdp": "7.04883", "year": "2007"}, {"max_rent": "10.71933882", "normalized_total_prod": "0.954064003219392", "gov_take": "32.4564450993272", "rev_resrevgdp": "6.15809", "year": "2008"}, {"max_rent": "6.45501078", "normalized_total_prod": "1.0491663500049", "gov_take": "37.4884921484619", "rev_resrevgdp": "3.87352", "year": "2009"}, {"max_rent": "7.133016849", "normalized_total_prod": "1.06557776234864", "gov_take": "31.0015386795822", "rev_resrevgdp": "3.71142", "year": "2010"}, {"max_rent": "7.840935637", "normalized_total_prod": "1.07383283072144", "gov_take": "32.5375783864014", "rev_resrevgdp": "4.20936", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Oil", "fillKey": "Potentially Progressive (-0.167 to .95)"}, "PRI": {"name": "Puerto Rico", "fillKey": "Insufficient Data"}, "PRK": {"name": "North Korea", "fillKey": "Insufficient Data"}, "TZA": {"name": "United Republic of Tanzania", "class_income": "Low income", "coef": "-0.280068962493522", "timedata": [{"max_rent": "2.754668444", "normalized_total_prod": "1", "gov_take": "4.09552601277075", "rev_resrevgdp": "0.143148", "year": "2007"}, {"max_rent": "2.895079819", "normalized_total_prod": "1.23182643140622", "gov_take": "4.06345911455389", "rev_resrevgdp": "0.155552", "year": "2008"}, {"max_rent": "3.684867625", "normalized_total_prod": "2.07444893778852", "gov_take": "2.44613747312921", "rev_resrevgdp": "0.10183", "year": "2009"}, {"max_rent": "5.202365212", "normalized_total_prod": "2.43694884365422", "gov_take": "3.02120966762345", "rev_resrevgdp": "0.172372", "year": "2010"}, {"max_rent": "5.646251922", "normalized_total_prod": "2.44338009925521", "gov_take": "3.82007571580723", "rev_resrevgdp": "0.236352", "year": "2011"}], "class_reg": "Africa", "datapoints": "5", "classifier": "Minerals", "fillKey": "Neutral (-0.46 to -0.17)"}, "BWA": {"name": "Botswana", "fillKey": "Insufficient Data"}, "KHM": {"name": "Cambodia", "fillKey": "Insufficient Data"}, "PRY": {"name": "Paraguay", "fillKey": "Insufficient Data"}, "SAU": {"name": "Saudi Arabia", "fillKey": "Insufficient Data"}, "LBN": {"name": "Lebanon", "fillKey": "Insufficient Data"}, "SVN": {"name": "Slovenia", "fillKey": "Insufficient Data"}, "BFA": {"name": "Burkina Faso", "fillKey": "Insufficient Data"}, "CHE": {"name": "Switzerland", "fillKey": "Insufficient Data"}, "MRT": {"name": "Mauritania", "fillKey": "Insufficient Data"}, "HRV": {"name": "Croatia", "fillKey": "Insufficient Data"}, "CHL": {"name": "Chile", "fillKey": "Insufficient Data"}, "CHN": {"name": "China", "fillKey": "Insufficient Data"}, "JAM": {"name": "Jamaica", "fillKey": "Insufficient Data"}, "DJI": {"name": "Djibouti", "fillKey": "Insufficient Data"}, "GIN": {"name": "Guinea", "fillKey": "Insufficient Data"}, "FIN": {"name": "Finland", "fillKey": "Insufficient Data"}, "URY": {"name": "Uruguay", "fillKey": "Insufficient Data"}, "THA": {"name": "Thailand", "fillKey": "Insufficient Data"}, "NPL": {"name": "Nepal", "fillKey": "Insufficient Data"}, "MAR": {"name": "Morocco", "fillKey": "Insufficient Data"}, "YEM": {"name": "Yemen", "class_income": "Lower middle income", "coef": "0.558371443227563", "timedata": [{"max_rent": "32.71277196", "normalized_total_prod": "1", "gov_take": "68.9975157947453", "rev_resrevgdp": "22.571", "year": "2007"}, {"max_rent": "33.41827195", "normalized_total_prod": "0.896351575456053", "gov_take": "83.1374525935055", "rev_resrevgdp": "27.7831", "year": "2008"}, {"max_rent": "20.04660583", "normalized_total_prod": "0.900793650793651", "gov_take": "71.6721500110361", "rev_resrevgdp": "14.6051", "year": "2009"}, {"max_rent": "20.56683784", "normalized_total_prod": "1.14445628997868", "gov_take": "69.762889932149", "rev_resrevgdp": "16.434", "year": "2010"}, {"max_rent": "18.70816838", "normalized_total_prod": "1.09429045249941", "gov_take": "69.5126985629074", "rev_resrevgdp": "16.0572", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Oil", "fillKey": "Potentially Progressive (-0.167 to .95)"}, "PHL": {"name": "Philippines", "class_income": "Lower middle income", "coef": "-0.580344488955878", "timedata": [{"max_rent": "2.413898278", "normalized_total_prod": "1", "gov_take": "4.12657945197443", "rev_resrevgdp": "0.126677", "year": "2007"}, {"max_rent": "1.172268618", "normalized_total_prod": "1.06458330345632", "gov_take": "3.86452145196947", "rev_resrevgdp": "0.0838189", "year": "2008"}, {"max_rent": "1.379872929", "normalized_total_prod": "1.26157538477059", "gov_take": "7.21567779848049", "rev_resrevgdp": "0.140359", "year": "2009"}, {"max_rent": "2.210313569", "normalized_total_prod": "1.51011693326852", "gov_take": "4.67947201850145", "rev_resrevgdp": "0.131601", "year": "2010"}, {"max_rent": "2.630274696", "normalized_total_prod": "1.83014757842901", "gov_take": "2.25169186164984", "rev_resrevgdp": "0.0753991", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Minerals", "fillKey": "Potentially Regressive (-0.68 to -0.46)"}, "ZAF": {"name": "South Africa", "fillKey": "Insufficient Data"}, "NIC": {"name": "Nicaragua", "fillKey": "Insufficient Data"}, "ROU": {"name": "Romania", "fillKey": "Insufficient Data"}, "SYR": {"name": "Syria", "fillKey": "Insufficient Data"}, "KAZ": {"name": "Kazakhstan", "class_income": "Upper middle income", "coef": "-0.716204610943727", "timedata": [{"max_rent": "29.74760934", "normalized_total_prod": "1", "gov_take": "21.7503275684673", "rev_resrevgdp": "9.23697", "year": "2007"}, {"max_rent": "33.82122188", "normalized_total_prod": "1.0859892020513", "gov_take": "20.9219690106712", "rev_resrevgdp": "10.7688", "year": "2008"}, {"max_rent": "24.72224504", "normalized_total_prod": "1.08110056723353", "gov_take": "25.3176716092537", "rev_resrevgdp": "8.81775", "year": "2009"}, {"max_rent": "26.32866471", "normalized_total_prod": "1.15786166870966", "gov_take": "30.1222548607859", "rev_resrevgdp": "11.2241", "year": "2010"}, {"max_rent": "27.4884312", "normalized_total_prod": "1.19890344376328", "gov_take": "29.0503849293469", "rev_resrevgdp": "11.0968", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Oil", "fillKey": "Regressive (-0.79 to -0.68)"}, "COD": {"name": "Democratic Republic of the Congo", "fillKey": "Insufficient Data"}, "BEN": {"name": "Benin", "fillKey": "Insufficient Data"}, "NGA": {"name": "Nigeria", "class_income": "Lower middle income", "coef": "0.947711419234319", "timedata": [{"max_rent": "29.64153798", "normalized_total_prod": "1", "gov_take": "60.0582436073455", "rev_resrevgdp": "20.373", "year": "2007"}, {"max_rent": "31.26869251", "normalized_total_prod": "0.930739837819543", "gov_take": "71.2247711699997", "rev_resrevgdp": "25.7926", "year": "2008"}, {"max_rent": "22.54044139", "normalized_total_prod": "0.849940729396029", "gov_take": "43.261189137589", "rev_resrevgdp": "10.5963", "year": "2009"}, {"max_rent": "25.11998625", "normalized_total_prod": "1.03638895557558", "gov_take": "51.8002297064533", "rev_resrevgdp": "13.9942", "year": "2010"}, {"max_rent": "32.91652679", "normalized_total_prod": "1.05633762410086", "gov_take": "65.8888522213668", "rev_resrevgdp": "23.0806", "year": "2011"}], "class_reg": "Africa", "datapoints": "5", "classifier": "Oil", "fillKey": "Progresive (.95 and up)"}, "BEL": {"name": "Belgium", "fillKey": "Insufficient Data"}, "DEU": {"name": "Germany", "fillKey": "Insufficient Data"}, "LKA": {"name": "Sri Lanka", "fillKey": "Insufficient Data"}, "FLK": {"name": "Falkland Islands", "fillKey": "Insufficient Data"}, "GBR": {"name": "United Kingdom", "class_income": "High income", "coef": "-0.653007616962167", "timedata": [{"max_rent": "1.110077788", "normalized_total_prod": "1", "gov_take": "32.4655204822988", "rev_resrevgdp": "0.552854", "year": "2007"}, {"max_rent": "1.519478934", "normalized_total_prod": "0.965475819658862", "gov_take": "32.7134921053453", "rev_resrevgdp": "0.805216", "year": "2008"}, {"max_rent": "0.995568283", "normalized_total_prod": "1.03560854665432", "gov_take": "41.7526794278533", "rev_resrevgdp": "0.581087", "year": "2009"}, {"max_rent": "1.181271476", "normalized_total_prod": "0.84370755503058", "gov_take": "36.5868740801744", "rev_resrevgdp": "0.561048", "year": "2010"}], "class_reg": "Europe", "datapoints": "4", "classifier": "Oil", "fillKey": "Potentially Regressive (-0.68 to -0.46)"}, "GUY": {"name": "Guyana", "fillKey": "Insufficient Data"}, "CRI": {"name": "Costa Rica", "fillKey": "Insufficient Data"}, "CMR": {"name": "Cameroon", "fillKey": "Insufficient Data"}, "LSO": {"name": "Lesotho", "fillKey": "Insufficient Data"}, "HUN": {"name": "Hungary", "fillKey": "Insufficient Data"}, "TKM": {"name": "Turkmenistan", "fillKey": "Insufficient Data"}, "TTO": {"name": "Trinidad and Tobago", "class_income": "High income", "coef": "-0.794434350544657", "timedata": [{"max_rent": "41.67924236", "normalized_total_prod": "1", "gov_take": "32.1446445283405", "rev_resrevgdp": "17.5493", "year": "2007"}, {"max_rent": "47.62187022", "normalized_total_prod": "0.996685409726849", "gov_take": "35.7486316902744", "rev_resrevgdp": "21.6739", "year": "2008"}, {"max_rent": "28.88994554", "normalized_total_prod": "1.01394350433045", "gov_take": "36.7976363071074", "rev_resrevgdp": "14.2503", "year": "2009"}, {"max_rent": "25.45441942", "normalized_total_prod": "1.08843936042638", "gov_take": "47.2017711648017", "rev_resrevgdp": "17.3189", "year": "2010"}, {"max_rent": "24.4794635", "normalized_total_prod": "1.0362362691539", "gov_take": "50.7863826598405", "rev_resrevgdp": "19.1147", "year": "2011"}], "class_reg": "Latin America and the Caribbean", "datapoints": "5", "classifier": "Gas", "fillKey": "Regressive (-0.79 to -0.68)"}, "NLD": {"name": "Netherlands", "fillKey": "Insufficient Data"}, "TCD": {"name": "Chad", "fillKey": "Insufficient Data"}, "GEO": {"name": "Georgia", "fillKey": "Insufficient Data"}, "MNE": {"name": "Montenegro", "fillKey": "Insufficient Data"}, "MNG": {"name": "Mongolia", "fillKey": "Insufficient Data"}, "BLZ": {"name": "Belize", "fillKey": "Insufficient Data"}, "AFG": {"name": "Afghanistan", "fillKey": "Insufficient Data"}, "BDI": {"name": "Burundi", "fillKey": "Insufficient Data"}, "BLR": {"name": "Belarus", "fillKey": "Insufficient Data"}, "GRC": {"name": "Greece", "fillKey": "Insufficient Data"}, "GRL": {"name": "Greenland", "fillKey": "Insufficient Data"}, "MOZ": {"name": "Mozambique", "fillKey": "Insufficient Data"}, "TJK": {"name": "Tajikistan", "fillKey": "Insufficient Data"}, "HTI": {"name": "Haiti", "fillKey": "Insufficient Data"}, "PSE": {"name": "West Bank", "fillKey": "Insufficient Data"}, "IND": {"name": "India", "fillKey": "Insufficient Data"}, "IRL": {"name": "Ireland", "fillKey": "Insufficient Data"}, "BTN": {"name": "Bhutan", "fillKey": "Insufficient Data"}, "MYS": {"name": "Malaysia", "fillKey": "Insufficient Data"}, "NOR": {"name": "Norway", "class_income": "High income", "coef": "-0.991363719824094", "timedata": [{"max_rent": "12.53737322", "normalized_total_prod": "1", "gov_take": "53.3768873091613", "rev_resrevgdp": "9.37083", "year": "2007"}, {"max_rent": "14.3566056", "normalized_total_prod": "1.01443313953474", "gov_take": "39.062203728381", "rev_resrevgdp": "8.44298", "year": "2008"}, {"max_rent": "9.162372111", "normalized_total_prod": "0.995295673521077", "gov_take": "71.5101498769102", "rev_resrevgdp": "9.1714", "year": "2009"}, {"max_rent": "10.03726253", "normalized_total_prod": "0.960294293996335", "gov_take": "65.5049760664364", "rev_resrevgdp": "8.56575", "year": "2010"}, {"max_rent": "10.77507422", "normalized_total_prod": "0.910829395970554", "gov_take": "59.6049338126914", "rev_resrevgdp": "8.03484", "year": "2011"}], "class_reg": "Europe", "datapoints": "5", "classifier": "Oil", "fillKey": "Extremely Regressive (below -0.79)"}, "CZE": {"name": "Czech Republic", "fillKey": "Insufficient Data"}, "ATF": {"name": "French Southern and Antarctic Lands", "fillKey": "Insufficient Data"}, "FJI": {"name": "Fiji", "fillKey": "Insufficient Data"}, "HND": {"name": "Honduras", "fillKey": "Insufficient Data"}, "DOM": {"name": "Dominican Republic", "fillKey": "Insufficient Data"}, "LUX": {"name": "Luxembourg", "fillKey": "Insufficient Data"}, "ISR": {"name": "Israel", "fillKey": "Insufficient Data"}, "PER": {"name": "Peru", "fillKey": "Insufficient Data"}, "IDN": {"name": "Indonesia", "class_income": "Lower middle income", "coef": "-0.50510419612239", "timedata": [{"max_rent": "4.499853943", "normalized_total_prod": "1", "gov_take": "32.1238917507523", "rev_resrevgdp": "4.26464", "year": "2007"}, {"max_rent": "5.413708932", "normalized_total_prod": "0.978664955272469", "gov_take": "36.1662430864898", "rev_resrevgdp": "5.83257", "year": "2008"}, {"max_rent": "2.645277625", "normalized_total_prod": "1.14532020374334", "gov_take": "38.1944259609652", "rev_resrevgdp": "3.13678", "year": "2009"}, {"max_rent": "3.249489816", "normalized_total_prod": "1.51445579687064", "gov_take": "37.2168808893794", "rev_resrevgdp": "3.28798", "year": "2010"}, {"max_rent": "3.980029391", "normalized_total_prod": "1.79930876645952", "gov_take": "38.3469574639384", "rev_resrevgdp": "3.58879", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Oil", "fillKey": "Potentially Regressive (-0.68 to -0.46)"}, "VUT": {"name": "Vanuatu", "fillKey": "Insufficient Data"}, "MKD": {"name": "Macedonia", "fillKey": "Insufficient Data"}, "SUR": {"name": "Suriname", "fillKey": "Insufficient Data"}, "COG": {"name": "Republic of the Congo", "fillKey": "Insufficient Data"}, "ISL": {"name": "Iceland", "fillKey": "Insufficient Data"}, "GAB": {"name": "Gabon", "fillKey": "Insufficient Data"}, "ETH": {"name": "Ethiopia", "fillKey": "Insufficient Data"}, "NER": {"name": "Niger", "fillKey": "Insufficient Data"}, "COL": {"name": "Colombia", "fillKey": "Insufficient Data"}, "PRT": {"name": "Portugal", "fillKey": "Insufficient Data"}, "MDA": {"name": "Moldova", "fillKey": "Insufficient Data"}, "MDG": {"name": "Madagascar", "fillKey": "Insufficient Data"}, "ECU": {"name": "Ecuador", "class_income": "Upper middle income", "coef": "0.11645621835725", "timedata": [{"max_rent": "26.39807791", "normalized_total_prod": "1", "gov_take": "27.176584864627", "rev_resrevgdp": "7.2917", "year": "2007"}, {"max_rent": "30.226846", "normalized_total_prod": "0.981660985988797", "gov_take": "32.0507260011944", "rev_resrevgdp": "9.78596", "year": "2008"}, {"max_rent": "17.18878078", "normalized_total_prod": "0.987986672730106", "gov_take": "28.3740613511644", "rev_resrevgdp": "4.93446", "year": "2009"}, {"max_rent": "20.40730023", "normalized_total_prod": "0.988845931505435", "gov_take": "36.7389958088289", "rev_resrevgdp": "7.57359", "year": "2010"}, {"max_rent": "25.59743028", "normalized_total_prod": "1.01343004318441", "gov_take": "44.8554853102159", "rev_resrevgdp": "11.5394", "year": "2011"}], "class_reg": "Latin America and the Caribbean", "datapoints": "5", "classifier": "Oil", "fillKey": "Potentially Progressive (-0.167 to .95)"}, "SEN": {"name": "Senegal", "fillKey": "Insufficient Data"}, "NZL": {"name": "New Zealand", "fillKey": "Insufficient Data"}, "SRB": {"name": "Republic of Serbia", "fillKey": "Insufficient Data"}, "FRA": {"name": "France", "fillKey": "Insufficient Data"}, "LTU": {"name": "Lithuania", "fillKey": "Insufficient Data"}, "RWA": {"name": "Rwanda", "fillKey": "Insufficient Data"}, "ZMB": {"name": "Zambia", "fillKey": "Insufficient Data"}, "GMB": {"name": "Gambia", "fillKey": "Insufficient Data"}, "GTM": {"name": "Guatemala", "fillKey": "Insufficient Data"}, "DNK": {"name": "Denmark", "fillKey": "Insufficient Data"}, "ZWE": {"name": "Zimbabwe", "fillKey": "Insufficient Data"}, "AUS": {"name": "Australia", "class_income": "High income", "coef": "-0.238845755240159", "timedata": [{"max_rent": "4.882686826", "normalized_total_prod": "1", "gov_take": "9.77472010162637", "rev_resrevgdp": "0.802509", "year": "2007"}, {"max_rent": "5.604830423", "normalized_total_prod": "1.0501105374819", "gov_take": "9.11667970946428", "rev_resrevgdp": "0.997229", "year": "2008"}, {"max_rent": "5.14230062", "normalized_total_prod": "1.11107549176219", "gov_take": "16.523087449557", "rev_resrevgdp": "1.31697", "year": "2009"}], "class_reg": "Oceania", "datapoints": "3", "classifier": "Minerals", "fillKey": "Neutral (-0.46 to -0.17)"}, "AUT": {"name": "Austria", "fillKey": "Insufficient Data"}, "VEN": {"name": "Venezuela", "class_income": "Upper middle income", "coef": "0.2942561793828", "timedata": [{"max_rent": "30.67968008", "normalized_total_prod": "1", "gov_take": "46.8563732876263", "rev_resrevgdp": "16.2698", "year": "2007"}, {"max_rent": "31.65288727", "normalized_total_prod": "0.999058320168988", "gov_take": "43.481786851021", "rev_resrevgdp": "15.5215", "year": "2008"}, {"max_rent": "17.30992957", "normalized_total_prod": "0.973326292938399", "gov_take": "24.0787366080966", "rev_resrevgdp": "4.59465", "year": "2009"}, {"max_rent": "18.30369311", "normalized_total_prod": "0.923906616640575", "gov_take": "52.671510026035", "rev_resrevgdp": "10.5152", "year": "2010"}, {"max_rent": "29.97722984", "normalized_total_prod": "0.917037231710599", "gov_take": "38.9071706095834", "rev_resrevgdp": "12.6232", "year": "2011"}], "class_reg": "Latin America and the Caribbean", "datapoints": "5", "classifier": "Oil", "fillKey": "Potentially Progressive (-0.167 to .95)"}, "KEN": {"name": "Kenya", "fillKey": "Insufficient Data"}, "LAO": {"name": "Laos", "fillKey": "Insufficient Data"}, "TUR": {"name": "Turkey", "fillKey": "Insufficient Data"}, "ALB": {"name": "Albania", "fillKey": "Insufficient Data"}, "OMN": {"name": "Oman", "class_income": "High income", "coef": "-0.383538988769296", "timedata": [{"max_rent": "39.69651185", "normalized_total_prod": "1", "gov_take": "70.2007382598178", "rev_resrevgdp": "37.3087", "year": "2007"}, {"max_rent": "40.4373586", "normalized_total_prod": "1.03203273945514", "gov_take": "74.3981724970439", "rev_resrevgdp": "40.55", "year": "2008"}, {"max_rent": "31.60433861", "normalized_total_prod": "1.09991974196211", "gov_take": "79.7435631046138", "rev_resrevgdp": "31.2465", "year": "2009"}, {"max_rent": "36.12800228", "normalized_total_prod": "1.18455407322939", "gov_take": "80.5915294961384", "rev_resrevgdp": "33.9481", "year": "2010"}, {"max_rent": "40.21141584", "normalized_total_prod": "1.20909539726786", "gov_take": "82.4096146492493", "rev_resrevgdp": "37.3113", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Oil", "fillKey": "Neutral (-0.46 to -0.17)"}, "MMR": {"name": "Myanmar", "fillKey": "Insufficient Data"}, "BRN": {"name": "Brunei", "fillKey": "Insufficient Data"}, "TUN": {"name": "Tunisia", "fillKey": "Insufficient Data"}, "RUS": {"name": "Russia", "class_income": "High income", "coef": "-0.258970749086618", "timedata": [{"max_rent": "15.48423904", "normalized_total_prod": "1", "gov_take": "39.1270254057272", "rev_resrevgdp": "10.6399", "year": "2007"}, {"max_rent": "16.79524014", "normalized_total_prod": "0.99420295127244", "gov_take": "40.6671458844068", "rev_resrevgdp": "12.6184", "year": "2008"}, {"max_rent": "12.61643072", "normalized_total_prod": "0.943554728862225", "gov_take": "45.5597589354433", "rev_resrevgdp": "8.90109", "year": "2009"}, {"max_rent": "14.13346813", "normalized_total_prod": "1.00980371824283", "gov_take": "46.7859765766396", "rev_resrevgdp": "9.80164", "year": "2010"}, {"max_rent": "15.42290733", "normalized_total_prod": "1.03897260021198", "gov_take": "53.9702683505874", "rev_resrevgdp": "11.7268", "year": "2011"}], "class_reg": "Europe", "datapoints": "5", "classifier": "Oil", "fillKey": "Neutral (-0.46 to -0.17)"}, "MEX": {"name": "Mexico", "fillKey": "Insufficient Data"}, "BRA": {"name": "Brazil", "fillKey": "Insufficient Data"}, "CAN": {"name": "Canada", "fillKey": "Insufficient Data"}, "TLS": {"name": "East Timor", "fillKey": "Insufficient Data"}, "GNQ": {"name": "Equatorial Guinea", "class_income": "High income", "coef": "-0.509428536466806", "timedata": [{"max_rent": "63.9897362", "normalized_total_prod": "1", "gov_take": "52.9941237669925", "rev_resrevgdp": "33.9108", "year": "2007"}, {"max_rent": "59.61883487", "normalized_total_prod": "0.993140656882976", "gov_take": "58.0284738462887", "rev_resrevgdp": "34.5959", "year": "2008"}, {"max_rent": "46.24574345", "normalized_total_prod": "0.876877673126362", "gov_take": "80.307715325528", "rev_resrevgdp": "37.1389", "year": "2009"}, {"max_rent": "45.643482", "normalized_total_prod": "0.781988171956239", "gov_take": "57.7841541537081", "rev_resrevgdp": "26.3747", "year": "2010"}, {"max_rent": "41.05321505", "normalized_total_prod": "0.719011908741916", "gov_take": "61.8126983942516", "rev_resrevgdp": "25.3761", "year": "2011"}], "class_reg": "Africa", "datapoints": "5", "classifier": "Oil", "fillKey": "Potentially Regressive (-0.68 to -0.46)"}, "USA": {"name": "United States of America", "fillKey": "Insufficient Data"}, "SWE": {"name": "Sweden", "fillKey": "Insufficient Data"}, "AZE": {"name": "Azerbaijan", "class_income": "Upper middle income", "coef": "-0.739731042115288", "timedata": [{"max_rent": "55.76653097", "normalized_total_prod": "1", "gov_take": "24.2355265892809", "rev_resrevgdp": "15.1803", "year": "2007"}, {"max_rent": "53.07226077", "normalized_total_prod": "1.14352168938847", "gov_take": "60.4921858016167", "rev_resrevgdp": "38.4154", "year": "2008"}, {"max_rent": "37.78422986", "normalized_total_prod": "1.23890754811533", "gov_take": "64.5079123659063", "rev_resrevgdp": "27.3592", "year": "2009"}, {"max_rent": "42.1619427", "normalized_total_prod": "1.28095920580809", "gov_take": "75.3249399999834", "rev_resrevgdp": "34.4911", "year": "2010"}], "class_reg": "Asia", "datapoints": "4", "classifier": "Oil", "fillKey": "Regressive (-0.79 to -0.68)"}, "GNB": {"name": "Guinea Bissau", "fillKey": "Insufficient Data"}, "SWZ": {"name": "Swaziland", "fillKey": "Insufficient Data"}, "CIV": {"name": "Ivory Coast", "fillKey": "Insufficient Data"}, "UKR": {"name": "Ukraine", "fillKey": "Insufficient Data"}, "KOR": {"name": "South Korea", "fillKey": "Insufficient Data"}, "CAF": {"name": "Central African Republic", "fillKey": "Insufficient Data"}, "SVK": {"name": "Slovakia", "fillKey": "Insufficient Data"}, "CYP": {"name": "Cyprus", "fillKey": "Insufficient Data"}, "BIH": {"name": "Bosnia and Herzegovina", "fillKey": "Insufficient Data"}, "TWN": {"name": "Taiwan", "fillKey": "Insufficient Data"}, "SOM": {"name": "Somalia", "fillKey": "Insufficient Data"}, "UZB": {"name": "Uzbekistan", "class_income": "Lower middle income", "coef": "-0.795499978914341", "timedata": [{"max_rent": "59.57629729", "normalized_total_prod": "1", "gov_take": "5.36970550010919", "rev_resrevgdp": "3.9317", "year": "2007"}, {"max_rent": "73.55188454", "normalized_total_prod": "1.02445571997542", "gov_take": "7.89545186114217", "rev_resrevgdp": "6.9741", "year": "2008"}, {"max_rent": "22.78364216", "normalized_total_prod": "1.00986713760566", "gov_take": "10.8641155960662", "rev_resrevgdp": "3.58631", "year": "2009"}, {"max_rent": "16.58894378", "normalized_total_prod": "0.934515023339376", "gov_take": "16.554084760922", "rev_resrevgdp": "4.61184", "year": "2010"}, {"max_rent": "15.08956301", "normalized_total_prod": "0.907881557940938", "gov_take": "23.8108676581037", "rev_resrevgdp": "6.64001", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Gas", "fillKey": "Extremely Regressive (below -0.79)"}, "ERI": {"name": "Eritrea", "fillKey": "Insufficient Data"}, "POL": {"name": "Poland", "fillKey": "Insufficient Data"}, "KWT": {"name": "Kuwait", "fillKey": "Insufficient Data"}, "TGO": {"name": "Togo", "fillKey": "Insufficient Data"}, "EST": {"name": "Estonia", "fillKey": "Insufficient Data"}, "MWI": {"name": "Malawi", "fillKey": "Insufficient Data"}, "ESP": {"name": "Spain", "fillKey": "Insufficient Data"}, "IRQ": {"name": "Iraq", "class_income": "Upper middle income", "coef": "-0.555204763787504", "timedata": [{"max_rent": "83.95839624", "normalized_total_prod": "1", "gov_take": "77.6406007781417", "rev_resrevgdp": "65.9427", "year": "2007"}, {"max_rent": "85.39357086", "normalized_total_prod": "1.13399276724797", "gov_take": "82.5771897191286", "rev_resrevgdp": "71.6087", "year": "2008"}, {"max_rent": "70.55025598", "normalized_total_prod": "1.15191980243985", "gov_take": "84.5123256381884", "rev_resrevgdp": "60.658", "year": "2009"}, {"max_rent": "73.59282102", "normalized_total_prod": "1.1642019513082", "gov_take": "82.7636445929733", "rev_resrevgdp": "61.7372", "year": "2010"}, {"max_rent": "77.69626655", "normalized_total_prod": "1.29931369911326", "gov_take": "78.6532395501804", "rev_resrevgdp": "61.7468", "year": "2011"}], "class_reg": "Asia", "datapoints": "5", "classifier": "Oil", "fillKey": "Potentially Regressive (-0.68 to -0.46)"}, "SLV": {"name": "El Salvador", "fillKey": "Insufficient Data"}, "MLI": {"name": "Mali", "fillKey": "Insufficient Data"}, "LVA": {"name": "Latvia", "fillKey": "Insufficient Data"}, "IRN": {"name": "Iran", "class_income": "Upper middle income", "coef": "-0.738769008878292", "timedata": [{"max_rent": "34.99250944", "normalized_total_prod": "1", "gov_take": "43.9102278403682", "rev_resrevgdp": "20.3852", "year": "2007"}, {"max_rent": "39.88777448", "normalized_total_prod": "1.02342612499656", "gov_take": "30.518810514999", "rev_resrevgdp": "16.6662", "year": "2008"}, {"max_rent": "23.45801663", "normalized_total_prod": "1.03464475131212", "gov_take": "44.1167116724537", "rev_resrevgdp": "13.7379", "year": "2009"}], "class_reg": "Asia", "datapoints": "3", "classifier": "Oil", "fillKey": "Regressive (-0.79 to -0.68)"}, "SSD": {"name": "South Sudan", "fillKey": "Insufficient Data"}, "SLE": {"name": "Sierra Leone", "fillKey": "Insufficient Data"}, "BHS": {"name": "The Bahamas", "fillKey": "Insufficient Data"}, "SLB": {"name": "Solomon Islands", "fillKey": "Insufficient Data"}, "ESH": {"name": "Western Sahara", "fillKey": "Insufficient Data"}, "ITA": {"name": "Italy", "fillKey": "Insufficient Data"}, "JPN": {"name": "Japan", "fillKey": "Insufficient Data"}, "KGZ": {"name": "Kyrgyzstan", "fillKey": "Insufficient Data"}, "ARM": {"name": "Armenia", "fillKey": "Insufficient Data"}, "NCL": {"name": "New Caledonia", "fillKey": "Insufficient Data"}, "ARE": {"name": "United Arab Emirates", "fillKey": "Insufficient Data"}, "ARG": {"name": "Argentina", "fillKey": "Insufficient Data"}, "SDN": {"name": "Sudan", "fillKey": "Insufficient Data"}, "BHR": {"class_income": "High income", "coef": "-0.830854444536201", "timedata": [{"max_rent": "23.01609225", "normalized_total_prod": "1", "gov_take": "69.6104163049476", "rev_resrevgdp": "23.4752", "year": "2007"}, {"max_rent": "26.53038008", "normalized_total_prod": "1.04829268292683", "gov_take": "67.8155807957506", "rev_resrevgdp": "27.6632", "year": "2008"}, {"max_rent": "17.43049059", "normalized_total_prod": "1.05510513036165", "gov_take": "80.0813701908841", "rev_resrevgdp": "19.8106", "year": "2009"}, {"max_rent": "19.20932707", "normalized_total_prod": "1.0773338940286", "gov_take": "87.688695083558", "rev_resrevgdp": "21.9827", "year": "2010"}], "class_reg": "Asia", "datapoints": "4", "classifier": "Oil"}, "UGA": {"name": "Uganda", "fillKey": "Insufficient Data"}, "PNG": {"name": "Papua New Guinea", "fillKey": "Insufficient Data"}, "CUB": {"name": "Cuba", "fillKey": "Insufficient Data"}};
 
+
+var cid = null; 
+var country = new Object();
+var countrylines = new Object();
+var cdata = new Array();
+
   var chartParams = {
  "dom": "chart23b225d997a1",
-"width":   width*.8,
-"height":    height*.8,
+"width":   width*.3,
+"height":    height*.3,
 "scope": "world",
-"fills": { "Extremely Regressive (below -0.79)": "#d53e4f",
+"fills": { 
+defaultFill: '#d3d3d3',
+"Extremely Regressive (below -0.79)": "#d53e4f",
 "Regressive (-0.79 to -0.68)": "#fc8d59",
 "Potentially Regressive (-0.68 to -0.46)": "#fee08b",
 "Neutral (-0.46 to -0.17)": "#e6f598",
@@ -224,7 +191,46 @@ var dataPack = {"AGO": {"name": "Angola", "class_income": "Upper middle income",
 "bodyattrs": "ng-app ng-controller='rChartsCtrl'",
 "data": dataPack,
 "id": "chart23b225d997a1",
+"done": function(datamap) {
+
+      datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography, data) {
+            cid = geography.id;
+            //alert(cid);
+            country = dataPack[cid];
+
+           if (country != null && country.fillKey != "Insufficient Data") {
+
+            countrylines = {'max_rent':{'2007':null,'2008':null,'2009':null,'2010':null,'2011':null},
+                                'gov_take':{'2007':null,'2008':null,'2009':null,'2010':null,'2011':null},
+                                'rev_resrevgdp':{'2007':null,'2008':null,'2009':null,'2010':null,'2011':null}
+                                };
+       
+            for (var j = 0; j < country['timedata'].length; j++) {
+                var tmpyear = country['timedata'][j]['year']
+                countrylines['max_rent'][tmpyear] = Number(country['timedata'][j]['max_rent']);
+                countrylines['rev_resrevgdp'][tmpyear] = Number(country['timedata'][j]['rev_resrevgdp']);
+                countrylines['gov_take'][tmpyear] = Number(country['timedata'][j]['gov_take']);
+            }
+            
+            cdata[0] = ['x', '2007','2008','2009','2010','2011'];
+            var i=1;
+            for (var stat in countrylines) {
+              cdata[i] = new Array();
+              cdata[i].push(stat);
+            
+              for (var currentyear in countrylines[stat]) {
+                cdata[i].push(Number(countrylines[stat][currentyear]));              
+              }
+              i=i+1;
+            }
+            
+            chart.load({ columns: cdata });
+       }
+       });
+},
 "geographyConfig":{
+  highlightBorderColor: '#625D5D',
+  highlightFillColor: '#625D5D',
    popupTemplate: function(geography, data) {
           if (data.fillKey != "Insufficient Data") {
             return '<div class="hoverinfo">    ' + data.name +  '</br>      Major Excrative Industry: ' +  data.classifier + '</br> Regressivity Correlation: ' + Math.round(data.coef*10)/10 + '</br>    Income Group: ' + data.class_income     
@@ -234,64 +240,54 @@ var dataPack = {"AGO": {"name": "Angola", "class_income": "Upper middle income",
   }
 } 
 }
+
+
+
   chartParams.element = document.getElementById('chart23b225d997a1')
   
   
   var mapchart23b225d997a1 = new Datamap(chartParams);
   mapchart23b225d997a1.legend();
   
-    
-
-  var resource_prices = {
+  
+    var resource_prices = {
     "Oil":"Average of Oil Benchmarks",
     "Minerals":"UNCTAD Minerals, Ores, Metals Index",
     "Gas":"Average of Gas Benchmarks"
   }
 
-  var chart = c3.generate({
+  
+    var chart = c3.generate({
     size: {
-        height: 480,
-        width: 900
+        height: 200,
+        width: 400
     },
     data: {
 
-        xs: {
-            'data1': 'x1',
-            'data2': 'x2',
-            'data3': 'x3',
-            'data4': 'x4',
-            'data5': 'x5',
-            'data6': 'x6',
-            'data7': 'x7'
-        },
-
+        x: 'x',
         columns: [
-            ['x1', 2007,2008,2009,2010,2011],
-            ['x2', 2007,2008,2009,2010,2011],
-            ['x3',2007,2008,2009,2010,2011],
-            ['x4',2007,2008,2009,2010,2011],
-            ['x5',2007,2008,2009,2010,2011],
-            ['x6',2007,2008,2009,2010,2011],
-            ['x7',2007,2008,2009,2010,2011],
-            ["data1",41.41,49.74,20.43,16.99,16.05],
-            ["data2",10.46,14.22,10.46,10.9,12.55],
-            ["data3",21.79,26.45,44.2,41.44,44.39],
-            ["data4",24.98,26.3,18.52,20.8,24.38],
-            ["data5",17.29,18.58,16.01,17.21,19.95],
-            ["data6",45.89,44.42,58.82,61.13,62],
-            ["data7",50,68.42,43.22,55.36,74.17]
+            ['x', '2007','2008','2009','2010','2011'],
+            ["max_rent",41.41,49.74,20.43,16.99,16.05],
+            ["rev_resrevgdp",10.46,14.22,10.46,10.9,12.55],
+            ["gov_take",21.79,26.45,44.2,41.44,44.39],
+            ["price",24.98,26.3,18.52,20.8,24.38],
         ],
 
-        names : 
-        {
+        axis: {
+          x: {
+            type: 'timeseries',
+            tick: {
+                format: '%Y-%m-%d'
+            }
+          }
+        },
+
+        names : {
       
-      data1:  "Oil Countries' Average Main Extractive Industry Rents",
-      data2:  "Oil Countries' Average Goverment Resource Revenue",
-      data3:  "Oil Countries' Average Government Take Ratio", 
-      data4:  "High Income Countries' Average Main Extractive Industry Rents",
-      data5:  "High Income Countries' Average Goverment Resource Revenue",
-      data6:  "High Income Countries' Average Government Take Ratio", 
-      data7:resource_prices['Gas']    
+          max_rent:  "Rents",
+          rev_resrevgdp:  "Govt Resource Revenue",
+          gov_take:  "Govt Take Ratio", 
+          price:   resource_prices['Gas']    
         }
     }
     ,
@@ -299,340 +295,15 @@ var dataPack = {"AGO": {"name": "Angola", "class_income": "Upper middle income",
         position: 'right'
     }
         
-});
-
-//sets the path class appropriately for the highlighted subsets
-updateHighlight = function(greens,blues) {    
-    var svg = mapchart23b225d997a1.svg;
-
-
-    
-    for ( var subunit in dataPack ) 
-      {
-          var subunitData = dataPack[subunit]            
-      
-          if ( ! subunitData.fillKey) {
-              continue }  
-       
-        svg
-          .selectAll('.' + subunit)
-          .classed({'plainpaths':true,'greenpaths':false, 'bluepaths':false})
-        }
+});  
   
-    for (var i = 0; i < greens.length; i++) {
-
-        svg
-          .selectAll('.' + greens[i])
-            .classed({'greenpaths':true,'plainpaths':false})
-      }
-
-    for (var i = 0; i < blues.length; i++) {
-
-        svg
-          .selectAll('.' + blues[i])
-            .classed({'bluepaths':true,'plainpaths':false})
-
-      }
-
-      
-}
-
-
-getCountryIDs = function(setname){
-  var ids = []
-  if (setname == 'Gas' | setname == 'Oil' | setname == 'Minerals' )
-  {
-    for ( var subunit in dataPack)
-      {             
-              var subunitData = dataPack[subunit]            
-        if ( ! subunitData.classifier)
-        {
-          continue
-        }
-        if ( subunitData.classifier == setname)
-        {
-          ids.push(subunit);
-        }
-      }
-  } else
-  {
-        for ( var subunit in dataPack)
-      {
-               var subunitData = dataPack[subunit]            
-        if ( ! subunitData.class_income)
-        {
-          continue
-        }
-        if ( subunitData.class_income == setname)
-        {
-          ids.push(subunit);
-        }
-      }
-  }
-  return ids;
-}
-
-
-arravg = function(somearray) {
-
-
-
-var sum = 0;
-  for (var i = 0; i < somearray.length; i++) {
-      sum += somearray[i];
-  }
-
-return sum/somearray.length;
-}
-
-maxKey = function(someobject) {
-
-var max = 0;
-var maxkey = '';
-
-for (var key in someobject)
-{ 
-  if (someobject[key] > max)
-  {
-    max = someobject[key];
-    maxkey = key;
-  }
-
-}
-
-return maxkey;
-}
-
-columnsToRows = function(aggcolumns) {
-  var len = aggcolumns[0].length;
-
-  var rows = []
-
-  for (var i = 0; i < len; i ++) {
-    tmparr = [];
-    for (var j = 0; j < aggcolumns.length; j++) {
-      tmparr.push(aggcolumns[j][i])
-    }
-    rows.push(tmparr);
-  }
- return rows;
-}
-
-chartcall = function(blues,greens,bluelabel,greenlabel) {
-
-  var names= { 
-      data1: bluelabel + " Countries' Main Extractive Industry Rent (% GDP)",
-      data2: bluelabel + " Countries' Goverment Resource Revenue",
-      data3: bluelabel + " Countries' Government Take Ratio"
-    }
-
     
- /*       Example Record
-    "IRQ": {
-        "name": "Iraq",
-        "class_income": "Upper middle income",
-        "coef": "-0.555204763787504",
-        "timedata": [{
-            "max_rent": "83.95839624",
-            "normalized_total_prod": "1",
-            "gov_take": "77.6406007781417",
-            "rev_resrevgdp": "65.9427",
-            "year": "2007"
-        }, {
-            "max_rent": "85.39357086",
-            "normalized_total_prod": "1.13399276724797",
-            "gov_take": "82.5771897191286",
-            "rev_resrevgdp": "71.6087",
-            "year": "2008"
-        }, {
-            "max_rent": "70.55025598",
-            "normalized_total_prod": "1.15191980243985",
-            "gov_take": "84.5123256381884",
-            "rev_resrevgdp": "60.658",
-            "year": "2009"
-        }, {
-            "max_rent": "73.59282102",
-            "normalized_total_prod": "1.1642019513082",
-            "gov_take": "82.7636445929733",
-            "rev_resrevgdp": "61.7372",
-            "year": "2010"
-        }, {
-            "max_rent": "77.69626655",
-            "normalized_total_prod": "1.29931369911326",
-            "gov_take": "78.6532395501804",
-            "rev_resrevgdp": "61.7468",
-            "year": "2011"
-        }],
-        "class_reg": "Asia",
-        "datapoints": "5",
-        "classifier": "Oil",
-        "fillKey": "Potentially Regressive (-0.68 to -0.46)"
-    },
-  */
-
-    
-    // we're going to count the number of each classifier so that we can show world prices for whatever resource type is most common in the selections
-    
-    var classifier_counts = {'Oil':0,'Gas':0,'Minerals':0}
-
-    // we're going to graph max_rent, gov_take, and rev_resrevgdp
-    
-    var bluedata = {'max_rent':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
-                    'gov_take':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
-                    'rev_resrevgdp':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]}
-                  }
-
-    // variables for aggregation are initialized here if they don't depend on blue != green
-      
-      var aggregator_variables = ['max_rent','rev_resrevgdp','gov_take'];
-      var years = ['2007','2008','2009','2010','2011'];
-
-      
-  for (var i = 0; i < blues.length; i++) { 
-
-    var subunitData = dataPack[blues[i]]
-
-    
-        //tally the resource class
-        classifier_counts[subunitData['classifier']]++;
-
-      for (var j = 0; j < subunitData['timedata'].length; j++) {
-      
-        var tmpyear = subunitData['timedata'][j]['year'];
-
-        //go through the timedata and push the values to the proper array
-          
-        bluedata['max_rent'][tmpyear].push(Number(subunitData['timedata'][j]["max_rent"]));
-        bluedata['gov_take'][tmpyear].push(Number(subunitData['timedata'][j]["gov_take"]));
-        bluedata['rev_resrevgdp'][tmpyear].push(Number(subunitData['timedata'][j]["rev_resrevgdp"]));
-      }
-    }
-
- 
-    var greendata = {'max_rent':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
-                    'gov_take':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]},
-                    'rev_resrevgdp':{'2007':[],'2008':[],'2009':[],'2010':[],'2011':[]}
-                  }
-
-namearray = [bluelabel + " Countries'",greenlabel + " Countries'"];
-
-
- if ((namearray[0] != namearray[1]) | (namearray[0] == "undefined Countries'")) {
-  for (var i = 0; i < greens.length; i++) { 
-
-    var subunitData = dataPack[greens[i]]
-
-    
-        //tally the resource class
-        classifier_counts[subunitData['classifier']]++;
-
-      for (var j = 0; j < subunitData['timedata'].length; j++) {
-      
-        var tmpyear = subunitData['timedata'][j]['year'];
-
-        //go through the timedata and push the values to the proper array
-          
-        greendata['max_rent'][tmpyear].push(Number(subunitData['timedata'][j]["max_rent"]));
-        greendata['gov_take'][tmpyear].push(Number(subunitData['timedata'][j]["gov_take"]));
-        greendata['rev_resrevgdp'][tmpyear].push(Number(subunitData['timedata'][j]["rev_resrevgdp"]));
-      }
-    }
-      //call c3 chart update API
-      chart.data.names({ 
-      data1: bluelabel + " Countries'\n Extractive Rent",
-      data2: bluelabel + " Countries'\n Gov. Resource Revenue",
-      data3: bluelabel + " Countries'\n Government Take Ratio", 
-      data4: greenlabel + " Countries'\n Extractive Rent",
-      data5: greenlabel + " Countries'\n Gov. Resource Revenue",
-      data6: greenlabel + " Countries'\n Government Take Ratio", 
-      data7:resource_prices[maxKey(classifier_counts)]    // use the most frequent resource type to determine price to show
-      })
-        
-        var aggregator_subsets = [bluedata,greendata];
-        var aggregated_columns = [[],
-                                [],
-                                [],
-                                [],
-                                [],
-                                [],
-                                []
-                                ]
-
-      for (var i =0; i < aggregator_subsets.length;i++) {
-        for (var j = 0; j < aggregator_variables.length; j++){
-          columnidx = Number(((i)*3)+j);
-          columnlabel = columnidx + 1;
-          aggregated_columns[columnidx].push("data"+columnlabel.toString());
-          for (var k = 0; k < years.length; k++) {
-            aggregated_columns[columnidx]
-              .push(Math.round(arravg(aggregator_subsets[i][aggregator_variables[j]][years[k]])*100)/100)
-          }
-        }
-      }
-
-      var resource_data = {
-        'Oil':["data7",50, 68.42, 43.22, 55.36, 74.17],
-        'Gas':["data7",50, 72.22, 31.68, 38.26, 43.18],
-        'Minerals':["data7",50, 53.08, 36.98, 52.21, 59.87]     
-        }
-
-        aggregated_columns[6] = resource_data[maxKey(classifier_counts)];
-
-        var agg_rows = columnsToRows(aggregated_columns);
-        
-      var row_load = {xs: {
-            'data1': 'x1',
-            'data2': 'x2',
-            'data3': 'x3',
-            'data4': 'x4',
-            'data5': 'x1',
-            'data6': 'x1',
-            'data7': 'x1'
-        },rows:[],type:'line'};
-        row_load['rows'] = agg_rows;
-    
-        chart.load(row_load);
-        
- }
-    // now we describe the case where blue == green
-
- else { 
-  
-     var aggregator_subsets = [bluedata];
-     var aggregated_columns = [ [],
-                                [],
-                                [],
-                                []
-                                ]
-
-      for (var i =0; i < aggregator_subsets.length;i++) {
-        for (var j = 0; j < aggregator_variables.length; j++){
-          columnidx = Number(((i)*3)+j);
-          columnlabel = columnidx + 1;
-          aggregated_columns[columnidx].push("data"+columnlabel.toString());
-          for (var k = 0; k < years.length; k++) {
-            aggregated_columns[columnidx]
-              .push(Math.round(arravg(aggregator_subsets[i][aggregator_variables[j]][years[k]])*100)/100)
-          }
-        }
-      }
-       var column_load = {columns:[],unload:['data5','data6','data7']};
-        column_load['columns'] = aggregated_columns;
-    
-        chart.load(column_load);
- }
-}
-
 </script>
-
-
 
 <style>
 .datamaps {
   position: relative;
 }
 </style>
-    
 
-  </body>
-</html>
+</body>
