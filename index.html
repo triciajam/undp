@@ -44,13 +44,15 @@
     <!-- Set up our Bootstrap Layout Grid -->
     <div class="container">
       <div class="row">
-        <div class="col-md-2 text-left"><h2>The Countries</h2>Resource dependence, resource wealth, and the disrtibution of that wealth vary widely across countries, and by type of country.</div> 
+        <div class="col-md-2 text-left"><h3>The Countries</h3>Resource dependence, resource wealth, and the disrtibution of that wealth vary widely across countries, and by type of country.
+          Click on country, or select a group.
+        </div> 
         <div class="col-md-10 text-left" style="height: 350px;"><div id='chart1'></div></div> 
       </div>
       
       <div class="row">      
         <div class="col-md-10 text-left"><div id='chart2'></div></div> 
-        <div class="col-md-2 text-left"><h4>The Data</h4></div> 
+        <div class="col-md-2 text-left"><h3>The Data</h3></div> 
       </div>
     </div>
 
@@ -67,25 +69,97 @@
     // ----------------------------------------------------------------------
     // This is Angular Setup
     // ----------------------------------------------------------------------
-
-    var eimod = angular.module('EImodule',[]);  
+  
+    var eidata = [];
+    var selected_country = new Object();
+    var countryData = Object();
     
-    eimod.factory('countryts', function() {
-      var data = [
+    var eimod = angular.module('EImodule',[]);  
+/*    
+    eimod.factory("selected_data", function() {
+      
+      d3.json("eidata.json", function(data) {
+        //console.log(data);  
+        //eidata = data;
+        return data;
+      
+      });
+
+      var data2 = [
             ['data1', 30, 200, 100, 400, 150, 250],
             ['data2', 50, 20, 10, 40, 15, 25]
           ];
-      return data;
+      return data2;
     });
+*/
+    function eicontrol($scope) {
+      d3.json("eidata.json", function(data) {
+        //console.log(data);  
+        eidata = data;
+        //console.log(eidata.length);
+      for (var i = 0; i< eidata.length;  i++) {
+        //console.log(eidata[i]);
+        
+        var statData = Object();
 
-    function eicontrol($scope, countryts) {
+        countryData[eidata[i].ccode] = [];
+        for (var name in eidata[i].stat) {
+            //console.log(name);
+            var tmp=[];
+            tmp.push(name);
+            statData[name] = tmp.concat(eidata[i].stat[name].slice(1));
+            countryData[eidata[i].ccode].push(statData[name]);
+            
+        }
+        //countryData[eidata[i].ccode] = statData;   
+        
+      }
+        //console.log(eidata[i]);
+        selectedCountry = countryData["AGO"];
+    
+      //console.log(selected_country);  
+/*
+      for (var name in selected_country.stat) {
+        console.log(name);
+        var tmp=[];
+        tmp.push(name);
+        statData[name] = tmp.concat(selected_country.stat[name].slice(1));
+     }
+
+*/      
       
-      $scope.countryts = countryts;
-      //console.log($scope.countryts);
+           var chart2 = c3.generate({
+        bindto: '#chart2',
+        size: {
+          height: 300,
+        },
+  
+        data: {
+           columns: selectedCountry.slice(6)
+          /*
+          columns: [
+            ['econ_gdpcon', 30, 200, 100, 400, 150, 250],
+            ['data2', 50, 20, 10, 40, 15, 25],
+            
+          ] */
+        },
+        
+        legend: {
+          position: 'right'
+        }
+      });
+    
+      
+      
+      
+      });  
       
       // ----------------------------------------------------------------------
       // This generates the Chart with Individual country data
       // ----------------------------------------------------------------------
+    
+    
+    
     
       var chart2 = c3.generate({
         bindto: '#chart2',
@@ -94,7 +168,10 @@
         },
   
         data: {
-          columns: $scope.countryts,
+          columns: [
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 50, 20, 10, 40, 15, 25]
+          ]
         },
         
         legend: {
@@ -120,7 +197,11 @@
       var chart1 = new Datamap({
           element: document.getElementById('chart1'),
           scope: "world",
-
+          fills: {
+            defaultFill: "#eee",
+            selectable: "#fa0fa0",
+            selected: "#fa0fa0",
+          }
       });
 
     
@@ -131,6 +212,7 @@
     
       // ----------------------------------------------------------------------
       // This generates the Chart with Individual country data
+      // OLD
       // ----------------------------------------------------------------------
       /*
       var chart2 = c3.generate({
