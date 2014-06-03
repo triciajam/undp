@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="eimodule">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,43 +16,41 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  
-  <style>
+    
+    <style>
+          
+        #chart2 .c3-line-econ_gdpcon {
+          stroke-width: 0px;
+        }
+        #chart2 .c3-line-econ_gdpconpc {
+          stroke-width: 0px;
+        }
+        #chart2 .c3-line-econ_tax {
+          stroke-width: 0px;
+        }
+        #chart2 .c3-line-rev_gov_resrev_govtrev {
+          stroke-width: 4px;
+        }
+        #chart2 .c3-line-rev_gov_resrev_gdp {
+          stroke-width: 4px;
+        }
+        #chart2 .c3-line-rev2_gov_nonresrev_gdp {
+          stroke-width: 4px;
+        }
+        #chart2 .c3-line-rev2_gov_resrev_gdp {
+          stroke-width: 4px;
+        }
+        #chart2 .c3-line-rev2_gov_rev_gdp {
+          stroke-width: 4px;
+        }
+        #chart2 .c3-line-rent_total {
+          stroke-width: 4px;
+        }
+    </style>
 
-    #chart2 .c3-line-econ_gdpcon {
-      stroke-width: 0px;
-    }
-    #chart2 .c3-line-econ_gdpconpc {
-      stroke-width: 0px;
-    }
-    #chart2 .c3-line-econ_tax {
-      stroke-width: 0px;
-    }
-    #chart2 .c3-line-rev_gov_resrev_govtrev {
-      stroke-width: 4px;
-    }
-    #chart2 .c3-line-rev_gov_resrev_gdp {
-      stroke-width: 4px;
-    }
-    #chart2 .c3-line-rev2_gov_nonresrev_gdp {
-      stroke-width: 4px;
-    }
-    #chart2 .c3-line-rev2_gov_resrev_gdp {
-      stroke-width: 4px;
-    }
-    #chart2 .c3-line-rev2_gov_rev_gdp {
-      stroke-width: 4px;
-    }
-    #chart2 .c3-line-rent_total {
-      stroke-width: 4px;
-    }
-    #chart2 .legend {
-      width: 300px;
-    }
-  
-</style>
+   
   </head>
-  <body>
+  <body ng-controller="ei_countrySelect_control">
 
     <!-- For D3 -->
     <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -61,7 +58,7 @@
     <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
     <script src='http://datamaps.github.io/scripts/datamaps.all.min.js' type='text/javascript'></script>
     <!-- Load c3.js -->
-    <script src="http://c3js.org/js/c3.min-631d1d50.js"></script>
+    <script src="js/c3.min.js"></script>
     <!-- Load angular.js -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js' type='text/javascript'></script>
 
@@ -84,37 +81,8 @@
       </div>
       
       <div class="row">      
-        <div class="col-md-12 text-left"><div id='chart2'></div></div> 
+        <div class="col-md-12 text-left"><div id='chart2'></div> 
       </div>
-      
-      <div class="row">      
-        <div class="col-md-12 text-left">
-        <p>
-        <h3>REMOVE THIS</h3>
-          Right now if you click on a country the line graph should update.  Right now all countries are clickable, even if we don't have Resource/Rent data etc - I would change that.<p>
-My thought with the line graph was to show all the Resource/Rent data as colored lines and have a gray area background that is one of a selection of country-specific "macroeconomic indicators", such as GDP or INflation. <p>
-The actual value of the indicator wouldn't matter much (ie there is no second axis), just the shape to put the resourece numbers in perspective.  Originally I thought we could have a bunch of different 
-macro indicators (only of these could be selected at any given time), but the graph started to get wonky and I decided to just hide the others, so not sure if I can do that - maybe we just go with GDP.
-<p>
-Right Below the "The Countries" text I thought we could put buttons or links for "High Income", "Low Income", "Gas", etc.  When the user clicked on one either (1) those countries would be highlighted on the map and
-then the user could click them to see data in line graph or (2) those countries would be selected on the map, and the data in line graph would be an average of all countries.   Either way, countries would be highlighted in
-the same color.
-<p>Right now there is no data being fed into the map -- I think creating another set of JSON objects that just have keys for classifications would probably be the simplest way to do this - we can than use this
-to highlight/select the appropriate group.
-<p>
-Some of the Issues Right now: <p></p>
-1) The page works but if you open the JavaScript console there are svg errors. This just  started happening and I'm not sure why, I've seen some  issues in the C3 forum on this, I need to follow up.  
-It wasn't doing this last evening, ick. <p>
-2) I want to use Angular to handle the "communication" between the charts (as Ben did originally) and to load the data, need to get that in.  <p>
-3) Lots of visual improvements are needed.<p>
-4) I don't have government take as one of the vars, oy! Need to add that.
-<p>
-My main thought was that we could create one or two JavaScript "data" objects that have global scope (either in plain JavaScript or in Angular) and then any additional visualization has the data right there
-if it needs it.  Not sure it will work out that way, though.
-          
-        </div></div> 
-      </div>
-      
     </div>
 
 
@@ -131,79 +99,54 @@ if it needs it.  Not sure it will work out that way, though.
     // This is Angular Setup
     // ----------------------------------------------------------------------
   
-    var eidata = [];
-    var selected_country_id = null;
-    var countryData = Object();
-
-    //var varnames = [];
-    var lastMacroIndex = 6;
-    var xaxis = ["x","2000", "2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011"]
+   
+    var eimod = angular.module('eimodule',[]);
     
-    var chart2;
-    var chart1;
-    
-    //var eimod = angular.module('EImodule',[]);  
-/*    
-    eimod.factory("selected_data", function() {
+    eimod.factory("eifactory", function($http) {
+      var factory = {};    
+      /*
+      $http.get('eidata.json').success(function(data) {
+          raw_eidata = data;
+          console.log(raw_eidata);
+          raw_eidata.forEach(function(country, index) {
+            countryNames.push(country.ccode);
+            //console.log(country.ccode);  
+          }); 
+          //console.log(countryNames);
+        }).error(function(err){
+          throw(err);   
+        });
+      */
       
-      d3.json("eidata.json", function(data) {
-        //console.log(data);  
-        //eidata = data;
-        return data;
-      
-      });
-
-*/
-
-      d3.json("eidata.json", function(data) {
-        //console.log(data);  
-        eidata = data;
-        //console.log(eidata.length);
-        
-        /*
-        var i=0;
-        for (var name in eidata[0].stat) {
-          if (i < 6) {
-                  varnames.push(name + " : 'y2'");
-               }    
-               else 
-                varnames.push(name + " : 'y'");
-          i++;
-        }
-        */
-
-        for (var i = 0; i< eidata.length;  i++) {
-        //console.log(eidata[i]);
-        
-          var statData = Object();
-  
-          countryData[eidata[i].ccode] = [];
-          countryData[eidata[i].ccode].push(xaxis);
-  
-          for (var name in eidata[i].stat) {
-              //console.log(name);
-              var tmp=[];
-              tmp.push(name);
-              statData[name] = tmp.concat(eidata[i].stat[name].slice(1));
-              countryData[eidata[i].ccode].push(statData[name]);
-              
-          }
-        }
-      
- 
-        selected_country_id = "AGO";
-        //console.log("hi");    
-        chart2 = c3.generate({
+      factory.getRawData = function() {
+        return $http.get('eidata.json');      
+      };  
+      /*
+      factory.getRawData = function() {
+        return raw_eidata;      
+      };  
+      factory.getCountryNames = function() {        
+        return countryNames;
+      };  
+      */
+      return factory;      
+    });
+    /*
+    eimod.directive('countrySelect', function() {
+      function link(scope, element) {
+        //d3.select(element[0]).append("svg");
+        element.text("hi!");
+        console.log("in directive");
+        console.log(scope.country_data[scope.current_country_id]);
+        var chart2 = c3.generate({
           
-              bindto: '#chart2',
-              
+              bindto: element,              
               size: {
                 height: 280,
-              },        
-              
+              },                      
               data: {
                 x: 'x',
-                columns: countryData[selected_country_id],
+                json: scope.country_data[scope.current_country_id],
                 axes: { econ_gdpcon : 'y2',econ_gdpconpc : 'y2',econ_tax : 'y2',econ_govrev : 'y2',econ_govexp : 'y2',econ_invtotal : 'y2',rev_gov_resrev_govtrev : 'y',rev_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_resrev_gdp : 'y',rev2_gov_rev_gdp : 'y',rent_total : 'y'},
                 type: 'line',
                 types: {
@@ -257,21 +200,239 @@ if it needs it.  Not sure it will work out that way, though.
                 position: 'right'
               },
               
-      });
-      chart2.unload(['econ_gdpconpc', 'econ_tax', 'econ_govrev','econ_govexp','econ_invtotal']);      
+          });// c3.generate
+      } // link function 
+      return {
+        link: link,
+        restrict: 'E'
+      }
+    });    
+    */
+    eimod.controller("ei_countrySelect_control", function($scope, eifactory) {
       
-      });  
+      console.log("in controller");
+      
+      $scope.raw_data = [];
+      $scope.country_names = [];
+      $scope.country_data_json = [];
+      $scope.country_data_arr = [];
+      
+      $scope.current_country_id = "AGO";
+      var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
 
-    
-    function eicontrol($scope) {
       
-    }
+      $scope.chart1 = {};      
+      $scope.chart2 = null;
+      $scope.datamap = null;
+      
+      //var chart2 = {};
+      
+      //console.log($scope.current_country_id);
+      
+      eifactory.getRawData().success(function(data) {
+        
+          console.log("in get data success");
+  
+          //raw_eidata = data;
+          //console.log(data);
+          $scope.raw_data = data;
+          console.log("raw data: ");
+          console.log($scope.raw_data);
+      
+          $scope.raw_data.forEach(function(country, index) {
+            $scope.country_data_json[country.ccode] = country.stat;
+            $scope.country_data_json[country.ccode]["x"] = [2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
+          }); 
+          
+          console.log("country json data: ");
+          console.log($scope.country_data_json);  
+      
+          $scope.raw_data.forEach(function(country, index) {
+            
+            var statData = Object();
+            $scope.country_data_arr[country.ccode] = [];
+            $scope.country_data_arr[country.ccode].push(xaxis);
+            
+            for (var statname in country.stat) {
+              //console.log(name);
+              var tmp=[];
+              tmp.push(statname);
+              statData[statname] = tmp.concat(country.stat[statname].slice(1));
+              $scope.country_data_arr[country.ccode].push(statData[statname]);            
+            }
+
+          });
+          console.log("country arr data: ");
+          console.log($scope.country_data_arr);  
+  
+      
+          $scope.raw_data.forEach(function(country, index) {
+            $scope.country_names.push(country.ccode);
+          }); 
+          //console.log($scope.country_names);  
+          //console.log($scope.country_data_json[$scope.current_country_id]);
+
+          $scope.chart2 = c3.generate({
+              
+                  bindto: '#chart2',              
+                  size: {
+                    height: 300,
+                  },                      
+                  data: {
+                    x: 'x',
+                    json: $scope.country_data_json[$scope.current_country_id],
+                    axes: { econ_gdpcon : 'y2',econ_gdpconpc : 'y2',econ_tax : 'y2',econ_govrev : 'y2',econ_govexp : 'y2',econ_invtotal : 'y2',rev_gov_resrev_govtrev : 'y',rev_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_resrev_gdp : 'y',rev2_gov_rev_gdp : 'y',rent_total : 'y'},
+                    type: 'line',
+                    types: {
+                        econ_gdpcon: 'area',
+                        econ_gdpconpc: 'area',
+                        econ_tax: 'area',
+                        econ_govrev: 'area',
+                        econ_govexp: 'area',
+                        econ_invtotal: 'area',        
+                    },
+                    names: {
+                      econ_gdpcon: 'GDP (constant $)',
+                      econ_gdpconpc: 'GDP per capita (constant $)',
+                      econ_tax: 'Total Govt Tax Rev (% GDP)',
+                      econ_govrev: 'Total Govt Rev (% GDP) [econ]',
+                      econ_govexp: 'Total Govt Expenditure (% GDP)',
+                      econ_invtotal: 'Total Investments (% GDP)',
+                      rev_gov_resrev_govtrev: 'Govt Res Rev. (% Govt Rev.)',
+                      rev_gov_resrev_gdp: 'Govt Res Rev. (% GDP) [rev]',
+                      rev2_gov_nonresrev_gdp: 'Govt Non-Res Rev. (% GDP)', 
+                      rev2_gov_resrev_gdp: 'Govt Res Rev. (% GDP) [rev2]',
+                      rev2_gov_rev_gdp: 'Govt Rev. (% GDP) [rev2]',
+                      rent_total: 'Total Rent (% GDP)'                  
+                    },
+                    colors: {
+                      econ_gdpcon: '#B6B6B4',
+                      econ_gdpconpc: '#B6B6B4',
+                      econ_tax: '#B6B6B4',
+                      econ_govrev: '#B6B6B4',
+                      econ_govexp: '#B6B6B4',
+                      econ_invtotal: '#B6B6B4',                  
+                    },
+                  }, // data  
+                  axis: {
+                    y: {
+                      label: {
+                        text: 'Resource Statistics: % of GDP',
+                        position: 'outer-middle'
+                      },
+                    },
+                
+                  }, // axis
+              
+                 legend: {
+                    position: 'right'
+                  },
+                  
+          });// c3.generate
+          
+          console.log($scope.chart2);
+          
+          $scope.chart1 = new Datamap({
+              element: document.getElementById('chart1'),
+              scope: "world",
+              fills: {
+                defaultFill: "#eee",
+                selectable: "#fa0fa0",
+                selected: "#fa0fa0",
+              },
+              "done": function(datamap) {
+                  console.log("in done");
+                  //$scope.datamap = datamap;
+                  console.log($scope.datamap);
+                  datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography, data) {
+                    console.log("in on click datamap");
+                    $scope.current_country_id = geography.id;
+                    //$scope.current_country = $scope.country_data_json[geography.id];
+                    //console.log("current_country");
+                    //console.log($scope.current_country);
+                    $scope.$apply();
+                    //if ($scope.chart2 != null) $scope.chart2.load({ json: $scope.current_country });
+                    //$scope.setCurId(geography.id);
+                                        
+                  });
+              } // done               
+          }); // chart1 
+          
     
+      }).error(function(err){
+          throw(err);   
+      }); // getData
+          
+     $scope.$watch('current_country', function(newValue, oldValue) {
+        console.log('watch current_country:');
+        console.log(newValue);
+      }, true); 
+     $scope.$watch('current_country_id', function(newValue, oldValue) {
+        console.log('watch current_country_id:');
+        console.log(newValue);
+        if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_data_arr[newValue] });
+         
+      }, true); 
+      
+      //console.log($scope.chart2);
+      setTimeout(1000000000000);
+      //$scope.current_country_id = "ARG";
+      //$scope.current_country_id = "SYR";
+      
+      
+    }); // controller
+    
+    
+/*    
+    eimod.factory("selected_data", function() {
+      
+      d3.json("eidata.json", function(data) {
+        //console.log(data);  
+        //eidata = data;
+        return data;
+      
+      });
+
+      var data2 = [
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 50, 20, 10, 40, 15, 25]
+          ];
+      return data2;
+    });
+*/
+   
+      // ----------------------------------------------------------------------
+      // This generates the Chart with Individual country data
+      // ----------------------------------------------------------------------
+    
+    
+    
+  /*  
+      var chart2 = c3.generate({
+        bindto: '#chart2',
+        size: {
+          height: 300,
+        },
+  
+        data: {
+          columns: [
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 50, 20, 10, 40, 15, 25]
+          ]
+        },
+        
+        legend: {
+          position: 'right'
+        }
+      });
+    
+    }
+*/
     </script>
     
     
     <script>
-
+    /*
       // ----------------------------------------------------------------------
       // This generates the Map
       // ----------------------------------------------------------------------
@@ -287,35 +448,21 @@ if it needs it.  Not sure it will work out that way, though.
             defaultFill: "#eee",
             selectable: "#fa0fa0",
             selected: "#fa0fa0",
-          },
-          "done": function(datamap) {
-
-              datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography, data) {
-              cid = geography.id;
-              alert(cid);
-              selected_country_id = cid;
-              chart2.load({ columns: countryData[selected_country_id] });
-              chart2.unload(['econ_gdpconpc', 'econ_tax', 'econ_govrev','econ_govexp','econ_invtotal']);      
-
-              //country = dataPack[cid];
-              });
-          }    
+          }
       });
 
-
-
-
+    */
 
     </script>
 
     <script>
-/*
+    
       // ----------------------------------------------------------------------
       // This generates the Chart with Individual country data
       // OLD
       // ----------------------------------------------------------------------
-
-  var chart2 = c3.generate({
+      /*
+      var chart2 = c3.generate({
         bindto: '#chart2',
         size: {
           height: 300,
