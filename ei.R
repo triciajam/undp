@@ -3,7 +3,11 @@ library(ggplot2)
 library(RColorBrewer)
 library(RJSONIO)
 
-# First create the dataset
+options(scipen=999)
+
+# ------------------------------------------------
+# First create the dataset for the Line Chart
+# ------------------------------------------------
 
 out <- read.csv("raw/Economic_Indicators.csv")
 out <- out[which(out$year >= 2000),]
@@ -65,39 +69,64 @@ str(out)
 base <- read.csv("raw/Country_Classification.csv")
 str(base)
 
-out_var_cols <- merge(out, base[c(1,2)], by=c("ccode"), all.x=T, all.y=F)
+out_var_cols <- merge(out, base[c(1,2)], by=c("ccode"), all.x=T, all.y=T)
 str(out_var_cols)
 
-# Second put in format to send to JSON
+
+
+# ------------------------------------------------
+# Create the dataset for the DataMap
+# ------------------------------------------------
+
+base <- read.csv("raw/Country_Classification.csv")
+str(base)
+base <- base[,c(1:3,6:8,10)]
+
+resrev <- read.csv("raw/Resource_Revenue.csv")
+str(resrev)
+
+outdm <- merge(base, resrev[,c(1,6)], by=c("ccode"), all.x=T);
+outdm <- outdm[!duplicated(outdm),]
+table(outdm$ccode)
+outdm[which(outdm$ccode == "AGO"),]
+outdm$class_opec = factor(outdm$class_opec);
+outdm$class_hipc = factor(outdm$class_hipc);
+outdm$class_ldc = factor(outdm$class_ldc);
+str(outdm)
+
+#outdm_json <- split(outdm, outdm$ccode)
+#j4 <- lapply(outdm_json, function(x) toJSON(list(x), .na="null", digits=14))
+#j5 <- lapply(j4, function(x) substring(x, 2, nchar(x)))
+#j6 <- lapply(j5, function(x) substring(x, 1, nchar(x)-1))
+
+#j7 <- paste("[", paste(j6, collapse=","), "]")
+#writeLines(j7, "eigroups.json")
+
+#  put in format to send to JSON
 d2 <- split(out_var_cols, out_var_cols$ccode)
-j2 <- lapply(d2, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:14])), .na="null"))
+j2 <- lapply(d2, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:14])), .na="null", digits=14))
+j2 <- lapply(d2, function(x) toJSON(list(country=outdm[which(outdm$ccode == x[1,1]),],stat=(x[,3:14])), .na="null", digits=14))
+
 j3 <- paste("[", paste(j2, collapse=","), "]")
 writeLines(j3, "eidata.json")
 
 
 
+# ------------------------------------------------
+# Third do major production by value
+# ------------------------------------------------
 
-# ------------------------
-# Below is OLD -- IGNORE
+prod <- read.csv("raw/Production_Total.csv")
+str(prod)
+prod$max.prod.source = names(prod[,c(5:9)])[apply(prod[,c(5:9)],1,which.max)] 
+a <- table(prod$ccode, prod$max.prod.source)
+a <- dcast(as.data.frame(a), Var1 ~ Var2)
+a$all.year.max <- names(a[,2:5])[apply(a[2:5],1,which.max)]
 
-out_time_cols <- melt(out_var_cols)
-out_time_cols <- dcast(out_time_cols, ccode + country + variable ~ year)
-str(out_time_cols)
-
-write.csv("out1.csv", out_time_cols )
-
-
-d <- split(out_time_cols, out_time_cols$ccode)
-d2 <- split(out_var_cols, out_var_cols$ccode)
-j <- toJSON(d2$LBN[,3:14], .na="null")
-j <- toJSON(list(ccode="LBN", stat=d2$LBN[,3:14]), .na="null")
-writeLines(j, "out.json.txt")
-
-j2 <- lapply(d2, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:14])), .na="null"))
-# adds the column name btu converts all numbers to string unfortunately
-#j2 <- lapply(d2, function(x) toJSON(list(ccode=x[1,1],stat=(rbind(colnames(x)[3:14],x[,3:14]))), .na="null"))
-
-j3 <- paste("[", paste(j2, collapse=","), "]")
-writeLines(j3, "eidata.json")
-
+rent <- read.csv("raw/Rent.csv")
+str(rent)
+rent$max.rent.source= names(rent[,c(4:7)])[apply(rent[,c(4:7)],1,which.max)] 
+a <- table(rent$ccode, rent$max.rent.source)
+a <- dcast(as.data.frame(a), Var1 ~ Var2)
+a$all.year.max <- names(a[,2:6])[apply(a[2:6],1,which.max)]
 

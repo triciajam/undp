@@ -1,5 +1,14 @@
 [ {
+ "country": {
  "ccode": "AFG",
+"country": "Afghanistan",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null,      5150441046,      5585352695,      5644309210,      6275076016,      6623602375,      7533698917,      7805768540,      9446591725,     10243250246,     10869490318,     12433119538 ],
 "econ_gdpconpc": [ null, null,     231.9725284,     241.6213179,     234.9966251,     252.4078925,     258.4186922,     285.9170913,     288.7581997,     340.9314267,     360.7056151,     373.4516771,     416.8755396 ],
@@ -15,7 +24,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "AGO",
+"country": "Angola",
+"class_income": "Upper middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     17245687549,     17973622010,     20457898753,     21531441233,     23873946857,     28233699240,     34087962369,     41789491879,     47563587328,     48711254651,     50371160616,     52344988209,     55920477373 ],
 "econ_gdpconpc": [     1238.475709,     1249.445145,     1374.251641,     1396.234778,     1494.296347,     1706.543616,     1990.839161,     2359.278898,     2597.053731,     2573.686027,      2576.64541,      2593.84129,     2685.834165 ],
@@ -31,7 +49,16 @@
 "rent_total": [    140.48482749,   101.421520836,    84.306504208,    54.684762932,    56.614696012,    65.566940974,    62.915404842,    58.907586034,    70.908286524,    44.439034837,    46.704758727,    46.404032811, null ] 
 } 
 },{
+ "country": {
  "ccode": "ALB",
+"country": "Albania",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      6442273974,      6893233152,      7093136913,      7497445717,      7939795015,      8376483740,      8795307928,      9314231095,     10031426890,     10362463977,     10725150216,     11046904723,     11223655198 ],
 "econ_gdpconpc": [     1949.281494,     2097.704487,      2173.41145,     2314.465776,     2468.690511,     2620.820724,     2766.191538,     2941.749219,     3177.913409,     3288.434026,     3404.655032,     3502.636186,     3549.449903 ],
@@ -47,7 +74,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ARE",
+"country": "United Arab Emirates",
+"class_income": "High income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    139000000000,    141000000000,    144000000000,    157000000000,    172000000000,    181000000000,    199000000000,    205000000000,    212000000000,    208000000000,    204000000000,    212000000000,    222000000000 ],
 "econ_gdpconpc": [     45968.99982,     45038.33809,     44819.75753,     46661.38888,     47081.15807,     43533.89178,     40714.51819,     35341.66379,     31129.51349,     26978.93569,     24219.29765,     23795.85994,     24077.73006 ],
@@ -63,7 +99,16 @@
 "rent_total": [    22.825170934,    18.933210172,    16.391184712,    20.387462829,    23.028394833,    28.192135625,    28.497160169,    26.427456805, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ARG",
+"country": "Argentina",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    166000000000,    159000000000,    141000000000,    154000000000,    168000000000,    183000000000,    199000000000, null, null, null, null, null, null ],
 "econ_gdpconpc": [     4498.473172,     4257.422726,     3757.889723,     4053.044221,     4379.985196,     4740.067029,     5096.388227, null, null, null, null, null, null ],
@@ -79,7 +124,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ARM",
+"country": "Armenia",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      2754946338,      3018226683,      3416219125,      3895883451,      4303698369,      4900436759,      5547196574,      6309891834,      8675151248,      7447618332,      7611465936,      7969204835,      8542339350 ],
 "econ_gdpconpc": [     895.5977145,      986.361483,     1121.173903,     1283.215543,     1422.403624,     1625.396904,     1847.273054,     2110.415004,     2913.580592,     2509.175175,     2568.407697,      2688.55675,     2877.098789 ],
@@ -95,7 +149,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ATG",
+"country": "Antigua and Barbuda",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     847090613.8,     820661180.6,       844419520,     900017957.9,     944232248.7,      1001970945,      1137617186,      1247153012,      1247525078,      1094108607,      1009445957,     979184862.1,      1007064677 ],
 "econ_gdpconpc": [     10909.36809,     10391.79938,     10551.28727,     11124.51743,     11554.76454,     12135.54103,     13629.54444,     14777.21972,     14616.75096,     12677.96764,     11571.83586,     11107.91431,     11306.56768 ],
@@ -111,7 +174,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "AUS",
+"country": "Australia",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    591000000000,    602000000000,    626000000000,    645000000000,    672000000000,    694000000000,    715000000000,    742000000000,    770000000000,    782000000000,    799000000000,    818000000000,    846000000000 ],
 "econ_gdpconpc": [     30854.81764,     31019.80808,     31842.60636,     32443.10879,     33399.20579,     34011.73864,     34533.40515,     35299.19478,     35998.38764,     35929.04644,     36202.84436,     36654.15466,      37304.6359 ],
@@ -127,7 +199,16 @@
 "rent_total": [ null,     3.541816705,     3.355729788,     3.679446137,     4.580453386,     5.930841716,     7.292779705,     8.210045829,    10.938510859,     7.970483749, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "AUT",
+"country": "Austria",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    281000000000,    283000000000,    288000000000,    290000000000,    298000000000,    305000000000,    316000000000,    328000000000,    333000000000,    320000000000,    326000000000,    335000000000,    338000000000 ],
 "econ_gdpconpc": [      35027.2956,     35192.64513,     35613.07241,     35746.89287,     36445.76999,     37067.32383,     38237.94751,     39501.45167,       39895.109,     38240.32713,     38803.23579,     39742.64992,     39904.75267 ],
@@ -143,7 +224,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "AZE",
+"country": "Azerbaijan",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      7035249768,      7731739495,      8551303881,      9509049916,     10478973007,     13245421881,     17815092430,     22277594932,     24677431177,     26999738724,     28310397707,     28329060687,     28952300023 ],
 "econ_gdpconpc": [     874.0960872,     953.2177106,     1046.421464,     1154.837798,     1261.538916,      1578.36733,     2099.709758,     2596.062943,     2815.965399,     3017.660158,     3126.724059,     3088.281636,     3113.985289 ],
@@ -159,7 +249,16 @@
 "rent_total": [     55.77505491,    44.835683308,    39.484011215,    43.379547907,    48.173138217,    65.020829162,    68.468575717,    62.636559367,    63.504731216,    42.412161542,    45.789747725, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BDI",
+"country": "Burundi",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      1003173008,      1023796310,      1069319612,      1056234049,      1107288788,      1117254387,      1177414708,      1233763797,      1296045659,      1340998037,      1391766915,      1450104575,      1508389469 ],
 "econ_gdpconpc": [     150.3041686,     149.6914792,     151.9410474,     145.3998641,     147.4267806,     143.7835295,     146.3976553,     148.1409195,     150.2787084,     150.2234857,     150.7423534,     151.9968084,     153.1426877 ],
@@ -175,7 +274,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BEL",
+"country": "Belgium",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    349000000000,    351000000000,    356000000000,    359000000000,    371000000000,    377000000000,    387000000000,    399000000000,    403000000000,    391000000000,    400000000000,    407000000000,    407000000000 ],
 "econ_gdpconpc": [     34008.54314,     34165.49252,     34475.13668,     34608.10527,     35586.93263,      36011.4694,     36728.68264,     37511.17891,     37582.65512,     36237.38576,     36742.01341,     36877.02461,     36514.73959 ],
@@ -191,7 +299,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BEN",
+"country": "Benin",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      3564714018,      3787451985,      3954899568,      4108448873,      4236626607,      4358015993,      4521535485,      4730719643,      4968127509,      5100603394,      5230812508,      5415496713,      5707932121 ],
 "econ_gdpconpc": [     512.9552851,     527.8744203,     533.3831576,     535.9535406,     534.7388229,     532.6109983,     535.4940387,     543.2931468,     553.6571144,     551.9665806,     550.0445443,     553.7433773,     567.9137757 ],
@@ -207,7 +324,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BFA",
+"country": "Burkina Faso",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      3982851579,      4245137265,      4463498007,      4811762166,      5027254632,      5462709055,      5832414795,      6042743720,      6393223162,      6582810304,      7105465610,      7404611235,      8147597249 ],
 "econ_gdpconpc": [     343.1142999,     355.3581815,      362.992288,     380.1034424,     385.6954981,     406.9988043,      421.958208,     424.4967954,     436.1103373,      436.093057,     457.2288132,     462.9238099,     494.9895173 ],
@@ -223,7 +349,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BGD",
+"country": "Bangladesh",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     46268657157,     48708872666,     50859569550,     53532745612,     56889517979,     60277560976,     64273563733,     68404967193,     72639529866,     76809880500,     81471733197,     86936936296,     92356328485 ],
 "econ_gdpconpc": [     349.5053333,     361.5308569,     371.2207201,      384.613043,     402.8003249,     421.1233114,     443.6676994,     467.0649808,     490.9072519,     513.7678115,     539.0999313,     568.7266369,     597.0206457 ],
@@ -239,7 +374,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BGR",
+"country": "Bulgaria",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     22113172143,     23041925373,     24124895865,     25451765138,     27157033402,     28895083540,     30773263970,     32742752864,     34772803542,     32860299347,     32991740544,     33585591874,     33854276609 ],
 "econ_gdpconpc": [     2706.573637,     2872.957007,     3066.021984,     3253.221666,     3490.100436,     3733.263161,     3997.036502,     4274.642517,       4561.3278,     4332.199318,     4378.879088,     4570.507995,     4634.631369 ],
@@ -255,7 +399,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BHR",
+"country": "Bahrain",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     10017951923,     10478777712,     11029961419,     11824118642,     12486269285,     13460198290,     14362031575,     15559825008,     16540093984,     17052836898,     17792456287,     18166038611,     18783645646 ],
 "econ_gdpconpc": [     14991.57027,      14996.4833,     15057.12502,     15315.06524,     15217.78574,     15303.78392,     15102.80927,     15072.19431,     14820.36811,     14311.60616,     14216.75707,     14052.09196,     14253.49886 ],
@@ -271,7 +424,16 @@
 "rent_total": [    29.485779309,    25.603049254,    22.488413703,    26.520322371,    29.213525604,     37.09338379,     35.91567518,     33.72368856,     40.79180577,    24.738088213,    25.069023982, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BHS",
+"country": "Bahamas, The",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      7099130519,      7285527215,      7482573735,      7387938285,      7453165227,      7706222000,      7900177115,      8014454932,      7828204029,      7501356222,      7575468595,      7701174789,      7842273538 ],
 "econ_gdpconpc": [     23841.86714,     24044.24751,     24212.39305,     23407.40338,     23117.75815,     23416.90369,     23538.91317,     23430.72172,      22472.8829,      21160.8618,     21013.89909,     21022.44907,     21083.64754 ],
@@ -287,7 +449,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BIH",
+"country": "Bosnia and Herzegovina",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      8595475852,      8973676790,      9449281660,      9827252926,     10426715355,     10948051122,     11626830292,     12421872947,     13095138461,     12714069932,     12803068421,     12969508307,     12878721745 ],
 "econ_gdpconpc": [     2241.695325,     2313.189027,     2424.397725,     2522.538606,     2682.649459,      2821.78775,     3000.350771,     3210.893925,     3391.467696,     3299.402647,     3328.992402,     3378.072563,      3359.15595 ],
@@ -303,7 +474,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BLR",
+"country": "Belarus",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     21033237300,     22027122126,     23138449319,     24768134887,     27604022659,     30210091837,     33230492799,     36104038406,     39804069049,     39869162697,     42939088225,     45300738077,     45980249148 ],
 "econ_gdpconpc": [     2102.272594,     2218.686757,     2345.509308,     2528.134622,     2837.001301,     3126.367778,     3460.067972,     3776.573055,     4177.589111,       4193.6639,     4524.666831,     4782.089948,     4858.437146 ],
@@ -319,7 +499,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BLZ",
+"country": "Belize",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     856733436.6,     899704301.9,     945756200.4,      1033988110,      1082048816,      1114200000,      1166538878,      1180658196,      1226100264,      1229743237,      1277466194,      1307387531,      1376500403 ],
 "econ_gdpconpc": [     3590.878914,     3669.297066,     3756.488964,     4002.338375,      4082.58684,     4097.528685,     4181.367738,      4125.34835,     4176.887499,     4085.308544,     4139.620518,     4133.639596,     4247.671429 ],
@@ -335,7 +524,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BOL",
+"country": "Bolivia",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      8201398323,      8339493389,      8546776986,      8778509155,      9144862288,      9549196256,     10007272035,     10464042407,     11107423825,     11480299979,     11954060130,     12572554884,     13223364505 ],
 "econ_gdpconpc": [     965.4074983,     961.9829159,     966.4637254,     973.5739743,     995.3472435,     1020.790305,     1051.471756,     1081.392031,     1129.480693,     1148.787508,     1176.974475,     1217.746318,     1259.813782 ],
@@ -351,7 +549,16 @@
 "rent_total": [ null, null, null, null, null, null,    37.175248735,    35.522353642,    39.222057969,    15.939941219,    17.791848366,    20.292660807, null ] 
 } 
 },{
+ "country": {
  "ccode": "BRA",
+"country": "Brazil",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    769000000000,    779000000000,    800000000000,    809000000000,    855000000000,    882000000000,    917000000000,    973000000000,   1020000000000,   1020000000000,   1100000000000,   1130000000000,   1140000000000 ],
 "econ_gdpconpc": [     4406.713243,     4402.511201,     4458.333914,     4450.926292,     4647.527247,     4739.305437,     4874.601481,      5121.02886,     5336.079146,     5271.138037,       5618.3246,     5721.289504,     5721.225684 ],
@@ -367,7 +574,16 @@
 "rent_total": [     2.480388452,     2.580035375,      3.09411369,     3.563722956,      4.06386534,     5.340552018,     5.747459473,     5.331325773,     6.769283523,      4.10282149,     4.849380764, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BRB",
+"country": "Barbados",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      3687558812,      3593519264,      3617690072,      3689069488,      3741943129,      3891500000,      4113569293,      4182305027,      4196656444,      4022928766,      4033125825,      4063717003,      4064094672 ],
 "econ_gdpconpc": [     13801.26057,     13393.86075,     13422.51552,      13620.6432,     13746.78323,     14224.98245,     14962.62333,     15138.08615,     15115.78713,     14418.78944,     14383.67817,     14420.36665,     14349.55272 ],
@@ -383,7 +599,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BRN",
+"country": "Brunei",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      8602106665,      8838152034,      9180373875,      9446967804,      9494610558,      9531402830,      9950567280,      9965949012,      9772721198,      9600196363,      9849702194,     10067219011,     10284143007 ],
 "econ_gdpconpc": [     25925.49952,     26062.48056,     26501.69851,     26712.83619,     26315.65827,     25913.57837,     26556.30357,     26127.17337,     25186.32224,     24341.26867,     24589.27724,     24764.87536,     24947.10096 ],
@@ -399,7 +624,16 @@
 "rent_total": [     50.88206835,     48.74715001,      42.1978165,     53.79362015,     53.19220364,     67.45045848,      64.7641683,     58.81548349,      71.1864143,     44.72442493,     44.60335907, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BTN",
+"country": "Bhutan",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     559604551.8,     605513243.9,     670471741.1,     721858934.4,     764422682.7,     818869145.8,     874956489.1,      1031799658,      1079978144,      1152638919,      1287238647,      1396773363,      1528652032 ],
 "econ_gdpconpc": [      991.591303,     1042.392413,     1120.337772,     1171.120771,     1205.917533,     1258.990995,     1314.601196,     1518.770703,     1560.303549,     1636.011649,     1795.464672,     1914.885976,      2060.67228 ],
@@ -415,7 +649,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "BWA",
+"country": "Botswana",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      8312647254,      8333476575,      8839279508,      9248175276,      9498414407,      9931223496,     10721702328,     11652597047,     12107219247,     11157891950,     12116816309,     12856228939,     13393452909 ],
 "econ_gdpconpc": [     4735.539274,     4672.936467,     4886.344268,     5046.472325,     5121.159585,     5294.379478,     5655.073319,      6084.31294,       6261.1058,     5716.967872,     6152.726373,     6471.144344,     6683.659899 ],
@@ -431,7 +674,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CAF",
+"country": "Central African Republic",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      1232871264,      1287916287,      1334493625,      1262464742,      1338149399,      1350300947,      1452928387,      1570946904,      1632089450,      1777461809,      1895403785,      1996406408,      2134087236 ],
 "econ_gdpconpc": [      338.857665,     347.7053563,     354.2356715,     329.6565893,     343.6796582,     340.9078669,     360.3401866,     382.5143177,     389.9756541,     416.6335914,     435.7329213,     450.0245159,     471.5997065 ],
@@ -447,7 +699,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CAN",
+"country": "Canada",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [   1000000000000,   1020000000000,   1050000000000,   1070000000000,   1100000000000,   1130000000000,   1170000000000,   1190000000000,   1200000000000,   1170000000000,   1200000000000,   1230000000000,   1260000000000 ],
 "econ_gdpconpc": [     32497.23507,     32744.68229,     33401.30842,     33692.28082,     34397.06911,     35087.89259,     35785.96982,     36182.91384,      36005.5005,      34583.4307,     35277.26794,     35794.26989,     35992.13828 ],
@@ -463,7 +724,16 @@
 "rent_total": [ null, null,     2.535197318,     3.710332722,     4.278571303,     6.178835227,     6.323033268,     5.983665472,     7.583507287,     3.207057258, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CHE",
+"country": "Switzerland",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    361000000000,    365000000000,    366000000000,    366000000000,    375000000000,    385000000000,    399000000000,    415000000000,    424000000000,    415000000000,    428000000000,    435000000000,    440000000000 ],
 "econ_gdpconpc": [     50188.18133,     50491.58728,     50203.96588,     49843.37877,     50700.42621,     51734.30389,     53339.35747,     54897.82304,     55377.82255,     53630.93365,      54642.6648,     55005.91092,      54993.9047 ],
@@ -479,7 +749,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CHL",
+"country": "Chile",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [    101000000000,    105000000000,    107000000000,    111000000000,    118000000000,    124000000000,    130000000000,    137000000000,    141000000000,    140000000000,    148000000000,    156000000000,    165000000000 ],
 "econ_gdpconpc": [     6551.573086,      6690.88591,     6757.989701,     6948.026396,     7289.117742,     7614.522058,     7869.604222,     8194.138629,     8382.314974,     8217.059106,     8610.022043,     9030.735642,     9447.081235 ],
@@ -495,7 +774,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CHN",
+"country": "China",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [   1420000000000,   1530000000000,   1670000000000,   1840000000000,   2030000000000,   2260000000000,   2540000000000,   2900000000000,   3180000000000,   3480000000000,   3840000000000,   4190000000000,   4520000000000 ],
 "econ_gdpconpc": [     1122.285046,      1206.63801,     1307.651394,     1429.485043,     1564.543048,     1731.125235,     1940.114735,     2204.069679,     2403.314497,     2611.398465,     2869.093824,     3120.929717,     3348.009885 ],
@@ -511,7 +799,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CIV",
+"country": "Cote d'Ivoire",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     16364069025,     16360594856,     16126506131,     15875680153,     16160466859,     16363437145,     16475358262,     16757856573,     17148314631,     17791375259,     18217368879,     17355913134,     19004181835 ],
 "econ_gdpconpc": [     1014.427638,     996.3716494,     967.1075684,     938.8448837,     942.6131889,     940.7521438,     932.7918292,     933.6341647,     939.1168297,     956.4565427,     959.9918004,     895.0982108,     957.8841384 ],
@@ -527,7 +824,16 @@
 "rent_total": [ null, null, null,     2.768252108,     3.336536504,     6.552773137,     9.616488854,     7.480159098,     8.696533507,     5.228254515, null,     6.612421271, null ] 
 } 
 },{
+ "country": {
  "ccode": "CMR",
+"country": "Cameroon",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     13827210177,     14451407928,     15030771313,     15636660700,     16215507058,     16587921221,     17122408358,     17608693919,     18247395962,     18588341482,     19209829593,     19997837331,     20913538936 ],
 "econ_gdpconpc": [     868.1227604,     883.8543751,     895.6460437,     907.8795342,     917.4282181,     914.5531201,     919.9691767,     922.0333364,     931.2259122,     924.6116363,      931.415347,     945.2439131,     963.7739432 ],
@@ -543,7 +849,16 @@
 "rent_total": [     10.99306686,     7.908275423,     7.476359445,     6.741243702,     7.517739819,     9.539113389,    10.905573132,    10.416240361,     12.18240443,     6.644025973,     7.579311237, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "COD",
+"country": "Congo, Dem. Rep.",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      5837350101,      5714765277,      5912980553,      6255419074,      6670772404,      7191141825,      7592497937,      8067617826,      8564183233,      8806925113,      9438751813,     10088106489,     10809608899 ],
 "econ_gdpconpc": [     124.3332076,      118.644714,     119.4132385,     122.7218754,     127.0930929,     133.1002707,     136.5782242,     141.0720083,     145.6022323,     145.6020389,     151.7699889,     157.7955248,     164.5170626 ],
@@ -559,7 +874,16 @@
 "rent_total": [     5.217616574,     4.169620611,     3.476998075,     4.781231833,     7.735736212,    10.143206521,    16.632832343,    15.577991148,    18.825465709,    15.453876347,    21.924216019,    26.431442449, null ] 
 } 
 },{
+ "country": {
  "ccode": "COG",
+"country": "Congo, Rep.",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      4988137317,      5177816322,      5415057137,      5459095852,      5648888504,      6087002682,      6466587987,      6364272161,      6718906218,      7220733129,      7852666838,      8121276831,      8429885350 ],
 "econ_gdpconpc": [     1595.589193,     1615.222789,     1649.062279,     1623.079811,     1637.896407,     1718.100815,     1773.294028,     1693.139821,     1733.251528,     1807.376534,     1909.827612,     1922.032384,     1943.690621 ],
@@ -575,7 +899,16 @@
 "rent_total": [    73.418425712,    64.218784402,    58.250952568,    55.272356745,    58.667492661,    71.372653555,    75.789549577,    62.915333508,    65.087902833,    53.665327303,    64.207470931,    71.596102433, null ] 
 } 
 },{
+ "country": {
  "ccode": "COL",
+"country": "Colombia",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    123000000000,    125000000000,    128000000000,    133000000000,    140000000000,    147000000000,    156000000000,    167000000000,    173000000000,    176000000000,    183000000000,    195000000000,    203000000000 ],
 "econ_gdpconpc": [     3074.317626,     3074.983417,      3101.68674,     3172.741285,     3290.427523,     3392.924413,     3565.886389,     3755.671308,      3832.49512,     3840.544637,     3937.867201,     4142.997504,     4260.917334 ],
@@ -591,7 +924,16 @@
 "rent_total": [ null, null, null,     6.351851176,     7.615455922,     8.460823089,     9.483689181,     8.757026112,    11.817303301,     7.415989004,     9.391734361,    12.045117255, null ] 
 } 
 },{
+ "country": {
  "ccode": "COM",
+"country": "Comoros",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     337525258.7,     348762178.5,     363233767.3,     372222414.5,       371329326,     387036131.7,     391843702.8,     393767619.8,     397606567.6,     404804114.4,       413107576,     422308321.1,     434811979.1 ],
 "econ_gdpconpc": [     638.8748669,     643.5011486,     653.2652443,     652.4597487,     634.3291828,     644.2731325,     635.5671987,     622.3252981,     612.3703664,      607.725473,      604.770995,     603.1114986,     606.0071932 ],
@@ -607,7 +949,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CPV",
+"country": "Cabo Verde",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [       825706679,     844133599.2,     888458136.5,     925562451.7,      1019942727,      1090445839,      1177504313,      1356139819,      1446330176,      1478589966,      1532903134,      1601792089,      1641836891 ],
 "econ_gdpconpc": [     1866.315902,     1872.473668,     1935.048431,     1982.191361,     2153.699878,     2278.164757,     2443.259147,     2803.604244,     2984.271519,     3044.157603,     3143.765362,     3265.258378,     3320.860781 ],
@@ -623,7 +974,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CRI",
+"country": "Costa Rica",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     16340941962,     16516835260,     16996184390,     18084706852,     18855016400,     19964893807,     21717739802,     23441116407,     24081438730,     23836839014,     25017792423,     26127232422,     27467296879 ],
 "econ_gdpconpc": [     4158.436447,     4115.331916,     4151.648425,     4335.669667,      4440.30251,     4621.364127,      4944.28558,     5252.056787,     5312.811412,     5180.317879,     5357.490371,     5514.773565,     5716.048001 ],
@@ -639,7 +999,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CUB",
+"country": "Cuba",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -655,7 +1024,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CYM",
+"country": "Cayman Islands",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -671,7 +1049,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CYP",
+"country": "Cyprus",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     14498299779,     15081936318,     15397335239,     15695130499,     16358201720,     16997801392,     17699013878,     18607069376,     19281876370,     18960609562,     19207097486,     19283925876,     18821111655 ],
 "econ_gdpconpc": [     20890.22954,     21498.20441,     21676.06863,     21715.78979,     22112.52093,     22430.60642,     22909.89164,     23734.20314,     24312.89513,     23700.43607,      23156.5376,     22663.48159,     21552.03462 ],
@@ -687,7 +1074,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "CZE",
+"country": "Czech Republic",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    106000000000,    110000000000,    112000000000,    116000000000,    122000000000,    130000000000,    139000000000,    147000000000,    152000000000,    145000000000,    148000000000,    151000000000,    150000000000 ],
 "econ_gdpconpc": [     10361.19739,     10719.51075,     10983.85308,      11394.7226,     11925.01741,     12705.60825,     13553.48913,     14240.62525,     14554.93593,     13815.63866,      14112.9002,     14402.01098,     14229.56782 ],
@@ -703,7 +1099,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "DEU",
+"country": "Germany",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [   2690000000000,   2730000000000,   2730000000000,   2720000000000,   2750000000000,   2770000000000,   2870000000000,   2960000000000,   2990000000000,   2840000000000,   2950000000000,   3050000000000,   3070000000000 ],
 "econ_gdpconpc": [     32662.12507,     33101.01967,     33048.76775,       32906.465,     33295.78034,     33542.78138,     34823.12176,     36009.62477,     36468.95863,      34680.2123,      36127.0477,     37321.81582,     37536.53997 ],
@@ -719,7 +1124,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "DJI",
+"country": "Djibouti",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     612142706.5,     624677946.7,     641035528.6,     661548404.8,     686862396.3,     708633194.7,     742646629.2,     780522063.1, null, null, null, null, null ],
 "econ_gdpconpc": [     846.8027596,     851.3707277,     861.1045822,     876.1244161,     896.9494947,     912.4992045,     942.9906509,     977.2528304, null, null, null, null, null ],
@@ -735,7 +1149,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "DMA",
+"country": "Dominica",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     336914785.6,     336693033.9,     329516383.8,     353875285.2,       364596349,     361615917.8,     396014551.5,     397696560.7,     429673809.1,     455010070.1,     459398784.9,     458078978.2,     450161070.7 ],
 "econ_gdpconpc": [     4835.241402,     4833.376887,     4720.459328,     5051.175957,     5184.448617,     5126.249862,     5602.129743,     5617.579782,     6061.732843,     6408.953605,     6455.222012,      6415.58211,      6279.79843 ],
@@ -751,7 +1174,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "DNK",
+"country": "Denmark",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    242000000000,    244000000000,    245000000000,    246000000000,    252000000000,    258000000000,    266000000000,    271000000000,    269000000000,    253000000000,    257000000000,    260000000000,    259000000000 ],
 "econ_gdpconpc": [     45339.68604,      45495.9441,     45562.08839,      45612.7296,     46539.79063,     47546.59459,     48999.36484,     49554.90602,     48878.43936,     45862.77292,     46379.66445,     46699.20901,       46357.688 ],
@@ -767,7 +1199,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "DOM",
+"country": "Dominican Republic",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     28565149660,     29081958770,     30765282834,     30687336281,     31089941311,     33969724872,     37594686814,     40780695459,     42923985853,     44406603700,     47848657632,     49993672106,     51937267398 ],
 "econ_gdpconpc": [     3297.213613,     3305.031693,     3443.131973,     3382.897202,       3376.6295,     3635.706812,     3965.990079,     4241.355365,      4402.37204,     4492.656126,     4776.842102,      4926.65083,     5053.924573 ],
@@ -783,7 +1224,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "DZA",
+"country": "Algeria",
+"class_income": "Upper middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     78895342490,     82534408893,     87156335791,     93431591968,     97449150423,    103000000000,    105000000000,    109000000000,    111000000000,    113000000000,    117000000000,    120000000000,    124000000000 ],
 "econ_gdpconpc": [     2487.286034,     2567.150874,     2675.725212,     2830.965084,     2912.290299,     3038.748713,     3041.480757,     3092.039129,     3098.409819,     3094.101258,     3146.718756,     3168.675007,     3212.105237 ],
@@ -799,7 +1249,16 @@
 "rent_total": [    32.258348779,    27.604237164,    24.332013406,    32.138728147,     32.08840206,    42.809456823,    40.790932834,    37.106222373,    41.067704613,     25.18239114,    24.846551011, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ECU",
+"country": "Ecuador",
+"class_income": "Upper middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     32753307083,     34068558675,     35464271435,     36429920044,     39421188399,     41507085000,     43334860460,     44283921626,     47099108359,     47365920848,     48764673105,     52585205968,     55279286828 ],
 "econ_gdpconpc": [     2613.347141,     2665.590163,     2721.731377,     2743.256945,     2913.809095,     3012.752437,      3090.15946,     3103.636773,     3245.438512,     3209.850899,     3250.745887,       3449.0061,     3568.186472 ],
@@ -815,7 +1274,16 @@
 "rent_total": [    22.368794425,    13.934271807,    11.726087228,    13.236157618,    19.678732801,    25.681403484,    27.924423617,    26.830817913,    30.532724905,    17.390742689,    20.614580865,    25.725727679, null ] 
 } 
 },{
+ "country": {
  "ccode": "EGY",
+"country": "Egypt, Arab Rep.",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     75403498185,     78069182010,     79919803451,     82472056518,     85846872131,     89685724889,     95823670784,    103000000000,    110000000000,    115000000000,    121000000000,    123000000000,    126000000000 ],
 "econ_gdpconpc": [      1140.11772,     1161.671366,     1170.078973,     1187.802309,     1216.111429,      1249.49326,     1312.819303,     1382.407005,     1456.565677,     1499.338671,     1550.240558,     1551.397772,     1559.615266 ],
@@ -831,7 +1299,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ERI",
+"country": "Eritrea",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     967942712.5,      1052690320,      1084328177,      1055533675,      1070857220,      1098425900,      1087779776,      1103300455,       995364243,      1033949557,      1056636372,      1148350300,      1228931291 ],
 "econ_gdpconpc": [     245.7114001,      256.653016,     253.2544504,     236.0035522,     229.5257038,     226.2898568,      216.042105,     211.7721819,     184.9375879,     186.0327828,     184.0458298,     193.5578876,     200.4480388 ],
@@ -847,7 +1324,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ESP",
+"country": "Spain",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    963000000000,    998000000000,   1030000000000,   1060000000000,   1090000000000,   1130000000000,   1180000000000,   1220000000000,   1230000000000,   1180000000000,   1180000000000,   1180000000000,   1160000000000 ],
 "econ_gdpconpc": [     23920.93411,     24520.22085,     24822.97604,     25169.17322,     25571.18421,     26056.38877,       26676.965,     27136.08852,     26971.33446,     25738.32365,     25595.99011,     25551.39202,      25108.3992 ],
@@ -863,7 +1349,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "EST",
+"country": "Estonia",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "EmergingAdvanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      9842476302,     10460745662,     11147015406,     12012624259,     12774565431,     13905561150,     15309653398,     16456683847,     15773508424,     13549705747,     13897254467,     15225543588,     15825263611 ],
 "econ_gdpconpc": [     7186.833516,     7668.600538,     8204.515241,     8874.856588,     9467.620327,     10330.28166,     11394.95187,     12265.80256,     11765.34837,     10109.67614,     10369.83949,     11362.95651,     11815.22389 ],
@@ -879,7 +1374,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ETH",
+"country": "Ethiopia",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      8919503457,      9659949961,      9806270748,      9594349249,     10896529067,     12184372697,     13504504394,     15051582490,     16675430611,     18143283147,     19946243845,     21402128350,     23213939090 ],
 "econ_gdpconpc": [     135.0944592,     142.1482556,     140.1930366,     133.2739792,     147.1188864,     159.9686781,     172.4919204,     187.1139982,     201.8299496,     213.8578974,     229.0163556,     239.4159863,     253.0713003 ],
@@ -895,7 +1399,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "FIN",
+"country": "Finland",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    172000000000,    176000000000,    179000000000,    183000000000,    190000000000,    196000000000,    204000000000,    215000000000,    216000000000,    198000000000,    204000000000,    210000000000,    208000000000 ],
 "econ_gdpconpc": [     33217.07199,     33898.39575,     34436.56731,     35045.91105,      36385.7101,     37318.79732,       38815.526,     40712.84818,     40642.71607,     36995.04081,     38064.65332,     38921.73349,     38414.45773 ],
@@ -911,7 +1424,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "FJI",
+"country": "Fiji",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      2667071301,      2720412727,      2807465934,      2835540594,      2985824245,      3006725015,      3062424094,      3036373447,      3067732954,      3028700115,      3032066121,      3088694987,      3159956830 ],
 "econ_gdpconpc": [     3285.999087,     3339.158865,     3439.522999,     3469.722614,     3645.717306,     3655.663836,     3698.311831,     3634.669051,     3635.396479,     3552.814926,     3523.368091,     3558.728256,      3612.44439 ],
@@ -927,7 +1449,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "FRA",
+"country": "France",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [   1970000000000,   2010000000000,   2030000000000,   2050000000000,   2100000000000,   2140000000000,   2190000000000,   2240000000000,   2240000000000,   2170000000000,   2200000000000,   2250000000000,   2250000000000 ],
 "econ_gdpconpc": [     32392.11113,     32747.67684,     32812.53987,     32874.04921,      33463.4863,     33818.96875,      34412.6373,      34982.1285,     34759.22685,     33492.68705,     33898.38084,     34405.38342,     34239.89241 ],
@@ -943,7 +1474,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "FSM",
+"country": "Micronesia, Fed. Sts.",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     242479649.9,     246716222.8,     248196311.2,     252728016.2,     244561702.7,     249845592.6,       249437348,     244299716.5,     238046565.8,     240336472.8,     246418335.6,     251471358.4,     252561901.7 ],
 "econ_gdpconpc": [     2257.094386,     2302.101547,     2319.960286,     2366.012734,     2294.738004,      2352.63934,     2360.173987,     2324.516556,     2278.001166,     2311.305432,     2378.119222,     2431.460381,     2442.689701 ],
@@ -959,7 +1499,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GAB",
+"country": "Gabon",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      7951573993,      8121076102,      8099380302,      8299855530,      8411572880,      8665736618,      8768095232,      9255018589,      9347550944,      9076471967,      9684595588,     10372201875,     10953045180 ],
 "econ_gdpconpc": [     6488.289522,      6469.43565,     6301.460262,     6307.743863,      6244.09233,     6281.954684,     6205.712925,     6394.289982,     6303.803534,     5974.684589,     6223.145276,     6506.888733,     6709.073278 ],
@@ -975,7 +1524,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GBR",
+"country": "United Kingdom",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [   2010000000000,   2050000000000,   2100000000000,   2180000000000,   2250000000000,   2320000000000,   2390000000000,   2470000000000,   2450000000000,   2320000000000,   2360000000000,   2390000000000,   2390000000000 ],
 "econ_gdpconpc": [     34058.66125,     34675.94931,     35341.57536,     36588.88982,     37559.73159,     38545.22312,     39364.43503,     40452.51387,      39875.2111,     37558.08672,     37899.31849,     38028.87269,     37790.25571 ],
@@ -991,7 +1549,16 @@
 "rent_total": [     2.204482637,     1.813314027,     1.433678351,     1.629001268,     1.578615123,     2.058238399,     1.910136204,     1.702895847,     2.461418663,     1.391735831,     1.533467983, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GEO",
+"country": "Georgia",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      4501184529,      4717486779,      4975714429,      5525933957,      5849606157,      6411147323,      7012723011,      7878373539,      8060682813,      7756329650,      8241335083,      8814396294,      9343260072 ],
 "econ_gdpconpc": [     1018.759371,     1075.480298,     1142.004689,     1276.521508,     1354.608563,     1469.974624,     1594.525469,     1795.272432,     1838.743285,     1758.446043,      1850.82085,     1966.007114,     2070.849788 ],
@@ -1007,7 +1574,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GHA",
+"country": "Ghana",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      8393646433,      8729392290,      9122214943,      9596570120,     10133978047,     10731883141,     11418723662,     12156343018,     13181184012,     13707278823,     14804825657,     17026596445,     18374187876 ],
 "econ_gdpconpc": [     445.8768272,     452.4550317,     461.0367636,     472.6981848,     486.3800359,     501.8642947,     520.2678441,     539.6664762,     570.3636838,     578.5728945,     610.1836568,     685.9835673,     724.3496502 ],
@@ -1023,7 +1599,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GIN",
+"country": "Guinea",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      2524527100,      2616883048,      2752034838,      2786396779,      2851601733,      2937072009,      3010402725,      3063316042,      3214549894,      3205542973,      3267609255,      3395332306,      3529248118 ],
 "econ_gdpconpc": [     288.6451124,     294.1854076,     304.2351874,     302.7184811,     304.0209975,     306.7011791,       307.21646,     304.8995824,      311.648109,     302.6024665,     300.4412781,     304.1995412,     308.1970116 ],
@@ -1039,7 +1624,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GMB",
+"country": "Gambia, The",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     538066031.7,     569273861.6,     550772458.9,     588610526.9,       630107569,     624173996.3,     631190333.8,     654109017.9,     691619828.2,     736227203.5,     784275580.7,     750589990.2,     795710666.2 ],
 "econ_gdpconpc": [     437.8568089,     449.4180993,     421.5094274,     436.4772532,      452.684947,     434.4954445,     425.8113164,     427.6882776,     438.2933086,     452.1358074,     466.6529302,      432.625187,     444.2270883 ],
@@ -1055,7 +1649,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GNB",
+"country": "Guinea-Bissau",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     529090818.9,     567316991.3,     578659667.2,     550083470.8,     545971135.4,     572853553.5,     561500515.3,       595408533,     657695238.7,     665055963.7,     676484295.8,     708789572.3,       661212705 ],
 "econ_gdpconpc": [     415.5233116,     435.8116865,     434.8049007,     404.3069582,     392.5615965,     402.9880469,     386.5329133,     401.1275963,     433.5727914,     428.8179893,     426.3671139,      436.385515,     397.4689822 ],
@@ -1071,7 +1674,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GNQ",
+"country": "Equatorial Guinea",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      2439453095,      3985575427,      4761281358,      5425730090,      7487438447,      8217368425,      6889296705,      8398380745,      9805462393,      9886512942,      9718622518,     10199412172,     10454397477 ],
 "econ_gdpconpc": [     4707.742102,     7455.359279,     8634.911123,     9543.067459,      12777.5694,     13612.84793,     11084.64725,     13130.30707,     14901.35237,     14606.63121,     13960.18846,     14245.06865,     14198.63408 ],
@@ -1087,7 +1699,16 @@
 "rent_total": [     64.19408067,    73.569200563,    79.047688672,    78.911694657,     79.51518991,     75.07370837,     74.27804397,      63.9897362,     59.61883487,     46.24574345,       45.643482,     41.05321505, null ] 
 } 
 },{
+ "country": {
  "ccode": "GRC",
+"country": "Greece",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    197000000000,    205000000000,    212000000000,    225000000000,    235000000000,    240000000000,    253000000000,    262000000000,    262000000000,    253000000000,    241000000000,    224000000000,    210000000000 ],
 "econ_gdpconpc": [     18040.70652,     18742.13323,     19320.38529,     20401.87676,     21219.44851,     21620.71749,     22721.13728,     23431.47115,      23289.0865,     22467.52185,     21310.18623,     19809.33733,     18578.10265 ],
@@ -1103,7 +1724,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GRD",
+"country": "Grenada",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [       560361759,     548622286.1,     568633139.7,     623448904.1,     617036322.7,     700431791.3,     673387225.3,     713287105.8,     720638771.5,     672983522.1,     672704074.1,     679270029.7,     683395317.2 ],
 "econ_gdpconpc": [     5514.286154,      5386.62418,     5569.429081,     6090.211921,     6010.777095,     6803.545292,     6521.278572,     6885.941207,     6933.752565,     6452.630226,     6426.474527,     6464.682316,     6478.724697 ],
@@ -1119,7 +1749,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GRL",
+"country": "Greenland",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -1135,7 +1774,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GTM",
+"country": "Guatemala",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     23441923157,     23988716400,     24916273311,     25546863813,     26352108756,     27211230374,     28675122167,     30482822556,     31482993017,     31648605447,     32556756309,     33937050303,     34941513272 ],
 "econ_gdpconpc": [     2092.247436,     2089.794393,     2117.697446,     2117.815904,     2130.703016,     2146.179053,     2206.563825,     2288.855721,     2306.732477,     2262.394209,     2270.096139,     2307.610261,     2316.641569 ],
@@ -1151,7 +1799,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "GUY",
+"country": "Guyana",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     796311937.4,     814228950.4,     822786502.9,     814515398.2,     841344922.8,     824880550.3,     867193700.2,     835623363.3,     852140687.9,     880420034.7,     918902044.8,     968863907.3,      1015528839 ],
 "econ_gdpconpc": [     1069.634596,     1089.040764,     1096.129383,     1080.815324,     1111.509544,     1084.179401,     1133.042972,     1084.651831,     1098.488909,     1127.218998,      1168.89919,     1225.042304,     1276.802138 ],
@@ -1167,7 +1824,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "HKG",
+"country": "Hong Kong SAR, China",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    148000000000,    148000000000,    151000000000,    156000000000,    169000000000,    182000000000,    194000000000,    207000000000,    211000000000,    206000000000,    220000000000,    231000000000,    234000000000 ],
 "econ_gdpconpc": [     22152.24673,     22112.92839,     22379.94855,     23109.52188,     24924.92244,      26649.7508,     28341.31362,      29915.2514,     30369.59041,      29559.0454,     31336.08127,     32636.03199,     32741.76417 ],
@@ -1183,7 +1849,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "HND",
+"country": "Honduras",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      7704828500,      7914647839,      8211791331,      8585184443,      9120240790,      9672095584,     10307270097,     10945102350,     11408284210,     11130848997,     11546149370,     11989031445,     12452184408 ],
 "econ_gdpconpc": [     1235.627155,     1243.456104,     1264.169166,     1295.256933,     1348.664043,     1401.991728,     1464.635958,      1524.71964,     1558.004762,     1490.104612,     1515.003321,     1541.666676,     1569.106105 ],
@@ -1199,7 +1874,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "HRV",
+"country": "Croatia",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     36034178392,     37351587214,     39173696884,     41277742637,     42981868335,     44821408831,     47033452791,     49413312273,     50443252480,     46938856453,     46279296510,     45850763591,     44944885203 ],
 "econ_gdpconpc": [     8141.477269,     8412.519643,     8822.904704,     9296.788882,     9682.781783,     10090.36669,        10593.12,     11139.15966,      11376.4665,       10598.071,      10475.6432,     10711.29365,     10533.13457 ],
@@ -1215,7 +1899,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "HTI",
+"country": "Haiti",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      4269984676,      4225461660,      4214412153,      4229686472,      4081168092,      4154289832,      4247885661,      4389904330,      4426952679,      4554347001,      4307682995,      4548497262,      4676866540 ],
 "econ_gdpconpc": [     497.7696663,     484.5575659,     475.6868824,     470.1621615,     447.0096431,     448.5848301,     452.4494235,     461.4290834,     459.3105992,     466.3876747,     435.2777773,     453.3598045,     459.6982477 ],
@@ -1231,7 +1924,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "HUN",
+"country": "Hungary",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     89959445223,     93298922479,     97503072960,    101000000000,    106000000000,    110000000000,    115000000000,    115000000000,    116000000000,    108000000000,    109000000000,    111000000000,    109000000000 ],
 "econ_gdpconpc": [     8810.077438,     9158.108119,     9598.074161,     9996.232244,     10498.99329,     10936.94861,     11380.88727,     11411.60567,     11533.82047,     10766.34443,     10926.46895,     11132.79374,     10974.32065 ],
@@ -1247,7 +1949,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "IDN",
+"country": "Indonesia",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    227000000000,    235000000000,    246000000000,    258000000000,    270000000000,    286000000000,    302000000000,    321000000000,    340000000000,    356000000000,    378000000000,    402000000000,    427000000000 ],
 "econ_gdpconpc": [     1086.050898,     1109.521783,     1142.902849,     1180.479734,     1222.229512,     1273.465176,     1324.466828,     1388.606391,     1451.558317,     1498.007269,     1570.152937,     1650.628977,     1731.652711 ],
@@ -1263,7 +1974,16 @@
 "rent_total": [    12.232251365,    10.892427627,     7.706975391,     8.949273501,    11.206550125,    14.754867087,    13.339526601,    13.275601951,    16.127110538,     8.212664338,     8.834646863,     9.358734662, null ] 
 } 
 },{
+ "country": {
  "ccode": "IND",
+"country": "India",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    603000000000,    632000000000,    656000000000,    707000000000,    763000000000,    834000000000,    911000000000,   1000000000000,   1040000000000,   1130000000000,   1250000000000,   1330000000000,   1370000000000 ],
 "econ_gdpconpc": [     578.2172334,     596.2482231,     609.0393974,     646.6535971,     687.3061599,     740.1142605,     797.2578406,     863.4626401,     885.1714166,     947.7458444,     1034.240858,     1085.726593,     1106.794958 ],
@@ -1279,7 +1999,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "IRL",
+"country": "Ireland",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    159000000000,    167000000000,    176000000000,    183000000000,    191000000000,    203000000000,    214000000000,    225000000000,    220000000000,    208000000000,    207000000000,    210000000000,    212000000000 ],
 "econ_gdpconpc": [     41695.65595,     43210.46231,     44883.75711,     45873.94937,     47007.94812,     48697.57924,     50119.40709,     51676.84034,     49801.33901,     46732.80018,     46214.95809,      45827.4376,     46135.77897 ],
@@ -1295,7 +2024,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "IRN",
+"country": "Iran, Islamic Rep.",
+"class_income": "Upper middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    146000000000,    152000000000,    163000000000,    175000000000,    184000000000,    192000000000,    203000000000,    219000000000,    224000000000,    228000000000, null, null, null ],
 "econ_gdpconpc": [     2219.417052,     2268.286707,     2407.447171,     2548.033708,     2646.726203,     2737.112118,     2864.778308,     3053.124568,     3086.737271,      3104.61012, null, null, null ],
@@ -1311,7 +2049,16 @@
 "rent_total": [    41.908920634,    30.488739025,    29.286265612,    35.131678389,    38.712193546,    51.547176009,    53.186089582,    46.424719257,    54.609598863,    31.139900231, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "IRQ",
+"country": "Iraq",
+"class_income": "Upper middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     49966554848,     46668762228,     43028598774,     25257787480,     37002658659,     36743640204,     37249819911,     37762972740,     40258676578,     42597289638,     45092292873,     48961957183,     53088696115 ],
 "econ_gdpconpc": [      2099.33311,     1903.538891,     1704.895141,      972.967789,     1387.242346,      1342.13317,     1327.312351,     1313.922929,     1367.954825,     1412.227186,     1456.357453,     1541.622366,     1629.576878 ],
@@ -1327,7 +2074,16 @@
 "rent_total": [ null, null, null, null,    97.200338797,   107.352821724,     93.86595701,    84.933268598,    86.717288689,     71.77414601,    74.594588365,    78.505094454, null ] 
 } 
 },{
+ "country": {
  "ccode": "ISL",
+"country": "Iceland",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     13212623409,     13730769906,     13749850223,     14084578352,     15188217867,     16286323127,     17053241325,     18073877854,     18288606981,     17088551955,     16388130235,     16827262075,     17062701089 ],
 "econ_gdpconpc": [     46985.73428,      48183.5501,     47821.74026,     48647.86441,     52001.26635,      54885.2613,     56136.44431,     58009.78879,     57617.51839,      53653.3928,     51528.35714,     52747.72291,     53298.12264 ],
@@ -1343,7 +2099,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ISR",
+"country": "Israel",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    121000000000,    121000000000,    120000000000,    122000000000,    128000000000,    134000000000,    141000000000,    149000000000,    155000000000,    157000000000,    165000000000,    173000000000,    179000000000 ],
 "econ_gdpconpc": [     19224.81779,     18735.02502,     18255.78864,     18200.25619,     18747.60125,     19330.02435,     20053.72688,     20783.60488,     21240.10987,     20912.04154,     21696.61401,     22273.16324,     22606.35205 ],
@@ -1359,7 +2124,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ITA",
+"country": "Italy",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [   1700000000000,   1730000000000,   1740000000000,   1740000000000,   1770000000000,   1790000000000,   1830000000000,   1860000000000,   1830000000000,   1730000000000,   1760000000000,   1770000000000,   1730000000000 ],
 "econ_gdpconpc": [     29872.28759,     30409.94705,     30450.92829,     30200.42889,     30421.72889,     30478.84559,     30972.30087,      31263.4951,       30666.043,     28807.54575,     29163.14605,     29186.37211,     28356.29339 ],
@@ -1375,7 +2149,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "JAM",
+"country": "Jamaica",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null,     11075778481, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null,     4178.908271, null, null, null, null, null, null, null ],
@@ -1391,7 +2174,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "JOR",
+"country": "Jordan",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      9239396751,      9726439550,     10289832417,     10718275428,     11636053321,     12582876895,     13604621395,     14716896920,     15781283050,     16646641080,     17030688372,     17470758211,     17934011847 ],
 "econ_gdpconpc": [     1926.078122,     1978.124781,      2042.44391,     2075.576187,     2199.632008,      2325.42541,     2457.482188,     2599.699156,     2727.494478,     2814.309565,     2816.852195,     2826.526163,      2838.55838 ],
@@ -1407,7 +2199,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "JPN",
+"country": "Japan",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [   4310000000000,   4320000000000,   4340000000000,   4410000000000,   4510000000000,   4570000000000,   4650000000000,   4750000000000,   4700000000000,   4440000000000,   4650000000000,   4620000000000,   4710000000000 ],
 "econ_gdpconpc": [     33956.81138,     34002.73937,     34021.99135,     34521.35171,     35324.41466,     35781.23498,      36391.8189,     37185.30214,     36817.18914,     34822.14517,     36472.84768,      36160.7619,     36938.00909 ],
@@ -1423,7 +2224,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "KAZ",
+"country": "Kazakhstan",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     34880328744,     39589173124,     43468912090,     47511520915,     52072626922,     57123671734,     63235904609,     68863900119,     71136408824,     71990045730,     77245319067,     83038717998,     87190653898 ],
 "econ_gdpconpc": [     2343.537035,     2664.442087,     2925.436719,     3186.763724,     3468.506123,     3771.278957,     4130.882773,     4447.368007,     4538.497726,     4473.242658,     4732.215948,     5014.816281,     5190.704969 ],
@@ -1439,7 +2249,16 @@
 "rent_total": [ null, null,    37.264410271,    39.823886855,    48.180528845,    52.216249083,    48.025945996,    42.468187989,    51.471254902,     34.82843974,    37.261818718,    38.198461146, null ] 
 } 
 },{
+ "country": {
  "ccode": "KEN",
+"country": "Kenya",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     15672664146,     16265076196,     16354023315,     16833601049,     17692838510,     18737895401,     19924122755,     21317473473,     21642980382,     22234977835,     23516785868,     24545864807,     25674494995 ],
 "econ_gdpconpc": [     500.9633721,     506.2845823,     495.5685951,     496.4930125,     507.9098214,     523.6137892,     542.0424087,     564.6668207,     558.1932211,     558.3208123,      574.853317,     584.0375099,     594.6178877 ],
@@ -1455,7 +2274,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "KGZ",
+"country": "Kyrgyz Republic",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      2042842032,      2151553594,      2151180234,      2302414573,      2464202014,      2459876152,      2536203618,      2752868316,      2984153744,      3070285211,      3055806771,      3237819005,      3208688845 ],
 "econ_gdpconpc": [     417.0427143,     435.0879848,      431.037777,     456.5293702,     482.7319948,     476.4800976,     486.0117312,     522.5245456,      561.068258,     570.3351497,     560.9146224,     587.1357859,      574.817514 ],
@@ -1471,7 +2299,16 @@
 "rent_total": [     2.064583674, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "KHM",
+"country": "Cambodia",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      4026612205,      4350296727,      4641239389,      5036018514,      5556769455,      6293046162,      6970875649,      7682781331,      8196880596,      8203987042,      8693197236,      9307768895,      9983636034 ],
 "econ_gdpconpc": [     329.4326026,     348.7886736,     365.1834674,     389.3516966,     422.5877509,     471.1625029,     514.2639527,     558.8579603,     587.9896712,     580.0237936,     605.1680468,     637.2625522,     671.6363131 ],
@@ -1487,7 +2324,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "KIR",
+"country": "Kiribati",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     97813244.33,     98501125.67,     99070076.97,     103062836.7,     106332529.3,     106147384.5,     101362392.8,     108981176.1,     111982787.1,       111238099,     110681568.6,     113714243.6,     116909613.8 ],
 "econ_gdpconpc": [     1181.490606,     1169.000198,      1154.67636,     1179.600058,     1195.607282,      1173.31415,     1102.328285,     1166.809522,     1180.854428,     1155.456405,     1132.373353,     1145.735452,     1159.978706 ],
@@ -1503,7 +2349,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "KNA",
+"country": "St. Kitts and Nevis",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [       442651348,     465830948.5,       474740402,     467862614.9,     488252208.3,     536410666.4,     561475393.9,     576968373.8,     604033755.2,     562375599.8,     548826297.7,     560582073.2,     599493383.9 ],
 "econ_gdpconpc": [     9719.202265,     10079.86646,     10115.06375,     9812.760646,     10083.48048,     10916.19012,     11269.40156,     11430.09576,     11818.30865,     10871.15269,     10483.38741,     10582.81084,     11187.91773 ],
@@ -1519,7 +2374,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "KOR",
+"country": "Korea, Rep.",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    678000000000,    705000000000,    756000000000,    777000000000,    813000000000,    845000000000,    889000000000,    934000000000,    955000000000,    959000000000,   1020000000000,   1060000000000,   1080000000000 ],
 "econ_gdpconpc": [     14428.78715,     14891.55305,     15867.51039,     16231.46217,     16917.56893,     17550.85389,     18370.45806,     19218.62949,     19519.36685,      19488.9626,     20625.09983,     21226.02718,      21562.4463 ],
@@ -1535,7 +2399,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "KWT",
+"country": "Kuwait",
+"class_income": "High income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     54462764132,     54859812098,     56505606461,     66292377500,     73054200005,     80797945205,     84999438356,     88716463795,     93125672046,     88329699936,     86235752843,     91671631874, null ],
 "econ_gdpconpc": [     28570.91514,     27698.52636,     27587.50301,     31323.87532,     33259.88201,     35185.93067,     35160.85717,     34723.77366,     34462.64093,     30991.76799,     28826.15636,     29337.69168, null ],
@@ -1551,7 +2424,16 @@
 "rent_total": [ null, null, null,    44.570716906,    51.666348233,    61.780475115,    60.282457408, null,    63.671027026, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LAO",
+"country": "Lao PDR",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      2021232686,      2137482123,      2263994326,      2401350792,      2554021362,      2735550177,      2971334529,      3197061726,      3447228698,      3705832035,      4021824832,      4345125361,      4701308832 ],
 "econ_gdpconpc": [     375.1164213,     390.7524836,     408.2766994,     427.3574131,     448.1437393,     472.4084631,     503.9636714,     531.6670419,     561.5177366,     591.2334006,     628.8313487,      666.295989,     707.4076458 ],
@@ -1567,7 +2449,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LBN",
+"country": "Lebanon",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     18152347585,     18870003574,     19506654199,     20138160745,     21644253978,     21860696517,     21991989282,     23641575935,     25833742986,     28029611140,     29991683920,     30891824478,     31324305340 ],
 "econ_gdpconpc": [     5610.576682,      5620.08684,      5548.59256,     5457.333452,     5616.658469,      5483.17952,     5390.427301,     5710.783539,     6171.332993,     6599.979453,     6908.787909,     7048.438204,     7079.118237 ],
@@ -1583,7 +2474,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LBR",
+"country": "Liberia",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     482341824.2,     588919365.4,     776740913.3,     521720470.5,     495061641.4,       542000000,     595004024.7,     688348492.1,     760839799.1,     865543488.9,     960255604.2,      1047942871,      1155237990 ],
 "econ_gdpconpc": [     166.7867086,     196.3869738,     252.9546172,     166.9921249,     155.4527906,     165.7600834,     175.7875227,     195.4261888,     207.1600999,     226.4966842,     242.6119329,      256.867819,     275.6845029 ],
@@ -1599,7 +2499,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LBY",
+"country": "Libya",
+"class_income": "Upper middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     35929150706,     34384197226,     33937202662,     38349039008,     40036396724,     44000000000,     46600000000,     49391760000,     51268646880,     52345288464, null, null, null ],
 "econ_gdpconpc": [     6941.241611,      6538.56421,     6354.818471,     7072.060293,     7270.092015,     7864.937572,      8194.18005,     8542.171817,     8723.897914,     8776.397742, null, null, null ],
@@ -1615,7 +2524,16 @@
 "rent_total": [    35.817024924,    35.101526167,    45.872856403,    54.219177944,    58.066341109,    70.420442395,    68.736827535, null,    62.760371123, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LCA",
+"country": "St. Lucia",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     858219642.6,     817056167.3,     817964047.7,     854355477.4,     926092371.6,     908558306.8,     992976737.9,      1007826671,      1061482813,      1062887736,      1067166275,      1080793432,      1085797460 ],
 "econ_gdpconpc": [     5468.143426,     5150.054632,     5105.351166,     5281.427972,     5665.559596,     5492.864914,     5922.632608,     5923.200671,     6145.187476,     6066.710821,     6015.695165,     6028.824697,     6003.192677 ],
@@ -1631,7 +2549,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LKA",
+"country": "Sri Lanka",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     20090396639,     19779925100,     20564131186,     21785695912,     22971940404,     24405791045,     26277298342,     28063320620,     29733112933,     30785341651,     33253082140,     35995402878,     38302681411 ],
 "econ_gdpconpc": [     1051.743097,     1052.291594,     1086.841667,     1136.269541,     1181.988186,      1242.40435,     1323.260064,     1400.435182,     1470.698567,      1505.39568,     1610.084837,     1724.826435,     1884.232655 ],
@@ -1647,7 +2574,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LSO",
+"country": "Lesotho",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      1187351202,      1237566711,      1244155212,      1302520461,      1332371324,      1368405301,      1427348620,      1494911665,      1580621946,      1637442782,      1766292382,      1832304823,      1904935220 ],
 "econ_gdpconpc": [      639.659094,     661.2699499,     659.8588123,     685.9858641,     696.8389088,     710.5483628,     735.5901141,     764.3541747,     801.4515503,     822.8880846,     879.2244105,      902.828469,     928.5368932 ],
@@ -1663,7 +2599,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LTU",
+"country": "Lithuania",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     17840402458,     19042080928,     20349038400,     22434139923,     24083224893,     25962254181,     27998948427,     30753989500,     31654296590,     26987911154,     27346902406,     28987716551,     30060262063 ],
 "econ_gdpconpc": [     5097.933686,     5469.831582,     5865.848311,     6494.733209,     7009.921988,     7603.966776,     8249.343542,     9110.624929,      9426.20982,     8081.529193,     8320.170379,     9566.356954,     10068.72264 ],
@@ -1679,7 +2624,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LUX",
+"country": "Luxembourg",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     31585584241,     32380863553,     33705292742,     34266651744,     35764313784,     37643013481,     39501069492,     42103417400,     41794135204,     39471969358,     40696164752,     41471422176,     41398547480 ],
 "econ_gdpconpc": [     72394.18804,     73338.68649,     75542.76403,     75873.28509,     78071.82742,     80925.21999,     83575.91448,     87716.73212,     85529.79679,     79295.53512,     80276.01129,      80007.0651,     77898.67075 ],
@@ -1695,7 +2649,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "LVA",
+"country": "Latvia",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     10822812606,     11693345404,     12450199800,     13346108625,     14504256891,     16041840426,     18004275915,     19800672593,     18960420623,     15556078264,     15502642580,     16324282637,     17140496769 ],
 "econ_gdpconpc": [     4560.843244,     4965.303943,      5323.72874,     5739.417524,     6271.245995,     6973.160943,     7869.180556,     8699.386052,     8367.005351,     6898.990464,     6923.888874,     7931.401001,     8462.466184 ],
@@ -1711,7 +2674,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MAC",
+"country": "Macao SAR, China",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -1727,7 +2699,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MAR",
+"country": "Morocco",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     46686017639,     50211723276,     51876762054,     55153800019,     57802211816,     59523857868,     64142821236,     65878381261,     69559043368,     72868904039,     75523499824,     79862756656,     83219501683 ],
 "econ_gdpconpc": [     1608.989495,     1710.936697,      1748.90071,     1840.621012,     1910.193407,     1948.201997,     2079.627194,      2116.00853,     2212.611031,     2293.296337,     2348.586032,     2450.434092,     2516.425252 ],
@@ -1743,7 +2724,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MDA",
+"country": "Moldova",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      2122536927,      2252011680,      2427668591,      2587894718,      2779659348,      2988172424,      3131146154,      3227207950,      3477795691,      3269490341,      3501430332,      3726024354,      3696216159 ],
 "econ_gdpconpc": [     583.1805488,       620.13947,     670.0604629,     716.2990736,     771.2847538,     831.1602652,     873.2753281,     902.2349915,     974.1432654,     916.9529924,     982.9784916,     1046.400614,     1038.396849 ],
@@ -1759,7 +2749,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MDG",
+"country": "Madagascar",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      4502432506,      4773380988,      4168412795,      4576287490,      4816863089,      5038577519,      5291644767,      5621880566,      6022627278,      5774052218,      5804539998,      5912839330,      6096137349 ],
 "econ_gdpconpc": [      285.962944,     294.0040337,     249.0682105,     265.3647153,     271.1683595,     275.4767076,      281.079855,     290.2211497,     302.2377808,      281.720245,     275.3637983,     272.7458523,     273.4440148 ],
@@ -1775,7 +2774,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MDV",
+"country": "Maldives",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null,     797726905.4,     846371840.2,       966162135,      1086749513,     992473987.3,      1186855729,      1312144503,      1472207441,      1418692085,      1518834121,      1625905522,      1681499371 ],
 "econ_gdpconpc": [ null,     2871.328733,     2993.431633,     3359.465549,     3715.319441,        3335.195,     3919.279216,     4256.906177,     4690.904181,     4438.128278,     4663.377653,      4897.83688,     4968.353132 ],
@@ -1791,7 +2799,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MEX",
+"country": "Mexico",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    802000000000,    797000000000,    798000000000,    810000000000,    845000000000,    870000000000,    914000000000,    943000000000,    956000000000,    911000000000,    957000000000,    995000000000,   1030000000000 ],
 "econ_gdpconpc": [     7723.433686,     7569.813735,     7481.519947,     7494.375264,      7721.61202,      7858.76217,     8149.882439,     8301.822341,     8312.764412,     7823.049663,     8117.351537,     8336.318813,     8545.381945 ],
@@ -1807,7 +2824,16 @@
 "rent_total": [ null, null, null, null, null,     8.199632188, null,     8.431871169,    10.140739709, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MHL",
+"country": "Marshall Islands",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [       123834075,     130475767.1,     133888886.2,     134116584.3,       134042267,     137556822.8,     140146439.2,     144420192.2,     141632173.9,     139507691.3,       147320122,     148498682.9,     151320157.9 ],
 "econ_gdpconpc": [     2374.074021,     2500.302144,     2566.838945,     2573.473746,       2574.0728,     2642.376249,     2690.777191,     2769.322957,     2710.923033,     2665.361595,     2809.951209,     2828.815753,     2879.272342 ],
@@ -1823,7 +2849,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MKD",
+"country": "Macedonia, FYR",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      5537765607,      5287163001,      5332288417,      5482471528,      5736161748,      5985809060,      6286933485,      6673508620,      7003848110,      6939393955,      7140170814,      7343043944,      7323461543 ],
 "econ_gdpconpc": [     2698.546537,     2560.247989,     2570.470029,     2634.706669,     2750.196453,      2863.96318,     3002.641361,     3182.984336,     3337.121956,     3303.595499,     3396.497227,     3490.222371,     3478.129035 ],
@@ -1839,7 +2874,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MLI",
+"country": "Mali",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      3901566287,      4373655808,      4555307683,      4894286121,      5001251734,      5305317555,      5760422916,      6008016157,      6307126993,      6588262258,      6971653981,      7161987874,      7076905333 ],
 "econ_gdpconpc": [     380.2482343,     414.0634167,     418.5839533,     436.2211093,      432.150643,     444.2846436,     467.3564468,     472.1193865,     480.0565882,     485.8852745,     498.4751481,     496.7828624,     476.4446783 ],
@@ -1855,7 +2899,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MLT",
+"country": "Malta",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      5721155308,      5632483775,      5790846034,      5798495016,      5769315566,      5980795756,      6113803055,      6375426572,      6653622884,      6477129705,      6652772997,      6772522911,      6840248140 ],
 "econ_gdpconpc": [     15001.86255,     14330.99875,     14624.49342,     14547.80952,     14377.71157,     14809.92518,      15043.5106,     15585.93466,     16151.53024,     15645.58095,       15992.435,      16253.6909,     16349.91405 ],
@@ -1871,7 +2924,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MMR",
+"country": "Myanmar",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -1887,7 +2949,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MNE",
+"country": "Montenegro",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      1964939326,      1986553659,      2024298178,      2074905633,      2166201480,      2257181943,      2451299590,      2713588646,      2900826262,      2735479165,      2803866144,      2894431021,      2878652755 ],
 "econ_gdpconpc": [     3214.908681,     3248.524032,     3305.921166,     3382.365959,     3524.169848,     3665.327437,     3973.873217,     4392.341608,     4688.969452,     4416.280005,     4521.795878,     4663.593011,     4634.907129 ],
@@ -1903,7 +2974,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MNG",
+"country": "Mongolia",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      1843267456,      1897693809,      1987511248,      2126729148,      2352702754,      2523359941,      2739264542,      3019984821,      3288774582,      3247053222,      3453733410,      4058608091,      4557141781 ],
 "econ_gdpconpc": [     768.8376288,     784.2782666,     813.4766006,     861.5139982,      942.495599,     998.7563599,     1070.235915,     1163.740149,     1249.138602,     1215.113118,     1273.154064,     1473.602073,     1629.596944 ],
@@ -1919,7 +2999,16 @@
 "rent_total": [ null,     7.039718423, null, null, null,    20.858438866, null, null,    32.356060338,    29.561912268,    47.874250056,    45.834599146, null ] 
 } 
 },{
+ "country": {
  "ccode": "MOZ",
+"country": "Mozambique",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      4310941607,      4823897320,      5249218334,      5565417082,      6053514254,      6578515331,      6994357707,      7503686869,      8016160099,      8523905205,      9127794919,      9796130292,     10521043934 ],
 "econ_gdpconpc": [     235.8848607,     256.7853442,     271.7001623,     280.0426842,     296.1771854,     313.1079297,     324.0031036,     338.4398601,     352.1648015,      364.877192,      380.844244,      398.518532,     417.4455042 ],
@@ -1935,7 +3024,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MRT",
+"country": "Mauritania",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      1741942128,      1776934208,      1788746768,      1895691080,      2004640598,      2184444849,      2596630178,      2638549707,      2731347602,      2698019947,      2835163755,      2947280394,      3170341257 ],
 "econ_gdpconpc": [     643.2352366,     636.5738691,     621.6471458,     639.2123864,     656.0922288,     694.3200828,     801.9951669,     792.3484656,     797.9627813,     767.3381291,     785.4901217,     795.9678741,     835.1484461 ],
@@ -1951,7 +3049,16 @@
 "rent_total": [     11.33781762,     11.90184607,      10.3436442, null, null, null,      21.7335508,     29.18171393,     44.45422746,     37.38120964,     51.31862917,     57.96218057, null ] 
 } 
 },{
+ "country": {
  "ccode": "MUS",
+"country": "Mauritius",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      5406113153,      5545243276,      5662431638,      5869498633,      6206746377,      6283796155,      6531858624,      6916550847,      7297791188,      7517201061,      7826157632,      8127473382,      8389798697 ],
 "econ_gdpconpc": [     4554.921338,     4621.494361,     4678.937658,      4800.00477,     5032.282171,     5054.318112,       5214.2325,     5487.570917,     5752.792477,     5895.695999,     6109.775156,     6319.713123,     6496.387563 ],
@@ -1967,7 +3074,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MWI",
+"country": "Malawi",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      2505954305,      2381283984,      2421765812,      2554962932,      2678920476,      2754995877,      2811804032,      3078684118,      3335412862,      3636795274,      3290262502,      3433306506,      3498051783 ],
 "econ_gdpconpc": [     221.3448033,     204.8739547,     203.0528121,     208.7603087,     213.1355781,     213.1566745,     211.2941301,      224.496022,     235.9148414,     249.5512884,     219.1507634,     222.1122187,     219.9135901 ],
@@ -1983,7 +3099,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "MYS",
+"country": "Malaysia",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    114000000000,    114000000000,    121000000000,    128000000000,    136000000000,    144000000000,    152000000000,    161000000000,    169000000000,    166000000000,    179000000000,    188000000000,    198000000000 ],
 "econ_gdpconpc": [     4861.857591,     4783.877734,     4940.986535,     5126.855916,     5372.234083,     5553.943582,     5756.408216,     6007.900573,     6185.512962,     5984.915281,     6318.901213,     6531.320564,     6786.185307 ],
@@ -1999,7 +3124,16 @@
 "rent_total": [    11.570403573,    10.613866204,     8.906297056,    11.885218233,    13.779680035,    18.473758199,    17.049957251,    14.929776108,     18.29660721,    10.268444901,     9.676325982,       9.6952394, null ] 
 } 
 },{
+ "country": {
  "ccode": "NAM",
+"country": "Namibia",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      5707749998,      5775122556,      6051582362,      6308129097,      7082249743,      7261301442,      7774892739,      8192735352,      8469361100,      8377097203,      8902636343,      9407930527,      9879870316 ],
 "econ_gdpconpc": [     3007.318937,     2990.305173,     3090.217582,     3183.934631,     3535.256346,      3582.24386,      3787.21581,     3937.489956,     4012.411035,     3908.143233,     4085.714168,     4242.358479,     4372.798498 ],
@@ -2015,7 +3149,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "NCL",
+"country": "New Caledonia",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -2031,7 +3174,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "NER",
+"country": "Niger",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      2802302048,      3001387130,      3091402393,      3255246720,      3258501967,      3405134555,      3602632359,      3715991723,      4072268866,      4043246979,      4381636015,      4482913159,      4968302838 ],
 "econ_gdpconpc": [       254.99083,     263.3619543,     261.5997883,     265.6468169,       256.39534,     258.2817603,     263.3559978,     261.7395281,     276.3127886,     264.2135998,     275.6830274,     271.5031025,     289.5780542 ],
@@ -2047,7 +3199,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "NGA",
+"country": "Nigeria",
+"class_income": "Lower middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     67850915773,     70843863904,     73525054912,     81137974799,    109000000000,    112000000000,    121000000000,    130000000000,    138000000000,    147000000000,    159000000000,    170000000000,    181000000000 ],
 "econ_gdpconpc": [      552.186874,     562.2306131,     568.9708584,     612.1304068,     797.8757195,     804.1523667,     847.5391426,     881.5914286,     911.9575297,      949.006411,     995.6802014,     1034.255168,     1071.520076 ],
@@ -2063,7 +3224,16 @@
 "rent_total": [    44.951782575,    37.790899505,    26.299069374,    32.900774207,    36.263306503,    42.152513059,    37.561123225,    33.922070937,    36.212962957,    24.493778861,    27.015710315,    35.029597909, null ] 
 } 
 },{
+ "country": {
  "ccode": "NIC",
+"country": "Nicaragua",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      5413262687,      5573540925,      5615562020,      5757115340,      6062943123,      6322582497,      6585100498,      6916264697,      7192595749,      7035898279,      7290785418,      7688060004,      8088189096 ],
 "econ_gdpconpc": [     1061.232618,     1076.662174,      1069.92086,     1082.596355,     1125.623201,     1158.997008,     1191.889141,     1236.033224,     1268.986825,     1225.055761,     1252.236981,     1301.925474,     1349.891441 ],
@@ -2079,7 +3249,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "NLD",
+"country": "Netherlands",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    598000000000,    609000000000,    610000000000,    612000000000,    626000000000,    638000000000,    660000000000,    686000000000,    698000000000,    673000000000,    683000000000,    690000000000,    681000000000 ],
 "econ_gdpconpc": [     37546.79631,     37982.07716,     37769.24088,     37717.59597,     38427.40186,     39122.29108,     40385.25892,     41877.43356,     42467.27411,     40699.90511,     41110.24979,     41305.47994,     40608.78686 ],
@@ -2095,7 +3274,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "NOR",
+"country": "Norway",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    273000000000,    278000000000,    282000000000,    285000000000,    296000000000,    304000000000,    311000000000,    319000000000,    320000000000,    314000000000,    316000000000,    320000000000,    330000000000 ],
 "econ_gdpconpc": [     60726.25259,     61622.10485,     62211.32267,     62454.15035,     64545.43019,     65767.01961,     66739.17711,     67804.54554,     67009.96805,     65088.38672,     64589.97466,     64533.98972,     65656.95023 ],
@@ -2111,7 +3299,16 @@
 "rent_total": [    19.256879571,    16.110338548, null,    15.309692059,    16.408285822,    20.281536969,     19.43528788,    17.555969395,    21.614192734,    12.825312233,    13.076487489,    13.480159252, null ] 
 } 
 },{
+ "country": {
  "ccode": "NPL",
+"country": "Nepal",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      6881622155,      7211923684,      7220597241,      7505452529,      7856903093,      8130258976,      8403810872,      8690511945,      9221036339,      9639033175,     10103288981,     10449006177,     10956041729 ],
 "econ_gdpconpc": [     296.8240863,     304.8779287,      299.574268,     306.0261469,     315.2608726,     321.4550186,     327.8379018,     334.8942034,     351.2854436,      363.121261,     376.3422096,     384.7718723,     398.7730724 ],
@@ -2127,7 +3324,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "NZL",
+"country": "New Zealand",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     94397989620,     97778576727,    103000000000,    107000000000,    110000000000,    114000000000,    116000000000,    120000000000,    118000000000,    119000000000,    119000000000,    120000000000,    124000000000 ],
 "econ_gdpconpc": [     24470.01831,     25197.41702,     25972.96996,     26456.37433,     26981.53109,     27536.81043,     27662.98541,     28352.40688,     27562.98357,     27520.41779,     27257.09564,       27316.675,     27951.59662 ],
@@ -2143,7 +3349,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "OMN",
+"country": "Oman",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     25992774105,     27937448668,     28654972868,     28740937787,     29718129672,     30905071771,     32604850718,     34821980567,     39279194079,     39711265214,     41930341498,     42052467022, null ],
 "econ_gdpconpc": [     11855.12391,     12477.50636,     12413.29975,     12029.92138,     12060.92435,     12252.61288,     12761.66852,     13550.78495,     15145.11114,     14910.97452,     14960.33261,     13902.68067, null ],
@@ -2159,7 +3374,16 @@
 "rent_total": [    48.687085149,    40.004612499,    37.317074647,    42.211888855,    47.610163315,    57.439282266,    58.035525026,    53.145737388,    54.504026966,    39.183726916,    42.123657675,    45.275421028, null ] 
 } 
 },{
+ "country": {
  "ccode": "PAK",
+"country": "Pakistan",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     85822303909,     87523717381,     90345858357,     94724308605,    102000000000,    110000000000,    116000000000,    122000000000,    124000000000,    127000000000,    130000000000,    133000000000,    138000000000 ],
 "econ_gdpconpc": [     596.6842953,     595.9788713,     603.5382118,     621.4691298,     655.5154566,     693.1766897,     722.5758503,     743.5297851,     742.2357121,     749.4060345,     748.0104878,     755.6822282,     772.8952047 ],
@@ -2175,7 +3399,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "PAN",
+"country": "Panama",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     12523684388,     12595604517,     12876346336,     13417894992,     14427199829,     15464700000,     16783492680,     18816420297,     20720156014,     21519164623,     23122824847,     25631429401,     28366565316 ],
 "econ_gdpconpc": [     4099.657978,     4041.704576,     4051.140127,      4140.29693,      4367.46495,     4594.481939,       4895.2745,     5389.927539,     5830.947695,      5951.34987,      6286.57427,      6852.80666,     7460.407402 ],
@@ -2191,7 +3424,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "PER",
+"country": "Peru",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     64653624938,     64792562177,     68045267488,     70789042560,     74312022978,     79385073422,     85529866799,     93115110975,    102000000000,    103000000000,    112000000000,    120000000000,    128000000000 ],
 "econ_gdpconpc": [     2486.670231,     2456.836138,     2545.660275,     2614.714632,     2711.737093,      2863.48046,     3051.293882,     3286.986844,      3570.40515,      3564.89624,     3834.752386,     4050.767837,     4253.624114 ],
@@ -2207,7 +3449,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "PHL",
+"country": "Philippines",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     82353669775,     84736978728,     87826402659,     92191694324,     98366358825,    103000000000,    108000000000,    116000000000,    120000000000,    122000000000,    131000000000,    136000000000,    145000000000 ],
 "econ_gdpconpc": [     1060.550031,     1068.592392,     1084.897352,     1116.058959,     1167.812024,     1200.938178,     1241.546615,      1301.22125,     1332.826879,     1325.902811,     1403.306336,     1429.747858,     1501.069517 ],
@@ -2223,7 +3474,16 @@
 "rent_total": [ null, null, null, null, null, null, null,     3.069782164,      2.16893349,     1.945194948,     2.812304454,     3.348553205, null ] 
 } 
 },{
+ "country": {
  "ccode": "PLW",
+"country": "Palau",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -2239,7 +3499,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "PNG",
+"country": "Papua New Guinea",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      4521187133,      4515703442,      4508527973,      4606097122,      4731437107,      4901584516,      5028265993,      5390301145,      5751451321,      6067781144,      6553203636,      7142991963,      7714431320 ],
 "econ_gdpconpc": [     840.4902738,     818.2147436,     796.5221381,      793.702813,     795.4052497,     804.0711094,     805.0639483,     842.5474813,     877.9666175,     904.9867109,     955.4244327,     1018.539197,     1076.380711 ],
@@ -2255,7 +3524,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "POL",
+"country": "Poland",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    261000000000,    264000000000,    268000000000,    278000000000,    293000000000,    304000000000,    323000000000,    345000000000,    362000000000,    368000000000,    383000000000,    400000000000,    408000000000 ],
 "econ_gdpconpc": [     6789.837198,     6908.628002,     7011.600938,     7287.667706,     7681.672396,     7963.021208,     8464.279448,     9043.513687,      9505.83742,      9651.38851,     10035.85059,     10387.38222,     10573.89664 ],
@@ -2271,7 +3549,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "PRT",
+"country": "Portugal",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    184000000000,    188000000000,    189000000000,    187000000000,    190000000000,    192000000000,    195000000000,    199000000000,    199000000000,    193000000000,    197000000000,    195000000000,    188000000000 ],
 "econ_gdpconpc": [     18003.46222,     18239.19126,     18244.95967,     17952.89529,     18127.29699,     18185.62402,     18388.13808,     18780.51384,     18754.02915,     18191.35134,     18535.13123,      18442.6556,     17899.22628 ],
@@ -2287,7 +3574,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "PRY",
+"country": "Paraguay",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      7946283997,      7880007641,      7878320973,      8218723171,      8552191154,      8734651354,      9154536281,      9650860713,     10264570604,      9857508993,     11148152795,     11632059344,     11490950613 ],
 "econ_gdpconpc": [     1485.216493,     1443.060714,     1414.072223,     1446.359899,     1476.213361,     1479.403769,     1522.006584,     1575.577416,     1646.017058,     1553.003654,     1725.794782,     1769.646689,     1718.308704 ],
@@ -2303,7 +3599,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "PSE",
+"country": "West Bank and Gaza",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -2319,7 +3624,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "QAT",
+"country": "Qatar",
+"class_income": "High income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     28893378524,     29854869950,     31984554752,     33100838814,     40000100976,     43040108650,     51045568859,     60233771253,     70895148765,     79402566617,     92687851406,    105000000000,    111000000000 ],
 "econ_gdpconpc": [      48667.2043,     48797.77634,     50789.69226,      50134.7072,     55526.15897,     52413.85487,     52754.71615,     52265.43526,     52162.76837,     50766.24283,     52973.17412,     54791.92611,     54249.31867 ],
@@ -2335,7 +3649,16 @@
 "rent_total": [     48.00109215,     44.67244303,     38.77202503,     43.42784443,     48.16584513,     56.23069866,     48.26404186,     41.21560207,     46.98714702,     28.10141997,     28.63309344,     28.58640654, null ] 
 } 
 },{
+ "country": {
  "ccode": "ROU",
+"country": "Romania",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     74951470776,     79223706416,     83264115707,     87593848239,     94951724226,     98913392472,    107000000000,    113000000000,    122000000000,    114000000000,    112000000000,    116000000000,    119000000000 ],
 "econ_gdpconpc": [     3339.641208,     3579.604817,     3818.906713,      4028.78281,     4378.704445,     4572.048453,     4943.913366,     5250.469686,     5675.418184,     5310.403075,     5233.162893,     5406.016448,     5588.938313 ],
@@ -2351,7 +3674,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "RUS",
+"country": "Russian Federation",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    567000000000,    596000000000,    625000000000,    670000000000,    718000000000,    764000000000,    826000000000,    897000000000,    944000000000,    870000000000,    909000000000,    948000000000,    981000000000 ],
 "econ_gdpconpc": [      3878.09605,     4085.437154,     4298.376788,     4634.314272,     4992.762076,     5337.065324,     5798.548736,     6311.175101,     6649.401711,     6131.087323,     6385.660651,     6633.069603,     6833.999915 ],
@@ -2367,7 +3699,16 @@
 "rent_total": [    42.176263592,    32.475833972,    25.117101119,    31.961677835,    31.278942305,    37.914970645,    33.015868576,    27.193224861,    31.028486818,    19.537175367,    20.949952779,    21.728259574, null ] 
 } 
 },{
+ "country": {
  "ccode": "RWA",
+"country": "Rwanda",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      1769056478,      1922415174,      2182143650,      2213813873,      2367594027,      2581286407,      2802037515,      3015925394,      3352540286,      3561873222,      3818993880,      4133661692,      4463573339 ],
 "econ_gdpconpc": [      210.712912,     219.4537118,     242.7970032,      242.578716,     255.8349974,     273.7470892,      290.037592,     303.7753781,     327.9421966,     338.2702306,     352.4119522,     370.9211102,     389.5663173 ],
@@ -2383,7 +3724,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SAU",
+"country": "Saudi Arabia",
+"class_income": "High income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    259000000000,    260000000000,    260000000000,    282000000000,    306000000000,    328000000000,    347000000000,    368000000000,    399000000000,    406000000000,    436000000000,    473000000000,    498000000000 ],
 "econ_gdpconpc": [     12837.67381,     12446.40919,     11929.24194,     12337.26497,     12845.99776,     13303.30974,     13667.73742,     14182.82681,     15115.15099,     15144.63518,     15994.78056,     17050.67994,     17591.29943 ],
@@ -2399,7 +3749,16 @@
 "rent_total": [     43.17216586,    36.914683243,    32.980656298,    41.163515705,    49.138769857,    59.225111948,      61.6073275,    59.967525748,     69.85947081,     47.20265615,    50.364765012,    58.652563875, null ] 
 } 
 },{
+ "country": {
  "ccode": "SDN",
+"country": "Sudan",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     19452853127,     20717358675,     22048920055,     23754314022,     24676767057,     26524992225,     29194549147,     32556515776,     33534615575,     34618501399,     35822262376,     34642158923,     31143300872 ],
 "econ_gdpconpc": [     565.7730991,     585.9103314,     606.1850913,     634.7367372,     640.8093167,     669.3966844,     716.0014396,     775.9868106,     777.0115655,     780.1572366,     785.6977297,     832.3144825,     837.2901911 ],
@@ -2415,7 +3774,16 @@
 "rent_total": [     12.75704742,     11.48688543,    12.131071501,    13.334691154,    16.893097796,    20.088747155,    20.743605509,    24.358086594,    27.530622849,    16.825786021,    17.566943986,    14.348699509, null ] 
 } 
 },{
+ "country": {
  "ccode": "SEN",
+"country": "Senegal",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      6933511418,      7251129781,      7298610447,      7786393234,      8243514644,      8707015064,      8921344357,      9361923617,      9706678739,      9941888640,     10366034228,     10580263387,     10945589574 ],
 "econ_gdpconpc": [     703.0761616,     716.5772532,     702.4615326,     729.5046331,     751.6264904,      772.526793,     770.2151535,     786.3875735,     793.1076475,     789.8645656,     800.4311031,     793.6743022,     797.4335442 ],
@@ -2431,7 +3799,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SGP",
+"country": "Singapore",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     97828137017,     96698810862,    101000000000,    105000000000,    115000000000,    124000000000,    134000000000,    146000000000,    149000000000,    148000000000,    169000000000,    178000000000,    181000000000 ],
 "econ_gdpconpc": [     24287.62805,     23368.48982,     24128.84437,     25609.31543,      27606.6939,     28952.80891,     30480.47823,     31874.01694,      30750.3346,     29601.87505,     33380.93766,     34378.92276,     33988.50828 ],
@@ -2447,7 +3824,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SLB",
+"country": "Solomon Islands",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     392920101.1,     361570715.3,     351446735.2,       374290773,     392624923.5,     413909879.3,     442662749.9,     490027664.1,     525799683.6,     519490087.4,     555854393.5,       605881289,     629510659.2 ],
 "econ_gdpconpc": [     952.9124333,     853.7094632,     808.1464662,     838.5870994,     857.5835927,     881.9616184,     920.7849274,     995.6916703,     1044.204312,     1008.789134,     1055.860122,     1126.179679,      1145.40202 ],
@@ -2463,7 +3849,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SLE",
+"country": "Sierra Leone",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      1143174686,      1061548359,      1340402002,      1466163678,      1560255270,      1627853086,      1719916790,      1858242120,      1957187442,      2020794843,      2130751273,      2259229756,      2603171446 ],
 "econ_gdpconpc": [     276.1453598,     247.1207285,     298.3280616,     311.1049035,     316.5989987,     317.9465763,     325.6857466,     343.1013615,      353.784936,     358.2218838,     370.4381369,     385.1731689,     435.4056384 ],
@@ -2479,7 +3874,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SLV",
+"country": "El Salvador",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     15219053495,     15479137440,     15841476610,     16205836634,     16505731408,     17093800000,     17762500677,     18444538993,     18679564344,     18094324948,     18341273340,     18747869219,     19109602133 ],
 "econ_gdpconpc": [     2554.049275,     2586.192843,     2636.595296,     2687.817697,     2728.086143,      2814.93504,     2913.465315,      3012.36054,     3036.450668,     2926.234619,     2949.613729,     2996.666244,     3034.525414 ],
@@ -2495,7 +3899,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SMR",
+"country": "San Marino",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      1168012513,      1233508542,      1236627401,      1284969708,      1344228019,      1375416604,      1428437199,      1478338935,      1506408662, null, null, null, null ],
 "econ_gdpconpc": [     43309.44838,     44908.74657,     44064.54535,     44772.46368,     45893.75279,     46193.67269,     47409.13373,     48666.39021,     49311.22662, null, null, null, null ],
@@ -2511,7 +3924,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SOM",
+"country": "Somalia",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -2527,7 +3949,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SRB",
+"country": "Serbia",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     19457893235,     20489161577,     21333869443,     21904450412,     23941564301,     25234408773,     26142847489,     27554561254,     28601634581,     27600577371,     27879217077,     28334839240,     27853146973 ],
 "econ_gdpconpc": [     2588.743684,     2730.638306,     2844.504168,     2928.171105,     3207.967392,     3391.371076,     3527.302719,     3732.881712,     3891.261852,     3770.155035,      3823.55644,     3903.545205,     3855.700812 ],
@@ -2543,7 +3974,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SSD",
+"country": "South Sudan",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
@@ -2559,7 +3999,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "STP",
+"country": "Sao Tome and Principe",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null,     98392530.44,     100350279.9,     107109277.9,     111980827.2,     113808749.4,     119750030.2,       122139924,     133223592.5,     138583020.1,     144835069.6,     151994917.9,     158074714.6 ],
 "econ_gdpconpc": [ null,     693.9656407,      694.720416,     726.3862056,     742.3716681,     736.0783198,     754.0648981,      747.536104,     791.8051533,     799.9481651,     812.6392575,     829.7707565,      840.384877 ],
@@ -2575,7 +4024,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SUR",
+"country": "Suriname",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      1357974205,      1419803836,      1480854590,      1569856248,      1715162651,      1793557833,      1862468799,      1957668665,      2038782836,      2100225606,      2188868338,      2304711032,      2394082334 ],
 "econ_gdpconpc": [     2909.936412,     2999.720768,     3084.477556,     3224.404709,     3476.253565,     3590.541042,     3686.699155,     3835.309756,     3955.944126,     4037.552134,     4169.590708,     4350.473198,     4478.762778 ],
@@ -2591,7 +4049,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SVK",
+"country": "Slovak Republic",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     48269023753,     49949746300,     52238889442,     54733310534,     57501614227,     61328471583,     66446582515,     73419444099,     77641412760,     73812461137,     76899962691,     79206961572,     80632686880 ],
 "econ_gdpconpc": [     8957.419156,     9286.295106,     9711.534783,       10174.221,     10683.19119,     11384.52946,      12324.5301,     13602.94948,     14360.41863,     13622.07902,     14161.79755,     14672.34668,     14903.64281 ],
@@ -2607,7 +4074,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SVN",
+"country": "Slovenia",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     29900452543,     30779416299,     31957298602,     32893663261,     34341578807,     35717733757,     37807079252,     40404497110,     41854730758,     38503063055,     39034227961,     39307467557,     38324780868 ],
 "econ_gdpconpc": [     15033.47413,     15451.04881,     16022.47076,     16481.99597,     17196.48095,     17854.63533,     18838.84703,     20020.83973,     20706.67365,     18877.11342,     19054.25748,     19147.81966,     18620.96719 ],
@@ -2623,7 +4099,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SWE",
+"country": "Sweden",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    325000000000,    329000000000,    337000000000,    345000000000,    359000000000,    371000000000,    387000000000,    399000000000,    397000000000,    377000000000,    402000000000,    413000000000,    417000000000 ],
 "econ_gdpconpc": [     36576.18887,     36938.59145,     37732.93338,     38470.84822,     39942.63214,     41040.66502,     42564.16467,     43649.95505,     43045.55041,     40534.53948,     42825.66638,     43749.93855,     43854.41833 ],
@@ -2639,7 +4124,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SWZ",
+"country": "Swaziland",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      2328209675,      2355167498,      2397023645,      2450719228,      2521953902,      2584077931,      2669418698,      2762945840,      2828084744,      2863889135,      2917342648,      2926094676,      2882203256 ],
 "econ_gdpconpc": [     2188.753261,     2191.340678,     2214.989189,     2252.646293,     2303.663368,     2339.289952,     2387.133053,     2434.362846,     2450.830809,     2440.097825,     2445.080282,     2413.952853,     2341.379672 ],
@@ -2655,7 +4149,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SYC",
+"country": "Seychelles",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     932323776.2,     911149182.5,     922984140.6,     864593594.4,     843169436.2,       919103262,      1005555295,      1110310795,      1086544423,      1074514408,      1138398917,      1228504426,      1262971578 ],
 "econ_gdpconpc": [     11491.58492,     11220.77267,     11027.28961,     10441.95162,     10220.23559,     11086.89098,     11885.99639,     13057.41059,     12495.33584,      12308.5799,     12681.28458,     14049.52398,     14387.11521 ],
@@ -2671,7 +4174,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "SYR",
+"country": "Syrian Arab Republic",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     22681144450,     23860777801,     25268563691,     25420175074,     27174167154,     28858965517,     30301913793,     32029122879,     33470433409,     35478659413,     36613976515, null, null ],
 "econ_gdpconpc": [     1385.428885,     1428.704908,     1486.851746,     1469.503734,     1537.347177,     1588.505672,     1611.382737,     1637.357081,     1645.057568,     1686.925888,     1700.393663, null, null ],
@@ -2687,7 +4199,16 @@
 "rent_total": [    28.534350116,    22.830102373,    23.968460053,    28.457958779,    25.176816589,    29.699669968,    28.524189498,    24.538833517,    27.775012948,    14.413695833,    18.489431035, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TCA",
+"country": "Turks and Caicos Islands",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [ null, null, null, null, null, null, null, null, null, null ],
 "econ_gdpconpc": [ null, null, null, null, null, null, null, null, null, null ],
@@ -2703,7 +4224,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TCD",
+"country": "Chad",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [      3050372770,      3405989335,      3695199036,      4239193933,      5664808225,      6646663021,      6689750813,      6908605983,      7119504413,      7419783433,      8425171572,      8432153495,      9181145073 ],
 "econ_gdpconpc": [     367.4638336,     395.0843437,     412.4122637,     455.2773492,     586.1142429,     663.7096974,     645.9269854,     646.0042589,     645.4305605,      652.499461,     718.8233934,     698.0238136,      737.549486 ],
@@ -2719,7 +4249,16 @@
 "rent_total": [ null, null, null, null,     47.86587079,    59.785146757,    55.560000436,    49.937526272,    51.040043275,    32.489409686,    36.608199069,    36.783633569, null ] 
 } 
 },{
+ "country": {
  "ccode": "TGO",
+"country": "Togo",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      2001173658,      1968618439,      1950464804,      2047098587,      2090477943,      2115154090,      2200868860,      2251278746,      2301379908,      2382165910,      2477350119,      2596186560,      2742161664 ],
 "econ_gdpconpc": [     411.3618221,     394.3368817,     380.6769916,     389.2595008,      387.279668,     381.7820197,      387.078589,     385.8360923,     384.3646542,     387.6934788,     392.8551568,     401.1224689,     412.7941269 ],
@@ -2735,7 +4274,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "THA",
+"country": "Thailand",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    138000000000,    140000000000,    148000000000,    159000000000,    169000000000,    176000000000,    185000000000,    195000000000,    200000000000,    195000000000,    210000000000,    210000000000,    224000000000 ],
 "econ_gdpconpc": [     2205.775392,     2227.650024,     2319.307074,     2458.298364,     2590.193117,     2689.953147,     2813.027203,     2946.295851,       3014.5447,     2940.223579,     3163.903845,     3158.066671,     3352.528681 ],
@@ -2751,7 +4299,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TJK",
+"country": "Tajikistan",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      1449651439,      1597515886,      1770047601,      1964752837,      2167122380,      2312319579,      2474181950,      2672116506,      2885885826,      2987233653,      3181403840,      3416827725,      3673089804 ],
 "econ_gdpconpc": [     234.3381538,     254.0037405,     276.3920967,     300.8990029,     325.2019011,     339.7644428,     355.7659246,     375.7709339,     396.6715965,     401.1111606,     417.1060527,     437.2224322,     458.6208503 ],
@@ -2767,7 +4324,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TKM",
+"country": "Turkmenistan",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      6320368378,      6594915418,      6611876244,      6828007144,      7169435312,      8104355717,      8993168136,      9987558552,     11455729660,     12154529169,     13272745852,     15223839493,     16913685676 ],
 "econ_gdpconpc": [     1404.083552,     1448.870881,      1437.31097,     1469.008776,     1526.426355,     1706.956726,     1872.954328,     2055.799379,     2329.563699,     2441.177332,     2632.439313,     2981.168835,     3269.652287 ],
@@ -2783,7 +4349,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TLS",
+"country": "Timor-Leste",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     421840176.8,       490787279,     457921709.2,     447960068.8,     449685707.3,       479100000,     463883005.9,     517769990.2,     593541208.3,     669312426.3,     732847298.6,     821011738.7,     825874901.8 ],
 "econ_gdpconpc": [     494.1982073,     563.2473624,     509.1600084,      479.938876,      465.038007,     487.3235855,     457.2803351,     494.9857941,     550.6402739,     602.9456011,      641.440714,     698.2104796,     682.4098349 ],
@@ -2799,7 +4374,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TON",
+"country": "Tonga",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     233999795.3,     242427945.4,     250709545.5,     256116210.5,     258649064.4,     264812953.8,     260554490.5,     249773954.7,     252028444.5,       260189359,       268854243,     276605845.5,     278947200.8 ],
 "econ_gdpconpc": [     2388.679235,     2461.097472,      2530.29829,     2569.100626,     2578.265976,     2622.949225,     2564.083672,     2441.845699,     2448.137823,     2512.523142,      2582.70325,     2645.578797,     2658.133626 ],
@@ -2815,7 +4399,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TTO",
+"country": "Trinidad and Tobago",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     10957049280,     11405701869,     12319710568,     14097881248,     15211613866,     16088526686,     18299673444,     19169679738,     19819864883,     18949432000,     18988955441,     18684733721,     18969161726 ],
 "econ_gdpconpc": [     8641.342355,     8964.301302,     9641.925963,     10980.78716,     11788.48529,     12405.05615,     14039.11186,     14632.89651,     15055.55087,     14328.29799,     14297.88941,     14016.19234,     14183.19768 ],
@@ -2831,7 +4424,16 @@
 "rent_total": [     34.10208106,    29.136437541,     26.64565935,     41.48648298,      44.2196291,      62.1691133,     63.61943336,     54.59478634,     60.62861423,    38.726128714,     36.69120792,     37.63745122, null ] 
 } 
 },{
+ "country": {
  "ccode": "TUN",
+"country": "Tunisia",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     25946169329,     27219807479,     27710875975,     29249446560,     31035438376,     32282960678,     34010078620,     36167881596,     37837484291,     38991412230,     40161154597,     39357931505,     40774817039 ],
 "econ_gdpconpc": [      2713.04118,     2813.823962,     2832.872548,      2972.56515,     3124.666584,     3218.961081,     3358.058296,     3537.166541,     3663.263686,     3734.952702,     3807.069285,      3687.34017,     3783.327955 ],
@@ -2847,7 +4449,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TUR",
+"country": "Turkey",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    387000000000,    365000000000,    387000000000,    407000000000,    446000000000,    483000000000,    516000000000,    540000000000,    544000000000,    518000000000,    565000000000,    615000000000,    628000000000 ],
 "econ_gdpconpc": [     6119.231311,     5687.243697,     5952.181561,      6178.54293,     6665.307452,      7129.58488,     7522.971926,     7775.594115,     7730.383161,     7266.694423,     7833.528578,     8413.318373,     8492.613999 ],
@@ -2863,7 +4474,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TUV",
+"country": "Tuvalu",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     21707438.29,      22062146.8,     23801987.92,     23008580.46,     22697447.52,     21839580.57,        22306678,     23723278.06,     25617169.24,      24481598.2,     23813390.63,     25826413.67,     25871469.95 ],
 "econ_gdpconpc": [     2304.643624,     2329.442171,     2497.585301,     2399.226325,     2353.042455,     2252.896696,     2292.095972,      2429.66797,     2617.201598,     2496.084645,     2423.261486,     2623.569044,     2623.881334 ],
@@ -2879,7 +4499,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "TZA",
+"country": "Tanzania",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [     10060678389,     10664100660,     11428029221,     12214989201,     13171215003,     14141916592,     15094712407,     16173696879,     17376505548,     18422910392,     19720449299,     20992181081,     22431974950 ],
 "econ_gdpconpc": [     304.3592864,     314.5469129,     328.5247912,     342.0495763,     359.0366113,     374.9992699,     389.0816582,     404.9782986,     422.4403004,     434.7044131,     451.5468171,     466.3679263,     483.4818402 ],
@@ -2895,7 +4524,16 @@
 "rent_total": [ null, null, null, null,     1.333251835,     2.168067039,     3.798445521,     3.495228685,      3.82806854,     4.162889499,      5.70539681,     6.187102497, null ] 
 } 
 },{
+ "country": {
  "ccode": "UGA",
+"country": "Uganda",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      6517689669,      6855544615,      7454217784,      7936748583,      8477021579,      9013834490,      9985953500,     10826014445,     11768825183,     12622188031,     13362034649,     14246652673,     14734660266 ],
 "econ_gdpconpc": [     268.4868206,     273.2595503,     287.3257169,     295.7233033,     305.2913838,     313.7989764,      336.098417,     352.3090103,     370.3357444,     384.0695611,     393.1488778,     405.3325006,     405.4013378 ],
@@ -2911,7 +4549,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "UKR",
+"country": "Ukraine",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     59536498012,     65013855829,     68394576332,     74823666508,     83877330155,     86142018069,     92430385388,     99732386544,    102000000000,     86926349182,     90577255848,     95287273152,     95477847698 ],
 "econ_gdpconpc": [     1210.685751,     1335.429231,     1418.901018,     1564.924702,     1767.639661,     1828.717626,     1975.525333,      2144.35133,     2205.581528,     1887.516186,     1974.621182,     2084.782407,     2094.120138 ],
@@ -2927,7 +4574,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "URY",
+"country": "Uruguay",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     17205113142,     16543726233,     15264564126,     15387487207,     16157501741,     17362872710,     18074503486,     19256849093,     20638748441,     21102188425,     22990234866,     24491647114,     25455477705 ],
 "econ_gdpconpc": [     5180.950591,     4972.921487,     4587.397183,     4627.243732,     4861.121246,     5221.673188,     5427.425146,     5768.314578,     6162.847731,     6279.607713,     6818.018265,     7238.583849,     7497.372863 ],
@@ -2943,7 +4599,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "USA",
+"country": "United States",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [  11600000000000,  11700000000000,  11900000000000,  12200000000000,  12700000000000,  13100000000000,  13400000000000,  13700000000000,  13600000000000,  13300000000000,  13600000000000,  13800000000000,  14200000000000 ],
 "econ_gdpconpc": [      40965.0265,     40946.36667,     41288.79602,     42077.92452,     43273.71098,     44313.58524,     45058.64975,     45431.02702,     44872.65363,     43234.45116,     43952.44649,      44439.4091,     45335.89736 ],
@@ -2959,7 +4624,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "UZB",
+"country": "Uzbekistan",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     10995014211,     11456804808,     11915077000,     12415510234,     13371504522,     14307509839,     15351958057,     16810394072,     18323329539,     19807519232,     21491158366,     23274924511,     25183468321 ],
 "econ_gdpconpc": [     446.0379633,     458.9247834,     471.4762473,     485.5945006,       516.98591,     546.7768502,     579.5761538,     625.6659994,     671.1153998,     713.3371951,     752.4283102,     793.2492484,     845.7398389 ],
@@ -2975,7 +4649,16 @@
 "rent_total": [ null, null, null, null, null, null,     92.80230392,    73.220030408,    88.330599979,    33.010602366,     27.85922669,    27.886468042, null ] 
 } 
 },{
+ "country": {
  "ccode": "VCT",
+"country": "St. Vincent and the Grenadines",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     444626705.7,     451959799.8,     480253853.2,     516680823.3,     538180024.1,     551431645.4,     593735719.9,     613878154.7,     622414608.3,       608853307,     591892928.9,     592744529.7,     606291490.8 ],
 "econ_gdpconpc": [     4120.844006,     4185.239235,     4440.627399,     4768.495781,     4957.351781,     5070.682447,     5451.718147,     5629.585535,     5701.960537,     5573.078994,     5414.513236,     5420.270579,     5543.337851 ],
@@ -2991,7 +4674,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "VEN",
+"country": "Venezuela, RB",
+"class_income": "Upper middle income",
+"class_opec": "1",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [    128000000000,    133000000000,    121000000000,    112000000000,    132000000000,    146000000000,    160000000000,    174000000000,    183000000000,    177000000000,    175000000000,    182000000000,    192000000000 ],
 "econ_gdpconpc": [     5255.691743,     5332.943331,     4771.807698,     4322.636853,     5022.738461,     5444.662518,      5879.86805,     6287.037569,     6509.555318,     6199.091778,      6010.02702,     6163.967858,     6412.041247 ],
@@ -3007,7 +4699,16 @@
 "rent_total": [    28.194469085,    22.384327586,    26.990857199,    32.931034524,     39.69621177,    47.848437744,    44.726608328,    34.722704423,    35.696555096,    19.081773578,    19.963733705,    32.444404983, null ] 
 } 
 },{
+ "country": {
  "ccode": "VNM",
+"country": "Vietnam",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": "Mining and Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     41288646006,     43845607803,     46617010183,     49833147314,     53588777916,     57633255739,     61654878281,     66050565593,     69790197499,     73557400855,     78282167938,     83167212215,     87531301194 ],
 "econ_gdpconpc": [     531.8583967,      557.683161,     586.0921813,     619.2884078,     658.0340299,     699.4878933,     740.0391089,     784.2519938,     819.8814823,     855.0700477,     900.4936927,     946.8034178,     985.9848854 ],
@@ -3023,7 +4724,16 @@
 "rent_total": [    10.025035827,     8.631808089,      8.23371817,     9.009467001,    14.735788949,     17.49704017,    16.671388391,    15.867514386,    18.973396443,    10.332557481,    11.971728366,    12.936918507, null ] 
 } 
 },{
+ "country": {
  "ccode": "VUT",
+"country": "Vanuatu",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     377655016.4,     364480491.9,     345851097.3,     360699976.1,     375072985.8,     394962552.3,     428387951.4,     450559927.2,     479623192.7,     495485496.5,     503575271.4,     510774994.9,     522267432.3 ],
 "econ_gdpconpc": [     2040.738668,     1925.564582,     1783.197202,     1813.000001,     1837.377157,      1886.38831,     1995.713806,      2047.99036,     2127.894625,     2146.510666,     2131.093536,      2112.57846,     2112.202572 ],
@@ -3039,7 +4749,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "WSM",
+"country": "Samoa",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [     322447004.1,     345313500.7,       360535734,     377711152.4,     395811298.4,     412220560.3,     420413662.4,     427981108.4,       446384296,     423618696.9,     425313171.7,     431331596.1,     443814204.3 ],
 "econ_gdpconpc": [     1846.627441,     1966.847418,     2041.631184,     2125.830312,     2213.784011,     2291.030636,     2321.791004,     2348.447697,     2433.354572,     2293.500395,     2286.273493,     2301.306607,     2349.603229 ],
@@ -3055,7 +4774,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "YEM",
+"country": "Yemen, Rep.",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Hydrocarbons" 
+},
 "stat": {
  "econ_gdpcon": [     13633617158,     14152191675,     14709113179,     15260322221,     15866568491,     16753787028,     17284950662,     17861996286,     18513525010,     19229300378,     20710400137,     18540019013,     18565462178 ],
 "econ_gdpconpc": [     778.0618274,      784.925142,     792.8984563,     799.7525023,     808.9947701,     831.8802898,     836.5690602,     843.2565234,     853.0174601,     865.0303538,     909.8270377,      795.565359,     778.3474691 ],
@@ -3071,7 +4799,16 @@
 "rent_total": [     38.28194129,     30.91685408,     29.05514768,     30.84952621,     33.27076682,     39.71942441,     38.52485849,     32.71277196,     33.41827195,    20.377650172,    23.556936956,     23.09966428, null ] 
 } 
 },{
+ "country": {
  "ccode": "ZAF",
+"country": "South Africa",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Emerging ",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [    205000000000,    210000000000,    218000000000,    224000000000,    235000000000,    247000000000,    261000000000,    275000000000,    285000000000,    281000000000,    290000000000,    300000000000,    307000000000 ],
 "econ_gdpconpc": [     4652.338808,     4682.779452,     4788.055929,      4866.92248,     5028.801375,     5234.313052,      5465.96404,     5706.278485,     5848.042299,     5697.231708,      5794.23636,      5923.99456,      6003.45699 ],
@@ -3087,7 +4824,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ZMB",
+"country": "Zambia",
+"class_income": "Lower middle income",
+"class_opec": "0",
+"class_hipc": "1",
+"class_ldc": "1",
+"class_dev": "Developing",
+"rev_source": "Mining" 
+},
 "stat": {
  "econ_gdpcon": [      5674661754,      5952406142,      6149874257,      6465209215,      6814564604,      7178556337,      7626964314,      8096999646,      8586719246,      9105755546,      9799629000,     10469545872,     11235591955 ],
 "econ_gdpconpc": [     561.7931322,     574.4380857,     578.7886522,     593.4368662,     609.8235384,     625.8537548,      647.361695,     668.6419265,     689.3349363,     709.9987162,     741.4420914,     767.9112898,     798.2602435 ],
@@ -3103,7 +4849,16 @@
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
+ "country": {
  "ccode": "ZWE",
+"country": "Zimbabwe",
+"class_income": "Low income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
 "stat": {
  "econ_gdpcon": [      8447466005,      8569077034,      7806941293,      6480145778,      6103808866,      5755215232,      5555998739,      5353019894,      4407197685,      4670941633,      5120294858,      5660574896,      5910963831 ],
 "econ_gdpconpc": [     675.5998971,     680.8006979,     617.5927114,     511.3306329,     480.8781427,     452.7890275,     436.6444713,     420.1689692,     344.7421425,     362.3998254,     391.5503152,     423.7357523,     430.6927501 ],
@@ -3117,5 +4872,480 @@
 "rev2_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "rent_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+} 
+},{
+ "country": {
+ "ccode": "ABW",
+"country": "Aruba",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "AND",
+"country": "Andorra",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "ASM",
+"country": "American Samoa",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "BMU",
+"country": "Bermuda",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "CHI",
+"country": "Channel Islands",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "CUW",
+"country": "Curacao",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "FRO",
+"country": "Faeroe Islands",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "GUF",
+"country": "French Guiana",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "GUM",
+"country": "Guam",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "IMN",
+"country": "Isle of Man",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "LIE",
+"country": "Liechtenstein",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "MAF",
+"country": "St. Martin (French part)",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "MCO",
+"country": "Monaco",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "MNP",
+"country": "N. Mariana Islands",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "PRI",
+"country": "Puerto Rico",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "PYF",
+"country": "French Polynesia",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "SXM",
+"country": "Sint Maarten (Dutch part)",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "TWN",
+"country": "Taiwan, China",
+"class_income": "Upper middle income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": " Advanced",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
+} 
+},{
+ "country": {
+ "ccode": "VIR",
+"country": "Virgin Islands (U.S.)",
+"class_income": "High income",
+"class_opec": "0",
+"class_hipc": "0",
+"class_ldc": "0",
+"class_dev": "Developing",
+"rev_source": null 
+},
+"stat": {
+ "econ_gdpcon": null,
+"econ_gdpconpc": null,
+"econ_tax": null,
+"econ_govrev": null,
+"econ_govexp": null,
+"econ_invtotal": null,
+"rev_gov_resrev_govtrev": null,
+"rev_gov_resrev_gdp": null,
+"rev2_gov_nonresrev_gdp": null,
+"rev2_gov_resrev_gdp": null,
+"rev2_gov_rev_gdp": null,
+"rent_total": null 
 } 
 } ]
