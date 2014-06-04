@@ -53,7 +53,7 @@
   <body ng-controller="ei_countrySelect_control">
 
     <!-- For D3 -->
-    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <!-- For TopoJSON and DataMaps -->
     <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
     <script src='http://datamaps.github.io/scripts/datamaps.all.min.js' type='text/javascript'></script>
@@ -121,6 +121,11 @@
       factory.getRawData = function() {
         return $http.get('eidata.json');      
       };  
+      factory.getGroupsData = function() {
+        return $http.get('eigroups.json');      
+      };  
+      
+      
       /*
       factory.getRawData = function() {
         return raw_eidata;      
@@ -316,6 +321,9 @@
                   }, // data  
                   axis: {
                     y: {
+                      max: 100,
+                      min: 0,
+                      padding: {top:0, bottom:0},
                       label: {
                         text: 'Resource Statistics: % of GDP',
                         position: 'outer-middle'
@@ -363,10 +371,6 @@
           throw(err);   
       }); // getData
           
-     $scope.$watch('current_country', function(newValue, oldValue) {
-        console.log('watch current_country:');
-        console.log(newValue);
-      }, true); 
      $scope.$watch('current_country_id', function(newValue, oldValue) {
         console.log('watch current_country_id:');
         console.log(newValue);
