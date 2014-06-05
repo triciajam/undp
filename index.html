@@ -137,6 +137,8 @@
       $scope.country_resource_stat_data_arr = [];
       $scope.current_country_name = "";
       
+      $scope.dataMapFillKeys = {};
+      
       var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
       
       
@@ -182,8 +184,8 @@
             
             
             for (var statname in countryObj.resourceStats) {
-              console.log(countryObj.resourceStats);
-              console.log(statname);
+              //console.log(countryObj.resourceStats);
+              //console.log(statname);
               var tmp=[];
               tmp.push(statname);
               statData[statname] = tmp.concat(countryObj.resourceStats[statname]);
@@ -193,8 +195,21 @@
           });
           console.log("country arr data: ");
           console.log($scope.country_resource_stat_data_arr);  
-  
-          /*    
+          
+          console.log("before loop: ");
+          // this object will be passed to data map
+          $scope.country_data_json.forEach(function(countryObj, index) {
+            console.log("testing for resource stats");
+            if (countryObj.haveResourceStats == "1") {
+              console.log("has stats");
+              $scope.dataMapFillKeys[countryObj.ccode] = "haveResourceStats";
+            }  
+            else   
+              $scope.dataMapFillKeys[countryObj.ccode] = "defaultFill";  
+          });
+          console.log($scope.dataMapFillKeys);
+          
+      /*    
           $scope.raw_data.forEach(function(countryObj, index) {
             $scope.country_names.push(countryObj.ccode);
           });
@@ -267,15 +282,16 @@
                   
           });// c3.generate
           
-          console.log($scope.chart2);
+          //console.log($scope.chart2);
+          
+          
           
           $scope.chart1 = new Datamap({
               element: document.getElementById('chart1'),
               scope: "world",
               fills: {
                 defaultFill: "#eee",
-                selectable: "#fa0fa0",
-                selected: "#fa0fa0",
+                haveResourceStats: "#fa0fa0",
               },
               "done": function(datamap) {
                   console.log("in done");

@@ -99,6 +99,19 @@ outdm$name <- outdm$country
 outdm <- outdm[,-2]
 str(outdm)
 
+# easy flag for Javascript to know if we have resource data
+# MUST change indices in Lapply call if # of resource data lines change
+d3 <- split(out_var_cols, out_var_cols$ccode)
+d4 <- lapply(d3, function(x) all(is.na(melt(x[,c(9:16)])$value)))
+d5 <- as.data.frame(unlist(d4))
+colnames(d5) = c("haveResourceStats")
+d5$haveResourceStats <- ifelse(d5=="TRUE", 0,1) 
+d5$haveResourceStats <- factor(d5$haveResourceStats)
+d5$ccode <- rownames(d5)
+str(d5)
+
+outdm <- merge(outdm, d5, by=c("ccode"), all.x=T, all.y=F)
+
 #outdm_json <- split(outdm, outdm$ccode)
 #j4 <- lapply(outdm_json, function(x) toJSON(list(x), .na="null", digits=14))
 #j5 <- lapply(j4, function(x) substring(x, 2, nchar(x)))
