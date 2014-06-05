@@ -40,11 +40,17 @@
         #chart2 .c3-line-rev2_gov_resrev_gdp {
           stroke-width: 4px;
         }
+        #chart2 .c3-line-calc_gov_resrev_gdp {
+          stroke-width: 4px;
+        }
         #chart2 .c3-line-rev2_gov_rev_gdp {
           stroke-width: 4px;
         }
-        #chart2 .c3-line-rent_total {
+        #chart2 .c3-line-rent_total_gdp {
           stroke-width: 4px;
+        }
+        #chart2 .c3-line-calc_govt_take {
+          stroke-width: 0px;
         }
     </style>
 
@@ -123,8 +129,9 @@
       $scope.raw_data = [];
       $scope.country_names = [];
       $scope.country_data_json = [];
-      $scope.country_stat_data_json = [];
-      $scope.country_stat_data_arr = [];
+      $scope.country_macro_stat_data_json = [];
+      $scope.country_resource_stat_data_json = [];
+      $scope.country_resource_stat_data_arr = [];
       
       $scope.current_country_id = "AGO";
       var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
@@ -150,35 +157,39 @@
       
           $scope.raw_data.forEach(function(countryObj, index) {
             $scope.country_data_json[countryObj.country.ccode] = countryObj.country;
-            $scope.country_stat_data_json[countryObj.country.ccode] = countryObj.stat;
-            $scope.country_stat_data_json[countryObj.country.ccode]["x"] = [2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
+            $scope.country_macro_stat_data_json[countryObj.country.ccode] = countryObj.macroStats;
+            $scope.country_resource_stat_data_json[countryObj.country.ccode] = countryObj.resourceStats;            
+            //$scope.country_macro_stat_data_json[countryObj.country.ccode]["x"] = [2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
+            $scope.country_resource_stat_data_json[countryObj.country.ccode]["x"] = [2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
           }); 
           
           console.log("country json data: ");
           console.log($scope.country_data_json);  
-          console.log("country stat json data: ");
-          console.log($scope.country_stat_data_json);  
+          console.log("country macro stat json data: ");
+          console.log($scope.country_macro_stat_data_json);  
+          console.log("country resource stat json data: ");
+          console.log($scope.country_resource_stat_data_json);  
           
       
           $scope.raw_data.forEach(function(countryObj, index) {
                        
             var statData = Object();
-            $scope.country_stat_data_arr[countryObj.country.ccode] = [];
-            $scope.country_stat_data_arr[countryObj.country.ccode].push(xaxis);
+            $scope.country_resource_stat_data_arr[countryObj.country.ccode] = [];
+            $scope.country_resource_stat_data_arr[countryObj.country.ccode].push(xaxis);
             
             
-            for (var statname in countryObj.stat) {
-              //console.log(countryObj.stat);
-              //console.log(statname);
+            for (var statname in countryObj.resourceStats) {
+              console.log(countryObj.resourceStats);
+              console.log(statname);
               var tmp=[];
               tmp.push(statname);
-              statData[statname] = tmp.concat(countryObj.stat[statname]);
-              $scope.country_stat_data_arr[countryObj.country.ccode].push(statData[statname]);            
+              statData[statname] = tmp.concat(countryObj.resourceStats[statname]);
+              $scope.country_resource_stat_data_arr[countryObj.country.ccode].push(statData[statname]);            
             }
 
           });
           console.log("country arr data: ");
-          console.log($scope.country_stat_data_arr);  
+          console.log($scope.country_resource_stat_data_arr);  
   
       
           $scope.raw_data.forEach(function(countryObj, index) {
@@ -195,16 +206,14 @@
                   },                      
                   data: {
                     x: 'x',
-                    json: $scope.country_stat_data_json[$scope.current_country_id],
+                    json: $scope.country_resource_stat_data_json[$scope.current_country_id],
+                    axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', rent_total_gdp : 'y', calc_govt_take: 'y2' },
+                    /*
                     axes: { econ_gdpcon : 'y2',econ_gdpconpc : 'y2',econ_tax : 'y2',econ_govrev : 'y2',econ_govexp : 'y2',econ_invtotal : 'y2',rev_gov_resrev_govtrev : 'y',rev_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_resrev_gdp : 'y',rev2_gov_rev_gdp : 'y',rent_total : 'y'},
+                    */
                     type: 'line',
                     types: {
-                        econ_gdpcon: 'area',
-                        econ_gdpconpc: 'area',
-                        econ_tax: 'area',
-                        econ_govrev: 'area',
-                        econ_govexp: 'area',
-                        econ_invtotal: 'area',        
+                        calc_govt_take: 'area',
                     },
                     names: {
                       econ_gdpcon: 'GDP (constant $)',
@@ -227,6 +236,7 @@
                       econ_govrev: '#B6B6B4',
                       econ_govexp: '#B6B6B4',
                       econ_invtotal: '#B6B6B4',                  
+                      calc_govt_take: '#B6B6B4',                  
                     },
                   }, // data  
                   axis: {
@@ -237,8 +247,9 @@
                       label: {
                         text: 'Resource Statistics: % of GDP',
                         position: 'outer-middle'
-                      },
+                      },                      
                     },
+                    y2: { max: 1.5, min: 0}
                 
                   }, // axis
               
@@ -284,15 +295,10 @@
      $scope.$watch('current_country_id', function(newValue, oldValue) {
         console.log('watch current_country_id:');
         console.log(newValue);
-        if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_stat_data_arr[newValue] });
+        if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_resource_stat_data_arr[newValue] });
          
       }, true); 
-      
-      //console.log($scope.chart2);
-      //setTimeout(1000000000000);
-      //$scope.current_country_id = "ARG";
-      //$scope.current_country_id = "SYR";
-      
+            
       
     }); // controller
     

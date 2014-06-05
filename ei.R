@@ -52,18 +52,21 @@ table(resrev2$country, resrev2$year)
 out <- merge(out, resrev2[c(1,3, 12:14)], by=c("ccode", "year"), all.x=T, all.y=F)
 str(out)
 
-# just investigate which of two measures is better
+# we have two estimates for this one, from the REV table and one from REV2
+# take the average if we have both, if not both then use the one we have
 cbind(out$rev_gov_resrev_gdp, out$rev2_gov_resrev_gdp)
 apply(cbind(out$rev_gov_resrev_gdp, out$rev2_gov_resrev_gdp), 2, function(x) length(which(is.na(x))))
 c <- ifelse(apply(out[,c(10,12)], 1, function (x) all(is.na(x))), NA, rowMeans(out[,c(10,12)], na.rm=TRUE))
 cbind(out$rev_gov_resrev_gdp, out$rev2_gov_resrev_gdp, c)
+out$calc_gov_resrev_gdp <- c
 
 rent <- read.csv("raw/Rent.csv")
 rent$year <- factor(rent$year, ordered=TRUE)
-rent$rent_total <- ifelse(apply(rent[,c(4:7)], 1, function (x) all(is.na(x))), NA, rowSums(rent[,c(4:7)], na.rm=TRUE))
+rent$rent_total_gdp <- ifelse(apply(rent[,c(4:7)], 1, function (x) all(is.na(x))), NA, rowSums(rent[,c(4:7)], na.rm=TRUE))
 str(rent)
 
 out <- merge(out, rent[c(1,3, 8)], by=c("ccode", "year"), all.x=T, all.y=F)
+out$calc_govt_take <- out$calc_gov_resrev_gdp / out$rent_total_gdp
 str(out)
 
 base <- read.csv("raw/Country_Classification.csv")
@@ -106,8 +109,9 @@ str(outdm)
 
 #  put in format to send to JSON
 d2 <- split(out_var_cols, out_var_cols$ccode)
-j2 <- lapply(d2, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:14])), .na="null", digits=14))
-j2 <- lapply(d2, function(x) toJSON(list(country=outdm[which(outdm$ccode == x[1,1]),],stat=(x[,3:14])), .na="null", digits=14))
+#j2 <- lapply(d2, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:16])), .na="null", digits=14))
+j2 <- lapply(d2, function(x) toJSON(list(country=outdm[which(outdm$ccode == x[1,1]),],stat=(x[,3:16])), .na="null", digits=14))
+j2 <- lapply(d2, function(x) toJSON(list(country=outdm[which(outdm$ccode == x[1,1]),],macroStats=(x[,3:8]), resourceStats=(x[,c(9,11,13,14,15,16)])), .na="null", digits=14))
 
 j3 <- paste("[", paste(j2, collapse=","), "]")
 writeLines(j3, "eidata.json")
