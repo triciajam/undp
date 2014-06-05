@@ -198,15 +198,19 @@
           
           console.log("before loop: ");
           // this object will be passed to data map
-          $scope.country_data_json.forEach(function(countryObj, index) {
+          for (countryObjKey in $scope.country_data_json) {
+          //$scope.country_data_json.forEach(function(countryObj, index) {
             console.log("testing for resource stats");
-            if (countryObj.haveResourceStats == "1") {
+            console.log($scope.country_data_json[countryObjKey]);
+            $scope.dataMapFillKeys[countryObjKey] = {};
+            if ($scope.country_data_json[countryObjKey].haveResourceStats == "1") {
               console.log("has stats");
-              $scope.dataMapFillKeys[countryObj.ccode] = "haveResourceStats";
+              $scope.dataMapFillKeys[countryObjKey].fillKey = "haveResourceStats";
             }  
             else   
-              $scope.dataMapFillKeys[countryObj.ccode] = "defaultFill";  
-          });
+              $scope.dataMapFillKeys[countryObjKey].fillKey = "defaultFill";  
+          }
+          
           console.log($scope.dataMapFillKeys);
           
       /*    
@@ -244,12 +248,14 @@
                       econ_govrev: 'Total Govt Rev (% GDP) [econ]',
                       econ_govexp: 'Total Govt Expenditure (% GDP)',
                       econ_invtotal: 'Total Investments (% GDP)',
-                      rev_gov_resrev_govtrev: 'Govt Res Rev. (% Govt Rev.)',
-                      rev_gov_resrev_gdp: 'Govt Res Rev. (% GDP) [rev]',
-                      rev2_gov_nonresrev_gdp: 'Govt Non-Res Rev. (% GDP)', 
-                      rev2_gov_resrev_gdp: 'Govt Res Rev. (% GDP) [rev2]',
-                      rev2_gov_rev_gdp: 'Govt Rev. (% GDP) [rev2]',
-                      rent_total: 'Total Rent (% GDP)'                  
+                      rev_gov_resrev_govtrev: 'Govt Res Revenue (% Govt Rev.)',
+                      rev_gov_resrev_gdp: 'Govt Res Rev. (% GDP)',
+                      rev2_gov_nonresrev_gdp: 'Govt Non-Res Revenus (% GDP)', 
+                      rev2_gov_resrev_gdp: 'Govt Res Rev. (% GDP)',
+                      calc_gov_resrev_gdp: 'Govt Res Revenue (% GDP) ',
+                      rev2_gov_rev_gdp: 'Govt Revenue (% GDP)',
+                      rent_total_gdp: 'Total Rent (% GDP)',
+                      calc_govt_take: 'Government Take Ratio'
                     },
                     colors: {
                       econ_gdpcon: '#B6B6B4',
@@ -291,8 +297,9 @@
               scope: "world",
               fills: {
                 defaultFill: "#eee",
-                haveResourceStats: "#fa0fa0",
+                haveResourceStats: "#ffbb78",
               },
+              data: $scope.dataMapFillKeys,              
               "done": function(datamap) {
                   console.log("in done");
                   //$scope.datamap = datamap;
@@ -308,9 +315,15 @@
                     //$scope.setCurId(geography.id);
                                         
                   });
-              } // done               
+              }, // done
+              geographyConfig: {
+                highlightOnHover: true,
+                highlightFillColor: '#ff7f0e',
+                //highlightBorderColor: '#ff7f0e',
+                //highlightBorderWidth: 5,
+              }
           }); // chart1 
-          
+          console.log($scope.chart1);
     
       }).error(function(err){
           throw(err);   
