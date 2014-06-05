@@ -92,6 +92,8 @@ outdm[which(outdm$ccode == "AGO"),]
 outdm$class_opec = factor(outdm$class_opec);
 outdm$class_hipc = factor(outdm$class_hipc);
 outdm$class_ldc = factor(outdm$class_ldc);
+outdm$name <- outdm$country
+outdm <- outdm[,-2]
 str(outdm)
 
 #outdm_json <- split(outdm, outdm$ccode)
