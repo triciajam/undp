@@ -85,6 +85,9 @@
         </div> 
         <div class="col-md-10 text-left" style="height: 350px;"><div id='chart1'></div></div> 
       </div>
+      <div class="row">      
+        <div class="col-md-12 text-left"><h3 ng-bind='current_country_name'></div> 
+      </div>
       
       <div class="row">      
         <div class="col-md-12 text-left"><div id='chart2'></div> 
@@ -132,10 +135,10 @@
       $scope.country_macro_stat_data_json = [];
       $scope.country_resource_stat_data_json = [];
       $scope.country_resource_stat_data_arr = [];
+      $scope.current_country_name = "";
       
-      $scope.current_country_id = "AGO";
       var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
-
+      
       
       $scope.chart1 = {};      
       $scope.chart2 = null;
@@ -191,12 +194,16 @@
           console.log("country arr data: ");
           console.log($scope.country_resource_stat_data_arr);  
   
-      
+          /*    
           $scope.raw_data.forEach(function(countryObj, index) {
             $scope.country_names.push(countryObj.ccode);
-          }); 
+          });
+          */
           //console.log($scope.country_names);  
           //console.log($scope.country_data_json[$scope.current_country_id]);
+
+          $scope.current_country_id = "AGO";
+          $scope.current_country_name = $scope.country_data_json[$scope.current_country_id]["name"];
 
           $scope.chart2 = c3.generate({
               
@@ -249,7 +256,8 @@
                         position: 'outer-middle'
                       },                      
                     },
-                    y2: { max: 1.5, min: 0}
+                    y2: { max: 1.5, min: 0},
+                    x: { min: 2000, max:2011}
                 
                   }, // axis
               
@@ -295,6 +303,7 @@
      $scope.$watch('current_country_id', function(newValue, oldValue) {
         console.log('watch current_country_id:');
         console.log(newValue);
+        $scope.current_country_name = $scope.country_data_json[newValue]["name"];
         if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_resource_stat_data_arr[newValue] });
          
       }, true); 
