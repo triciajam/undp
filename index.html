@@ -200,11 +200,11 @@
           // this object will be passed to data map
           for (countryObjKey in $scope.country_data_json) {
           //$scope.country_data_json.forEach(function(countryObj, index) {
-            console.log("testing for resource stats");
-            console.log($scope.country_data_json[countryObjKey]);
+            //console.log("testing for resource stats");
+            //console.log($scope.country_data_json[countryObjKey]);
             $scope.dataMapFillKeys[countryObjKey] = {};
             if ($scope.country_data_json[countryObjKey].haveResourceStats == "1") {
-              console.log("has stats");
+              //console.log("has stats");
               $scope.dataMapFillKeys[countryObjKey].fillKey = "haveResourceStats";
             }  
             else   
@@ -273,7 +273,7 @@
                       min: 0,
                       padding: {top:0, bottom:0},
                       label: {
-                        text: 'Resource Statistics: % of GDP',
+                        text: '% of GDP',
                         position: 'outer-middle'
                       },                      
                     },
@@ -290,6 +290,53 @@
           
           //console.log($scope.chart2);
           
+          
+          function getTimeSeriesAverageByCountry(ccode, statname) {
+            //console.log("getting avg" + statname);
+            //console.log($scope.country_macro_stat_data_json[ccode]);
+            if ($scope.country_macro_stat_data_json[ccode][statname]) {
+              return d3.mean($scope.country_macro_stat_data_json[ccode][statname]);    
+            }  
+            else if ($scope.country_resource_stat_data_json[ccode][statname]) {
+              return d3.mean($scope.country_resource_stat_data_json[ccode][statname]);                    
+            }
+            else 
+              return null;            
+          };              
+          
+          function getTimeSeriesAverage(statName) {
+            var statData = {};
+            for (countryObjKey in $scope.country_data_json) {
+              statData[countryObjKey] = getTimeSeriesAverageByCountry(countryObjKey, statName);    
+            }
+            console.log(statData);
+            return statData;
+          };
+                    
+          function createChloroKeysForStat(statName) {
+            var countryVals = {};
+            countryVals = getTimeSeriesAverage(statName);
+            
+            var vals = [];
+            for(key in countryVals) {
+              vals.push(countryVals[key]);
+            }            
+            
+            var color = d3.scale.linear()
+                         .domain([d3.min(vals),d3.max(vals)])
+                         .range(["#ffead6", "#ffbb78"]);
+            
+            var chloroVals = {};
+            for(key in countryVals) {
+              if (countryVals[key] == null) {
+                  chloroVals[key] = "#eee";
+              }
+              else
+                  chloroVals[key] = color(countryVals[key]);
+            }
+            $scope.chart1.updateChoropleth(chloroVals);
+                         
+          };
           
           
           $scope.chart1 = new Datamap({
@@ -323,7 +370,13 @@
                 //highlightBorderWidth: 5,
               }
           }); // chart1 
-          console.log($scope.chart1);
+          //console.log($scope.chart1);
+          
+          // initial implementation
+          //createChloroKeysForStat("calc_govt_take");
+          //createChloroKeysForStat("rent_total_gdp");
+                    
+
     
       }).error(function(err){
           throw(err);   
