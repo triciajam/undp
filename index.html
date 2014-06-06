@@ -18,6 +18,16 @@
     <![endif]-->
     
     <style>
+        
+        .btn {
+          margin-bottom: 5;
+          margin-left: 5;
+          margin-right: 5;
+          background-color: '#fff';
+        }
+        h3 {
+           margin-top:5px; margin-bottom:5px;
+        }
           
         #chart2 .c3-line-econ_gdpcon {
           stroke-width: 0px;
@@ -85,21 +95,23 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 text-left">
-          <h3 style="margin-top:0px; margin-bottom:0px">The Countries</h3>Resource dependence, resource wealth, and the disrtibution of that wealth vary widely across countries, and by type of country.
-          Click on country, or select a group.
-          <!--
+          <h3>The Countries</h3>Resource dependence, resource wealth, and the disrtibution of that wealth vary widely across countries, and by type of country.<br>
+          Click on country to see it's data.<p>
+          Click to fill countries based on <br> 
           <div class="btn-group btn-group-xs">
-                <button class="btn btn-mini">Govt Take</button>
-                <button class="btn btn-mini">Total Rent</button>
-                <button class="btn btn-mini" ng-click="">Govt Resource Revenue % GDP</button>
+                <button class="btn btn-mini" ng-click="updateChloroFillsForStat('default')" style="margin-bottom:10">Resource Data Availability (default)</button>
+                <button class="btn btn-mini" ng-click="updateChloroFillsForStat('calc_govt_take')">Government Take</button>
+                <button class="btn btn-mini" ng-click="updateChloroFillsForStat('rent_total_gdp')">Total Rent</button>
+                <button class="btn btn-mini" ng-click="updateChloroFillsForStat('calc_gov_resrev_gdp')">Government Resource Revenue</button>               
           </div>
-          -->
         </div>
-        <div class="col-md-10 text-left" style="height: 360px;"><div id='chart1'></div></div> 
+        <div class="col-md-10 text-left" style="height: 360px;">
+          <div id='chart1'></div>            
+        </div> 
       </div>        
       <div class="row">      
         <div class="col-md-2 text-left"><h3 ng-bind='current_country_name'></div>       
-        <div class="col-md-8 text-left"><div id='chart2'></div> 
+        <div class="col-md-8 text-left"><div id='chart2'></div></div> 
         <div class="col-md-2 text-left">Buttons Here</div>       
       </div>
     </div>
@@ -245,20 +257,20 @@
                       econ_govrev: 'Total Govt Rev (% GDP) [econ]',
                       econ_govexp: 'Total Govt Expenditure (% GDP)',
                       econ_invtotal: 'Total Investments (% GDP)',
-                      rev_gov_resrev_govtrev: 'Govt Res Revenue (% Govt Rev.)',
-                      rev_gov_resrev_gdp: 'Govt Res Rev. (% GDP)',
-                      rev2_gov_nonresrev_gdp: 'Govt Non-Res Revenus (% GDP)', 
-                      rev2_gov_resrev_gdp: 'Govt Res Rev. (% GDP)',
-                      calc_gov_resrev_gdp: 'Govt Res Revenue (% GDP) ',
+                      rev_gov_resrev_gdp: 'Govt Resource Rev. (% GDP)',
+                      rev2_gov_resrev_gdp: 'Govt Resource Rev. (% GDP)',
+                      rev_gov_resrev_govtrev: 'Govt Resource Revenue (% Govt Rev.)',
+                      calc_gov_resrev_gdp: 'Govt Resource Revenue (% GDP) ',
+                      rev2_gov_nonresrev_gdp: 'Govt Non-Resource Revenue (% GDP)', 
                       rev2_gov_rev_gdp: 'Govt Revenue (% GDP)',
                       rent_total_gdp: 'Total Rent (% GDP)',
                       calc_govt_take: 'Government Take Ratio'
                     },
                     colors: {
-                      rev_gov_resrev_govtrev: '#3c5d7f',
+                      rev_gov_resrev_govtrev: '#5ab75c',
                       rev2_gov_nonresrev_gdp: '#4aafcd', 
                       calc_gov_resrev_gdp: '#016ecd',
-                      rev2_gov_rev_gdp: '#5ab75c',
+                      rev2_gov_rev_gdp: '#a631fa',
                       rent_total_gdp: '#da4f4a',
                       calc_govt_take: '#a6a6a6'
                     },
@@ -313,29 +325,36 @@
             return statData;
           };
                     
-          function createChloroKeysForStat(statName) {
-            var countryVals = {};
-            countryVals = getTimeSeriesAverage(statName);
+          $scope.updateChloroFillsForStat = function(statName) {
+            console.log("updating choro");
             
-            var vals = [];
-            for(key in countryVals) {
-              vals.push(countryVals[key]);
-            }            
-            
-            var color = d3.scale.linear()
-                         .domain([d3.min(vals),d3.max(vals)])
-                         .range(["#ffead6", "#ffbb78"]);
-            
-            var chloroVals = {};
-            for(key in countryVals) {
-              if (countryVals[key] == null) {
-                  chloroVals[key] = "#eee";
+            if(statName == "default") {
+              $scope.chart1.updateChoropleth($scope.dataMapFillKeys);
+            }           
+              else {
+              var countryVals = {};
+              countryVals = getTimeSeriesAverage(statName);
+              
+              var vals = [];
+              for(key in countryVals) {
+                vals.push(countryVals[key]);
+              }            
+              
+              var color = d3.scale.linear()
+                           .domain([d3.min(vals),d3.max(vals)])
+                           .range(["#ffead6", "#faa632"]); //faa632 #ffbb78 b28254
+              
+              var chloroVals = {};
+              for(key in countryVals) {
+                if (countryVals[key] == null) {
+                    chloroVals[key] = "#eee";
+                }
+                else
+                    chloroVals[key] = color(countryVals[key]);
               }
-              else
-                  chloroVals[key] = color(countryVals[key]);
+              $scope.chart1.updateChoropleth(chloroVals);
             }
-            $scope.chart1.updateChoropleth(chloroVals);
-                         
+            
           };
           
           
