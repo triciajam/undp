@@ -32,8 +32,23 @@
           border-color: #eee !important;
           border-style: solid !important;
         }
+        h2 {
+           margin-top:5px; margin-bottom:5px;
+        }
         h3 {
            margin-top:5px; margin-bottom:5px;
+        }
+        h5 {
+           margin-top:5px; margin-bottom:2px;
+        }
+        .jumbotron {
+          padding-top: 0;
+          padding-bottom: 0;
+          margin-bottom: 10;
+          
+        }
+        h1 {
+          font-size: 50px !important;
         }
         
     /*-------------------------------------------------------------------------        
@@ -48,12 +63,12 @@
 
         .plainpaths {
           stroke: #ffffff !important;
-          stroke-width: 1.5 !important;
+          stroke-width: 1.4 !important;
           stroke-opacity: .1 !important;
         }
         
     /*-------------------------------------------------------------------------        
-      These override DataMap Styles
+      These override c3 Styles
       -----------------------------------------------------------------------*/  
       
         #chart2 .c3-line-econ_gdpcon {
@@ -124,7 +139,7 @@
     <!-------------------------------------------------------------------------        
       Define Page Layout
       
-      This section uses bootstrap to create cells on the page for each visual-
+      This section uses bootstrap to create "cells" on the page for each visual-
       ization.  
       You can add rows, and columns within rows, at the end as needed 
       to accomodate more content.
@@ -143,10 +158,11 @@
              <div class="btn-group btn-group-xs">
                 <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Low income')">Low</button>
                 <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Lower middle income')">LowMid</button>
-                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Upper middle income')">UpperMid</button>
+                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Upper middle income')">UprMid</button>
                 <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'High income')">High</button>
-            </div>
-      </div>
+                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('default', 'default')">Reset</button>
+            </div>  
+       </div>
         <div class="col-md-8 text-left" style="height: 360px;">
           <div id='chart1'></div>            
         </div> 
@@ -166,21 +182,58 @@
         </div>        
       </div>        
       <div class="row">      
-        <div class="col-md-2 text-left"><h3 ng-bind='current_country_name'></div>       
+        <div class="col-md-2 text-left"><h3 ng-bind='current_country_name'>
+        </div>       
         <div class="col-md-8 text-left"><div id='chart2'></div></div> 
-        <div class="col-md-2 text-left">More Visual Here</div>       
+        <div class="col-md-2 text-left">
+          Hi There
+        </div>       
       </div>
-      
-      <!-- Next row coudl go here
-      <div class="row">      
-        <div class="col-md-2 text-left"><div id=anotherChart></div></div>       
-      </div>
-      -->
+
+    <!-- DEV TEAM NOTES
+    
+        Some Visualization Thoughts
+        ----------------------------
+    
+        The cell to the left of the line chart I thought of two potential visualizations (just below country name):
+
+        1) I think there are too many lines on middle map - maybe here could be a c3 area chart that shows
+        'Composition of Govt Revenue' -- ie Govt Resource Revenue and one for Govt Non-Resource revenue.
+        We could then remove Govt Non-Resource Revenue as well as 'Resource Rev as % of Govt Rev' from the middle
+        chart (as now it should be obvious).  I would keep Govt Resource Rev on middle chart as I think it's
+        important and worth having there as well. <br>
+        For Non-Resource revenue we also have more detailed data in one of the tables on % from taxes or VAT,
+        etc -- maybe eventually these could be separate sections in the area chart.          
+        2) Sparklines for other macro indicators like GDP, or unemployment, or inflation.
+
+        The cell to the right of the line chart I was thinking might be used to place this country's data in the
+        context of all the other countries.  For example, an ordered bar graph of all the values of government 
+        take, with only the current country selected colored in.  You could then visually see where in the order
+        the country is.  These would be really small -- mainly its just where in the ordered bars the "color"
+        bar is.
+        We could do this for Govt Take, Govt Resource Rev, Total Rent, whatever we think is important.
+        One issue is that we have data for these across mutliple years.  We could take an average or add some
+        kind of selection feature which let's you select the year and the charts update for that year.
+        Or, perhaps we could even use a slider bar / D3 transitions to change the data as you slide the bar
+        from 2000 to 2011.  That seems like it could be useful - you could really get a sense of 
+        movement over time.  But Not sure how that would actually look though.
+        If we did this I think we should make center section smaller so we have 3 even sections.  
+
+        Some Issues
+        ------------
+
+        1) The map highlights aren't quite right.  They are too thin on the edges where a country shares a border
+        with a country that is not a group member.
+        I think this has to do with the order in which the country paths are being 
+        drawn - we want to make sure that the new group paths are drawn last.  Not sure how to access that "through"
+        the datamaps interface.  Any ideas guys?
+
+      END NOTES -->
       
     </div>
 
     <!-------------------------------------------------------------------------        
-      End Page Payout   
+      End Page Layout   
       From here on it is all JavaScript.
       ------------------------------------------------------------------------->
 
@@ -208,7 +261,8 @@
     // Best way would be to wrap the UI code for each chart into their own
     // separate Angular Directive.  The Controller would take care of loading
     // the data and managing the events - mainly, updating the scope data
-    // variables that each Directive uses.
+    // variables that each Directive then uses.  All the UI code would be
+    // hidden behind the Directive's interface.
     // Just learning Angular, so staring with this initial implementation for 
     // now, hope to change in the future.
     // -------------------------------------------------------------------------
@@ -483,8 +537,8 @@
       }, true); 
 
       // -------------------------------------------------------------------------      
-      // Event functions that are called when the user clicks a button on the 
-      // datamap to
+      // These are Event functions that are called when the user clicks a button 
+      // on the datamap to
       // highlight or fill by a different variable
       // -------------------------------------------------------------------------                
 
@@ -492,12 +546,15 @@
         console.log("finding countries in group:" + group + " with value: " + value);
         
         var svg = $scope.chart1.svg;
-
+        
+        
         for (countryObjKey in $scope.country_data_json) {
           svg
               .selectAll('.' + countryObjKey)
               .classed({'plainpaths':true,'grouppaths':false });  
         }
+        // if "default" then this block never finds a match
+        // lazy...
         for (countryObjKey in $scope.country_data_json) {
           if ($scope.country_data_json[countryObjKey][group] == value) {
             svg
