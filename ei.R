@@ -9,6 +9,9 @@ library(RJSONIO)
 # The goal here is to get the data we want to use into a format that makes it
 # easy for D3, Datamaps, and C3 to display it without a lot of extra
 # Javscript.
+# This happens in two steps - first create a time series data set, then a non-
+# time series data set for all countries.  The two sets for each country
+# are joined at the end when we write the JSON file.
 # The output of this file is a .JSON file containing our data that the web page
 # will then read in.
 # -----------------------------------------------------------------------------
@@ -146,7 +149,7 @@ str(outdm)
 
 # -----------------------------------------------------------------------------
 # This makes a flag indicating whether or not we have any resource data at all
-# for a given country.  This uses the ouput from Step 1
+# for a given country.  This uses the ouput from Step 1.
 d3 <- split(out_var_cols, out_var_cols$ccode)
 d4 <- lapply(d3, function(x) all(is.na(melt(x[,c(9:16)])$value)))
 d5 <- as.data.frame(unlist(d4))
@@ -162,6 +165,33 @@ outdm <- merge(outdm, d5, by=c("ccode"), all.x=T, all.y=F)
 
 
 # -----------------------------------------------------------------------------
+# Create a classifier for primary production type
+# merge with non-time-series data set
+prod <- read.csv("raw/Production_Total.csv")
+prod <- prod[-which(prod$ccode == "#N/A"),]
+str(prod)
+prod$max.prod.source = names(prod[,c(5:9)])[apply(prod[,c(5:9)],1,which.max)] 
+a <- table(prod$ccode, prod$max.prod.source)
+a <- dcast(as.data.frame(a), Var1 ~ Var2)
+a$prim_prod <- names(a[,2:5])[apply(a[2:5],1,which.max)]
+a$ccode <- a$Var1
+outdm <- merge(outdm, a[,c(7,8)], by=c("ccode"), all.x=T, all.y=F)
+
+
+# -----------------------------------------------------------------------------
+# Create a classifier for primary rent type
+# merge with non-time-series data set
+rent <- read.csv("raw/Rent.csv")
+str(rent)
+rent$max.rent.source= names(rent[,c(4:7)])[apply(rent[,c(4:7)],1,which.max)] 
+a <- table(rent$ccode, rent$max.rent.source)
+a <- dcast(as.data.frame(a), Var1 ~ Var2)
+a$prim_rent <- names(a[,2:5])[apply(a[2:5],1,which.max)]
+a$ccode <- a$Var1
+outdm <- merge(outdm, a[,c(6,7)], by=c("ccode"), all.x=T, all.y=F)
+
+
+# -----------------------------------------------------------------------------
 # Put all of this into a format to send to JSON encoder.
 d2 <- split(out_var_cols, out_var_cols$ccode)
 #j2 <- lapply(d2, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:16])), .na="null", digits=14))
@@ -173,26 +203,4 @@ j3 <- paste("[", paste(j2, collapse=","), "]")
 # -----------------------------------------------------------------------------
 # Write the file.
 writeLines(j3, "eidata.json")
-
-
-
-# ------------------------------------------------
-# NOT USING - IGNORE Below
-# Third do major production by value
-# ------------------------------------------------
-
-prod <- read.csv("raw/Production_Total.csv")
-prod <- prod[-which(prod$ccode == "#N/A"),]
-str(prod)
-prod$max.prod.source = names(prod[,c(5:9)])[apply(prod[,c(5:9)],1,which.max)] 
-a <- table(prod$ccode, prod$max.prod.source)
-a <- dcast(as.data.frame(a), Var1 ~ Var2)
-a$all.year.max <- names(a[,2:5])[apply(a[2:5],1,which.max)]
-
-rent <- read.csv("raw/Rent.csv")
-str(rent)
-rent$max.rent.source= names(rent[,c(4:7)])[apply(rent[,c(4:7)],1,which.max)] 
-a <- table(rent$ccode, rent$max.rent.source)
-a <- dcast(as.data.frame(a), Var1 ~ Var2)
-a$all.year.max <- names(a[,2:5])[apply(a[2:5],1,which.max)]
 
