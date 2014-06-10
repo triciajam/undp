@@ -131,7 +131,7 @@ str(out)
 # COUNTRYCLASSIFICATION table
 cclass <- read.csv("raw/Country_Classification.csv")
 str(cclass)
-#cclass <- cclass[,c(1:3,6:8,10)]
+cclass <- cclass[,c(1:8,10)]
 
 # -----------------------------------------------------------------------------
 # RESREV table - we only need this for the 'rev_source' classifier
