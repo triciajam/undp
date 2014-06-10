@@ -112,7 +112,7 @@ str(out)
 # ccodes, even if no resource data for them (those will have no for those)
 # fields).  This could have been done first, would be cleaner.
 cclass <- read.csv("raw/Country_Classification.csv")
-str(base)
+str(cclass)
 
 out <- merge(out, cclass[c(1,2)], by=c("ccode"), all.x=T, all.y=T)
 str(out)
@@ -131,7 +131,7 @@ str(out)
 # COUNTRYCLASSIFICATION table
 cclass <- read.csv("raw/Country_Classification.csv")
 str(cclass)
-base <- cclass[,c(1:3,6:8,10)]
+#cclass <- cclass[,c(1:3,6:8,10)]
 
 # -----------------------------------------------------------------------------
 # RESREV table - we only need this for the 'rev_source' classifier
