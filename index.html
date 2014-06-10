@@ -507,9 +507,12 @@
                 //highlightBorderWidth: 5,
               }
           }); // chart1 
-    
+          
+          var a = getCountriesInGroup($scope.country_data_json, "prim_rent", "rent_oil");
+          //var b = getCountriesInGroup($scope.country_data_json[a], "class_income", "High income");
+          
       }).error(function(err){
-          throw(err);   
+          throw(err);                     
       }); // getData
 
 
@@ -623,8 +626,22 @@
         return statData;
       };
               
-
-
+      function getCountriesInGroup(data, group, value) {
+        console.log("Getting countries in " + group + " that are " + value);
+        var out = [];
+        //console.log(d3.keys(data));
+        var keys = d3.keys(data);
+        
+        keys.forEach(function(ccode, index) {
+          //console.log(ccode);
+          //console.log(data[ccode]);
+          //console.log(data[ccode][group]);
+          if(data[ccode][group] == value) out.push(ccode);
+        });
+        console.log(out);
+        return out;
+      }
+      
     }); // controller
     
     </script>
