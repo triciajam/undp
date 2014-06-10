@@ -52,11 +52,11 @@
         }
         
     /*-------------------------------------------------------------------------        
-      These are used for highlighting countries.
+      These are used for highlighting countries. bf8c5a bb7c25
       -----------------------------------------------------------------------*/  
 
         .grouppaths {
-          stroke: #bb7c25 !important;
+          stroke: #bf8c5a !important; 
           stroke-width: 1.8 !important;
           stroke-opacity: 1 !important;  
         }
@@ -82,6 +82,7 @@
         }
         #chart2 .c3-line-rev_gov_resrev_govtrev {
           stroke-width: 4px;
+          stroke-dasharray: 5,5;
         }
         #chart2 .c3-line-rev_gov_resrev_gdp {
           stroke-width: 4px;
@@ -335,7 +336,7 @@
 
       // array of years
       // this is necessary for the c3 charts
-      var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011, 2012];
+      var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012];
       
       // -------------------------------------------------------------------------      
       // This function is called when the JSON data has been loaded.
@@ -428,30 +429,9 @@
                     types: {
                         calc_govt_take: 'area',
                     },
-                    names: {
-                      econ_gdpcon: 'GDP (constant $)',
-                      econ_gdpconpc: 'GDP per capita (constant $)',
-                      econ_tax: 'Total Govt Tax Rev (% GDP)',
-                      econ_govrev: 'Total Govt Rev (% GDP) [econ]',
-                      econ_govexp: 'Total Govt Expenditure (% GDP)',
-                      econ_invtotal: 'Total Investments (% GDP)',
-                      rev_gov_resrev_gdp: 'Govt Resource Rev. (% GDP)',
-                      rev2_gov_resrev_gdp: 'Govt Resource Rev. (% GDP)',
-                      rev_gov_resrev_govtrev: 'Govt Resource Revenue (% Govt Rev.)',
-                      calc_gov_resrev_gdp: 'Govt Resource Revenue (% GDP) ',
-                      rev2_gov_nonresrev_gdp: 'Govt Non-Resource Revenue (% GDP)', 
-                      rev2_gov_rev_gdp: 'Govt Revenue (% GDP)',
-                      rent_total_gdp: 'Total Rent (% GDP)',
-                      calc_govt_take: 'Government Take Ratio'
-                    },
-                    colors: {
-                      rev_gov_resrev_govtrev: '#5ab75c',
-                      rev2_gov_nonresrev_gdp: '#4aafcd', 
-                      calc_gov_resrev_gdp: '#016ecd',
-                      rev2_gov_rev_gdp: '#a631fa',
-                      rent_total_gdp: '#da4f4a',
-                      calc_govt_take: '#a6a6a6'
-                    },
+                    names: varnames, 
+                    colors: varcolors, 
+                    labels:false,
                   }, // data  
                   axis: {
                     y: {
@@ -486,7 +466,7 @@
               element: document.getElementById('chart1'),
               scope: "world",
               fills: {
-                defaultFill: "#eee",
+                defaultFill: "#eee", //#eee
                 haveResourceStats: "#ffbb78", //#faa632
               },
               data: $scope.dataMapFillKeys,              
@@ -646,7 +626,131 @@
     
     </script>
     
+    <script>
     
+      // ----------------------------------------------------------------------      
+      // I would like to load this separately from a JSON file, but don't know
+      // how to do two seperate JSON files.  For now I will put these
+      // constants here.
+      // ----------------------------------------------------------------------                
+    
+      console.log("loading lookup constants for variables");
+      var varlookupvals = 
+        [ {
+           "variable": "calc_gov_resrev_gdp",
+          "values": {
+           "name": "Govt Resource Revenue",
+          "source": "Calculated: avg of REV$rev_gov_resrev_gdp and REV2$rev2_gov_resrev_gdp",
+          "color": "78bbff" 
+          } 
+          },{
+           "variable": "calc_govt_take",
+          "values": {
+           "name": "Govt Take",
+          "source": "Calculated: calc_gov_resrev_gdp / rent_total_gdp",
+          "color": "a6a6a6",
+          } 
+          },{
+           "variable": "econ_gdpcon",
+          "values": {
+           "name": "GDP (constant $)",
+          "source": "Economic_Indicators ",
+          "color": "" 
+          } 
+          },{
+           "variable": "econ_gdpconpc",
+          "values": {
+           "name": "GDP per capita (constant $)",
+          "source": "Economic_Indicators ",
+          "color": "" 
+          } 
+          },{
+           "variable": "econ_govexp",
+          "values": {
+           "name": "Govt Expenditure",
+          "source": "Economic_Indicators ",
+          "color": "" 
+          } 
+          },{
+           "variable": "econ_govrev",
+          "values": {
+           "name": "Govt Revenue",
+          "source": "Economic_Indicators ",
+          "color": "" 
+          } 
+          },{
+           "variable": "econ_invtotal",
+          "values": {
+           "name": "Value of Investments",
+          "source": "Economic_Indicators ",
+          "color": "" 
+          } 
+          },{
+           "variable": "econ_tax",
+          "values": {
+           "name": "Govt Tax Revenue",
+          "source": "Economic_Indicators ",
+          "color": "" 
+          } 
+          },{
+           "variable": "rent_total_gdp",
+          "values": {
+           "name": "Total Rents",
+          "source": "Calculated from RENT: sum of RENT$rent_min, RENT$rent_oil, RENT$rent_gas",
+          "color": "000000" 
+          } 
+          },{
+           "variable": "rev_gov_resrev_gdp",
+          "values": {
+           "name": "Govt Resource Revenue",
+          "source": "Resource_Revenue",
+          "color": "" 
+          } 
+          },{
+           "variable": "rev_gov_resrev_govtrev",
+          "values": {
+           "name": "Govt Resource Revenue as % Govt Revenue",
+          "source": "Resource_Revenue",
+          "color": "a6a6a6" 
+          } 
+          },{
+           "variable": "rev2_gov_nonresrev_gdp",
+          "values": {
+           "name": "Govt Non-Resource Revenue",
+          "source": "Resource_Revenue2",
+          "color": "bcddff" 
+          } 
+          },{
+           "variable": "rev2_gov_resrev_gdp",
+          "values": {
+           "name": "Govt Resource Revenue",
+          "source": "Resource_Revenue2",
+          "color": "" 
+          } 
+          },{
+           "variable": "rev2_gov_rev_gdp",
+          "values": {
+           "name": "Govt Revenue",
+          "source": "Resource_Revenue2",
+          "color": "5a8cbf" 
+          } 
+        } ];
+
+        var varnames = {};
+        var varcolors = {};
+
+        varlookupvals.forEach(function(item, index) {
+          //console.log(item);
+          varnames[item.variable] = item.values.name;
+          varcolors[item.variable] = "#".concat(item.values.color);
+        });
+        console.log(varnames);
+        console.log(varcolors);
+        
+        
+        
+      
+    </script>
 
 
   </body>
