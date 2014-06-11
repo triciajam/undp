@@ -31,23 +31,38 @@ options(scipen=999)
 
 # "out" is the output variable
 
+
 # -----------------------------------------------------------------------------
+# COUNTRYCLASSIFICATION table
+# this is our base table - includes all the countries
+
+cclass <- read.csv("raw/Country_Classification.csv")
+str(cclass)
+
+out.ts <- expand.grid(ccode=cclass$ccode, year=c(2000:2012))
+out.ts$year <- factor(as.integer(out.ts$year))
+str(out.ts)
+#cclass <- cclass[,c(1,2)]
+out.ts <- merge(out.ts, cclass[c(1,2)], by=c("ccode"), all.x=T, all.y=F)
+str(out.ts)
+head(out.ts)
+out.ts[which(out.ts$ccode == "AFG"),]
+summary(out.ts)
+
 # Economic Indicators Table
-out <- read.csv("raw/Economic_Indicators.csv")
-out <- out[which(out$year >= 2000),]
-out$year <- factor(out$year, ordered=TRUE)
-str(out)
+ecoind <- read.csv("raw/Economic_Indicators.csv")
+#out.ts <- out.ts[which(out.ts$year >= 2000),]
+ecoind$year <- factor(ecoind$year, ordered=TRUE)
+str(ecoind)
+ecoind[duplicated(ecoind[1:3]),]
+ecoind <- ecoind[!duplicated(ecoind[1:3]),]
+str(ecoind)
 
-table(out$ccode, out$year)
-out[which(out$ccode == "LBY"),]
-out[which(out$ccode == "CZE"),]
-out[duplicated(out[1:3]),]
-
-out <- out[!duplicated(out[1:3]),]
-str(out)
+out.ts <- merge(out.ts, ecoind[c(1,2,4,6,9:12)], by=c("ccode", "year"), all.x=T, all.y=F)
 
 # -----------------------------------------------------------------------------
 # ResRev Table
+
 resrev <- read.csv("raw/Resource_Revenue.csv")
 str(resrev)
 summary(resrev)
@@ -59,11 +74,13 @@ resrev$rev_gov_resrev_govtrev <- resrev$rev_resrevrev
 resrev$rev_gov_resrev_gdp <- resrev$rev_resrevgdp
 str(resrev)
 
-out <- merge(out[,c(1,2,4,6,9:12)], resrev[c(1,3,7,8)], by=c("ccode", "year"), all.x=T, all.y=F)
-str(out)
+out.ts <- merge(out.ts, resrev[c(1,3,7,8)], by=c("ccode", "year"), all.x=T, all.y=F)
+str(out.ts)
+
 
 # -----------------------------------------------------------------------------
 # ResRev2 Table
+
 resrev2 <- read.csv("raw/Resource_Revenue2.csv")
 str(resrev2)
 summary(resrev2)
@@ -77,19 +94,19 @@ resrev2$rev2_gov_resrev_gdp <- resrev2$rev2_resrevgdp
 resrev2$rev2_gov_rev_gdp <- resrev2$rev2_govrevgdp
 table(resrev2$country, resrev2$year)
 
-out <- merge(out, resrev2[c(1,3, 12:14)], by=c("ccode", "year"), all.x=T, all.y=F)
-str(out)
+out.ts <- merge(out.ts, resrev2[c(1,3, 12:14)], by=c("ccode", "year"), all.x=T, all.y=F)
+str(out.ts)
 
 # -----------------------------------------------------------------------------
 # There are two estimates for Govt Resource Rev as % of GDP, one from the REV 
 # table and one from REV2.  
 # We take the average if we have both. If not both, then use the one we have.
 # Create a new field with 'calc_' prefix for this.
-cbind(out$rev_gov_resrev_gdp, out$rev2_gov_resrev_gdp)
-apply(cbind(out$rev_gov_resrev_gdp, out$rev2_gov_resrev_gdp), 2, function(x) length(which(is.na(x))))
-c <- ifelse(apply(out[,c(10,12)], 1, function (x) all(is.na(x))), NA, rowMeans(out[,c(10,12)], na.rm=TRUE))
-cbind(out$rev_gov_resrev_gdp, out$rev2_gov_resrev_gdp, c)
-out$calc_gov_resrev_gdp <- c
+cbind(out.ts$rev_gov_resrev_gdp, out.ts$rev2_gov_resrev_gdp)
+apply(cbind(out.ts$rev_gov_resrev_gdp, out.ts$rev2_gov_resrev_gdp), 2, function(x) length(which(is.na(x))))
+c <- ifelse(apply(out.ts[,c(11,13)], 1, function (x) all(is.na(x))), NA, rowMeans(out.ts[,c(11,13)], na.rm=TRUE))
+cbind(out.ts$rev_gov_resrev_gdp, out.ts$rev2_gov_resrev_gdp, c)
+out.ts$calc_gov_resrev_gdp <- c
 
 # -----------------------------------------------------------------------------
 # RENT table
@@ -98,25 +115,12 @@ out$calc_gov_resrev_gdp <- c
 # that year.
 rent <- read.csv("raw/Rent.csv")
 rent$year <- factor(rent$year, ordered=TRUE)
-rent$rent_total_gdp <- ifelse(apply(rent[,c(4:7)], 1, function (x) all(is.na(x))), NA, rowSums(rent[,c(4:7)], na.rm=TRUE))
+rent$calc_rent_total_gdp <- ifelse(apply(rent[,c(4:7)], 1, function (x) all(is.na(x))), NA, rowSums(rent[,c(4:7)], na.rm=TRUE))
 str(rent)
 
-out <- merge(out, rent[c(1,3, 8)], by=c("ccode", "year"), all.x=T, all.y=F)
-out$calc_govt_take <- out$calc_gov_resrev_gdp / out$rent_total_gdp
-str(out)
-
-
-# -----------------------------------------------------------------------------
-# COUNTRYCLASSIFICATION table
-# merge with this as an outer join only to insure that we have a set with all 
-# ccodes, even if no resource data for them (those will have no for those)
-# fields).  This could have been done first, would be cleaner.
-cclass <- read.csv("raw/Country_Classification.csv")
-str(cclass)
-
-out <- merge(out, cclass[c(1,2)], by=c("ccode"), all.x=T, all.y=T)
-str(out)
-
+out.ts <- merge(out.ts, rent[c(1,3, 8)], by=c("ccode", "year"), all.x=T, all.y=F)
+out.ts$calc_govt_take <- out.ts$calc_gov_resrev_gdp / out.ts$calc_rent_total_gdp
+str(out.ts)
 
 
 # -----------------------------------------------------------------------------
@@ -129,6 +133,8 @@ str(out)
 
 # -----------------------------------------------------------------------------
 # COUNTRYCLASSIFICATION table
+# again, use our base table so we are sure we have all the countries
+
 cclass <- read.csv("raw/Country_Classification.csv")
 str(cclass)
 cclass <- cclass[,c(1:8,10)]
@@ -141,22 +147,22 @@ str(resrev)
 
 # -----------------------------------------------------------------------------
 # Merge the two 
-out.noTimeSeries <- merge(cclass, resrev[,c(1,6)], by=c("ccode"), all.x=T);
-out.noTimeSeries <- out.noTimeSeries[!duplicated(out.noTimeSeries),]
-table(out.noTimeSeries$ccode)
-out.noTimeSeries[which(out.noTimeSeries$ccode == "AGO"),]
-out.noTimeSeries$class_opec = factor(out.noTimeSeries$class_opec);
-out.noTimeSeries$class_hipc = factor(out.noTimeSeries$class_hipc);
-out.noTimeSeries$class_ldc = factor(out.noTimeSeries$class_ldc);
-out.noTimeSeries$name <- out.noTimeSeries$country
-out.noTimeSeries <- out.noTimeSeries[,-2]
-str(out.noTimeSeries)
+out.no.ts <- merge(cclass, resrev[,c(1,6)], by=c("ccode"), all.x=T);
+out.no.ts <- out.no.ts[!duplicated(out.no.ts),]
+table(out.no.ts$ccode)
+out.no.ts[which(out.no.ts$ccode == "AGO"),]
+out.no.ts$class_opec = factor(out.no.ts$class_opec);
+out.no.ts$class_hipc = factor(out.no.ts$class_hipc);
+out.no.ts$class_ldc = factor(out.no.ts$class_ldc);
+out.no.ts$name <- out.no.ts$country
+out.no.ts <- out.no.ts[,-2]
+str(out.no.ts)
 
 # -----------------------------------------------------------------------------
 # This makes a flag indicating whether or not we have any resource data at all
 # for a given country.  This uses the ouput from Step 1.
-tmpByCountry <- split(out, out$ccode)
-tmpDataFlag <- lapply(tmpByCountry, function(x) all(is.na(melt(x[,c(9:16)])$value)))
+tmpByCountry <- split(out.ts, out.ts$ccode)
+tmpDataFlag <- lapply(tmpByCountry, function(x) all(is.na(melt(x[,c(10:17)])$value)))
 tmpDataFlag <- as.data.frame(unlist(tmpDataFlag))
 colnames(tmpDataFlag) = c("haveResourceStats")
 tmpDataFlag$haveResourceStats <- ifelse(tmpDataFlag=="TRUE", 0,1) 
@@ -167,7 +173,7 @@ str(tmpDataFlag)
 
 # -----------------------------------------------------------------------------
 # Merges our new flag with the non-time-series data set
-out.noTimeSeries <- merge(out.noTimeSeries, tmpDataFlag, by=c("ccode"), all.x=T, all.y=F)
+out.no.ts <- merge(out.no.ts, tmpDataFlag, by=c("ccode"), all.x=T, all.y=F)
 
 
 # -----------------------------------------------------------------------------
@@ -181,7 +187,7 @@ a <- table(prod$ccode, prod$max.prod.source)
 a <- dcast(as.data.frame(a), Var1 ~ Var2)
 a$prim_prod <- names(a[,2:5])[apply(a[2:5],1,which.max)]
 a$ccode <- a$Var1
-out.noTimeSeries <- merge(out.noTimeSeries, a[,c(7,8)], by=c("ccode"), all.x=T, all.y=F)
+out.no.ts <- merge(out.no.ts, a[,c(7,8)], by=c("ccode"), all.x=T, all.y=F)
 
 
 # -----------------------------------------------------------------------------
@@ -194,7 +200,8 @@ a <- table(rent$ccode, rent$max.rent.source)
 a <- dcast(as.data.frame(a), Var1 ~ Var2)
 a$prim_rent <- names(a[,2:5])[apply(a[2:5],1,which.max)]
 a$ccode <- a$Var1
-out.noTimeSeries <- merge(out.noTimeSeries, a[,c(6,7)], by=c("ccode"), all.x=T, all.y=F)
+out.no.ts <- merge(out.no.ts, a[,c(6,7)], by=c("ccode"), all.x=T, all.y=F)
+str(out.no.ts)
 
 
 # -----------------------------------------------------------------------------
@@ -203,10 +210,10 @@ out.noTimeSeries <- merge(out.noTimeSeries, a[,c(6,7)], by=c("ccode"), all.x=T, 
 # Send all this to JSON encoder.  
 # First split by country.
 
-tmpByCountry <- split(out, out$ccode)
+tmpByCountry <- split(out.ts, out.ts$ccode)
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:16])), .na="null", digits=14))
-#jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.noTimeSeries[which(out.noTimeSeries$ccode == x[1,1]),],stat=(x[,3:16])), .na="null", digits=14))
-jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.noTimeSeries[which(out.noTimeSeries$ccode == x[1,1]),],macroStats=(x[,3:8]), resourceStats=(x[,c(9,11,13,14,15,16)])), .na="null", digits=14))
+#jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],stat=(x[,3:16])), .na="null", digits=14))
+jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:17)])), .na="null", digits=14))
 jsonString <- paste("[", paste(jsonString, collapse=","), "]")
 
 

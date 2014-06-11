@@ -99,12 +99,28 @@
         #chart2 .c3-line-rev2_gov_rev_gdp {
           stroke-width: 4px;
         }
-        #chart2 .c3-line-rent_total_gdp {
+        #chart2 .c3-line-calc_rent_total_gdp {
           stroke-width: 4px;
         }
         #chart2 .c3-line-calc_govt_take {
           stroke-width: 0px;
         }
+        
+        
+    /*-------------------------------------------------------------------------        
+      Group Comparison Small Multiples
+      -----------------------------------------------------------------------*/  
+        
+        .smallmult line {
+          fill: none;
+          stroke: #666;
+          stroke-width: 1.5px;
+        }
+        
+        .area {
+          fill: #e7e7e7;
+        }
+        
     </style>
 
    
@@ -173,7 +189,7 @@
           Fill countries by<br> 
           <div class="btn-group btn-group-xs btn-group-vertical">
                 <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('calc_govt_take')">Government Take</button>
-                <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('rent_total_gdp')">Total Rent</button>
+                <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('calc_rent_total_gdp')">Total Rent</button>
                 <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('calc_gov_resrev_gdp')">Government Resource Revenue</button>               
           </div>
           Fill colors are based on an average of yearly values.<br> 
@@ -190,6 +206,12 @@
           More visualizations here
         </div>       
       </div>
+      <div class="row">      
+        <div class="col-md-12 text-left">
+          <div id="smallmult"></div>
+        </div>       
+      </div>
+      
 
     <!-- DEV TEAM NOTES
     
@@ -424,7 +446,7 @@
                   data: {
                     x: 'x',
                     columns: $scope.country_resource_stat_data_arr[$scope.current_country_id],
-                    axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', rent_total_gdp : 'y', calc_govt_take: 'y2' },
+                    axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', calc_rent_total_gdp : 'y', calc_govt_take: 'y2' },
                     type: 'line',
                     types: {
                         calc_govt_take: 'area',
@@ -490,6 +512,8 @@
           
           var a = getCountriesInGroup($scope.country_data_json, "prim_rent", "rent_oil");
           //var b = getCountriesInGroup($scope.country_data_json[a], "class_income", "High income");
+          
+          $scope.setUpSmallMultiples();
           
       }).error(function(err){
           throw(err);                     
@@ -580,6 +604,38 @@
         
       };
 
+      $scope.setUpSmallMultiples = function() { 
+    
+        // I need each level to have the format
+        // key: factorLevel name
+        // values: Array with sub-objects that have properties date and value.        
+        // Small Multiples Code
+
+        // step 0a = Determine which factor to use - primary production?  region?
+        // step 0b = Determine which stat to use - govt take?        
+        // step 1 = get countries for each "level" of that factor
+        // step 2 = using those countries, get an average value of the stat for each year for factor levels 
+        // step 3 = put data into proper format
+        
+        var cstat = "calc_govt_take";
+        var cfactor = "class_income";
+        
+        var highinc = getCountriesInGroup($scope.country_data_json, cfactor, "High income");
+        var umidinc = getCountriesInGroup($scope.country_data_json, cfactor, "Upper middle income");
+        var lmidinc = getCountriesInGroup($scope.country_data_json, cfactor, "Lower middle income");
+        var lowinc = getCountriesInGroup($scope.country_data_json, cfactor, "Low income");
+
+        var highincdata = [];
+        highinc.forEach(function(item, index) {
+          //console.log(item);
+          //console.log($scope.country_resource_stat_data_json[item]);
+          //console.log($scope.country_resource_stat_data_json[item][cstat]);
+          highincdata.push($scope.country_resource_stat_data_json[item][cstat]);
+        });
+        console.log(highincdata);
+        console.log(d3.transpose(highincdata));
+      };
+
       // -------------------------------------------------------------------------      
       // Helper functions to manage user clicks.
       // -------------------------------------------------------------------------                
@@ -647,7 +703,7 @@
            "variable": "calc_govt_take",
           "values": {
            "name": "Govt Take",
-          "source": "Calculated: calc_gov_resrev_gdp / rent_total_gdp",
+          "source": "Calculated: calc_gov_resrev_gdp / calc_rent_total_gdp",
           "color": "a6a6a6",
           } 
           },{
@@ -693,7 +749,7 @@
           "color": "" 
           } 
           },{
-           "variable": "rent_total_gdp",
+           "variable": "calc_rent_total_gdp",
           "values": {
            "name": "Total Rents",
           "source": "Calculated from RENT: sum of RENT$rent_min, RENT$rent_oil, RENT$rent_gas",
@@ -752,6 +808,88 @@
       
     </script>
 
+    <script>
+    
+ 
+        /*
+        var margin = {top: 8, right: 10, bottom: 2, left: 10},
+            width = 960 - margin.left - margin.right,
+            height = 69 - margin.top - margin.bottom;
+        
+        var parseDate = d3.time.format(%Y").parse;
+        
+        var x = d3.time.scale()
+            .range([0, width]);
+        
+        var y = d3.scale.linear()
+            .range([height, 0]);
+        
+        var area = d3.svg.area()
+            .x(function(d) { return x(d.date); })
+            .y0(height)
+            .y1(function(d) { return y(d.price); });
+        
+        var line = d3.svg.line()
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.price); });
+        
+        d3.csv("stock.csv", type, function(error, data) {
+        
+          // Nest data by symbol.
+          var symbols = d3.nest()
+              .key(function(d) { return d.symbol; })
+              .entries(data);
+          
+          console.log(symbols);
+          // Compute the maximum price per symbol, needed for the y-domain.
+          symbols.forEach(function(s) {
+            s.maxPrice = d3.max(s.values, function(d) { return d.price; });
+          });
+          console.log(symbols);
+          
+          // Compute the minimum and maximum date across symbols.
+          // We assume values are sorted by date.
+          x.domain([
+            d3.min(symbols, function(s) { return s.values[0].date; }),
+            d3.max(symbols, function(s) { return s.values[s.values.length - 1].date; })
+          ]);
+        
+          // Add an SVG element for each symbol, with the desired dimensions and margin.
+          var svg = d3.select("body").selectAll("svg")
+              .data(symbols)
+            .enter().append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        
+          // Add the area path elements. Note: the y-domain is set per element.
+          svg.append("path")
+              .attr("class", "area")
+              .attr("d", function(d) { y.domain([0, d.maxPrice]); return area(d.values); });
+        
+          // Add the line path elements. Note: the y-domain is set per element.
+          svg.append("path")
+              .attr("class", "line")
+              .attr("d", function(d) { y.domain([0, d.maxPrice]); return line(d.values); });
+        
+          // Add a small label for the symbol name.
+          svg.append("text")
+              .attr("x", width - 6)
+              .attr("y", height - 6)
+              .style("text-anchor", "end")
+              .text(function(d) { return d.key; });
+        });
+        
+        function type(d) {
+          d.price = +d.price;
+          d.date = parseDate(d.date);
+          return d;
+        }
+        */
+        
+    
+    </script>
 
   </body>
 </html>
