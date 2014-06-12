@@ -221,14 +221,29 @@
         </div>       
       </div>
       <div class="row">   
-        <div class="col-md-4 text-left"></div>     
+        <div class="col-md-2 text-left">
+          <h3>Groups</h3>
+          <div class="btn-group btn-group-xs btn-group-vertical">
+                <button class="btn btn-mini mybtn" ng-click="updateGroupStat('calc_govt_take')">Government Take</button>
+                <button class="btn btn-mini mybtn" ng-click="updateGroupStat('calc_rent_total_gdp')">Total Rent</button>
+                <button class="btn btn-mini mybtn" ng-click="updateGroupStat('calc_gov_resrev_gdp')">Government Resource Revenue</button>               
+          </div>          
+        </div>     
         <div class="col-md-2 text-left">
           <div id="smallmult1"></div>
         </div>       
         <div class="col-md-2 text-left">
           <div id="smallmult2"></div>
         </div>       
-        <div class="col-md-4 text-left"></div>
+        <div class="col-md-2 text-left">
+          <div id="smallmult3"></div>
+        </div>       
+        <div class="col-md-2 text-left">
+          <div id="smallmult4"></div>
+        </div>       
+        <div class="col-md-2 text-left">
+          <div id="smallmult5"></div>
+        </div>       
       </div>
       
 
@@ -532,8 +547,8 @@
           //var a = getCountriesInGroup($scope.country_data_json, "prim_rent", "rent_oil");
           //var b = getCountriesInGroup($scope.country_data_json[a], "class_income", "High income");
 
-         //var cstat = "calc_govt_take";
-        var cstat = "calc_rent_total_gdp"; //
+         var cstat = "calc_govt_take";
+        //var cstat = "calc_rent_total_gdp"; //
         //var cstat = "calc_gov_resrev_gdp"; //calc_gov_resrev_gdp
         //var cfactor = "class_income";
         //var clevels = ["High income", "Upper middle income","Lower middle income", "Low income"];        
@@ -544,8 +559,11 @@
         //var cfactor = "prim_prod";
         //var clevels = ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"];
 
-          $scope.setUpSmallMultiples("#smallmult1", "calc_rent_total_gdp", "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
-          $scope.setUpSmallMultiples("#smallmult2", "calc_rent_total_gdp", "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
+          $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
+          $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
+          $scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
+          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
+          $scope.setUpSmallMultiples("#smallmult5", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);
           
           
           
@@ -582,6 +600,15 @@
       // on the datamap to
       // highlight or fill by a different variable
       // -------------------------------------------------------------------------                
+
+      $scope.updateGroupStat = function(cstat) {
+        console.log("insmall");
+          $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
+          $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
+          $scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
+          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
+          $scope.setUpSmallMultiples("#smallmult5", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);        
+      }
 
       $scope.updateOutlinesByGroup = function(group, value) {
         console.log("finding countries in group:" + group + " with value: " + value);
@@ -734,7 +761,7 @@
         //var h = d3.select("#smallmult").height;
         //console.log("h " + h + "w " + w);     
              
-        var margin = {top: 10, right: 10, bottom: 11, left: 10},
+        var margin = {top: 10, right: 10, bottom: 15, left: 10},
             width = 190 - margin.left - margin.right,
             height = 60 - margin.top - margin.bottom;
         
@@ -779,7 +806,7 @@
           });
           
           var max = d3.max(maxvals);
-          graphobjs.forEach(function(level) {
+          graphobjs.forEach(function(level, index) {
             var cleanArray = level.values.filter( function(elem) { return elem.value != null } );
             level.numvals = cleanArray.length;
             level.hasvals = level.numvals != 0;
@@ -789,6 +816,7 @@
             level.lastX = (level.hasvals ? cleanArray[cleanArray.length - 1].time : "");
             // from before            
             level.maxval = max;
+            level.levelmax = maxvals[index];
             //maxvals.push(d3.max(level.values, function(d) { return d.value; });
           });
           //cleanArray = arr.filter( function(elem) { return elem !== null } )
@@ -803,9 +831,12 @@
             d3.max(graphobjs, function(s) { return s.values[s.values.length - 1].time; })
           ]);
         
+          d3.select(elem).selectAll("*").remove();
+        
           //console.log(x.domain());
           // Add an SVG element for each symbol, with the desired dimensions and margin.
-          var svg = d3.select(elem).selectAll("svg")
+          var svg = d3.select(elem)
+              .selectAll("svg")
               .data(graphobjs)
             .enter().append("svg")
               .attr("width", width + margin.left + margin.right)
@@ -837,8 +868,8 @@
               .text(function(d) { return d.key + "(n="+ d3.round(d.avg_n) + ")";  });          
           // values
           svg.append("text")
-              .attr("x", function(d) { return x(d.lastX) - 6 })
-              .attr("y", function(d) { return y(d.lastVal) - 3; })
+              .attr("x", function(d) { return x(d.lastX) - 3 })
+              .attr("y", function(d) { return (d.lastVal > .3*d.maxval) ? y(d.lastVal) - 3 : y(.3*d.maxval) - 3; })
               .attr("font-family", "sans-serif")
               .attr("font-size", "9px")
               .style("text-anchor", "end")
@@ -846,7 +877,7 @@
               .text(function(d) { return d3.round(d.lastVal,2); });  // use the filter !=null here
           svg.append("text")
               .attr("x", function(d) { return x(d.firstX) + margin.left })
-              .attr("y", function(d) { return y(d.firstVal) - 3; })
+              .attr("y", function(d) { return (d.firstVal > .3*d.maxval) ? y(d.firstVal) - 3 : y(.3*d.maxval) - 3; }) // FIX THIS
               .attr("font-family", "sans-serif")
               .attr("font-size", "9px")
               .style("text-anchor", "middle")
@@ -854,13 +885,13 @@
               .text(function(d) { return d3.round(d.firstVal,2); });
           // years
           svg.append("text")
-              .attr("x", function(d) { return x(d.lastX) - 6 })
+              .attr("x", function(d) { return x(d.lastX) - 3 })
               .attr("y", function(d) { return height-3; })
               .attr("font-family", "sans-serif")
               .attr("font-size", "9px")
               .style("text-anchor", "end")
               .attr("font-color", varcolors[cstat])
-              .text(function(d) { return d3.time.format("%Y")(d.lastX); });  // use the filter !=null here
+              .text(function(d) { return (d.hasvals) ? d3.time.format("%Y")(d.lastX) : ""; });  // use the filter !=null here
           svg.append("text")
               .attr("x", function(d) { return x(d.firstX) + margin.left })
               .attr("y", function(d) { return height - 3; })
@@ -868,7 +899,7 @@
               .attr("font-size", "9px")
               .style("text-anchor", "middle")
               .attr("font-color", varcolors[cstat])
-              .text(function(d) { return d3.time.format("%Y")(d.firstX); });
+              .text(function(d) { return (d.hasvals) ? d3.time.format("%Y")(d.firstX) : ""; });
  
               
       }
@@ -921,7 +952,7 @@
           //console.log(data[ccode][group]);
           if(data[ccode][group] == value) out.push(ccode);
         });
-        console.log(out);
+        //console.log(out);
         return out;
       }
       
@@ -944,14 +975,14 @@
           "values": {
            "name": "Govt Resource Revenue",
           "source": "Calculated: avg of REV$rev_gov_resrev_gdp and REV2$rev2_gov_resrev_gdp",
-          "color": "4daf4a" 
+          "color": "1f77b4" 
           } 
           },{
            "variable": "calc_govt_take",
           "values": {
            "name": "Govt Take",
           "source": "Calculated: calc_gov_resrev_gdp / calc_rent_total_gdp",
-          "color": "377eb8", //#a6a6a6 ff7878
+          "color": "8c564b", //#a6a6a6 ff7878
           } 
           },{
            "variable": "econ_gdpcon",
@@ -1000,7 +1031,7 @@
           "values": {
            "name": "Total Rents",
           "source": "Calculated from RENT: sum of RENT$rent_min, RENT$rent_oil, RENT$rent_gas",
-          "color": "e41a1c" 
+          "color": "d62728" 
           } 
           },{
            "variable": "rev_gov_resrev_gdp",
@@ -1014,14 +1045,14 @@
           "values": {
            "name": "Govt Resource Revenue as % Govt Revenue",
           "source": "Resource_Revenue",
-          "color": "984ea3" 
+          "color": "2ca02c" 
           } 
           },{
            "variable": "rev2_gov_nonresrev_gdp",
           "values": {
            "name": "Govt Non-Resource Revenue",
           "source": "Resource_Revenue2",
-          "color": "ff7f00" 
+          "color": "17becf" 
           } 
           },{
            "variable": "rev2_gov_resrev_gdp",
@@ -1035,27 +1066,28 @@
           "values": {
            "name": "Govt Revenue",
           "source": "Resource_Revenue2",
-          "color": "ffff33" 
+          "color": "bcbd22" 
           } 
         } ];
 
         var varnames = {};
         var varcolors = {};
 
-        var c = d3.scale.category10();
-        var dataAvailable = c(0);
+        //var c = d3.scale.category10();
+        //var dataAvailable = c(0);
+        var dataAvailable = "#ff7f0e";
         varlookupvals.forEach(function(item, index) {
           //console.log(item);
           varnames[item.variable] = item.values.name;
-          //varcolors[item.variable] = "#".concat(item.values.color);
-          varcolors[item.variable] = c(item.variable);
+          varcolors[item.variable] = "#".concat(item.values.color);
+          //varcolors[item.variable] = c(item.variable);
         });
         //console.log(d3.keys(varnames));
         console.log(varcolors);
         
                         
-        console.log(c("calc_total_rent_gdp"));
-        console.log(c("calc_govt_take"));
+        //console.log(c("calc_total_rent_gdp"));
+        //console.log(c("calc_govt_take"));
         
       
     </script>
