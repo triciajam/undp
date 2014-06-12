@@ -104,21 +104,21 @@
         }
         #chart2 .c3-line-calc_govt_take {
           stroke-width: 0px;
-        }
+        } 
         
         
     /*-------------------------------------------------------------------------        
       Group Comparison Small Multiples
       -----------------------------------------------------------------------*/  
         
-        .smallmult line {
+        #smallmult .line {
           fill: none;
-          stroke: #666;
+          /*stroke: #666;*/
           stroke-width: 1.5px;
         }
         
-        .area {
-          fill: #e7e7e7;
+        #smallmult .area {
+          /*fill: #e7e7e7;*/
         }
         
     </style>
@@ -618,23 +618,181 @@
         // step 3 = put data into proper format
         
         var cstat = "calc_govt_take";
-        var cfactor = "class_income";
+        //var cfactor = "class_income";
+        //var clevels = ["High income", "Upper middle income","Lower middle income", "Low income"];        
+        //var cfactor = "class_opec";
+        //var clevels = ["0", "1"];
+        var cfactor = "class_reg";
+        var clevels = ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"];
         
-        var highinc = getCountriesInGroup($scope.country_data_json, cfactor, "High income");
-        var umidinc = getCountriesInGroup($scope.country_data_json, cfactor, "Upper middle income");
-        var lmidinc = getCountriesInGroup($scope.country_data_json, cfactor, "Lower middle income");
-        var lowinc = getCountriesInGroup($scope.country_data_json, cfactor, "Low income");
-
-        var highincdata = [];
-        highinc.forEach(function(item, index) {
-          //console.log(item);
-          //console.log($scope.country_resource_stat_data_json[item]);
-          //console.log($scope.country_resource_stat_data_json[item][cstat]);
-          highincdata.push($scope.country_resource_stat_data_json[item][cstat]);
+        var countriesInLevels = [];        
+        clevels.forEach(function(level, index) {
+            countriesInLevels.push(getCountriesInGroup($scope.country_data_json, cfactor, level));
         });
-        console.log(highincdata);
-        console.log(d3.transpose(highincdata));
-      };
+        console.log("countriesInLevels");
+        console.log(countriesInLevels);
+        
+        var countryDataForLevels = [];
+        var statDataInLevels = [];              
+        countriesInLevels.forEach(function(levelsArray, index) {
+          var countryData = [];
+          levelsArray.forEach(function(country, index) {
+              countryData.push($scope.country_resource_stat_data_json[country][cstat]);
+          });
+          statDataInLevels.push(countryData);          
+        });        
+        console.log("statDataInLevels");
+        console.log(statDataInLevels);
+        
+        var yearlyAvgForLevels = [];        
+        statDataInLevels.forEach(function(levelsArray, index) {
+          var years = d3.transpose(levelsArray);
+          var yearData = [];
+          years.forEach(function(year, index) {
+            yearData.push(d3.mean(year));
+          });
+          yearlyAvgForLevels.push(yearData);
+        });
+        console.log("yearlyAvgForLevels");
+        console.log(yearlyAvgForLevels);
+
+        // parse function only takes a string
+        var time = ["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011"];
+        var parseDate = d3.time.format("%Y").parse;
+       
+        graphobjs = [];
+        yearlyAvgForLevels.forEach(function(levelsArray, lindex) {
+          var l = {};
+          l.key = clevels[lindex];
+          l.values = [];
+          time.forEach(function(year, yindex) {
+            var y = {};
+            y.time = parseDate(time[yindex]);
+            y.value = levelsArray[yindex];
+            l.values.push(y);
+          })
+          graphobjs.push(l);
+        });
+        console.log("graphobjs");
+        console.log(graphobjs);
+              
+        var margin = {top: 10, right: 10, bottom: 2, left: 10},
+            width = 960 - margin.left - margin.right,
+            height = 69 - margin.top - margin.bottom;
+        
+        //console.log("parseDate");
+        console.log(parseDate("2000"));
+        //console.log(parseDate(2000));
+        
+        
+        var x = d3.time.scale()
+            .range([0, width]);
+        
+        var y = d3.scale.linear()
+            .range([height, 0]);
+        
+        var area = d3.svg.area()
+            .x(function(d) { return x(d.time); })
+            .y0(height)
+            .y1(function(d) { return y(d.value); });
+        
+        var line = d3.svg.line()
+            .x(function(d) { return x(d.time); })
+            .y(function(d) { return y(d.value); });
+ /*       
+        d3.csv("stock.csv", type, function(error, data) {
+        
+          console.log(data);
+        
+          // Nest data by symbol.
+          var symbols = d3.nest()
+              .key(function(d) { return d.symbol; })
+              .entries(data);
+          
+          console.log(symbols);
+          // Compute the maximum price per symbol, needed for the y-domain.
+          
+  */      maxvals = [];  
+          graphobjs.forEach(function(level) {
+            //level.maxval = d3.max(level.values, function(d) { return d.value; });
+            maxvals.push(d3.max(level.values, function(d) { return d.value; }));
+          });
+          var max = d3.max(maxvals);
+          graphobjs.forEach(function(level) {
+            level.maxval = max;
+            //maxvals.push(d3.max(level.values, function(d) { return d.value; });
+          });
+          
+          
+          console.log(graphobjs);
+          
+          
+          // Compute the minimum and maximum date across symbols.
+          // We assume values are sorted by date.
+          x.domain([
+            d3.min(graphobjs, function(s) { return s.values[0].time; }),
+            d3.max(graphobjs, function(s) { return s.values[s.values.length - 1].time; })
+          ]);
+        
+          console.log(x.domain());
+          // Add an SVG element for each symbol, with the desired dimensions and margin.
+          var svg = d3.select("#smallmult").selectAll("svg")
+              .data(graphobjs)
+            .enter().append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        
+          // Add the area path elements. Note: the y-domain is set per element.
+          svg.append("path")
+              .attr("class", "area")
+              .attr("d", function(d) { y.domain([0, d.maxval]); return area(d.values); })
+              .attr("fill", varcolors[cstat])
+              .attr("fill-opacity", .3);
+              
+        
+          // Add the line path elements. Note: the y-domain is set per element.
+          svg.append("path")
+              .attr("class", "line")
+              .attr("d", function(d) { y.domain([0, d.maxval]); return line(d.values); })
+              .attr("stroke", varcolors[cstat]);
+        
+          // Add a small label for the symbol name.
+          svg.append("text")
+              .attr("x", width - 6)
+              .attr("y", height - 6)
+              .style("text-anchor", "end")
+              .text(function(d) { return d.key; });
+              
+          svg.append("text")
+              .attr("x", width - 6)
+              .attr("y", function(d) { return y(d.values[d.values.length - 1].value) - 3; })
+              .attr("font-family", "sans-serif")
+              .attr("font-size", "9px")
+              .style("text-anchor", "end")
+              .attr("font-color", varcolors[cstat])
+              .text(function(d) { return d3.round(d.values[d.values.length - 1].value,2); });
+             svg.append("text")
+              .attr("x", margin.left)
+              .attr("y", function(d) { return y(d.values[0].value) - 3; })
+              .attr("font-family", "sans-serif")
+              .attr("font-size", "9px")
+              .style("text-anchor", "middle")
+              .attr("font-color", varcolors[cstat])
+              .text(function(d) { return d3.round(d.values[0].value,2); });
+              
+      }
+        /*
+        function type(d) {
+          d.price = +d.price;
+          d.date = parseDate(d.date);
+          return d;
+        }
+        */
+      
+ 
+      
 
       // -------------------------------------------------------------------------      
       // Helper functions to manage user clicks.
@@ -704,7 +862,7 @@
           "values": {
            "name": "Govt Take",
           "source": "Calculated: calc_gov_resrev_gdp / calc_rent_total_gdp",
-          "color": "a6a6a6",
+          "color": "a6a6a6", //#a6a6a6 ff7878
           } 
           },{
            "variable": "econ_gdpcon",
