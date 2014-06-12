@@ -206,10 +206,12 @@
           More visualizations here
         </div>       
       </div>
-      <div class="row">      
-        <div class="col-md-12 text-left">
+      <div class="row">   
+        <div class="col-md-2 text-left"></div>     
+        <div class="col-md-8 text-left">
           <div id="smallmult"></div>
         </div>       
+        <div class="col-md-2 text-left"></div>
       </div>
       
 
@@ -622,8 +624,10 @@
         //var clevels = ["High income", "Upper middle income","Lower middle income", "Low income"];        
         //var cfactor = "class_opec";
         //var clevels = ["0", "1"];
-        var cfactor = "class_reg";
-        var clevels = ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"];
+        //var cfactor = "class_reg";
+        //var clevels = ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"];
+        var cfactor = "prim_prod";
+        var clevels = ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"];
         
         var countriesInLevels = [];        
         clevels.forEach(function(level, index) {
@@ -675,13 +679,17 @@
         });
         console.log("graphobjs");
         console.log(graphobjs);
-              
+        
+        var w = d3.select("#smallmult").width;
+        var h = d3.select("#smallmult").height;
+        console.log("h " + h + "w " + w);     
+             
         var margin = {top: 10, right: 10, bottom: 2, left: 10},
-            width = 960 - margin.left - margin.right,
-            height = 69 - margin.top - margin.bottom;
+            width = 400 - margin.left - margin.right,
+            height = 60 - margin.top - margin.bottom;
         
         //console.log("parseDate");
-        console.log(parseDate("2000"));
+        //console.log(parseDate("2000"));
         //console.log(parseDate(2000));
         
         
@@ -692,11 +700,13 @@
             .range([height, 0]);
         
         var area = d3.svg.area()
+            .defined(function(d) { return d.value != null; })
             .x(function(d) { return x(d.time); })
             .y0(height)
             .y1(function(d) { return y(d.value); });
         
         var line = d3.svg.line()
+            .defined(function(d) { return d.value != null; })
             .x(function(d) { return x(d.time); })
             .y(function(d) { return y(d.value); });
  /*       
@@ -717,12 +727,21 @@
             //level.maxval = d3.max(level.values, function(d) { return d.value; });
             maxvals.push(d3.max(level.values, function(d) { return d.value; }));
           });
+          
           var max = d3.max(maxvals);
           graphobjs.forEach(function(level) {
+            var cleanArray = level.values.filter( function(elem) { console.log(elem); return elem.value != null } );
+            level.numvals = cleanArray.length;
+            level.hasvals = level.numvals != 0;
+            level.firstVal = (level.hasvals ? cleanArray[0].value  :  "");
+            level.firstX = (level.hasvals ? cleanArray[0].time  :  "");
+            level.lastVal = (level.hasvals ? cleanArray[cleanArray.length - 1].value : "");            
+            level.lastX = (level.hasvals ? cleanArray[cleanArray.length - 1].time : "");
+            // from before            
             level.maxval = max;
             //maxvals.push(d3.max(level.values, function(d) { return d.value; });
           });
-          
+          //cleanArray = arr.filter( function(elem) { return elem !== null } )
           
           console.log(graphobjs);
           
@@ -734,7 +753,7 @@
             d3.max(graphobjs, function(s) { return s.values[s.values.length - 1].time; })
           ]);
         
-          console.log(x.domain());
+          //console.log(x.domain());
           // Add an SVG element for each symbol, with the desired dimensions and margin.
           var svg = d3.select("#smallmult").selectAll("svg")
               .data(graphobjs)
@@ -762,25 +781,27 @@
           svg.append("text")
               .attr("x", width - 6)
               .attr("y", height - 6)
+              .attr("font-family", "sans-serif")
+              .attr("font-size", "10px")
               .style("text-anchor", "end")
-              .text(function(d) { return d.key; });
+              .text(function(d) { return d.key  });
               
           svg.append("text")
-              .attr("x", width - 6)
-              .attr("y", function(d) { return y(d.values[d.values.length - 1].value) - 3; })
+              .attr("x", function(d) { return x(d.lastX) - 6 })
+              .attr("y", function(d) { return y(d.lastVal) - 3; })
               .attr("font-family", "sans-serif")
               .attr("font-size", "9px")
               .style("text-anchor", "end")
               .attr("font-color", varcolors[cstat])
-              .text(function(d) { return d3.round(d.values[d.values.length - 1].value,2); });
+              .text(function(d) { return d3.round(d.lastVal,2); });  // use the filter !=null here
              svg.append("text")
-              .attr("x", margin.left)
-              .attr("y", function(d) { return y(d.values[0].value) - 3; })
+              .attr("x", function(d) { return x(d.firstX) + margin.left })
+              .attr("y", function(d) { return y(d.firstVal) - 3; })
               .attr("font-family", "sans-serif")
               .attr("font-size", "9px")
               .style("text-anchor", "middle")
               .attr("font-color", varcolors[cstat])
-              .text(function(d) { return d3.round(d.values[0].value,2); });
+              .text(function(d) { return d3.round(d.firstVal,2); });
               
       }
         /*
