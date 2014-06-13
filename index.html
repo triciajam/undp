@@ -57,7 +57,7 @@
       -----------------------------------------------------------------------*/  
 
         .grouppaths {
-          stroke: #bf8c5a !important; 
+          stroke: #000000 !important; /*bf8c5a */
           stroke-width: 1.8 !important;
           stroke-opacity: 1 !important;  
         }
@@ -648,12 +648,30 @@
             vals.push(countryVals[key]);
           }            
           
+          var baseColor = d3.rgb(varcolors[statName]);
+          var darkest = baseColor.darker().darker();
+          var lightest = baseColor.brighter().brighter().brighter();
+          console.log(darkest.toString());
+          console.log(lightest.toString());
+          
+          
           var color = d3.scale.linear()
                        .domain([d3.min(vals),d3.max(vals)])
-                       .range(["#ffead6", "#faa632"]); //faa632 #ffbb78 b28254
+                       .range([lightest.toString(), darkest.toString()]); //faa632 #ffbb78 b28254
           
+          //             .range(["#ffead6", "#faa632"]); //faa632 #ffbb78 b28254
+         
+         
+          console.log("d3.min(vals),d3.max(vals))");
+          console.log(d3.min(vals) + ",  " + d3.max(vals));
+          console.log("color obj");
+          console.log(color());
+         
           var chloroVals = {};
           for(key in countryVals) {
+            //console.log("Key" + key + " is = " + countryVals[key]);
+            //console.log("color" + ": " + color(countryVals[key]));
+            
             if (countryVals[key] == null) {
                 chloroVals[key] = "#eee";
             }
@@ -762,7 +780,7 @@
         //console.log("h " + h + "w " + w);     
              
         var margin = {top: 10, right: 10, bottom: 15, left: 10},
-            width = 190 - margin.left - margin.right,
+            width = 160 - margin.left - margin.right,
             height = 60 - margin.top - margin.bottom;
         
         //console.log("parseDate");
@@ -1052,7 +1070,7 @@
           "values": {
            "name": "Govt Non-Resource Revenue",
           "source": "Resource_Revenue2",
-          "color": "17becf" 
+          "color": "9467bd" 
           } 
           },{
            "variable": "rev2_gov_resrev_gdp",
@@ -1075,7 +1093,7 @@
 
         //var c = d3.scale.category10();
         //var dataAvailable = c(0);
-        var dataAvailable = "#ff7f0e";
+        var dataAvailable = "#ffbb78";
         varlookupvals.forEach(function(item, index) {
           //console.log(item);
           varnames[item.variable] = item.values.name;
