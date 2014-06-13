@@ -184,40 +184,42 @@
     <!-- Set up our Bootstrap Layout Grid -->
     <div class="container">
       <div class="row">
-        <div class="col-md-2 text-left">
+        <div class="col-md-4 text-left">
           Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
-           Click on a country to see its data below. 
-           <h5>See Groups</h5>
-           
-             <div class="btn-group btn-group-xs">
-                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Low income')">Low</button>
-                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Lower middle income')">LowMid</button>
-                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Upper middle income')">UprMid</button>
-                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'High income')">High</button>
-                <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('default', 'default')">Reset</button>
+           Click on a country to see its data below. Filled countries have resource data available.
+           <div class="row">
+              <div class="col-md-6 text-left">
+                 
+                 <h5>Find Groups</h5>
+                 
+                   <div class="btn-group btn-group-xs">
+                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Low income')">Low</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Lower middle income')">LowMid</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Upper middle income')">UprMid</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'High income')">High</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('default', 'default')">Reset</button>
+                  </div>  
+              </div>
+              <div class="col-md-6 text-left">
+                <h5>Compare Statistics</h5>
+                Fill colors are based on an average of yearly values from 2000-2011. Darker colors indicating higher values.<br>                 
+                Fill countries by<br> 
+                <div class="btn-group btn-group-xs btn-group-vertical">
+                      <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_govt_take')">Government Take</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_rent_total_gdp')">Total Rent</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_gov_resrev_gdp')">Government Resource Revenue</button>               
+                      <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Any Resource Data Available</button>
+                </div>
+              </div>
             </div>  
-       </div>
-        <div class="col-md-8 text-left" style="height: 360px;">
+          </div>    
+        <div class="col-md-8 text-left" style="height: 390px;">
           <div id='chart1'></div>            
         </div> 
-        <div class="col-md-2 text-left">
-          <h5>Putting Comparisons <br>on the Map</h5>
-          Filled countries have resource data available.
-          Fill countries by<br> 
-          <div class="btn-group btn-group-xs btn-group-vertical">
-                <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('calc_govt_take')">Government Take</button>
-                <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('calc_rent_total_gdp')">Total Rent</button>
-                <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('calc_gov_resrev_gdp')">Government Resource Revenue</button>               
-          </div>
-          Fill colors are based on an average of yearly values.<br> 
-          <div class="btn-group btn-group-xs btn-group-vertical">
-                <button class="btn btn-mini mybtn" ng-click="updateChloroFillsForStat('default')">Reset</button>
-          </div>
-        </div>        
       </div>        
       <div class="row">      
         <div class="col-md-4 text-left"><h3 ng-bind='current_country_name'></div>
-        <div class="col-md-8 text-left"><h3>Groups</h3></div>
+        <div class="col-md-8 text-left"><h3 ng-bind='currentStatName'></div>
       </div>      
       
       <div class="row">            
@@ -380,6 +382,9 @@
       // object that holds the default fill information for each country on 
       // the map 
       $scope.dataMapFillKeys = {};
+      
+      $scope.currentStat = "calc_govt_take";
+      $scope.currentStatName = "";
  
       // stores our map and chart visualization variables
       $scope.chart1 = {};      
@@ -539,28 +544,17 @@
               }
           }); // chart1 
           
-          //var a = getCountriesInGroup($scope.country_data_json, "prim_rent", "rent_oil");
-          //var b = getCountriesInGroup($scope.country_data_json[a], "class_income", "High income");
-
-         var cstat = "calc_govt_take";
-        //var cstat = "calc_rent_total_gdp"; //
-        //var cstat = "calc_gov_resrev_gdp"; //calc_gov_resrev_gdp
-        //var cfactor = "class_income";
-        //var clevels = ["High income", "Upper middle income","Lower middle income", "Low income"];        
-        //var cfactor = "class_opec";
-        //var clevels = ["0", "1"];
-        var cfactor = "class_reg";
-        var clevels = ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"];
-        //var cfactor = "prim_prod";
-        //var clevels = ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"];
-
-          $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
-          $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
-          //$scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
-          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
-          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);
           
+      // -------------------------------------------------------------------------      
+      // Update map and groups at same time
+      // For map, should really be doing this intially, not updating it...
+      // have to change later.
+      // -------------------------------------------------------------------------      
           
+        console.log($scope.currentStat);
+        //$scope.updateGroupStat($scope.currentStat);
+        $scope.updateCurrentStat($scope.currentStat);
+
           
       }).error(function(err){
           throw(err);                     
@@ -597,7 +591,7 @@
       // -------------------------------------------------------------------------                
 
       $scope.updateGroupStat = function(cstat) {
-        console.log("insmall");
+        console.log("insmallmultiples for: " + cstat);
           $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
           $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
           //$scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
@@ -628,18 +622,19 @@
       } // end ftn   
               
               
-      $scope.updateChloroFillsForStat = function(statName) {
+      $scope.updateCurrentStat = function(statName) {
         console.log("updating choro");
         
         if(statName == "default") {
           $scope.chart1.updateChoropleth($scope.dataMapFillKeys);
         }           
           else {
-          
+          $scope.currentStat = statName;
+          $scope.currentStatName = varnames[statName];
           $scope.updateGroupStat(statName);
             
           var countryVals = {};
-          countryVals = getTimeSeriesAverage(statName);
+          countryVals = getTimeSeriesAverage($scope.currentStat);
           
           var vals = [];
           for(key in countryVals) {
@@ -660,6 +655,11 @@
             lightest = "#bbd6e8"; //bbd6e8 8fbbd9
             darkest = "#12476c";
           }
+          if (statName == "calc_rent_total_gdp") {
+            lightest = "#f2bebe"; //bbd6e8 8fbbd9
+            darkest = "#951b1c";
+          }
+          
           
                               
           var color = d3.scale.linear()
