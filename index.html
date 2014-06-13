@@ -520,8 +520,13 @@
                     y2: { max: 1.4, 
                           min: 0, 
                           padding: {top:0, bottom:.2},
-                    },
-                    x: { min: 2000, max:2011,
+                          show: true,
+                          label: {
+                            text: 'Government Take Ratio',
+                            position: 'outer-middle'
+                          },
+                        },
+                    x: { min: 2000, max: 2011,
                     }
                 
                   }, // axis
@@ -702,6 +707,9 @@
       };
 
       $scope.setUpSmallMultiples = function(elem,cstat, cfactor, clevels) { 
+        
+        // Based on Small Multiples Script by M Bostok
+        // http://bl.ocks.org/mbostock/1157787
     
         // I need each level to have the format
         // key: factorLevel name
@@ -828,20 +836,8 @@
             .defined(function(d) { return d.value != null; })
             .x(function(d) { return x(d.time); })
             .y(function(d) { return y(d.value); });
- /*       
-        d3.csv("stock.csv", type, function(error, data) {
-        
-          console.log(data);
-        
-          // Nest data by symbol.
-          var symbols = d3.nest()
-              .key(function(d) { return d.symbol; })
-              .entries(data);
-          
-          console.log(symbols);
-          // Compute the maximum price per symbol, needed for the y-domain.
-          
-  */      maxvals = [];  
+
+          maxvals = [];  
           graphobjs.forEach(function(level) {
             //level.maxval = d3.max(level.values, function(d) { return d.value; });
             maxvals.push(d3.max(level.values, function(d) { return d.value; }));
@@ -945,15 +941,6 @@
  
               
       }
-        /*
-        function type(d) {
-          d.price = +d.price;
-          d.date = parseDate(d.date);
-          return d;
-        }
-        */
-      
- 
       
 
       // -------------------------------------------------------------------------      
@@ -1015,14 +1002,14 @@
         [ {
            "variable": "calc_gov_resrev_gdp",
           "values": {
-           "name": "Govt Resource Revenue",
+           "name": "Government Resource Revenue",
           "source": "Calculated: avg of REV$rev_gov_resrev_gdp and REV2$rev2_gov_resrev_gdp",
           "color": "1f77b4" 
           } 
           },{
            "variable": "calc_govt_take",
           "values": {
-           "name": "Govt Take",
+           "name": "Government Take",
           "source": "Calculated: calc_gov_resrev_gdp / calc_rent_total_gdp",
           "color": "8c564b", //#a6a6a6 ff7878 8c564b
           } 
@@ -1043,14 +1030,14 @@
           },{
            "variable": "econ_govexp",
           "values": {
-           "name": "Govt Expenditure",
+           "name": "Government Expenditure",
           "source": "Economic_Indicators ",
           "color": "" 
           } 
           },{
            "variable": "econ_govrev",
           "values": {
-           "name": "Govt Revenue",
+           "name": "Government Revenue",
           "source": "Economic_Indicators ",
           "color": "" 
           } 
@@ -1064,7 +1051,7 @@
           },{
            "variable": "econ_tax",
           "values": {
-           "name": "Govt Tax Revenue",
+           "name": "Government Tax Revenue",
           "source": "Economic_Indicators ",
           "color": "" 
           } 
@@ -1078,35 +1065,35 @@
           },{
            "variable": "rev_gov_resrev_gdp",
           "values": {
-           "name": "Govt Resource Revenue",
+           "name": "Government Resource Revenue",
           "source": "Resource_Revenue",
           "color": "" 
           } 
           },{
            "variable": "rev_gov_resrev_govtrev",
           "values": {
-           "name": "Govt Resource Revenue as % Govt Revenue",
+           "name": "Government Resource Revenue as % Govt Rev",
           "source": "Resource_Revenue",
           "color": "2ca02c" 
           } 
           },{
            "variable": "rev2_gov_nonresrev_gdp",
           "values": {
-           "name": "Govt Non-Resource Revenue",
+           "name": "Government Non-Resource Revenue",
           "source": "Resource_Revenue2",
           "color": "9467bd" //9467bd 1f77b4
           } 
           },{
            "variable": "rev2_gov_resrev_gdp",
           "values": {
-           "name": "Govt Resource Revenue",
+           "name": "Government Resource Revenue",
           "source": "Resource_Revenue2",
           "color": "" 
           } 
           },{
            "variable": "rev2_gov_rev_gdp",
           "values": {
-           "name": "Govt Revenue",
+           "name": "Total Government Revenue",
           "source": "Resource_Revenue2",
           "color": "bcbd22" //8c564b bcbd22
           } 
@@ -1132,89 +1119,6 @@
         //console.log(c("calc_govt_take"));
         
       
-    </script>
-
-    <script>
-    
- 
-        /*
-        var margin = {top: 8, right: 10, bottom: 2, left: 10},
-            width = 960 - margin.left - margin.right,
-            height = 69 - margin.top - margin.bottom;
-        
-        var parseDate = d3.time.format(%Y").parse;
-        
-        var x = d3.time.scale()
-            .range([0, width]);
-        
-        var y = d3.scale.linear()
-            .range([height, 0]);
-        
-        var area = d3.svg.area()
-            .x(function(d) { return x(d.date); })
-            .y0(height)
-            .y1(function(d) { return y(d.price); });
-        
-        var line = d3.svg.line()
-            .x(function(d) { return x(d.date); })
-            .y(function(d) { return y(d.price); });
-        
-        d3.csv("stock.csv", type, function(error, data) {
-        
-          // Nest data by symbol.
-          var symbols = d3.nest()
-              .key(function(d) { return d.symbol; })
-              .entries(data);
-          
-          console.log(symbols);
-          // Compute the maximum price per symbol, needed for the y-domain.
-          symbols.forEach(function(s) {
-            s.maxPrice = d3.max(s.values, function(d) { return d.price; });
-          });
-          console.log(symbols);
-          
-          // Compute the minimum and maximum date across symbols.
-          // We assume values are sorted by date.
-          x.domain([
-            d3.min(symbols, function(s) { return s.values[0].date; }),
-            d3.max(symbols, function(s) { return s.values[s.values.length - 1].date; })
-          ]);
-        
-          // Add an SVG element for each symbol, with the desired dimensions and margin.
-          var svg = d3.select("body").selectAll("svg")
-              .data(symbols)
-            .enter().append("svg")
-              .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-        
-          // Add the area path elements. Note: the y-domain is set per element.
-          svg.append("path")
-              .attr("class", "area")
-              .attr("d", function(d) { y.domain([0, d.maxPrice]); return area(d.values); });
-        
-          // Add the line path elements. Note: the y-domain is set per element.
-          svg.append("path")
-              .attr("class", "line")
-              .attr("d", function(d) { y.domain([0, d.maxPrice]); return line(d.values); });
-        
-          // Add a small label for the symbol name.
-          svg.append("text")
-              .attr("x", width - 6)
-              .attr("y", height - 6)
-              .style("text-anchor", "end")
-              .text(function(d) { return d.key; });
-        });
-        
-        function type(d) {
-          d.price = +d.price;
-          d.date = parseDate(d.date);
-          return d;
-        }
-        */
-        
-    
     </script>
 
   </body>
