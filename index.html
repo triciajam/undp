@@ -185,7 +185,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 text-left">
-          <h2>Countries</h2>Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
+          Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
            Click on a country to see its data below. 
            <h5>See Groups</h5>
            
@@ -216,43 +216,31 @@
         </div>        
       </div>        
       <div class="row">      
-        <div class="col-md-2 text-left"><h3 ng-bind='current_country_name'>
-        </div>       
-        <div class="col-md-8 text-left"><div id='chart2'></div></div> 
-        <div class="col-md-2 text-left">
-          More visualizations here
-        </div>       
-      </div>
-      <div class="row">   
-        <div class="col-md-2 text-left">
-          <h3>Groups</h3>
-          <div class="btn-group btn-group-xs btn-group-vertical">
-                <button class="btn btn-mini mybtn" ng-click="updateGroupStat('calc_govt_take')">Government Take</button>
-                <button class="btn btn-mini mybtn" ng-click="updateGroupStat('calc_rent_total_gdp')">Total Rent</button>
-                <button class="btn btn-mini mybtn" ng-click="updateGroupStat('calc_gov_resrev_gdp')">Government Resource Revenue</button>               
-          </div>          
-        </div>   
-        <div class="col-md-10 text-left">
-          <div class="row">
-            <div class="col-md-2 text-left">
+        <div class="col-md-4 text-left"><h3 ng-bind='current_country_name'></div>
+        <div class="col-md-8 text-left"><h3>Groups</h3></div>
+      </div>      
+      
+      <div class="row">            
+        <div class="col-md-4 text-left"><div id='chart2'></div></div> 
+        <div class="col-md-8 text-left">
+          <div class="row">   
+            <div class="col-md-3 text-left">
               <div id="smallmult1"></div>
             </div>       
-            <div class="col-md-2 text-left">
+            <div class="col-md-3 text-left">
               <div id="smallmult2"></div>
             </div>       
-            <div class="col-md-2 text-left">
+            <div class="col-md-3 text-left">
               <div id="smallmult3"></div>
             </div>       
-            <div class="col-md-2 text-left">
+            <div class="col-md-3 text-left">
               <div id="smallmult4"></div>
             </div>       
-            <div class="col-md-2 text-left">
-              <div id="smallmult5"></div>
             </div>    
-          </div>
+          </div> 
         </div>
       </div>
-      
+     
 
     <!-- DEV TEAM NOTES
     
@@ -530,7 +518,7 @@
               scope: "world",
               fills: {
                 defaultFill: "#eee", //#eee
-                haveResourceStats: dataAvailable, //#faa632 //a65628 ffbb78 a65628
+                haveResourceStats: "#bebebe", //#faa632 //a65628 ffbb78 a65628 //#a6a6a6 dataAvailable bebebe
               },
               data: $scope.dataMapFillKeys,              
               "done": function(datamap) {
@@ -568,9 +556,9 @@
 
           $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
           $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
-          $scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
-          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
-          $scope.setUpSmallMultiples("#smallmult5", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);
+          //$scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
+          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
+          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);
           
           
           
@@ -612,9 +600,9 @@
         console.log("insmall");
           $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
           $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
-          $scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
-          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
-          $scope.setUpSmallMultiples("#smallmult5", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);        
+          //$scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
+          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
+          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);        
       }
 
       $scope.updateOutlinesByGroup = function(group, value) {
@@ -791,7 +779,7 @@
         //console.log("h " + h + "w " + w);     
              
         var margin = {top: 10, right: 10, bottom: 15, left: 10},
-            width = 160 - margin.left - margin.right,
+            width = 180 - margin.left - margin.right,
             height = 60 - margin.top - margin.bottom;
         
         //console.log("parseDate");
