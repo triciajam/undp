@@ -188,7 +188,7 @@
           Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
            Click on a country to see its data below. Filled countries have resource data available.
           <div class="btn-group btn-group-xs">
-            <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Restore Default</button>
+            <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Reset</button>
           </div>  
            <div class="row">
               <div class="col-md-12 text-left">
@@ -227,7 +227,7 @@
       <div class="row">      
         <div class="col-md-4 text-left"><h3 ng-bind='current_country_name'></div>
         <div class="col-md-8 text-left">
-            <h3>Compare Groups</h3><p>Choose a Statistic to compare countries on the map (above), and compare groups (below).</p>
+            <h3>Compare Groups</h3><p>Choose a statistic to compare countries on the map (above) and country groups on the chart (below).</p>
             <div class="btn-group btn-group-xs">
                       <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_govt_take')">Government Take</button>
                       <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_rent_total_gdp')">Total Rent</button>
@@ -401,7 +401,7 @@
       // the map 
       $scope.dataMapFillKeys = {};
       
-      $scope.currentStat = "calc_govt_take";
+      $scope.currentStat = "default";
       $scope.currentStatName = "";
  
       // stores our map and chart visualization variables
@@ -572,7 +572,7 @@
         console.log($scope.currentStat);
         //$scope.updateGroupStat($scope.currentStat);
         $scope.updateCurrentStat($scope.currentStat);
-
+  
           
       }).error(function(err){
           throw(err);                     
@@ -645,6 +645,7 @@
         
         if(statName == "default") {
           $scope.chart1.updateChoropleth($scope.dataMapFillKeys);
+          $scope.updateGroupStat(statName);
         }           
           else {
           $scope.currentStat = statName;
@@ -724,6 +725,12 @@
         //var clevels = ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"];
         //var cfactor = "prim_prod";
         //var clevels = ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"];
+        
+        if (cstat == "default") {
+          d3.select(elem).selectAll("*").remove();
+          return;
+        }
+        
         
         var countriesInLevels = [];        
         clevels.forEach(function(level, index) {
