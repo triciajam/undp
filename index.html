@@ -187,11 +187,14 @@
         <div class="col-md-4 text-left">
           Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
            Click on a country to see its data below. Filled countries have resource data available.
+          <div class="btn-group btn-group-xs">
+            <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Restore Default</button>
+          </div>  
            <div class="row">
-              <div class="col-md-6 text-left">
+              <div class="col-md-12 text-left">
                  
-                 <h5>Find Groups</h5>
-                 
+                 <h5>Show Groups</h5>
+                   By Income
                    <div class="btn-group btn-group-xs">
                       <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Low income')">Low</button>
                       <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Lower middle income')">LowMid</button>
@@ -200,6 +203,7 @@
                       <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('default', 'default')">Reset</button>
                   </div>  
               </div>
+          <!--    
               <div class="col-md-6 text-left">
                 <h5>Compare Statistics</h5>
                 Fill colors are based on an average of yearly values from 2000-2011. Darker colors indicating higher values.<br>                 
@@ -211,15 +215,29 @@
                       <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Any Resource Data Available</button>
                 </div>
               </div>
+            -->  
             </div>  
           </div>    
-        <div class="col-md-8 text-left" style="height: 390px;">
+        <div class="col-md-8 text-left" style="height: 350px;">
           <div id='chart1'></div>            
         </div> 
-      </div>        
+      </div>
+      
+      
       <div class="row">      
         <div class="col-md-4 text-left"><h3 ng-bind='current_country_name'></div>
+        <div class="col-md-8 text-left">
+            <h3>Compare Groups</h3><p>Choose a Statistic to compare countries on the map (above), and compare groups (below).</p>
+            <div class="btn-group btn-group-xs">
+                      <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_govt_take')">Government Take</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_rent_total_gdp')">Total Rent</button>
+                      <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_gov_resrev_gdp')">Government Resource Revenue</button>               
+          </div>
+        </div>
+        
+        <!--
         <div class="col-md-8 text-left"><h3 ng-bind='currentStatName'></div>
+        -->
       </div>      
       
       <div class="row">            
