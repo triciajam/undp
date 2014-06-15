@@ -185,14 +185,15 @@ str(prod)
 prod$max.prod.source = names(prod[,c(5:9)])[apply(prod[,c(5:9)],1,which.max)] 
 a <- table(prod$ccode, prod$max.prod.source)
 a <- dcast(as.data.frame(a), Var1 ~ Var2)
-a$prim_prod <- names(a[,2:5])[apply(a[2:5],1,which.max)]
+a$prim_prod <- names(a[,2:6])[apply(a[2:6],1,which.max)]
 a$ccode <- a$Var1
 out.no.ts <- merge(out.no.ts, a[,c(7,8)], by=c("ccode"), all.x=T, all.y=F)
 out.no.ts$prim_prod <- ifelse(out.no.ts$prim_prod == "prod_fuels", "Fuels", 
                               ifelse(out.no.ts$prim_prod == "prod_indus", "Industrial", 
                                      ifelse(out.no.ts$prim_prod == "prod_ironferr", "Iron&Ferrous Metal",
-                                            ifelse(out.no.ts$prim_prod == "prod_nfm", "Non-Ferrous Metal", NA
-                                              ))))
+                                            ifelse(out.no.ts$prim_prod == "prod_prec", "Precious Stone&Metal",                                                   
+                                              ifelse(out.no.ts$prim_prod == "prod_nfm", "Non-Ferrous Metal", NA
+                                                )))))
 
 # -----------------------------------------------------------------------------
 # Create a classifier for primary rent type

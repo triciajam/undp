@@ -427,7 +427,7 @@
 "rev_source": null,
 "name": "Burundi",
 "haveResourceStats": "0",
-"prim_prod": "Fuels",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {
@@ -523,7 +523,7 @@
 "rev_source": null,
 "name": "Burkina Faso",
 "haveResourceStats": "0",
-"prim_prod": "Fuels",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {
@@ -2027,7 +2027,7 @@
 "rev_source": null,
 "name": "Fiji",
 "haveResourceStats": "0",
-"prim_prod": "Fuels",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {
@@ -2475,7 +2475,7 @@
 "rev_source": null,
 "name": "Greenland",
 "haveResourceStats": "0",
-"prim_prod": "Industrial",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {
@@ -2539,7 +2539,7 @@
 "rev_source": null,
 "name": "French Guiana",
 "haveResourceStats": "0",
-"prim_prod": "Fuels",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {
@@ -2667,7 +2667,7 @@
 "rev_source": null,
 "name": "Honduras",
 "haveResourceStats": "0",
-"prim_prod": "Fuels",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {
@@ -4107,7 +4107,7 @@
 "rev_source": null,
 "name": "Mali",
 "haveResourceStats": "1",
-"prim_prod": "Fuels",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {
@@ -5419,7 +5419,7 @@
 "rev_source": null,
 "name": "Solomon Islands",
 "haveResourceStats": "0",
-"prim_prod": "Fuels",
+"prim_prod": "Precious Stone&Metal",
 "prim_rent": null 
 },
 "macroStats": {

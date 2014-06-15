@@ -219,9 +219,10 @@
             
         <div class="col-md-2 text-left">
           <div class="row">
-            <div class="col-md-12 text-left" style="padding-left: 4px; padding-right: 4px;">
+            <div class="col-md-12 text-left small text" style="padding-left: 4px; padding-right: 4px;">
               <h5>Show Groups</h5>
-              Click to outline countries in each group.
+              Click to outline countries in each group.  Income is based on World Bank classification.  Production is based on average yearly production from 2007-2011; max production
+              by volume during that period is used to classify countries.              
               <div class="btn-group btn-group-xs">
                   <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('default', 'default')">Reset Outline</button>
               </div>  
@@ -242,8 +243,9 @@
                  <div class="btn-group btn-group-xs btn-group-vertical">
                     <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Fuels')">Fuels</button>
                     <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Industrial')">Industrial</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Iron&Ferrous Metal')">Fer. Metal</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Iron&Ferrous Metal')">Ferrous Metal</button>
                     <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Non-Ferrous Metal')">NonFer. Metal</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Precious Stone&Metal')">Prec.St.&Metal</button>
                 </div>  
             </div>
           </div>
@@ -255,6 +257,7 @@
         <div class="col-md-4 text-left"><h3 ng-bind='current_country_name'></div>
         <div class="col-md-8 text-left">
             <h3>Compare Groups</h3><p>Choose a statistic to compare values across countries on the map above (darker colors = greater values), and by groups of countries on the chart below.
+            Government Take is a ratio of Government Resource Revenue / Total Rents, all other statistics are % of GDP in constant dollars.
                 N-values are the average number of countries used to calculate the mean for each year.
             </p>
             <div class="btn-group btn-group-xs">
@@ -608,8 +611,8 @@
           $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
           $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
           //$scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
-          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["Fuels", "Industrial","Iron&Ferrous Metal","Non-Ferrous Metal"]);
-          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["Oil", "Gas","Minerals"]);        
+          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["Fuels", "Industrial","Iron&Ferrous Metal","Non-Ferrous Metal", "Precious Stone&Metal"]);
+          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["Oil", "Gas","Minerals", "Coal"]);        
       }
 
       $scope.updateOutlinesByGroup = function(group, value) {
@@ -784,7 +787,7 @@
         yearlyAvgStatByLevel.forEach(function(level, lindex) {
           var l = {};
           l.key = clevels[lindex];
-          l.avg_n = level.avg_n; 
+          l.avg_n = (level.avg_n != null) ? level.avg_n : 0; 
           l.values = [];
           time.forEach(function(year, yindex) {
             var y = {};
