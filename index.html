@@ -31,7 +31,7 @@
           background-color: #eee !important;
           border: 2px !important;
           border-color: #eee !important;
-          border-style: solid !important;
+          border-style: solid !important;          
         }
         h2 {
            margin-top:5px; margin-bottom:5px;
@@ -52,6 +52,12 @@
           font-size: 50px !important;
         }
         
+        .smalltext {
+          font-size: 11px !important;
+        }  
+        .btnsmalltext {
+          font-size: 10px !important;
+        }
     /*-------------------------------------------------------------------------        
       These are used for highlighting countries. bf8c5a bb7c25
       -----------------------------------------------------------------------*/  
@@ -184,25 +190,19 @@
     <!-- Set up our Bootstrap Layout Grid -->
     <div class="container">
       <div class="row">
-        <div class="col-md-4 text-left">
+        <div class="col-md-2 text-left">
+          <h3>Natural Resources</h3>
           Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
-           Click on a country to see its data below. Filled countries have resource data available.
+           <p>Click on a country to see its data below.</p> 
+           <p>Filled countries have resource data available.</p>
           <div class="btn-group btn-group-xs">
-            <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Reset</button>
-          </div>  
-           <div class="row">
-              <div class="col-md-12 text-left">
-                 
-                 <h5>Show Groups</h5>
-                   By Income
-                   <div class="btn-group btn-group-xs">
-                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Low income')">Low</button>
-                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Lower middle income')">LowMid</button>
-                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'Upper middle income')">UprMid</button>
-                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('class_income', 'High income')">High</button>
-                      <button class="btn btn-mini mybtn" ng-click="updateOutlinesByGroup('default', 'default')">Reset</button>
-                  </div>  
-              </div>
+            <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Reset Data Availability Fill</button>
+          </div>
+        </div>  
+        <div class="col-md-8 text-left" style="height: 350px;">
+          <div id='chart1'></div>            
+        </div> 
+        
           <!--    
               <div class="col-md-6 text-left">
                 <h5>Compare Statistics</h5>
@@ -216,18 +216,47 @@
                 </div>
               </div>
             -->  
-            </div>  
-          </div>    
-        <div class="col-md-8 text-left" style="height: 350px;">
-          <div id='chart1'></div>            
-        </div> 
+            
+        <div class="col-md-2 text-left">
+          <div class="row">
+            <div class="col-md-12 text-left" style="padding-left: 4px; padding-right: 4px;">
+              <h5>Show Groups</h5>
+              Click to outline countries in each group.
+              <div class="btn-group btn-group-xs">
+                  <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('default', 'default')">Reset Outline</button>
+              </div>  
+            </div>
+          </div>
+          <div class="row">         
+            <div class="col-md-6 text-left smalltext" style="border: 1px solid #ccc; padding-left: 4px; padding-right: 4px;">              
+                by Income <br>Level
+                 <div class="btn-group btn-group-xs btn-group-vertical">
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'Low income')">Low</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'Lower middle income')">Lower Mid</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'Upper middle income')">Upper Mid</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'High income')">High</button>
+                </div>  
+            </div>
+            <div class="col-md-6 text-left smalltext" style="border: 1px solid #ccc; padding-left: 4px; padding-right: 4px;">              
+                by Primary Resource
+                 <div class="btn-group btn-group-xs btn-group-vertical">
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Fuels')">Fuels</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Industrial')">Industrial</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Iron&Ferrous Metal')">Fer. Metal</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Non-Ferrous Metal')">NonFer. Metal</button>
+                </div>  
+            </div>
+          </div>
+         </div>  
       </div>
       
       
-      <div class="row">      
+      <div class="row">          
         <div class="col-md-4 text-left"><h3 ng-bind='current_country_name'></div>
         <div class="col-md-8 text-left">
-            <h3>Compare Groups</h3><p>Choose a statistic to compare countries on the map (above) and country groups on the chart (below).</p>
+            <h3>Compare Groups</h3><p>Choose a statistic to compare values across countries on the map above (darker colors = greater values), and by groups of countries on the chart below.
+                N-values are the average number of countries used to calculate the mean for each year.
+            </p>
             <div class="btn-group btn-group-xs">
                       <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_govt_take')">Government Take</button>
                       <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('calc_rent_total_gdp')">Total Rent</button>
@@ -260,48 +289,7 @@
           </div> 
         </div>
       </div>
-     
-
-    <!-- DEV TEAM NOTES
     
-        Some Visualization Thoughts
-        ----------------------------
-    
-        The cell to the left of the line chart I thought of two potential visualizations (just below country name):
-
-        1) I think there are too many lines on middle map - maybe here could be a c3 area chart that shows
-        'Composition of Govt Revenue' -- ie Govt Resource Revenue and one for Govt Non-Resource revenue.
-        We could then remove Govt Non-Resource Revenue as well as 'Resource Rev as % of Govt Rev' from the middle
-        chart (as now it should be obvious).  I would keep Govt Resource Rev on middle chart as I think it's
-        important and worth having there as well. <br>
-        For Non-Resource revenue we also have more detailed data in one of the tables on % from taxes or VAT,
-        etc -- maybe eventually these could be separate sections in the area chart.          
-        2) Sparklines for other macro indicators like GDP, or unemployment, or inflation.
-
-        The cell to the right of the line chart I was thinking might be used to place this country's data in the
-        context of all the other countries.  For example, an ordered bar graph of all the values of government 
-        take, with only the current country selected colored in.  You could then visually see where in the order
-        the country is.  These would be really small -- mainly its just where in the ordered bars the "color"
-        bar is.
-        We could do this for Govt Take, Govt Resource Rev, Total Rent, whatever we think is important.
-        One issue is that we have data for these across mutliple years.  We could take an average or add some
-        kind of selection feature which let's you select the year and the charts update for that year.
-        Or, perhaps we could even use a slider bar / D3 transitions to change the data as you slide the bar
-        from 2000 to 2011.  That seems like it could be useful - you could really get a sense of 
-        movement over time.  But Not sure how that would actually look though.
-        If we did this I think we should make center section smaller so we have 3 even sections.  
-
-        Some Issues
-        ------------
-
-        1) The map highlights aren't quite right.  They are too thin on the edges where a country shares a border
-        with a country that is not a group member.
-        I think this has to do with the order in which the country paths are being 
-        drawn - we want to make sure that the new group paths are drawn last.  Not sure how to access that "through"
-        the datamaps interface.  Any ideas guys?
-
-      END NOTES -->
-      
     </div>
 
     <!-------------------------------------------------------------------------        
@@ -541,6 +529,8 @@
       // Create the data map
       // -------------------------------------------------------------------------      
           
+          
+          
           $scope.chart1 = new Datamap({
               element: document.getElementById('chart1'),
               scope: "world",
@@ -564,10 +554,10 @@
                 highlightFillColor: '#ff7f0e',
                 //highlightBorderColor: '#ff7f0e',
                 //highlightBorderWidth: 5,
-              }
-          }); // chart1 
+              },
+         }); // chart1 
           
-          
+        
       // -------------------------------------------------------------------------      
       // Update map and groups at same time
       // For map, should really be doing this intially, not updating it...
@@ -618,8 +608,8 @@
           $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
           $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
           //$scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
-          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"]);
-          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["rent_oil", "rent_gas","rent_min"]);        
+          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["Fuels", "Industrial","Iron&Ferrous Metal","Non-Ferrous Metal"]);
+          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["Oil", "Gas","Minerals"]);        
       }
 
       $scope.updateOutlinesByGroup = function(group, value) {
@@ -650,7 +640,7 @@
         
         if(statName == "default") {
           $scope.chart1.updateChoropleth($scope.dataMapFillKeys);
-          $scope.updateGroupStat(statName);
+          //$scope.updateGroupStat(statName);
         }           
           else {
           $scope.currentStat = statName;
@@ -807,18 +797,10 @@
         console.log("graphobjs");
         console.log(graphobjs);
         
-        //var w = d3.select("#smallmult").width;
-        //var h = d3.select("#smallmult").height;
-        //console.log("h " + h + "w " + w);     
              
         var margin = {top: 10, right: 10, bottom: 15, left: 10},
             width = 180 - margin.left - margin.right,
             height = 60 - margin.top - margin.bottom;
-        
-        //console.log("parseDate");
-        //console.log(parseDate("2000"));
-        //console.log(parseDate(2000));
-        
         
         var x = d3.time.scale()
             .range([0, width]);
@@ -871,16 +853,37 @@
         
           d3.select(elem).selectAll("*").remove();
         
-          //console.log(x.domain());
-          // Add an SVG element for each symbol, with the desired dimensions and margin.
-          var svg = d3.select(elem)
-              .selectAll("svg")
-              .data(graphobjs)
-            .enter().append("svg")
+        // container around whole group
+        var svgCont = d3.select(elem).append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", 35 + (height + margin.top + margin.bottom)*graphobjs.length)
+            .append("g");
+        // border around whole group    
+        var borderPath = svgCont.append("rect")
+              .attr("x", 0)
+              .attr("y", 0)
               .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+              .attr("height", 35 + (height + margin.top + margin.bottom)*graphobjs.length)
+              .style("stroke", "#a6a6a6")
+              .style("fill", "none")
+              .style("stroke-width", 2);   
+        // title for whole group      
+        var title = svgCont.append("text")
+               .attr("x", margin.left)
+              .attr("y", margin.top + 5)
+               .attr("font-family", "sans-serif")
+              .attr("font-size", "13px")
+              .style("text-anchor", "left")
+              .attr("font-color", "#000000")
+              .text(function(d) { return varnames[cfactor]; });
+                   
+        var svg = svgCont.selectAll("g")
+              .data(graphobjs)
+              .enter().append("g")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .attr("transform", function(d,i) { return "translate(" + margin.left +"," + (35 + (height + margin.top + margin.bottom)*i) + ")" } );
+       
         
           // Add the area path elements. Note: the y-domain is set per element.
           svg.append("path")
@@ -903,7 +906,7 @@
               .attr("font-family", "sans-serif")
               .attr("font-size", "10px")
               .style("text-anchor", "end")
-              .text(function(d) { return d.key + "(n="+ d3.round(d.avg_n) + ")";  });          
+              .text(function(d) { return d.key + " (n="+ d3.round(d.avg_n) + ")";  });          
           // values
           svg.append("text")
               .attr("x", function(d) { return x(d.lastX) - 3 })
@@ -937,10 +940,8 @@
               .attr("font-size", "9px")
               .style("text-anchor", "middle")
               .attr("font-color", varcolors[cstat])
-              .text(function(d) { return (d.hasvals) ? d3.time.format("%Y")(d.firstX) : ""; });
- 
-              
-      }
+              .text(function(d) { return (d.hasvals) ? d3.time.format("%Y")(d.firstX) : ""; });             
+     }
       
 
       // -------------------------------------------------------------------------      
@@ -1096,7 +1097,35 @@
            "name": "Total Government Revenue",
           "source": "Resource_Revenue2",
           "color": "bcbd22" //8c564b bcbd22
+           }
+           },{
+           "variable": "class_income",
+          "values": {
+           "name": "Income Level",
+          "source": "CountryClassification",
+          "color": "" //9467bd 1f77b4
           } 
+          },{
+           "variable": "class_reg",
+          "values": {
+           "name": "Region",
+          "source": "CountryClassification",
+          "color": "" 
+          } 
+          },{
+           "variable": "prim_prod",
+          "values": {
+           "name": "Primary Resource Produced",
+          "source": "Production_Total",
+          "color": "" //8c564b bcbd22
+          }
+          },{
+           "variable": "prim_rent",
+          "values": {
+           "name": "Primary Rent Source",
+          "source": "Rent",
+          "color": "" //8c564b bcbd22
+          }          
         } ];
 
         var varnames = {};
