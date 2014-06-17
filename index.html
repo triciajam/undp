@@ -1,4 +1,4 @@
-<html lang="en" ng-app="eimodule" ng-init="current_country_id='AGO'">
+<html lang="en" ng-app="eimodule" ng-init="current_selection_id='AGO'">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +33,11 @@
           border-color: #eee !important;
           border-style: solid !important;          
         }
+        
+        .mygroupselect {
+          border: 1px solid #ccc; padding-left: 4px; padding-right: 4px; padding-top: 4px;
+        }
+        
         h2 {
            margin-top:5px; margin-bottom:5px;
         }
@@ -112,9 +117,16 @@
         #chart2 .c3-line-calc_govt_take {
           stroke-width: 0px;
         } 
-        /*        
-        .c3 c3-axis-x path {
-          stroke: none;
+
+        .c3-axis-y path {
+          stroke-width: 0px !important;
+        }
+        .c3-axis-y2 path {
+          stroke-width: 0px !important;
+        }
+        /*
+        .c3-axis-y line {
+          stroke-width: 0px !important;
         }
         */
     /*-------------------------------------------------------------------------        
@@ -172,7 +184,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Extractive Industries and Development</h1>
-        <p>How are countries transforming natural capital into economic and human development?</p>
+        <p>What is the relationship between extractive industry profitability and fiscal revenue from resources?</p>
       </div>
     </div>
 
@@ -189,7 +201,8 @@
     
     <!-- Set up our Bootstrap Layout Grid -->
     <div class="container">
-      <div class="row">
+    <div class="row">
+        <!--
         <div class="col-md-2 text-left">
           <h3>Natural Resources</h3>
           Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
@@ -199,9 +212,82 @@
             <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Reset Data Availability Fill</button>
           </div>
         </div>  
-        <div class="col-md-8 text-left" style="height: 350px;">
-          <div id='chart1'></div>            
-        </div> 
+        -->
+        <div class="col-md-8 text-left">
+        
+          <div class="row">
+            <div class="col-md-12 text-left">
+                <div id='chart1'  style="width: 700px;height: 300px;"></div>
+            </div>
+          </div>   
+          <div class="row">
+            <div class="col-md-12 text-left">                 
+             Click a country on the map to select it and view its data. Click a button to select a country group and view its data.
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-md-6 text-left mygroupselect">                 
+                  <div class="smalltext" >              
+                    Income
+                     <div class="btn-group btn-group-xs">
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Low income')">Low</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Lower middle income')">Lower Middle</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Upper middle income')">Upper Middle</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'High income')">High</button>
+                    </div>  
+                  </div>
+            </div>
+            <div class="col-md-6 text-left mygroupselect">                 
+                  <div class="smalltext">              
+                      Production
+                      <div class="btn-group btn-group-xs">
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Oil')">Oil</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Gas')">Gas</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Minerals')">Minerals</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Coal')">Coal</button>
+                      </div>  
+                  </div>
+            </div>
+          </div>  
+          <div class="row">
+             <div class="col-md-6 text-left mygroupselect">                 
+                  <div class="smalltext">              
+                      Region
+                      <div class="btn-group btn-group-xs">
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Africa')">Africa</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Asia')">Asia</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Europe')">Europe</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Latin America and the Caribbean')">LAmer.&Carr.</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'North America')">North America</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Oceania')">Oceania</button>                        
+                      </div>  
+                  </div>
+            </div>
+            <div class="col-md-6 text-left mygroupselect">                 
+             Click to select countries in each group.
+            </div>
+         </div>  
+              <!--
+              <div class="smalltext" style="border: 1px solid #ccc; padding-left: 4px; padding-right: 4px; display: inline">              
+                Income
+                 <div class="btn-group btn-group-xs">
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Low income')">Low</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Lower middle income')">Lower Mid</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Upper middle income')">Upper Mid</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'High income')">High</button>
+                </div>  
+              </div>            
+              -->
+        </div>  <!-- 8 -->            
+        
+        <div class="col-md-4 text-left">
+          <h3 ng-bind='current_country_name'></h3>
+          <div id='chart2'></div>        
+        </div>
+        
+    </div> 
+    </div>
+
         
           <!--    
               <div class="col-md-6 text-left">
@@ -216,7 +302,7 @@
                 </div>
               </div>
             -->  
-            
+        <!--    
         <div class="col-md-2 text-left">
           <div class="row">
             <div class="col-md-12 text-left small text" style="padding-left: 4px; padding-right: 4px;">
@@ -224,7 +310,7 @@
               Click to outline countries in each group.  Income is based on World Bank classification.  Production is based on average yearly production from 2007-2011; max production
               by volume during that period is used to classify countries.              
               <div class="btn-group btn-group-xs">
-                  <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('default', 'default')">Reset Outline</button>
+                  <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('default', 'default')">Reset Outline</button>
               </div>  
             </div>
           </div>
@@ -232,26 +318,28 @@
             <div class="col-md-6 text-left smalltext" style="border: 1px solid #ccc; padding-left: 4px; padding-right: 4px;">              
                 by Income <br>Level
                  <div class="btn-group btn-group-xs btn-group-vertical">
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'Low income')">Low</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'Lower middle income')">Lower Mid</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'Upper middle income')">Upper Mid</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('class_income', 'High income')">High</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Low income')">Low</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Lower middle income')">Lower Mid</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Upper middle income')">Upper Mid</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'High income')">High</button>
                 </div>  
             </div>
             <div class="col-md-6 text-left smalltext" style="border: 1px solid #ccc; padding-left: 4px; padding-right: 4px;">              
                 by Primary Resource
                  <div class="btn-group btn-group-xs btn-group-vertical">
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Fuels')">Fuels</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Industrial')">Industrial</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Iron&Ferrous Metal')">Ferrous Metal</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Non-Ferrous Metal')">NonFer. Metal</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="updateOutlinesByGroup('prim_prod', 'Precious Stone&Metal')">Prec.St.&Metal</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_prod', 'Fuels')">Fuels</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_prod', 'Industrial')">Industrial</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_prod', 'Iron&Ferrous Metal')">Ferrous Metal</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_prod', 'Non-Ferrous Metal')">NonFer. Metal</button>
+                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_prod', 'Precious Stone&Metal')">Prec.St.&Metal</button>
                 </div>  
             </div>
           </div>
-         </div>  
-      </div>
-      
+         </div> 
+
+    </div>
+
+
       
       <div class="row">          
         <div class="col-md-4 text-left"><h3 ng-bind='current_country_name'></div>
@@ -269,11 +357,11 @@
         
         <!--
         <div class="col-md-8 text-left"><h3 ng-bind='currentStatName'></div>
-        -->
+
       </div>      
       
       <div class="row">            
-        <div class="col-md-4 text-left"><div id='chart2'></div></div> 
+        <div class="col-md-4 text-left"><div id='chart3'></div></div> 
         <div class="col-md-8 text-left">
           <div class="row">   
             <div class="col-md-3 text-left">
@@ -292,7 +380,7 @@
           </div> 
         </div>
       </div>
-    
+    -->
     </div>
 
     <!-------------------------------------------------------------------------        
@@ -474,7 +562,42 @@
           console.log("dataMapFillKeys:");
           console.log($scope.dataMapFillKeys);
           
-          $scope.current_country_name = $scope.country_data_json[$scope.current_country_id]["name"];
+          $scope.group_resource_stat_data_json = [];
+          $scope.group_resource_stat_data_arr = [];
+          
+          
+          // this calculates average data for groups of countries we are interested in
+          // and stores it in an object
+          var resourceStats = d3.keys($scope.country_resource_stat_data_json[$scope.current_selection_id]);
+          lookupfactors.forEach(function(currentFactor, index) {
+              console.log(currentFactor.factor);
+              $scope.group_resource_stat_data_arr[currentFactor.factor] = [];  
+              
+              currentFactor.levels.forEach(function(currentLevel, index) {
+                console.log(currentLevel.level);
+                $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level] = [];  
+                var countries = getCountriesInGroup($scope.country_data_json, currentFactor.factor, currentLevel.level); 
+                console.log(countries);
+                
+                resourceStats.forEach(function(currentStat, index) {
+                  var timeseries = [];
+                  countries.forEach(function(currentCountry, index) {
+                    timeseries.push($scope.country_resource_stat_data_json[currentCountry][currentStat])
+                  });                    
+                  var byyears = d3.transpose(timeseries);
+                  $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level][currentStat] = [];
+                  byyears.forEach(function(currentYear, index){
+                    $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level][currentStat].push(d3.mean(currentYear));  
+                  });
+                });
+              });                        
+          });
+          
+          console.log("$scope.group_resource_stat_data_arr");
+          console.log($scope.group_resource_stat_data_arr);
+          
+          
+          $scope.current_country_name = $scope.country_data_json[$scope.current_selection_id]["name"];
 
       // -------------------------------------------------------------------------      
       // Create the c3 line chart for resource data
@@ -482,13 +605,14 @@
 
           $scope.chart2 = c3.generate({
               
-                  bindto: '#chart2',              
+                  bindto: '#chart2',      
+                  /*
                   size: {
                     height: 300,
-                  },   
+                  }, */   
                   data: {
                     x: 'x',
-                    columns: $scope.country_resource_stat_data_arr[$scope.current_country_id],
+                    columns: $scope.country_resource_stat_data_arr[$scope.current_selection_id],
                     axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', calc_rent_total_gdp : 'y', calc_govt_take: 'y2' },
                     type: 'line',
                     types: {
@@ -517,7 +641,7 @@
                             position: 'outer-middle'
                           },
                         },
-                    x: { min: 2000, max: 2011,
+                    x: { min: 2000, max: 2011, 
                     }
                 
                   }, // axis
@@ -548,7 +672,7 @@
                   console.log($scope.datamap);
                   datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography, data) {
                     //console.log("in on click datamap");
-                    $scope.current_country_id = geography.id;
+                    $scope.current_selection_id = geography.id;
                     $scope.$apply();
                   });
               }, // done
@@ -578,15 +702,15 @@
 
 
       // -------------------------------------------------------------------------      
-      // "Listener" function that is called whenever the current_country_id is
+      // "Listener" function that is called whenever the current_selection_id is
       // changed.  When selection is made in datamap, datamap changes this variable
       // This updates the line chart
       // Have to check for nulls here becuase it is called right at the beginning,
       // before data is loaded
       // -------------------------------------------------------------------------                
 
-     $scope.$watch('current_country_id', function(newValue, oldValue) {
-        console.log('watch current_country_id:');
+     $scope.$watch('current_selection_id', function(newValue, oldValue) {
+        console.log('watch current_selection_id:');
         console.log(newValue);
         //console.log($scope.country_data_json);
         //console.log($scope.country_data_json[newValue]);
@@ -615,8 +739,8 @@
           $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["Oil", "Gas","Minerals", "Coal"]);        
       }
 
-      $scope.updateOutlinesByGroup = function(group, value) {
-        console.log("finding countries in group:" + group + " with value: " + value);
+      $scope.selectGroup = function(group, value) {
+        console.log("selecting group:" + group + " with value: " + value);
         
         var svg = $scope.chart1.svg;
         
@@ -635,6 +759,7 @@
               .classed({'plainpaths':false,'grouppaths':true });
           } //end if
         }// end for
+        
       } // end ftn   
               
               
@@ -699,254 +824,7 @@
         
       };
 
-      $scope.setUpSmallMultiples = function(elem,cstat, cfactor, clevels) { 
-        
-        // Based on Small Multiples Script by M Bostok
-        // http://bl.ocks.org/mbostock/1157787
-    
-        // I need each level to have the format
-        // key: factorLevel name
-        // values: Array with sub-objects that have properties date and value.        
-        // Small Multiples Code
-
-        // step 0a = Determine which factor to use - primary production?  region?
-        // step 0b = Determine which stat to use - govt take?        
-        // step 1 = get countries for each "level" of that factor
-        // step 2 = using those countries, get an average value of the stat for each year for factor levels 
-        // step 3 = put data into proper format
-        
-        //var cstat = "calc_govt_take";
-        //var cstat = "calc_rent_total_gdp"; //
-        //var cstat = "calc_gov_resrev_gdp"; //calc_gov_resrev_gdp
-        //var cfactor = "class_income";
-        //var clevels = ["High income", "Upper middle income","Lower middle income", "Low income"];        
-        //var cfactor = "class_opec";
-        //var clevels = ["0", "1"];
-        //var cfactor = "class_reg";
-        //var clevels = ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"];
-        //var cfactor = "prim_prod";
-        //var clevels = ["prod_fuels", "prod_indus","prod_ironferr","prod_nfm"];
-        
-        if (cstat == "default") {
-          d3.select(elem).selectAll("*").remove();
-          return;
-        }
-        
-        
-        var countriesInLevels = [];        
-        clevels.forEach(function(level, index) {
-            //console.log(level);
-            countriesInLevels.push(getCountriesInGroup($scope.country_data_json, cfactor, level));
-        });
-        console.log("countriesInLevels");
-        console.log(countriesInLevels);
-        
-        var countryDataForLevels = [];
-        var statDataInLevels = [];              
-        countriesInLevels.forEach(function(levelsArray, index) {
-          //console.log("levels");
-          //console.log(levelsArray);
-          var countryData = [];
-          levelsArray.forEach(function(country, index) {
-              countryData.push($scope.country_resource_stat_data_json[country][cstat]);
-          });
-          statDataInLevels.push(countryData);          
-        });        
-        console.log("statDataInLevels");
-        console.log(statDataInLevels);
-        
-        var yearlyAvgForLevels = [];        
-        var yearlyAvgStatByLevel = [];  
-        statDataInLevels.forEach(function(levelsArray, index) {
-          var years = d3.transpose(levelsArray);
-          var yearData = [];
-          var yearlyn = [];
-          var yearObj = {};
-          yearObj.values = [];        
-          years.forEach(function(year, index) {
-            //console.log("clean years");
-            //console.log(year.filter(function(elem) { return elem != null } ));
-            yearlyn.push((year.filter(function(elem) { return elem != null } )).length);
-            yearData.push(d3.mean(year));
-          });
-          yearObj.avg_n = d3.mean(yearlyn);
-          yearObj.values = yearData; 
-          yearlyAvgStatByLevel.push(yearObj);
-          yearlyAvgForLevels.push(yearData);
-        });
-        console.log("yearlyAvgForLevels");
-        console.log(yearlyAvgForLevels);
-        console.log("yearlyAvgStatByLevel");
-        console.log(yearlyAvgStatByLevel);
-
-        // parse function only takes a string
-        var time = ["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011"];
-        var parseDate = d3.time.format("%Y").parse;
-       
-        graphobjs = [];
-        yearlyAvgStatByLevel.forEach(function(level, lindex) {
-          var l = {};
-          l.key = clevels[lindex];
-          l.avg_n = (level.avg_n != null) ? level.avg_n : 0; 
-          l.values = [];
-          time.forEach(function(year, yindex) {
-            var y = {};
-            y.time = parseDate(time[yindex]);
-            y.value = level.values[yindex];
-            l.values.push(y);
-          })
-          graphobjs.push(l);
-        });
-        console.log("graphobjs");
-        console.log(graphobjs);
-        
-             
-        var margin = {top: 10, right: 10, bottom: 15, left: 10},
-            width = 180 - margin.left - margin.right,
-            height = 60 - margin.top - margin.bottom;
-        
-        var x = d3.time.scale()
-            .range([0, width]);
-        
-        var y = d3.scale.linear()
-            .range([height, 0]);
-        
-        var area = d3.svg.area()
-            .defined(function(d) { return d.value != null; })
-            .x(function(d) { return x(d.time); })
-            .y0(height)
-            .y1(function(d) { return y(d.value); });
-        
-        var line = d3.svg.line()
-            .defined(function(d) { return d.value != null; })
-            .x(function(d) { return x(d.time); })
-            .y(function(d) { return y(d.value); });
-
-          maxvals = [];  
-          graphobjs.forEach(function(level) {
-            //level.maxval = d3.max(level.values, function(d) { return d.value; });
-            maxvals.push(d3.max(level.values, function(d) { return d.value; }));
-          });
-          
-          var max = d3.max(maxvals);
-          graphobjs.forEach(function(level, index) {
-            var cleanArray = level.values.filter( function(elem) { return elem.value != null } );
-            level.numvals = cleanArray.length;
-            level.hasvals = level.numvals != 0;
-            level.firstVal = (level.hasvals ? cleanArray[0].value  :  "");
-            level.firstX = (level.hasvals ? cleanArray[0].time  :  "");
-            level.lastVal = (level.hasvals ? cleanArray[cleanArray.length - 1].value : "");            
-            level.lastX = (level.hasvals ? cleanArray[cleanArray.length - 1].time : "");
-            // from before            
-            level.maxval = max;
-            level.levelmax = maxvals[index];
-            //maxvals.push(d3.max(level.values, function(d) { return d.value; });
-          });
-          //cleanArray = arr.filter( function(elem) { return elem !== null } )
-          
-          console.log(graphobjs);
-          
-          
-          // Compute the minimum and maximum date across symbols.
-          // We assume values are sorted by date.
-          x.domain([
-            d3.min(graphobjs, function(s) { return s.values[0].time; }),
-            d3.max(graphobjs, function(s) { return s.values[s.values.length - 1].time; })
-          ]);
-        
-          d3.select(elem).selectAll("*").remove();
-        
-        // container around whole group
-        var svgCont = d3.select(elem).append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", 35 + (height + margin.top + margin.bottom)*graphobjs.length)
-            .append("g");
-        // border around whole group    
-        var borderPath = svgCont.append("rect")
-              .attr("x", 0)
-              .attr("y", 0)
-              .attr("width", width + margin.left + margin.right)
-              .attr("height", 35 + (height + margin.top + margin.bottom)*graphobjs.length)
-              .style("stroke", "#a6a6a6")
-              .style("fill", "none")
-              .style("stroke-width", 2);   
-        // title for whole group      
-        var title = svgCont.append("text")
-               .attr("x", margin.left)
-              .attr("y", margin.top + 5)
-               .attr("font-family", "sans-serif")
-              .attr("font-size", "13px")
-              .style("text-anchor", "left")
-              .attr("font-color", "#000000")
-              .text(function(d) { return varnames[cfactor]; });
-                   
-        var svg = svgCont.selectAll("g")
-              .data(graphobjs)
-              .enter().append("g")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .attr("transform", function(d,i) { return "translate(" + margin.left +"," + (35 + (height + margin.top + margin.bottom)*i) + ")" } );
-       
-        
-          // Add the area path elements. Note: the y-domain is set per element.
-          svg.append("path")
-              .attr("class", "area")
-              .attr("d", function(d) { y.domain([0, d.maxval]); return area(d.values); })
-              .attr("fill", varcolors[cstat])
-              .attr("fill-opacity", .3);
-              
-        
-          // Add the line path elements. Note: the y-domain is set per element.
-          svg.append("path")
-              .attr("class", "line")
-              .attr("d", function(d) { y.domain([0, d.maxval]); return line(d.values); })
-              .attr("stroke", varcolors[cstat]);
-        
-          // Add a small label for the symbol name.
-          svg.append("text")
-              .attr("x", width - 3)
-              .attr("y", height + 10)
-              .attr("font-family", "sans-serif")
-              .attr("font-size", "10px")
-              .style("text-anchor", "end")
-              .text(function(d) { return d.key + " (n="+ d3.round(d.avg_n) + ")";  });          
-          // values
-          svg.append("text")
-              .attr("x", function(d) { return x(d.lastX) - 3 })
-              .attr("y", function(d) { return (d.lastVal > .3*d.maxval) ? y(d.lastVal) - 3 : y(.3*d.maxval) - 3; })
-              .attr("font-family", "sans-serif")
-              .attr("font-size", "9px")
-              .style("text-anchor", "end")
-              .attr("font-color", varcolors[cstat])
-              .text(function(d) { return d3.round(d.lastVal,2); });  // use the filter !=null here
-          svg.append("text")
-              .attr("x", function(d) { return x(d.firstX) + margin.left })
-              .attr("y", function(d) { return (d.firstVal > .3*d.maxval) ? y(d.firstVal) - 3 : y(.3*d.maxval) - 3; }) // FIX THIS
-              .attr("font-family", "sans-serif")
-              .attr("font-size", "9px")
-              .style("text-anchor", "middle")
-              .attr("font-color", varcolors[cstat])
-              .text(function(d) { return d3.round(d.firstVal,2); });
-          // years
-          svg.append("text")
-              .attr("x", function(d) { return x(d.lastX) - 3 })
-              .attr("y", function(d) { return height-3; })
-              .attr("font-family", "sans-serif")
-              .attr("font-size", "9px")
-              .style("text-anchor", "end")
-              .attr("font-color", varcolors[cstat])
-              .text(function(d) { return (d.hasvals) ? d3.time.format("%Y")(d.lastX) : ""; });  // use the filter !=null here
-          svg.append("text")
-              .attr("x", function(d) { return x(d.firstX) + margin.left })
-              .attr("y", function(d) { return height - 3; })
-              .attr("font-family", "sans-serif")
-              .attr("font-size", "9px")
-              .style("text-anchor", "middle")
-              .attr("font-color", varcolors[cstat])
-              .text(function(d) { return (d.hasvals) ? d3.time.format("%Y")(d.firstX) : ""; });             
-     }
-      
-
+ 
       // -------------------------------------------------------------------------      
       // Helper functions to manage user clicks.
       // -------------------------------------------------------------------------                
@@ -1145,6 +1023,53 @@
         });
         //console.log(d3.keys(varnames));
         console.log(varcolors);
+        
+        var lookupfactors = [
+          {
+            "factor": "class_income",
+            "name": "Income",
+            "color": "",
+            "levels": [ 
+              { "level": "Low income", "dname":"Low", "code": "LINC" },
+              { "level": "Lower middle income", "dname":"Lower Middle", "code": "LMINC" },
+              { "level": "Upper middle income", "dname":"Upper Middle", "code": "UMINC" },
+              { "level": "High income", "dname":"High", "code": "HINC" },   
+            ]
+          },
+          {
+            "factor": "class_reg",
+            "name": "Region",
+            "color": "",
+            "levels": [ 
+              { "level": "Africa", "dname":"Africa", "code": "AFR" },
+              { "level": "Asia", "dname":"Asia", "code": "ASIA" },
+              { "level": "Europe", "dname":"Europe", "code": "EUR" },
+              { "level": "Latin America and the Caribbean", "dname":"LAmer.&Carr.", "code": "LAMERC" },   
+              { "level": "North America", "dname":"NAmerica", "code": "NAMER" },   
+              { "level": "Oceania", "dname":"Oceania", "code": "OCA" },   
+            ]
+          },
+          {
+            "factor": "prim_rent",
+            "name": "Main Rent Source",
+            "color": "",
+            "levels": [ 
+              { "level": "Oil", "dname":"Oil", "code": "OIL" },
+              { "level": "Gas", "dname":"Gas", "code": "GAS" },
+              { "level": "Coal", "dname":"Coal", "code": "COAL" },   
+              { "level": "Minerals", "dname":"Minerals", "code": "MIN" },
+            ]
+          },
+          {
+            "factor": "class_opec",
+            "name": "OPEC",
+            "color": "",
+            "levels": [ 
+              { "level": "OPEC", "dname":"Member", "code": "OPEC" },
+              { "level": "Non-OPEC", "dname":"Non-Member", "code": "NOPEC" },
+            ]
+          },         
+        ];
         
                         
         //console.log(c("calc_total_rent_gdp"));
