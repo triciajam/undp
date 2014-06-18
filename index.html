@@ -58,7 +58,7 @@
         }
         
         .smalltext {
-          font-size: 11px !important;
+          font-size: 10px !important;
         }  
         .btnsmalltext {
           font-size: 10px !important;
@@ -136,15 +136,6 @@
     /*-------------------------------------------------------------------------        
       Group Comparison Small Multiples
       -----------------------------------------------------------------------*/  
-        /*
-        #smallmult .line {
-          fill: none;
-          stroke-width: 1.5px;
-        }
-        
-        #smallmult .area {
-        }
-        */
         
         div[id*='smallmult'] .line {
           fill: none;
@@ -154,8 +145,18 @@
         div[id*='smallmult'] .area {
           /*fill: #e7e7e7;*/
         }
-
-
+        /*
+        div[id*='stat-'] {
+          fill: none;
+          stroke-width: 1.5px;
+        }
+        */
+        .statunselected {
+          text-anchor: start;
+          font-size: 11;
+          fill: #bebebe;          
+        }
+        /*#stat:hover { fill: "red" !important; };*/
         
     </style>
 
@@ -205,30 +206,23 @@
     
     <!-- Set up our Bootstrap Layout Grid -->
     <div class="container">
-    <div class="row">
-        <!--
-        <div class="col-md-2 text-left">
-          <h3>Natural Resources</h3>
-          Resource dependence, resource wealth, and the distribution of resource wealth vary widely across countries.
-           <p>Click on a country to see its data below.</p> 
-           <p>Filled countries have resource data available.</p>
-          <div class="btn-group btn-group-xs">
-            <button class="btn btn-mini mybtn" ng-click="updateCurrentStat('default')">Reset Data Availability Fill</button>
-          </div>
-        </div>  
-        -->
-        <div class="col-md-8 text-left">
+    
+      <div class="row">
+        
+        <div class="col-md-8 text-left"> 
         
           <div class="row">
             <div class="col-md-12 text-left">
                 <div id='chart1'  style="width: 700px;height: 300px;"></div>
             </div>
           </div>   
+          
           <div class="row">
             <div class="col-md-12 text-left">                 
              Click a country on the map to select it and view its data. Click a button to select a country group and view its data. Click on the legend to fill the map by the statistic.
             </div>
           </div>  
+          
           <div class="row">
             <div class="col-md-6 text-left mygroupselect">                 
                   <div class="smalltext" >              
@@ -240,10 +234,6 @@
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'High income')">High</button>
                     </div>  
                   </div>
-<!--                  
-            </div>
-            <div class="col-md-6 text-left mygroupselect">  
--->            
                   <div class="smalltext">              
                       Primary Rents
                       <div class="btn-group btn-group-xs">
@@ -253,12 +243,6 @@
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Coal')">Coal</button>
                       </div>  
                   </div>
-<!--                  
-            </div>
-          </div>  
-          <div class="row">         
-             <div class="col-md-6 text-left mygroupselect">                 
---> 
                   <div class="smalltext">              
                       Region
                       <div class="btn-group btn-group-xs">
@@ -270,33 +254,25 @@
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Oceania')">Oceania</button>                        
                       </div>  
                   </div>
-            </div>
-            <div class="col-md-6 text-left mygroupselect">                 
-             <div id="legend">
-               
-             </div>
-            </div>
-         </div>  
-              <!--
-              <div class="smalltext" style="border: 1px solid #ccc; padding-left: 4px; padding-right: 4px; display: inline">              
-                Income
-                 <div class="btn-group btn-group-xs">
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Low income')">Low</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Lower middle income')">Lower Mid</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Upper middle income')">Upper Mid</button>
-                    <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'High income')">High</button>
-                </div>  
-              </div>            
-              -->
-        </div>  <!-- 8 -->            
+            </div> <!-- 6 -->
+            <div class="col-md-6 text-left">
+              <div id="legend"></div>
+            </div> <!-- 6 -->
+          </div>  <!-- third row -->
+
+          <div class="row">
+              Next Row of rmultiples!
+          </div>
+          
+        </div>  <!-- end first column -->            
         
         <div class="col-md-4 text-left">
           <h3 ng-bind='current_selection_name'></h3>
           <div id='chart2'></div>        
         </div>
         
-    </div> 
-    </div>
+      </div> <!-- end big row -->
+    </div> <!-- end container -->
 
  
     <!-------------------------------------------------------------------------        
@@ -595,7 +571,7 @@
       // Create the data map
       // -------------------------------------------------------------------------      
           
-          
+          console.log("width " + $("#chart1").parent().width());
           
           $scope.chart1 = new Datamap({
               element: document.getElementById('chart1'),
@@ -688,8 +664,10 @@
           
           resourceStatNames.forEach(function(stat, index) {
             var statObj = {};
+            statObj.variable = stat;
             statObj.name = varnames[stat];
-            statObj.color = varcolors[stat];            
+            statObj.color = varcolors[stat]; 
+            statObj.selected = false;
             resourceStatObjs.push(statObj);
           });
           console.log("resourceStatObjs");
@@ -700,25 +678,51 @@
         
           //var resourceStatObjs = [2,4,5,6,7];  
                   
+          //var svg = d3.selectAll("#legend").append("svg")
           var svg = d3.selectAll("#legend").append("svg")
+            .attr("width", $("#legend").width())
+            .attr("height", 100);            
+          
+          var currentselection = null;
+          
           var legend = svg.selectAll("g")
             .data(resourceStatObjs)
               .enter().append("g")
               .attr("class", "legend")
-              .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+              .attr("transform", function(d, i) { return "translate(0," + i * 14 + ")"; });
   
           legend.append("rect")
             .attr("x", 0)
-            .attr("width", 18)
-            .attr("height", 18)
+            .attr("width", 10)
+            .attr("height", 10)
             .style("fill", function(d,i) { return d.color; });
   
           legend.append("text")
-              .attr("x", 22)
-              .attr("y", 9)
-              .attr("dy", ".35em")
-              .style("text-anchor", "start")
-              .text(function(d) { return d.name; });      
+              .attr("x", 14)
+              .attr("y", 5)
+              .attr("dy", ".35em")              
+              .attr("id", function(d) { return "stat"; } )              
+              .attr("class", "statunselected")              
+              .text(function(d) { return d.name; })
+              .on("click", function(d, i) { 
+                  //console.log(d3.select(this).parentNode); 
+                  d.selected = true;
+                  currentSelection = d;
+                  d3.selectAll("#stat").style("fill", "#bebebe");
+                  //d3.selectAll("#stat").attr("class", "statunselected");
+                  d3.select(this).style("fill", function(d) { return d.color; });
+                  $scope.updateCurrentStat(d.variable);
+              })
+              /*
+              .on("mouseover", function(d,i) {
+                  //console.log(d.name);
+                  if (!d.selected) d3.select(this).style("fill", "#ff7f0e");
+              })   
+              .on("mouseout", function(d,i) {
+                  //console.log(d.name);
+                  if (!d.selected) d3.select(this).style("fill", "#bebebe");
+              });
+              */
       }
 
       $scope.updateGroupStat = function(cstat) {
@@ -773,7 +777,7 @@
           else {
           $scope.currentStat = statName;
           $scope.currentStatName = varnames[statName];
-          $scope.updateGroupStat(statName);
+          //$scope.updateGroupStat(statName);
             
           var countryVals = {};
           countryVals = getTimeSeriesAverage($scope.currentStat);
