@@ -545,10 +545,10 @@
           $scope.chart2 = c3.generate({
               
                   bindto: '#chart2',      
-                  /*
+                  
                   size: {
-                    height: 300,
-                  }, */   
+                    height: 200,
+                  },   
                   data: {
                     x: 'x',
                     columns: $scope.country_resource_stat_data_arr[$scope.current_country_id],
@@ -586,7 +586,7 @@
                   }, // axis
               
                  legend: {
-                    position: 'bottom'
+                    show: false
                   },
                   
           });// c3.generate
@@ -698,27 +698,27 @@
           var width = $("#legend").width()
           console.log("width: " + width);
         
-          var resourceStatObjs = [2,4,5,6,7];  
+          //var resourceStatObjs = [2,4,5,6,7];  
                   
-          var legend = d3.selectAll("#legend").append("svg")
-              .data(resourceStatObjs)
+          var svg = d3.selectAll("#legend").append("svg")
+          var legend = svg.selectAll("g")
+            .data(resourceStatObjs)
               .enter().append("g")
               .attr("class", "legend")
               .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
   
           legend.append("rect")
-            .attr("x", width - 18)
+            .attr("x", 0)
             .attr("width", 18)
             .attr("height", 18)
             .style("fill", function(d,i) { return d.color; });
   
           legend.append("text")
-              .attr("x", width - 24)
+              .attr("x", 22)
               .attr("y", 9)
               .attr("dy", ".35em")
-              .style("text-anchor", "end")
-              .text(function(d) { return d.name; });
-       
+              .style("text-anchor", "start")
+              .text(function(d) { return d.name; });      
       }
 
       $scope.updateGroupStat = function(cstat) {
