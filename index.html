@@ -159,6 +159,12 @@
           font-size: 11;
           fill: #bebebe;          
         }
+        .heatcountrylabel {
+          text-anchor: start;
+          font-family: Consolas, courier;
+          font-size: 11;
+          fill: #bebebe;          
+        }
         /*#stat:hover { fill: "red" !important; };*/
         
     </style>
@@ -279,10 +285,15 @@
         
         <div class="col-md-4 text-left">
           <h3 ng-bind='current_selection_name'></h3>
-          <div id='chart2'></div>        
+          <div id='chart2'></div> 
         </div>
         
       </div> <!-- end big row -->
+      <div class="row">
+        <div class="col-md-12 text-left">
+          <div id="heatyear"></div>          
+        </div>
+      </div>
     </div> <!-- end container -->
 
  
@@ -630,6 +641,7 @@
         $scope.setupLevelsCompare("#regionCompare", "class_reg", "calc_govt_take");
         $scope.setupLevelsCompare("#rentCompare", "prim_rent", "calc_govt_take");
   
+        $scope.setUpHeatmap("calc_govt_take");
           
       }).error(function(err){
           throw(err);                     
@@ -782,7 +794,288 @@
                 }  
             });  
       } 
+      
+      $scope.setUpHeatmap = function(stat, numrows) {
+        // create the data objects with ID (ccode), stat(year or statistic), and value
+        // then add a key function that returns the ccode
+          var countries = d3.keys($scope.country_data_json).filter(function(ccode) { return $scope.country_data_json[ccode].haveResourceStats == "1";});          
+          //var rows = xaxis.slice(1, xaxis.length-1);        
+ 
+          numrows = 12;
+          var rows = d3.range(0,numrows);
+ 
+          var margin = { top: 15, right: 0, bottom: 5, left: 50 },
+          width = 1100 - margin.left - margin.right,
+          height = 350 - margin.top - margin.bottom,
+          gridSize = Math.floor(width / countries.length),
+          legendElementWidth = gridSize*2;
+          //buckets = 9;
+          //colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
+        
+        var chartData = [];
+        /*
+        countries.forEach(function(ccode, index) {
+          var rowData = new Object();
+          rowData.ccode = ccode;
+          rowData.values = $scope.country_resource_stat_data_json[ccode][stat];
+          rowData.max = d3.max(rowData.values);
+          rowData.min = d3.min(rowData.values);          
+          chartData.push(rowData);
+        });
+        */
+        countries.forEach(function(ccode, index) {
+          rows.forEach(function(row, rindex) {
+            var entry = new Object();
+            entry.ccode = ccode;
+            entry.row = rindex;            
+            entry.value = $scope.country_resource_stat_data_json[ccode][stat][rindex];
+            chartData.push(entry);              
+          });  
+        });
+        
+        console.log(chartData);
+             
+        var color = d3.scale.linear()
+                       .domain([0,1])
+                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
+        var colorq = d3.range(.1, 1.1, .1);
+        colorq = colorq.map(function (input) { return color(input); });
+        console.log(colorq);
+
+        var colorScale = d3.scale.quantize()
+              .domain([d3.min(chartData, function (d) { return d.value; }), d3.max(chartData, function (d) { return d.value; })])
+              .range(colorq);
+  
+        var padding = 2;
+        //updateData(chartData);
+        
+     
+        var svg = d3.select("#heatyear").append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      
+        var data=d3.nest()
+          .key(function(d) {return d.ccode;})
+          .sortKeys(d3.ascending)
+          .entries(chartData);
           
+        console.log("data");
+        console.log(data);
+        
+          
+        var countryg = svg.selectAll("g").data(data).enter()
+                        .append("g")
+                        .attr("transform",function(d,i) {return "translate(" + (gridSize*(i)) + ",0)" });
+         countryg
+          .append("text")
+                .text(function (d) { return d.key; })
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("class", "heatcountrylabel")              
+                .attr("transform", "rotate(-90)")              
+                .style("text-anchor", "middle");      
+        countryg.selectAll("rect")
+          .data(function(d) {return d.values}) 
+          .enter()
+              .append("rect")
+              .attr("x", -gridSize + 2*padding)
+              .attr("y", function(d,i) { return 10 + padding + (d.row * gridSize); })
+              //.attr("class", "hour bordered")
+              .attr("width", function(d,i) { return gridSize - padding; })
+              .attr("height", gridSize)
+              .style("fill", function(d,i) { return (d.value == null) ? "#ffffff" : colorScale(d.value); })
+              // throwing in a title element
+              .append("title")
+                .text(function(d) {return d.value;}); 
+                    
+      var myint = setInterval(updateData,3000);
+     
+      function updateData() {
+        console.log("updating");
+        
+        /*
+        chartData.sort(function(a,b) {
+          console.log(a);
+          console.log(b);
+          
+          if (a.values[0].value == null && a.values[0].value) return 0;
+          if (a.values[0].value == null) return -1;
+          if (b.values[0].value == null) return 1;
+                    
+          if (a.values[0].value > b.values[0].value) return 1;
+          if (a.values[0].value < b.values[0].value) return -1;
+          return 0;          
+        });
+        console.log(data);  
+        */
+
+        /*
+        data.sort(function(a,b) {
+          console.log(a);
+          console.log(b);
+          
+          if (a.values[0].value == null && a.values[0].value) return 0;
+          if (a.values[0].value == null) return -1;
+          if (b.values[0].value == null) return 1;
+                    
+          if (a.values[0].value > b.values[0].value) return 1;
+          if (a.values[0].value < b.values[0].value) return -1;
+          return 0;          
+        });
+        console.log(data);  
+        */
+        function doSort(a, b) {
+          
+          var nestdata = chartData.filter(function (elem, index) { return elem.row == 0; });
+          
+          //console.log("nestdata");
+          //console.log(nestdata);
+                    
+          //console.log(a);
+          //console.log(b);
+          
+          var nestData2 = [];
+          nestdata.forEach(function(elem, index) {
+            nestData2[elem.ccode] = elem.value;                  
+          });
+          
+          if (nestData2[a] == null && nestData2[b]) return 0;
+          if (nestData2[a] == null) return -1;
+          if (nestData2[b] == null) return 1;
+                    
+          if (nestData2[a] > nestData2[b]) return 1;
+          if (nestData2[a] < nestData2[b]) return -1;
+          return 0;                    
+        }
+        
+        var data=d3.nest()
+          .key(function(d) {return d.ccode;})
+          .sortKeys(function(a,b) { return doSort(a,b); }) 
+          .entries(chartData);
+        console.log("data");        
+        console.log(data);  
+            
+        var update = svg.selectAll("g").data(data, function(d) { return d.key; });
+        console.log(update);
+        //update selection          
+        update.transition()
+          .duration(750)
+          .attr("transform",function(d,i) { console.log(d); return "translate(" + (gridSize*(i)) + ",0)" });
+        clearInterval(myint);
+      
+      }  
+      
+      }
+        /*   
+      
+        function updateData(chartData) {
+           console.log("in update data");
+            var data=d3.nest()
+              .key(function(d) {return d.ccode;})
+              .sortKeys(d3.ascending)
+              .entries(chartData);
+         
+            var svg = d3.select("#heatyear").append("svg")
+                  .attr("width", width + margin.left + margin.right)
+                  .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+          
+            var countryg = svg.selectAll("g").data(data).enter()
+                            .append("g")
+                            .attr("transform",function(d,i) {return "translate(" + (gridSize*(i)) + ",0)" });
+             countryg
+              .append("text")
+                    .text(function (d) { return d.key; })
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("class", "heatcountrylabel")              
+                    .attr("transform", "rotate(-90)")              
+                    .style("text-anchor", "middle");      
+            countryg.selectAll("rect")
+              .data(function(d) {return d.values}) 
+              .enter()
+                  .append("rect")
+                  .attr("x", -gridSize + 2*padding)
+                  .attr("y", function(d,i) { return 10 + padding + (d.row * gridSize); })
+                  //.attr("class", "hour bordered")
+                  .attr("width", function(d,i) { return gridSize - padding; })
+                  .attr("height", gridSize)
+                  .style("fill", function(d,i) { return (d.value == null) ? "#ffffff" : colorScale(d.value); })
+                  // throwing in a title element
+                  .append("title")
+                    .text(function(d) {return d.value;});                 
+            }
+      
+      }
+          */
+      
+      
+      /*          
+        countryg        
+          .append("text")
+                .text(function (d) { return d.key; })
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("class", "heatcountrylabel")              
+                .attr("transform", "rotate(-90)")              
+                .style("text-anchor", "middle");
+      
+        
+        /*      
+            .data(chartData)
+              .enter().append("g")
+              .attr("transform", function(d,i) { return "translate(" + i*gridSize + ",0)" });
+       
+       
+       
+       /*
+          rows.append("text")
+                .text(function (d) { return d.ccode; })
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("class", "heatcountrylabel")              
+                .attr("transform", "rotate(90)")              
+                .style("text-anchor", "start");
+                .append("rect") 
+                
+                //.attr("transform", "translate(-6," + gridSize / 1.5 + ")");
+                //.attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+
+        var dayLabels = svg.selectAll(".xlevels")
+              .data(xlevels)
+              .enter().append("text")
+                .text(function (d) { return d; })
+                .attr("x", 0)
+                .attr("y", function (d, i) { return i * gridSize; })
+                .style("text-anchor", "end")
+                .attr("transform", "translate(-6," + gridSize / 1.5 + ")");
+                //.attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+
+          var timeLabels = svg.selectAll(".timeLabel")
+              .data(countries)
+              .enter().append("text")
+                .text(function(d) { return d; })
+                .attr("x", function(d, i) { return i * gridSize; })
+                .attr("y", 0)
+                .style("text-anchor", "middle")
+                .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+                //.attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
+
+          var heatMap = svg.selectAll(".hour")
+              .data(chartData)
+              .enter().append("rect")
+              .attr("x", function(d,i) { return (d.hour - 1) * gridSize; })
+              .attr("y", function(d,i) { return (d.day - 1) * gridSize; })
+              .attr("rx", 4)
+              .attr("ry", 4)
+              .attr("class", "hour bordered")
+              .attr("width", gridSize)
+              .attr("height", gridSize)
+              .style("fill", colors[0]);
+      */          
    
       $scope.selectCountry = function(country) {
         console.log("selecting country:" + country);
@@ -836,30 +1129,20 @@
             vals.push(countryVals[key]);
           }            
           
+          /*
           var baseColor = d3.rgb(varcolors[statName]);
           var darkest = baseColor.darker().darker().darker();
           var lightest = baseColor.brighter().brighter().brighter();
           console.log(darkest.toString());
           console.log(lightest.toString());
           
-          if (statName == "calc_govt_take") {
-            lightest = "#dcccc9";
-            darkest = "#54332d";
-          }
-          if (statName == "calc_gov_resrev_gdp") {
-            lightest = "#bbd6e8"; //bbd6e8 8fbbd9
-            darkest = "#12476c";
-          }
-          if (statName == "calc_rent_total_gdp") {
-            lightest = "#f2bebe"; //bbd6e8 8fbbd9
-            darkest = "#951b1c";
-          }
-          
+         
+     */
           
                               
           var color = d3.scale.linear()
                        .domain([d3.min(vals),d3.max(vals)])
-                       .range([lightest.toString(), darkest.toString()]); //faa632 #ffbb78 b28254
+                       .range([varlookup[statName].lightColor, varlookup[statName].darkColor]); //faa632 #ffbb78 b28254
          
           var chloroVals = {};
           for(key in countryVals) {
@@ -939,7 +1222,7 @@
           "values": {
            "name": "Government Resource Revenue",
           "source": "Calculated: avg of REV$rev_gov_resrev_gdp and REV2$rev2_gov_resrev_gdp",
-          "color": "1f77b4" 
+          "color": "1f77b4",
           } 
           },{
            "variable": "calc_govt_take",
@@ -1032,7 +1315,9 @@
           "source": "Resource_Revenue2",
           "color": "bcbd22" //8c564b bcbd22
            }
-           },{
+           }
+           /*
+           ,{
            "variable": "class_income",
           "values": {
            "name": "Income Level",
@@ -1060,10 +1345,12 @@
           "source": "Rent",
           "color": "" //8c564b bcbd22
           }          
-        } ];
+        }*/ ];
 
+        
         var varnames = {};
         var varcolors = {};
+        var varlookup = {};
 
         //var c = d3.scale.category10();
         //var dataAvailable = c(0);
@@ -1072,10 +1359,28 @@
           //console.log(item);
           varnames[item.variable] = item.values.name;
           varcolors[item.variable] = "#".concat(item.values.color);
-          //varcolors[item.variable] = c(item.variable);
-        });
-        //console.log(d3.keys(varnames));
-        console.log(varcolors);
+          varlookup[item.variable] = item.values;
+          
+          if (varcolors[item.variable] != "#") {            
+            var baseColor = d3.rgb(varcolors[item.variable]);
+            var darkest = baseColor.darker().darker().darker();
+            var lightest = baseColor.brighter().brighter().brighter();
+            //console.log(darkest.toString());
+            //console.log(lightest.toString());
+            
+            varlookup[item.variable]["lightColor"] = lightest.toString();
+            varlookup[item.variable]["darkColor"] = darkest.toString();
+          }
+      }); 
+      
+      varlookup["calc_govt_take"].lightColor = "#dcccc9";
+      varlookup["calc_govt_take"].darkColor = "#54332d";
+      varlookup["calc_gov_resrev_gdp"].lightColor = "#bbd6e8";
+      varlookup["calc_gov_resrev_gdp"].darkColor = "#12476c";
+      varlookup["calc_rent_total_gdp"].lightColor = "#f2bebe";
+      varlookup["calc_rent_total_gdp"].darkColor = "#951b1c";
+    
+      console.log(varlookup);
         
         var lookupfactors = [
           {
