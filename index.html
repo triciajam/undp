@@ -79,7 +79,7 @@
 
         .plainpaths {
           stroke: #ffffff !important;
-          stroke-width: 1.4 !important;
+          stroke-width: 1.8 !important;
           stroke-opacity: .1 !important;
         }
         
@@ -261,7 +261,15 @@
           </div>  <!-- third row -->
 
           <div class="row">
-              Next Row of rmultiples!
+            <div class="col-md-4 text-left">
+              <div id="incomeCompare"></div>
+            </div>
+            <div class="col-md-4 text-left">
+              <div id="regionCompare"></div>
+            </div>
+            <div class="col-md-4 text-left">
+              <div id="rentCompare"></div>
+            </div>            
           </div>
           
         </div>  <!-- end first column -->            
@@ -378,7 +386,8 @@
       // stores our map and chart visualization variables
       $scope.chart1 = null;      
       $scope.chart2 = null;
-
+      $scope.levelsCompareChart = {};
+      
       // array of years
       // this is necessary for the c3 charts
       var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012];
@@ -397,8 +406,8 @@
   
           // save raw data
           $scope.raw_data = data;
-          console.log("raw data: ");
-          console.log($scope.raw_data);
+          //console.log("raw data: ");
+          //console.log($scope.raw_data);
           
     
           // take data out of raw data and puts into associative arrays
@@ -461,14 +470,17 @@
           // this calculates average data for groups of countries we are interested in
           // and stores it in an object
           var resourceStats = d3.keys($scope.country_resource_stat_data_json[$scope.current_country_id]);
-          console.log("lookupfactors before loop");
-          console.log(lookupfactors);
           
           lookupfactors.forEach(function(currentFactor, index) {
               console.log("in lookup loop");
               console.log(currentFactor);
-              $scope.group_resource_stat_data_json[currentFactor.factor] = currentFactor;
-              $scope.group_resource_stat_data_json[currentFactor.factor].alevels = {};
+              
+              // have to make a copy of currentFactor explicitly or Javascript will point to same ref
+              $scope.group_resource_stat_data_json[currentFactor.factor] = new Object();
+              $scope.group_resource_stat_data_json[currentFactor.factor]["factor"] = currentFactor.factor;
+              $scope.group_resource_stat_data_json[currentFactor.factor]["name"] = currentFactor.name;
+              $scope.group_resource_stat_data_json[currentFactor.factor]["color"] = currentFactor.color;              
+              $scope.group_resource_stat_data_json[currentFactor.factor].levels = [];
               
               $scope.group_resource_stat_data_arr[currentFactor.factor] = [];  
               
@@ -477,7 +489,8 @@
                 
                 console.log(currentLevel.level);
                 
-                $scope.group_resource_stat_data_json[currentFactor.factor].alevels[currentLevel.level] = currentLevel;
+                $scope.group_resource_stat_data_json[currentFactor.factor].levels[currentLevel.level] = currentLevel;
+                $scope.group_resource_stat_data_json[currentFactor.factor].levels[currentLevel.level].stats = [];                
                 
                 $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level] = [];  
                 $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level].push(xaxis);  
@@ -494,14 +507,12 @@
                     timeseries.push($scope.country_resource_stat_data_json[currentCountry][currentStat])
                   });                          
                   var byyears = d3.transpose(timeseries);
-                  //$scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level][currentStat] = [];
-                  //$scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level][sindex] = [];                  
                   var tmp=[];
                   tmp.push(currentStat);
                   byyears.forEach(function(currentYear, index){
                     tmp.push(d3.mean(currentYear));
-                    //$scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level][currentStat].push(d3.mean(currentYear));  
                   });
+                  $scope.group_resource_stat_data_json[currentFactor.factor].levels[currentLevel.level].stats[currentStat] = tmp;
                   $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp);                  
                 });
               });                        
@@ -612,6 +623,9 @@
         $scope.updateCurrentStat($scope.currentStat);
         
         $scope.doLegend();
+        $scope.setupLevelsCompare("#incomeCompare", "class_income", "calc_govt_take");
+        $scope.setupLevelsCompare("#regionCompare", "class_reg", "calc_govt_take");
+        $scope.setupLevelsCompare("#rentCompare", "prim_rent", "calc_govt_take");
   
           
       }).error(function(err){
@@ -725,16 +739,39 @@
               */
       }
 
-      $scope.updateGroupStat = function(cstat) {
-        console.log("insmallmultiples for: " + cstat);
-          $scope.setUpSmallMultiples("#smallmult1", cstat, "class_income", ["High income", "Upper middle income","Lower middle income", "Low income"]);
-          $scope.setUpSmallMultiples("#smallmult2", cstat, "class_reg", ["Africa", "Asia","Europe","Latin America and the Caribbean","North America","Oceania"]);
-          //$scope.setUpSmallMultiples("#smallmult3", cstat, "class_opec", ["0", "1"]);
-          $scope.setUpSmallMultiples("#smallmult3", cstat, "prim_prod", ["Fuels", "Industrial","Iron&Ferrous Metal","Non-Ferrous Metal", "Precious Stone&Metal"]);
-          $scope.setUpSmallMultiples("#smallmult4", cstat, "prim_rent", ["Oil", "Gas","Minerals", "Coal"]);        
-      }
-
-
+      $scope.setupLevelsCompare = function(element, factor, stat) {
+          
+          //$scope.groupCompareChart = {};
+          var chartData = [];
+          chartData.push(xaxis);
+          var levelnames = d3.keys($scope.group_resource_stat_data_json[factor].levels);
+          
+          levelnames.forEach(function(levelname, index) {
+            //console.log("in levels");
+            var tmp = [];
+            tmp.push($scope.group_resource_stat_data_json[factor].levels[levelname].dname);
+            tmp = tmp.concat($scope.group_resource_stat_data_json[factor].levels[levelname].stats[stat].slice(1));
+            chartData.push(tmp);
+          }); 
+          console.log(chartData);    
+          
+          $scope.levelsCompareChart[element] = c3.generate({
+                bindto: element,
+                size: {
+                    height: 200,
+                  }, 
+                data: {
+                    x: 'x',
+                    columns: chartData,
+                    type: 'line',
+                    names: varnames, 
+                    //colors: varcolors, 
+                    //labels:false,
+                  }, // data    
+            });  
+      } 
+          
+   
       $scope.selectCountry = function(country) {
         console.log("selecting country:" + country);
         $scope.current_country_id = country;
