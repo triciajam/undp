@@ -133,6 +133,9 @@
           stroke-width: 0px !important;
         }
         */
+        #incomeCompare .c3-circle {
+          fill: none !important;
+        }
     /*-------------------------------------------------------------------------        
       Group Comparison Small Multiples
       -----------------------------------------------------------------------*/  
@@ -767,7 +770,16 @@
                     names: varnames, 
                     //colors: varcolors, 
                     //labels:false,
-                  }, // data    
+                  }, // data
+                axis: {
+                    x: {
+                        //type: 'timeseries',
+                        tick: {
+                        count: 2,
+                        //format: '%Y'
+                        }
+                    }
+                }  
             });  
       } 
           
