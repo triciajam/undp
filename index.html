@@ -647,11 +647,10 @@
         $scope.setupLevelsCompare("#rentCompare", "prim_rent", "calc_govt_take");
   
         $scope.setUpHeatmap("calc_govt_take");
-        var a = new Heatmap("#heat2", "calc_govt_take", xaxis.slice(1, xaxis.length-1));
-        a.setupData();
-        a.setupChart();
-        a.drawChart();
-
+        $scope.heatmap = new Heatmap("#heat2", xaxis.slice(1, xaxis.length-1));
+        $scope.heatmap.setupData("calc_govt_take");
+        $scope.heatmap.setupChart();
+        $scope.heatmap.drawChart();
           
       }).error(function(err){
           throw(err);                     
@@ -745,8 +744,8 @@
               .text(function(d) { return d.name; })
               .on("click", function(d, i) { 
                   //console.log(d3.select(this).parentNode); 
-                  d.selected = true;
-                  currentSelection = d;
+                  //d.selected = true;
+                  //currentSelection = d;
                   d3.selectAll("#stat").style("fill", "#bebebe");
                   //d3.selectAll("#stat").attr("class", "statunselected");
                   d3.select(this).style("fill", function(d) { return d.color; });
@@ -1040,7 +1039,7 @@
           }
           $scope.chart1.updateChoropleth(chloroVals);
         }
-        
+        if ($scope.heatmap != null) $scope.heatmap.updateChart(statName, 0);
       };
 
       // -------------------------------------------------------------------------      
@@ -1051,8 +1050,8 @@
       // call it like this var a = new Heatmap("calc_govt_take", d3.range(2000,2012))
       
 
-      Heatmap = function(element, stat, rowlabels) {
-        this.stat = stat;
+      Heatmap = function(element, rowlabels) {
+        this.stat = null;
         this.rowlabels = rowlabels;        
         this.numrows = rowlabels.length;
         this.numcountries = null;
@@ -1067,74 +1066,8 @@
         this.svg = {};
         this.countryg = {};
         
-        
-        
-        //this.setupData();
-        //this.setupChart();
-        //this.drawChart();
-        console.log("this.rowlabels");
-        console.log(this.rowlabels);
-        
-        
-        this.setupData = function() {
-         
         this.countries = d3.keys($scope.country_data_json).filter(function(ccode) { return $scope.country_data_json[ccode].haveResourceStats == "1";});          
         this.numcountries = this.countries.length;
-        //var rows = xaxis.slice(1, xaxis.length-1);        
-        //numrows = 12;
-        //var rows = d3.range(2000,2012); 
-       console.log("this.rowlabels");
-        console.log(this.rowlabels);
-         
-        
-        /*
-        var margin = { top: 15, right: 0, bottom: 5, left: 50 },
-        width = 1100 - margin.left - margin.right,
-        height = 350 - margin.top - margin.bottom,
-        gridSize = Math.floor(width / countries.length),
-        legendElementWidth = gridSize*2;
-        */
-        //var chartData = [];
-        console.log("this.rowlabels");
-        console.log(this.rowlabels);
-        
-        this.countries.forEach(function(ccode, index) {
-        console.log("this.rowlabels");
-        console.log(this.rowlabels);
-          this.rowlabels.forEach(function(row, rindex) {
-            var entry = new Object();
-            entry.ccode = ccode;
-            entry.row = rindex;            
-            entry.value = $scope.country_resource_stat_data_json[ccode][this.stat][rindex];
-            this.chartData.push(entry);              
-          }, this);  
-        }, this);       
-        console.log(this.chartData);
-        /*     
-        var color = d3.scale.linear()
-                       .domain([0,1])
-                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
-        var colorq = d3.range(.1, 1.1, .1);
-        colorq = colorq.map(function (input) { return color(input); });
-        console.log(colorq);
-
-        var colorScale = d3.scale.quantize()
-              .domain([d3.min(chartData, function (d) { return d.value; }), d3.max(chartData, function (d) { return d.value; })])
-              .range(colorq);
-  
-        var padding = 2;
-        */
-        //updateData(chartData);
-        this.data = d3.nest()
-              .key(function(d) {return d.ccode;})
-              .sortKeys(d3.ascending)
-              .entries(this.chartData);          
-        console.log("data");
-        console.log(this.data);
-        
-      };
-      
-      this.setupChart = function() {
         
         this.margin = { top: 15, right: 0, bottom: 5, left: 50 };
         this.width = 1100 - this.margin.left - this.margin.right;
@@ -1142,7 +1075,33 @@
         this.gridSize = Math.floor(this.width / this.numcountries),
         this.legendElementWidth = this.gridSize*2;       
         this.padding = 2;
+ 
+          
+        //this.setupData();
+        //this.setupChart();
+        //this.drawChart();
         
+        
+        this.setupData = function(whichstat) {
+          this.chartData = [];
+          this.stat = whichstat;
+          this.countries.forEach(function(ccode, index) {
+            this.rowlabels.forEach(function(row, rindex) {
+              var entry = new Object();
+              entry.ccode = ccode;
+              entry.row = rindex;            
+              entry.value = $scope.country_resource_stat_data_json[ccode][whichstat][rindex];
+              this.chartData.push(entry);              
+            }, this);  
+          }, this);       
+          console.log("this.chartData");
+          console.log(this.chartData);
+  
+          this.sortData(0);
+        };
+      
+      this.setupChart = function() {
+              
         console.log("setupChart gridSize " + this.gridSize);
         
         var color = d3.scale.linear()
@@ -1158,8 +1117,6 @@
       };
       
       this.drawChart = function() {
-        console.log(this.element);
-        console.log("drawChart gridSize " + this.gridSize);
         
         var chart = this;
         
@@ -1186,7 +1143,7 @@
             //.attr("transform", "rotate(-90)")              
             .style("text-anchor", "start")
             .on("click", function(d, i) { 
-                  chart.sortByRow(i);              
+                  chart.updateChart(null,i);              
             }); 
         this.svg = container.append("g")
             .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");            
@@ -1216,49 +1173,76 @@
                   // throwing in a title element
                   .append("title")
                     .text(function(d) {return d.value;});                   
+      };
       
-        
-      this.sortByRow = function(whichrow) {
-        console.log("this.chartData in sortByRow");
-        console.log(this.chartData);
-        
-        console.log("drawChart gridSize " + this.gridSize);
- 
+      this.sortData = function(whichrow) {
         var chart = this;
-        
-        var localcd = this.chartData;
-        var localgridSize = this.gridSize;
-        this.data=d3.nest()
+         this.data=d3.nest()
           .key(function(d) {return d.ccode;})
           .sortKeys(function(a,b) { return chart.doSort(a,b, whichrow); }) 
-          .entries(localcd);
+          .entries(this.chartData);
         console.log("data");        
-        console.log(this.data);  
-            
-        var update = this.svg.selectAll("g").data(this.data, function(d) { return d.key; });
-        console.log(update);
-        //update selection          
-        update.transition()
-          .duration(1000)
-          .attr("transform",function(d,i) { return "translate(" + (localgridSize*(i)) + ",0)" });
-        //clearInterval(myint);
+        console.log(this.data);         
+      };
         
+      this.updateChart = function(whichstat, whichrow) {
+        var chart = this;
+        var localgridSize = this.gridSize;
+        
+        if (whichstat == null) {
+          this.sortData(whichrow);  
+          
+          console.log("this.data in update whichrow");
+          console.log(this.data);
+          
+          var update = this.svg.selectAll("g").data(this.data, function(d) { return d.key; });
+          console.log(update);
+          //update selection          
+          update.transition()
+            .duration(1000)
+            .attr("transform",function(d,i) { return "translate(" + (localgridSize*(i)) + ",0)" });
+          //clearInterval(myint);
+        } else {
+          this.setupData(whichstat);
+          this.setupChart();
+          this.sortData(whichrow);
+          
+          console.log("this.data in update whichstat");
+          console.log(this.data);
+          
+          var rects = this.svg.selectAll("g").data(this.data, function(d) { return d.key; })
+            .selectAll("rect")
+            .data(function(d) { console.log(d); return d.values}, function(d) { console.log("key: " + d.row); return d.row; })
+                .style("fill", function(d,i) { console.log("filling: " + d); return (d.value == null) ? "#ffffff" : chart.colorScale(d.value); })
+                .append("title")
+                    .text(function(d) {return d.value;});                
 
-      }; // sortBy Row  
+          console.log("rects");
+          console.log(rects);
+          
+          
+          var update = this.svg.selectAll("g").data(this.data, function(d) { return d.key; });
+          //console.log(update);
+          //update selection          
+          update.transition()
+            .duration(1000)
+            .attr("transform",function(d,i) { return "translate(" + (chart.gridSize*(i)) + ",0)" });
+//              .selectAll("rect")
+//                .data(function(d) {console.log(d); return d.values}, function(d) { return d; }) 
+//                .style("fill", function(d,i) { return (d.value == null) ? "#ffffff" : chart.colorScale(d.value); });
+          //clearInterval(myint);
+          
+        }        
+      }; // updateChart  
       
       this.doSort = function(a, b, whichrowindex) {
-        console.log("this.chartData in doSort");
-        console.log(this.doSort);
-          
+
           var nestdata = this.chartData.filter(function (elem, index) { return elem.row == whichrowindex; });          
           var nestData2 = [];
           
           nestdata.forEach(function(elem, index) {
             nestData2[elem.ccode] = elem.value; 
           });
-        console.log("nestdata in doSort");
-        console.log(nestdata);
-      
 
           if (nestData2[a] == null && nestData2[b] == null) return 0;
           if (nestData2[a] == null) return 1;
@@ -1266,8 +1250,7 @@
                     
           if (nestData2[a] > nestData2[b]) return -1;
           if (nestData2[a] < nestData2[b]) return 1;
-          return 0;                    
-        };      
+          return 0;                          
       }; // doSort
       
       } // HEatmap
