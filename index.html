@@ -292,9 +292,11 @@
         
       </div> <!-- end big row -->
       <div class="row">
+        <!--
         <div class="col-md-12 text-left">
           <div id="heatyear"></div>          
         </div>
+        -->
         <div class="col-md-12 text-left">
           <div id="heat2"></div>          
         </div>
@@ -646,7 +648,7 @@
         $scope.setupLevelsCompare("#regionCompare", "class_reg", "calc_govt_take");
         $scope.setupLevelsCompare("#rentCompare", "prim_rent", "calc_govt_take");
   
-        $scope.setUpHeatmap("calc_govt_take");
+        //$scope.setUpHeatmap("calc_govt_take");
         $scope.heatmap = new Heatmap("#heat2", xaxis.slice(1, xaxis.length-1));
         $scope.heatmap.setupData("calc_govt_take");
         $scope.heatmap.setupChart();
@@ -687,6 +689,9 @@
           }    
           if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_resource_stat_data_arr[newValue] });          
         }
+        
+        //$scope.heatmap.selectCountries(newValue);
+        
     }, true); 
  
 
@@ -804,161 +809,6 @@
             });  
       } 
       
-      $scope.setUpHeatmap = function(stat, numrows) {
-        // create the data objects with ID (ccode), stat(year or statistic), and value
-        // then add a key function that returns the ccode
-          var countries = d3.keys($scope.country_data_json).filter(function(ccode) { return $scope.country_data_json[ccode].haveResourceStats == "1";});          
-          var rows = xaxis.slice(1, xaxis.length-1);        
- 
-          numrows = 12;
-          var rows = d3.range(2000,2012);
- 
-          var margin = { top: 15, right: 0, bottom: 5, left: 50 },
-          width = 1100 - margin.left - margin.right,
-          height = 350 - margin.top - margin.bottom,
-          gridSize = Math.floor(width / countries.length),
-          legendElementWidth = gridSize*2;
-          //buckets = 9;
-          //colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
-        
-        var chartData = [];
-        countries.forEach(function(ccode, index) {
-          rows.forEach(function(row, rindex) {
-            var entry = new Object();
-            entry.ccode = ccode;
-            entry.row = rindex;            
-            entry.value = $scope.country_resource_stat_data_json[ccode][stat][rindex];
-            chartData.push(entry);              
-          });  
-        });
-        
-        console.log(chartData);
-             
-        var color = d3.scale.linear()
-                       .domain([0,1])
-                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
-        var colorq = d3.range(.1, 1.1, .1);
-        colorq = colorq.map(function (input) { return color(input); });
-        console.log(colorq);
-
-        var colorScale = d3.scale.quantize()
-              .domain([d3.min(chartData, function (d) { return d.value; }), d3.max(chartData, function (d) { return d.value; })])
-              .range(colorq);
-  
-        var padding = 2;
-        //updateData(chartData);
-          var data=d3.nest()
-          .key(function(d) {return d.ccode;})
-          .sortKeys(d3.ascending)
-          .entries(chartData);
-          
-        console.log("data");
-        console.log(data);
-        
-        var base = d3.select("#heatyear").append("svg")
-              .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom);
-
-        var years = base.append("g")
-                .attr("transform", "translate(6," + (margin.top + 24) + ")")
-                .selectAll("text")
-                .data(rows)
-                .enter()
-                .append("text")
-                .text(function (d) { return d; })
-                .attr("x", 0)
-                .attr("y", function(d,i) { return i*gridSize})
-                .attr("class", "heatcountrylabel")              
-                //.attr("transform", "rotate(-90)")              
-                .style("text-anchor", "start")
-                .on("click", function(d, i) { 
-                      
-                  
-                });
-  
-        var svg = base.append("g")
-              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-              
-      /*
-        var svg = d3.select("#heatyear").append("svg")
-              .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom)
-              .append("g")
-              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-      */
-      var countryg = svg.selectAll("g").data(data).enter()
-                        .append("g")
-                        .attr("transform",function(d,i) {return "translate(" + (gridSize*(i)) + ",0)" });
-         countryg
-          .append("text")
-                .text(function (d) { return d.key; })
-                .attr("x", 0)
-                .attr("y", 0)
-                .attr("class", "heatcountrylabel")              
-                .attr("transform", "rotate(-90)")              
-                .style("text-anchor", "middle");      
-        countryg.selectAll("rect")
-          .data(function(d) {return d.values}) 
-          .enter()
-              .append("rect")
-              .attr("x", -gridSize + 2*padding)
-              .attr("y", function(d,i) { return 10 + padding + (d.row * gridSize); })
-              //.attr("class", "hour bordered")
-              .attr("width", function(d,i) { return gridSize - padding; })
-              .attr("height", function(d,i) { return gridSize - padding; })
-              .style("fill", function(d,i) { return (d.value == null) ? "#ffffff" : colorScale(d.value); })
-              // throwing in a title element
-              .append("title")
-                .text(function(d) {return d.value;}); 
-                    
-      var myint = setInterval(updateData,3000);
-     
-      function updateData() {
-          console.log("updating");
-        
-          function doSort(a, b) {
-          
-          var nestdata = chartData.filter(function (elem, index) { return elem.row == 0; });
-          
-          //console.log("nestdata");
-          //console.log(nestdata);
-                    
-          //console.log(a);
-          //console.log(b);
-          
-          var nestData2 = [];
-          nestdata.forEach(function(elem, index) {
-            nestData2[elem.ccode] = elem.value;                  
-          });
-          
-          if (nestData2[a] == null && nestData2[b]) return 0;
-          if (nestData2[a] == null) return 1;
-          if (nestData2[b] == null) return -1;
-                    
-          if (nestData2[a] > nestData2[b]) return -1;
-          if (nestData2[a] < nestData2[b]) return 1;
-          return 0;                    
-        }
-        
-        var data=d3.nest()
-          .key(function(d) {return d.ccode;})
-          .sortKeys(function(a,b) { return doSort(a,b); }) 
-          .entries(chartData);
-        console.log("data");        
-        console.log(data);  
-            
-        var update = svg.selectAll("g").data(data, function(d) { return d.key; });
-        console.log(update);
-        //update selection          
-        update.transition()
-          .duration(1000)
-          .attr("transform",function(d,i) { return "translate(" + (gridSize*(i)) + ",0)" });
-        clearInterval(myint);
-      
-      }  
-      
-      }
-
       $scope.selectCountry = function(country) {
         console.log("selecting country:" + country);
         $scope.current_country_id = country;
@@ -1011,17 +861,6 @@
             vals.push(countryVals[key]);
           }            
           
-          /*
-          var baseColor = d3.rgb(varcolors[statName]);
-          var darkest = baseColor.darker().darker().darker();
-          var lightest = baseColor.brighter().brighter().brighter();
-          console.log(darkest.toString());
-          console.log(lightest.toString());
-          
-         
-     */
-          
-                              
           var color = d3.scale.linear()
                        .domain([d3.min(vals),d3.max(vals)])
                        .range([varlookup[statName].lightColor, varlookup[statName].darkColor]); //faa632 #ffbb78 b28254
@@ -1039,7 +878,7 @@
           }
           $scope.chart1.updateChoropleth(chloroVals);
         }
-        if ($scope.heatmap != null) $scope.heatmap.updateChart(statName, 0);
+        if ($scope.heatmap != null) $scope.heatmap.updateChart(statName, null);
       };
 
       // -------------------------------------------------------------------------      
@@ -1061,13 +900,14 @@
         this.gridSize = null;
         
         this.element = element;
-        this.colorScale = {};
-        
+        this.colorScale = {};        
         this.svg = {};
         this.countryg = {};
         
         this.countries = d3.keys($scope.country_data_json).filter(function(ccode) { return $scope.country_data_json[ccode].haveResourceStats == "1";});          
         this.numcountries = this.countries.length;
+        
+        this.currentRowSelection = 0;
         
         this.margin = { top: 15, right: 0, bottom: 5, left: 50 };
         this.width = 1100 - this.margin.left - this.margin.right;
@@ -1097,7 +937,7 @@
           console.log("this.chartData");
           console.log(this.chartData);
   
-          this.sortData(0);
+          this.sortData(this.currentRowSelection);
         };
       
       this.setupChart = function() {
@@ -1145,6 +985,7 @@
             .on("click", function(d, i) { 
               container.selectAll(".heatcountrylabel").style("fill", "#bebebe");
               d3.select(this).style("fill", "#000000");
+              //chart.currentRowSelection = i;
               chart.updateChart(null,i);              
             }); 
         this.svg = container.append("g")
@@ -1174,7 +1015,7 @@
                   .style("fill", function(d,i) { return (d.value == null) ? "#ffffff" : cs(d.value); })
                   // throwing in a title element
                   .append("title")
-                    .text(function(d) {return d.value;});                   
+                    .text(function(d) {return (d.value == null) ? "null" : d3.round(d.value,2);});                   
       };
       
       this.sortData = function(whichrow) {
@@ -1186,19 +1027,21 @@
         console.log("data");        
         console.log(this.data);         
       };
-        
+      
+      this.selectCountries = function(countries) {
+        console.log(this.svg.selectAll("heatcountrylabel"));  
+      };
+      
       this.updateChart = function(whichstat, whichrow) {
         var chart = this;
         var localgridSize = this.gridSize;
+        this.currentRowSelection = (whichrow == null) ? this.currentRowSelection : whichrow;
         
         if (whichstat == null) {
-          this.sortData(whichrow);  
-          
-          console.log("this.data in update whichrow");
-          console.log(this.data);
-          
+          this.sortData(this.currentRowSelection);  
+
           var update = this.svg.selectAll("g").data(this.data, function(d) { return d.key; });
-          console.log(update);
+          //console.log(update);
           //update selection          
           update.transition()
             .duration(1000)
@@ -1207,10 +1050,7 @@
         } else {
           this.setupData(whichstat);
           this.setupChart();
-          this.sortData(whichrow);
-          
-          console.log("this.data in update whichstat");
-          console.log(this.data);
+          this.sortData(this.currentRowSelection);
           
           var rects = this.svg.selectAll("g").data(this.data, function(d) { return d.key; })
             .selectAll("rect")
@@ -1220,19 +1060,12 @@
           var titles = this.svg.selectAll("g").data(this.data, function(d) { return d.key; })
             .selectAll("title")
             .data(function(d) { console.log(d); return d.values}, function(d) { return d.row; })
-                    .text(function(d) {return d.value;},function(d) { return d.row; });                
+                    .text(function(d) {return (d.value == null) ? "null" : d3.round(d.value,2) ;}, function(d) { return d.row; });                
           
           var update = this.svg.selectAll("g").data(this.data, function(d) { return d.key; });
-          //console.log(update);
-          //update selection          
           update.transition()
             .duration(1000)
             .attr("transform",function(d,i) { return "translate(" + (chart.gridSize*(i)) + ",0)" });
-//              .selectAll("rect")
-//                .data(function(d) {console.log(d); return d.values}, function(d) { return d; }) 
-//                .style("fill", function(d,i) { return (d.value == null) ? "#ffffff" : chart.colorScale(d.value); });
-          //clearInterval(myint);
-          
         }        
       }; // updateChart  
       
