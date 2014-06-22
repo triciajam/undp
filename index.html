@@ -161,7 +161,7 @@
           font-size: 11;
           fill: #bebebe;          
         }
-        .heatcountrylabel {
+        .heatcountrylabel, .heatrowlabel {
           text-anchor: start;
           font-family: Consolas, courier;
           font-size: 11;
@@ -671,8 +671,10 @@
         console.log('watch current_selection newValue:');
         console.log(newValue);
         
+        var countries;
+        
         if ($scope.current_country_id == null) {
-          var countries = getCountriesInGroup($scope.country_data_json, newValue.factor, newValue.level);
+          countries = getCountriesInGroup($scope.country_data_json, newValue.factor, newValue.level);
           if ($scope.chart1 != null) {
             $scope.selectOnMap(countries);
           } 
@@ -681,7 +683,8 @@
           }
           if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.group_resource_stat_data_arr[newValue.factor][newValue.level] })
         } else {
-          if ($scope.chart1 != null) $scope.selectOnMap(new Array(newValue));
+          countries = new Array(newValue);
+          if ($scope.chart1 != null) $scope.selectOnMap(countries);
         
           if ($scope.country_data_json[newValue] != null) {
             //console.log($scope.country_data_json[newValue]);
@@ -690,7 +693,7 @@
           if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_resource_stat_data_arr[newValue] });          
         }
         
-        //$scope.heatmap.selectCountries(newValue);
+        if ($scope.heatmap != null) $scope.heatmap.selectCountries(countries);
         
     }, true); 
  
@@ -916,12 +919,7 @@
         this.legendElementWidth = this.gridSize*2;       
         this.padding = 2;
  
-          
-        //this.setupData();
-        //this.setupChart();
-        //this.drawChart();
-        
-        
+                  
         this.setupData = function(whichstat) {
           this.chartData = [];
           this.stat = whichstat;
@@ -934,15 +932,14 @@
               this.chartData.push(entry);              
             }, this);  
           }, this);       
-          console.log("this.chartData");
-          console.log(this.chartData);
+          //console.log("this.chartData");
+          //console.log(this.chartData);
   
           this.sortData(this.currentRowSelection);
         };
       
       this.setupChart = function() {
               
-        console.log("setupChart gridSize " + this.gridSize);
         
         var color = d3.scale.linear()
                        .domain([0,1])
@@ -968,7 +965,6 @@
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom);
               
-        console.log(this.gridSize);
         var labels = container.append("g")
             .attr("transform", "translate(6," + (this.margin.top + 24) + ")")
             .selectAll("text")
@@ -978,12 +974,12 @@
             .text(function (d) { return d; })
             .attr("x", 0)
             .attr("id", function (d,i) { return i; })
-            .attr("y", function(d,i) { console.log("gridSize " + localgridsize);console.log("i " + i); return i*localgridsize})
-            .attr("class", "heatcountrylabel")              
+            .attr("y", function(d,i) { return i*localgridsize})
+            .attr("class", "heatrowlabel")              
             //.attr("transform", "rotate(-90)")              
             .style("text-anchor", "start")
             .on("click", function(d, i) { 
-              container.selectAll(".heatcountrylabel").style("fill", "#bebebe");
+              container.selectAll(".heatrowlabel").style("fill", "#bebebe");
               d3.select(this).style("fill", "#000000");
               //chart.currentRowSelection = i;
               chart.updateChart(null,i);              
@@ -1012,7 +1008,7 @@
                   //.attr("class", "hour bordered")
                   .attr("width", function(d,i) { return localgridsize - padding; })
                   .attr("height", function(d,i) { return localgridsize - padding; })
-                  .style("fill", function(d,i) { return (d.value == null) ? "#ffffff" : cs(d.value); })
+                  .style("fill", function(d,i) { return (d.value == null) ? "#eee" : cs(d.value); })
                   // throwing in a title element
                   .append("title")
                     .text(function(d) {return (d.value == null) ? "null" : d3.round(d.value,2);});                   
@@ -1024,12 +1020,16 @@
           .key(function(d) {return d.ccode;})
           .sortKeys(function(a,b) { return chart.doSort(a,b, whichrow); }) 
           .entries(this.chartData);
-        console.log("data");        
-        console.log(this.data);         
+        //console.log("data");        
+        //console.log(this.data);         
       };
       
       this.selectCountries = function(countries) {
-        console.log(this.svg.selectAll("heatcountrylabel"));  
+        console.log("countries to highlight in heat");
+        console.log(countries);
+        
+        var allcountrylabels = this.svg.selectAll("text.heatcountrylabel");
+        allcountrylabels.style("fill", function(d,i) { return (countries.indexOf(d.key) != -1) ? "#000000" : "#bebebe" } );
       };
       
       this.updateChart = function(whichstat, whichrow) {
@@ -1054,12 +1054,12 @@
           
           var rects = this.svg.selectAll("g").data(this.data, function(d) { return d.key; })
             .selectAll("rect")
-            .data(function(d) { console.log(d); return d.values}, function(d) { return d.row; })
-                .style("fill", function(d,i) { console.log("filling: " + d); return (d.value == null) ? "#ffffff" : chart.colorScale(d.value); });
+            .data(function(d) { return d.values}, function(d) { return d.row; })
+                .style("fill", function(d,i) { return (d.value == null) ? "#eee" : chart.colorScale(d.value); });
       
           var titles = this.svg.selectAll("g").data(this.data, function(d) { return d.key; })
             .selectAll("title")
-            .data(function(d) { console.log(d); return d.values}, function(d) { return d.row; })
+            .data(function(d) { return d.values}, function(d) { return d.row; })
                     .text(function(d) {return (d.value == null) ? "null" : d3.round(d.value,2) ;}, function(d) { return d.row; });                
           
           var update = this.svg.selectAll("g").data(this.data, function(d) { return d.key; });
@@ -1078,7 +1078,12 @@
             nestData2[elem.ccode] = elem.value; 
           });
 
-          if (nestData2[a] == null && nestData2[b] == null) return 0;
+          //if (nestData2[a] == null && nestData2[b] == null) return 0;
+          // both values are null then sort by alphabetical order
+          if (nestData2[a] == null && nestData2[b] == null) {
+            return (a > b) ? 1 : -1;
+          }
+                    
           if (nestData2[a] == null) return 1;
           if (nestData2[b] == null) return -1;
                     
