@@ -1212,11 +1212,18 @@
           
           var rects = this.svg.selectAll("g").data(this.data, function(d) { return d.key; })
             .selectAll("rect")
-            .data(function(d) { console.log(d); return d.values}, function(d) { console.log("key: " + d.row); return d.row; })
-                .style("fill", function(d,i) { console.log("filling: " + d); return (d.value == null) ? "#ffffff" : chart.colorScale(d.value); })
+            .data(function(d) { console.log(d); return d.values}, function(d) { return d.row; })
+                .style("fill", function(d,i) { console.log("filling: " + d); return (d.value == null) ? "#ffffff" : chart.colorScale(d.value); });
+      
+          var titles = this.svg.selectAll("g").data(this.data, function(d) { return d.key; })
+            .selectAll("title")
+            .data(function(d) { console.log(d); return d.values}, function(d) { return d.row; })
+                    .text(function(d) {return d.value;},function(d) { return d.row; });                
+                /*
+.selectAll("title")
+                .remove("title")
                 .append("title")
-                    .text(function(d) {return d.value;});                
-
+                */
           console.log("rects");
           console.log(rects);
           
