@@ -1143,7 +1143,9 @@
             //.attr("transform", "rotate(-90)")              
             .style("text-anchor", "start")
             .on("click", function(d, i) { 
-                  chart.updateChart(null,i);              
+              container.selectAll(".heatcountrylabel").style("fill", "#bebebe");
+              d3.select(this).style("fill", "#000000");
+              chart.updateChart(null,i);              
             }); 
         this.svg = container.append("g")
             .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");            
@@ -1219,14 +1221,6 @@
             .selectAll("title")
             .data(function(d) { console.log(d); return d.values}, function(d) { return d.row; })
                     .text(function(d) {return d.value;},function(d) { return d.row; });                
-                /*
-.selectAll("title")
-                .remove("title")
-                .append("title")
-                */
-          console.log("rects");
-          console.log(rects);
-          
           
           var update = this.svg.selectAll("g").data(this.data, function(d) { return d.key; });
           //console.log(update);
