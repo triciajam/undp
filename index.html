@@ -35,8 +35,9 @@
         }
         
         .mygroupselect {
-          /* border: 1px solid #ccc; padding-left: 4px; padding-right: 4px; padding-top: 4px; */
-          padding-left: 0px; padding-right: 0px; padding-top: 4px;      
+          border: 1px solid #ccc; 
+          padding-left: 0px; padding-right: 0px; padding-top: 0px;
+          font-size: 13px !important;
         }
         
         h2 {
@@ -135,8 +136,11 @@
           stroke-width: 0px !important;
         }
         */
-        #incomeCompare .c3-circle {
+        div[id*='Compare'] .c3-circle {
           fill: none !important;
+        }
+        div[id*='Compare'] .c3-line {
+          stroke-width: 3px !important;
         }
     /*-------------------------------------------------------------------------        
       Group Comparison Small Multiples
@@ -227,15 +231,16 @@
                 <div id='chart1'  style="width: 700px;height: 300px;"></div>
             </div>
           </div>   
-          
+          <!--
           <div class="row">
             <div class="col-md-12 text-left" style="padding-left: 0px;padding-right: 0px;">                 
              Click a country on the map to select it and view its data. Click a button to select a country group and view its data. Click on the legend to fill the map by the statistic.
             </div>
           </div>  
-          
+          -->
           <div class="row">
-            <div class="col-md-6 text-left mygroupselect">                 
+            <div class="col-md-6 text-left mygroupselect" style="padding-left: 6px">   
+            Click the map to select a country. <br> Click a button to select a group of countries.
                   <div class="smalltext" >              
                     Income
                      <div class="btn-group btn-group-xs">
@@ -266,7 +271,8 @@
                       </div>  
                   </div>
             </div> <!-- 6 -->
-            <div class="col-md-6 text-left">
+            <div class="col-md-6 text-left mygroupselect" style="padding-left: 6px">
+            Click on a statistic to color countries according to their relative values for that statistic.  A darker color indicates a higher value.
               <div id="legend"></div>
             </div> <!-- 6 -->
           </div>  <!-- third row -->
@@ -291,12 +297,8 @@
         </div>
         
       </div> <!-- end big row -->
+      
       <div class="row">
-        <!--
-        <div class="col-md-12 text-left">
-          <div id="heatyear"></div>          
-        </div>
-        -->
         <div class="col-md-12 text-left">
           <div id="heat2"></div>          
         </div>
@@ -401,13 +403,14 @@
       // the map 
       $scope.dataMapFillKeys = {};
       
-      $scope.current_statistic = "default";
       $scope.current_statistic_name = "";
  
       // stores our map and chart visualization variables
       $scope.chart1 = null;      
       $scope.chart2 = null;
       $scope.levelsCompareChart = {};
+      
+      $scope.initDone = false;
       
       // array of years
       // this is necessary for the c3 charts
@@ -633,27 +636,38 @@
          }); // chart1 
           
         
-      // -------------------------------------------------------------------------      
-      // Update map and groups at same time
-      // For map, should really be doing this intially, not updating it...
-      // have to change later.
-      // -------------------------------------------------------------------------      
           
         //console.log($scope.current_statistic);
         //$scope.updateGroupStat($scope.current_statistic);
-        $scope.selectStatistic($scope.current_statistic);
+        //$scope.selectStatistic($scope.current_statistic);
+        $scope.current_statistic = "calc_govt_take";
+
+        
+      // -------------------------------------------------------------------------      
+      // Set up other charts
+      // -------------------------------------------------------------------------      
         
         $scope.doLegend();
-        $scope.setupLevelsCompare("#incomeCompare", "class_income", "calc_govt_take");
-        $scope.setupLevelsCompare("#regionCompare", "class_reg", "calc_govt_take");
-        $scope.setupLevelsCompare("#rentCompare", "prim_rent", "calc_govt_take");
+        
+      // -------------------------------------------------------------------------      
+      // Lien charts to compare levels of different factors
+      // -------------------------------------------------------------------------      
+        
+        $scope.setupLevelsCompare("#incomeCompare", "class_income", $scope.current_statistic);        
+        $scope.setupLevelsCompare("#regionCompare", "class_reg", $scope.current_statistic);
+        $scope.setupLevelsCompare("#rentCompare", "prim_rent", $scope.current_statistic);
+        
   
-        //$scope.setUpHeatmap("calc_govt_take");
+      // -------------------------------------------------------------------------      
+      // Heatmap to compare countries
+      // -------------------------------------------------------------------------      
         $scope.heatmap = new Heatmap("#heat2", xaxis.slice(1, xaxis.length-1));
         $scope.heatmap.setupData("calc_govt_take");
         $scope.heatmap.setupChart();
         $scope.heatmap.drawChart();
         $scope.heatmap.selectCountries(new Array($scope.current_country_id));
+        
+        $scope.initDone = true;
           
       }).error(function(err){
           throw(err);                     
@@ -671,6 +685,8 @@
     $scope.$watch('current_statistic', function(newValue, oldValue) {
         console.log('watch current_statistic newValue:');
         console.log(newValue);
+        
+        if (!$scope.initDone) return;
         
         if(newValue == "default") {
           if ($scope.chart1 != null) $scope.chart1.updateChoropleth($scope.dataMapFillKeys);
@@ -704,9 +720,15 @@
             else
                 chloroVals[key] = color(countryVals[key]);
           }
-          $scope.chart1.updateChoropleth(chloroVals);
+          if ($scope.chart1 != null) $scope.chart1.updateChoropleth(chloroVals);
         }
         if ($scope.heatmap != null) $scope.heatmap.updateChart(newValue, null);
+        
+        if ($scope.levelsCompareChart != null) {
+          $scope.updateLevelsCompare("#incomeCompare", "class_income", newValue);
+          $scope.updateLevelsCompare("#regionCompare", "class_reg", newValue);
+          $scope.updateLevelsCompare("#rentCompare", "prim_rent", newValue);          
+        }
                    
     }, true);
 
@@ -770,9 +792,7 @@
           //var svg = d3.selectAll("#legend").append("svg")
           var svg = d3.selectAll("#legend").append("svg")
             .attr("width", $("#legend").width())
-            .attr("height", 100);            
-          
-          var currentselection = null;
+            .attr("height", 90);            
           
           var legend = svg.selectAll("g")
             .data(resourceStatObjs)
@@ -790,30 +810,45 @@
               .attr("x", 14)
               .attr("y", 5)
               .attr("dy", ".35em")              
-              .attr("id", function(d) { return "stat"; } )              
-              .attr("class", "statunselected")              
+              .attr("class", "statunselected")      
+              .style("fill", function(d,i) { return ($scope.current_statistic == d.variable) ? d.color : "#bebebe"; })
               .text(function(d) { return d.name; })
               .on("click", function(d, i) { 
-                  //console.log(d3.select(this).parentNode); 
-                  //d.selected = true;
-                  //currentSelection = d;
-                  d3.selectAll("#stat").style("fill", "#bebebe");
-                  //d3.selectAll("#stat").attr("class", "statunselected");
+                  legend.selectAll(".statunselected").style("fill", "#bebebe");
                   d3.select(this).style("fill", function(d) { return d.color; });
-                  //$scope.updateCurrentStat(d.variable);
                   $scope.selectStatistic(d.variable);
               })
-              /*
-              .on("mouseover", function(d,i) {
-                  //console.log(d.name);
-                  if (!d.selected) d3.select(this).style("fill", "#ff7f0e");
-              })   
-              .on("mouseout", function(d,i) {
-                  //console.log(d.name);
-                  if (!d.selected) d3.select(this).style("fill", "#bebebe");
-              });
-              */
       }
+
+      $scope.updateLevelsCompare = function(element, factor, stat) {
+          var chartData = [];
+          chartData.push(xaxis);
+          var levelnames = d3.keys($scope.group_resource_stat_data_json[factor].levels);
+          
+          var color = d3.scale.linear()
+                       .domain([0,1])
+                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
+          var buckets = d3.range(0, 1, 1/levelnames.length);
+          buckets = buckets.map(function (input) { return color(input); });
+          var colorScale = d3.scale.ordinal()
+              .domain(levelnames)
+              .range(buckets);
+          
+         var levellinecolors = [];
+ 
+        levelnames.forEach(function(levelname, index) {
+            //console.log("in levels");
+            var tmp = [];
+            tmp.push($scope.group_resource_stat_data_json[factor].levels[levelname].dname);
+            tmp = tmp.concat($scope.group_resource_stat_data_json[factor].levels[levelname].stats[stat].slice(1));
+            chartData.push(tmp);
+            levellinecolors[$scope.group_resource_stat_data_json[factor].levels[levelname].dname] = colorScale(levelname);
+            
+          }); 
+          console.log(chartData);   
+          $scope.levelsCompareChart[element].load({ columns: chartData });
+          $scope.levelsCompareChart[element].data.colors(levellinecolors);
+      };
 
       $scope.setupLevelsCompare = function(element, factor, stat) {
           
@@ -822,14 +857,28 @@
           chartData.push(xaxis);
           var levelnames = d3.keys($scope.group_resource_stat_data_json[factor].levels);
           
+          // set up colors
+          var color = d3.scale.linear()
+                       .domain([0,1])
+                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
+          var buckets = d3.range(0, 1, 1/levelnames.length);
+          buckets = buckets.map(function (input) { return color(input); });
+          var colorScale = d3.scale.ordinal()
+              .domain(levelnames)
+              .range(buckets);
+              
+          var levellinecolors = [];
+          
           levelnames.forEach(function(levelname, index) {
             //console.log("in levels");
             var tmp = [];
             tmp.push($scope.group_resource_stat_data_json[factor].levels[levelname].dname);
             tmp = tmp.concat($scope.group_resource_stat_data_json[factor].levels[levelname].stats[stat].slice(1));
             chartData.push(tmp);
+            levellinecolors[$scope.group_resource_stat_data_json[factor].levels[levelname].dname] = colorScale(levelname);
           }); 
           console.log(chartData);    
+                                  
           
           $scope.levelsCompareChart[element] = c3.generate({
                 bindto: element,
@@ -840,8 +889,8 @@
                     x: 'x',
                     columns: chartData,
                     type: 'line',
-                    names: varnames, 
-                    //colors: varcolors, 
+//                    names: varnames, 
+                      colors: levellinecolors, 
                     //labels:false,
                   }, // data
                 axis: {
@@ -854,6 +903,10 @@
                     }
                 }  
             });  
+            
+          // now do the legend  
+          var svg = d3.selectAll(element + "Legend").append("svg");          
+          
       } 
       
       $scope.selectStatistic = function(stat) {
@@ -893,46 +946,6 @@
       }
       
       
-      $scope.updateCurrentStat = function(statName) {
-        console.log("updating choro");
-        
-        if(statName == "default") {
-          $scope.chart1.updateChoropleth($scope.dataMapFillKeys);
-          //$scope.updateGroupStat(statName);
-        }           
-          else {
-          $scope.current_statistic = statName;
-          $scope.current_statistic_name = varnames[statName];
-          //$scope.updateGroupStat(statName);
-            
-          var countryVals = {};
-          countryVals = getTimeSeriesAverage($scope.current_statistic);
-          
-          var vals = [];
-          for(key in countryVals) {
-            vals.push(countryVals[key]);
-          }            
-          
-          var color = d3.scale.linear()
-                       .domain([d3.min(vals),d3.max(vals)])
-                       .range([varlookup[statName].lightColor, varlookup[statName].darkColor]); //faa632 #ffbb78 b28254
-         
-          var chloroVals = {};
-          for(key in countryVals) {
-            //console.log("Key" + key + " is = " + countryVals[key]);
-            //console.log("color" + ": " + color(countryVals[key]));
-            
-            if (countryVals[key] == null) {
-                chloroVals[key] = "#eee";
-            }
-            else
-                chloroVals[key] = color(countryVals[key]);
-          }
-          $scope.chart1.updateChoropleth(chloroVals);
-        }
-        if ($scope.heatmap != null) $scope.heatmap.updateChart(statName, null);
-      };
-
       // -------------------------------------------------------------------------      
       // Heatmap Object
       // -------------------------------------------------------------------------                
@@ -1355,14 +1368,23 @@
             varlookup[item.variable]["lightColor"] = lightest.toString();
             varlookup[item.variable]["darkColor"] = darkest.toString();
           }
-      }); 
+        }); 
       
+      // I tried to use the default from lighter() and darker() above
+      // but didn't like the result, so just picked these instead.
       varlookup["calc_govt_take"].lightColor = "#dcccc9";
       varlookup["calc_govt_take"].darkColor = "#54332d";
       varlookup["calc_gov_resrev_gdp"].lightColor = "#bbd6e8";
       varlookup["calc_gov_resrev_gdp"].darkColor = "#12476c";
       varlookup["calc_rent_total_gdp"].lightColor = "#f2bebe";
       varlookup["calc_rent_total_gdp"].darkColor = "#951b1c";
+      varlookup["rev2_gov_nonresrev_gdp"].lightColor = "#ded1eb";
+      varlookup["rev2_gov_nonresrev_gdp"].darkColor = "#4a335e";
+      varlookup["rev_gov_resrev_govtrev"].lightColor = "#bfe2bf";
+      varlookup["rev_gov_resrev_govtrev"].darkColor = "#114011";
+      varlookup["rev2_gov_rev_gdp"].lightColor = "#eaebbc";
+      varlookup["rev2_gov_rev_gdp"].darkColor = "#5e5e11";
+    
     
       console.log(varlookup);
         
