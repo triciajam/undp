@@ -36,7 +36,7 @@
         
         .mygroupselect {
           /* border: 1px solid #ccc; padding-left: 4px; padding-right: 4px; padding-top: 4px; */
-          padding-left: 4px; padding-right: 4px; padding-top: 4px;      
+          padding-left: 0px; padding-right: 0px; padding-top: 4px;      
         }
         
         h2 {
@@ -229,7 +229,7 @@
           </div>   
           
           <div class="row">
-            <div class="col-md-12 text-left">                 
+            <div class="col-md-12 text-left" style="padding-left: 0px;padding-right: 0px;">                 
              Click a country on the map to select it and view its data. Click a button to select a country group and view its data. Click on the legend to fill the map by the statistic.
             </div>
           </div>  
@@ -401,8 +401,8 @@
       // the map 
       $scope.dataMapFillKeys = {};
       
-      $scope.currentStat = "default";
-      $scope.currentStatName = "";
+      $scope.current_statistic = "default";
+      $scope.current_statistic_name = "";
  
       // stores our map and chart visualization variables
       $scope.chart1 = null;      
@@ -639,9 +639,9 @@
       // have to change later.
       // -------------------------------------------------------------------------      
           
-        console.log($scope.currentStat);
-        //$scope.updateGroupStat($scope.currentStat);
-        $scope.updateCurrentStat($scope.currentStat);
+        //console.log($scope.current_statistic);
+        //$scope.updateGroupStat($scope.current_statistic);
+        $scope.selectStatistic($scope.current_statistic);
         
         $scope.doLegend();
         $scope.setupLevelsCompare("#incomeCompare", "class_income", "calc_govt_take");
@@ -653,6 +653,7 @@
         $scope.heatmap.setupData("calc_govt_take");
         $scope.heatmap.setupChart();
         $scope.heatmap.drawChart();
+        $scope.heatmap.selectCountries(new Array($scope.current_country_id));
           
       }).error(function(err){
           throw(err);                     
@@ -666,6 +667,48 @@
       // Have to check for nulls here becuase it is called right at the beginning,
       // before data is loaded
       // -------------------------------------------------------------------------                
+
+    $scope.$watch('current_statistic', function(newValue, oldValue) {
+        console.log('watch current_statistic newValue:');
+        console.log(newValue);
+        
+        if(newValue == "default") {
+          if ($scope.chart1 != null) $scope.chart1.updateChoropleth($scope.dataMapFillKeys);
+          //$scope.updateGroupStat(statName);
+        }           
+          else {
+          //$scope.current_statistic = statName;
+          $scope.current_statistic_name = varnames[newValue];
+          //$scope.updateGroupStat(statName);
+            
+          var countryVals = {};
+          countryVals = getTimeSeriesAverage(newValue);
+          
+          var vals = [];
+          for(key in countryVals) {
+            vals.push(countryVals[key]);
+          }            
+          
+          var color = d3.scale.linear()
+                       .domain([d3.min(vals),d3.max(vals)])
+                       .range([varlookup[newValue].lightColor, varlookup[newValue].darkColor]); //faa632 #ffbb78 b28254
+         
+          var chloroVals = {};
+          for(key in countryVals) {
+            //console.log("Key" + key + " is = " + countryVals[key]);
+            //console.log("color" + ": " + color(countryVals[key]));
+            
+            if (countryVals[key] == null) {
+                chloroVals[key] = "#eee";
+            }
+            else
+                chloroVals[key] = color(countryVals[key]);
+          }
+          $scope.chart1.updateChoropleth(chloroVals);
+        }
+        if ($scope.heatmap != null) $scope.heatmap.updateChart(newValue, null);
+                   
+    }, true);
 
     $scope.$watch('current_selection', function(newValue, oldValue) {
         console.log('watch current_selection newValue:');
@@ -757,7 +800,8 @@
                   d3.selectAll("#stat").style("fill", "#bebebe");
                   //d3.selectAll("#stat").attr("class", "statunselected");
                   d3.select(this).style("fill", function(d) { return d.color; });
-                  $scope.updateCurrentStat(d.variable);
+                  //$scope.updateCurrentStat(d.variable);
+                  $scope.selectStatistic(d.variable);
               })
               /*
               .on("mouseover", function(d,i) {
@@ -812,6 +856,11 @@
             });  
       } 
       
+      $scope.selectStatistic = function(stat) {
+        console.log("selecting statistic:" + stat);
+        $scope.current_statistic = stat;       
+        $scope.$apply();        
+      }
       $scope.selectCountry = function(country) {
         console.log("selecting country:" + country);
         $scope.current_country_id = country;
@@ -852,12 +901,12 @@
           //$scope.updateGroupStat(statName);
         }           
           else {
-          $scope.currentStat = statName;
-          $scope.currentStatName = varnames[statName];
+          $scope.current_statistic = statName;
+          $scope.current_statistic_name = varnames[statName];
           //$scope.updateGroupStat(statName);
             
           var countryVals = {};
-          countryVals = getTimeSeriesAverage($scope.currentStat);
+          countryVals = getTimeSeriesAverage($scope.current_statistic);
           
           var vals = [];
           for(key in countryVals) {
@@ -975,7 +1024,8 @@
             .attr("x", 0)
             .attr("id", function (d,i) { return i; })
             .attr("y", function(d,i) { return i*localgridsize})
-            .attr("class", "heatrowlabel")              
+            .attr("class", "heatrowlabel")    
+            .style("fill", function (d,i) { return (chart.currentRowSelection == i) ? "#000000" : "#bebebe"; })
             //.attr("transform", "rotate(-90)")              
             .style("text-anchor", "start")
             .on("click", function(d, i) { 
