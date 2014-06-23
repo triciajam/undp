@@ -39,6 +39,9 @@
           padding-left: 0px; padding-right: 0px; padding-top: 0px;
           font-size: 13px !important;
         }
+        .mycol {
+          padding-left: 2px; padding-right: 2px; padding-top: 2px;
+        }
         
         h2 {
            margin-top:5px; margin-bottom:5px;
@@ -238,8 +241,8 @@
             </div>
           </div>  
           -->
-          <div class="row">
-            <div class="col-md-6 text-left mygroupselect" style="padding-left: 6px">   
+          <div class="row mygroupselect">
+            <div class="col-md-6 text-left mycol">   
             Click the map to select a country. <br> Click a button to select a group of countries.
                   <div class="smalltext" >              
                     Income
@@ -271,12 +274,18 @@
                       </div>  
                   </div>
             </div> <!-- 6 -->
-            <div class="col-md-6 text-left mygroupselect" style="padding-left: 6px">
+            <div class="col-md-6 text-left mycol">
             Click on a statistic to color countries according to their relative values for that statistic.  A darker color indicates a higher value.
               <div id="legend"></div>
             </div> <!-- 6 -->
           </div>  <!-- third row -->
 
+          <div class="row">
+            <div class="col-md-12 text-left">
+               Compare Statistics across country groups.
+            </div>
+          </div>
+          
           <div class="row">
             <div class="col-md-4 text-left">
               <div id="incomeCompare"></div>
