@@ -247,7 +247,7 @@
         
           <div class="row">
             <div class="col-md-12 text-left">
-                <div id='chart1'  style="width: 700px;height: 300px;"></div>
+                <div id='chart1'  style="height:320px;"></div>
             </div>
           </div>   
           <!--
@@ -328,7 +328,7 @@
       <div class="row">
         <div class="col-md-12 text-left mycol medtext">
            <h5 style="display:inline;">Compare <span ng-bind='current_statistic_name'></span></h5> across groups of countries.  
-           Yearly values are the average of all countries within the group reporting data for that year.  Click the group name to add/remove its graph line.
+           Yearly values are the average of all countries within the group reporting data for that year.  Click the group to add/remove its line.
         </div>
       </div>
       
@@ -691,6 +691,17 @@
                 //highlightBorderColor: '#ff7f0e',
                 //highlightBorderWidth: 5,
               },
+              "setProjection":   function(element) {
+              var projection = d3.geo.equirectangular()
+                     .scale(114)
+                     .center([55, -33])
+                     .rotate([-10,0])
+              
+                       var path = d3.geo.path()
+                         .projection(projection);
+                       
+                       return {path: path, projection: projection}; 
+               },
          }); // chart1 
           
         
