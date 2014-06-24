@@ -37,7 +37,6 @@
         .mygroupselect {
           border: 1px solid #ccc; 
           padding-left: 0px; padding-right: 0px; padding-top: 0px;
-          font-size: 13px !important;
         }
         .mycol {
           padding-left: 2px; padding-right: 2px; padding-top: 2px;
@@ -65,6 +64,14 @@
         .smalltext {
           font-size: 10px !important;
         }  
+        .medtext {
+          font-size: 12px !important;
+        } 
+        .datatext {
+          font-family: Consolas, courier;
+          font-size: 11px;
+        }         
+        
         .btnsmalltext {
           font-family: Consolas, courier !important;
           font-size: 9px !important;
@@ -151,7 +158,7 @@
         
         div[id*='Compare'] .c3-legend-item {
           font-family: Consolas, courier !important;
-          font-size: 9px !important;
+          font-size: 11px !important;
         }
     /*-------------------------------------------------------------------------        
       Group Comparison Small Multiples
@@ -173,13 +180,14 @@
         */
         .statunselected {
           text-anchor: start;
-          font-size: 12;
+          font-family: Consolas, courier;
+          font-size: 12px;
           fill: #bebebe;          
         }
         .heatcountrylabel, .heatrowlabel {
           text-anchor: start;
           font-family: Consolas, courier;
-          font-size: 11;
+          font-size: 11px;
           fill: #bebebe;          
         }
         /*#stat:hover { fill: "red" !important; };*/
@@ -249,10 +257,19 @@
             </div>
           </div>  
           -->
-          <div class="row mygroupselect">
-            <div class="col-md-6 text-left mycol">   
-            Click the map to select a country. <br> Click a button to select a group of countries.
-                  <div class="smalltext" >              
+          <div class="row">
+            <div class="col-md-6 text-left mycol medtext" style="">  
+              <h5 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Select</h5> 
+              a country by clicking on the map, or  
+              a group of countries by clicking its button.<br>
+              <h5 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Choose</h5>
+              a statistic to color countries according to their average value for that statistic across all years for which there is reported data.  
+              Darker colors indicate higher average values.
+              All statistics are given as % GDP, unless noted. Government Take is Government Resource Revenue / Total Rents.
+              <p>[PLACE LEGEND HERE]</p>
+            </div>
+            <div class="col-md-6 text-left mycol" style="padding-left:10px;">   
+                  <div class="datatext" >              
                     Income
                      <div class="btn-group btn-group-xs">
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Low income')">Low</button>
@@ -261,89 +278,80 @@
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'High income')">High</button>
                     </div>  
                   </div>
-                  <div class="smalltext">              
-                      Primary Rents
-                      <div class="btn-group btn-group-xs">
-                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Oil')">Oil</button>
-                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Gas')">Gas</button>
-                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Minerals')">Minerals</button>
-                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Coal')">Coal</button>
-                      </div>  
-                  </div>
-                  <div class="smalltext">              
+                  <div class="datatext">              
                       Region
                       <div class="btn-group btn-group-xs">
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Africa')">Africa</button>
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Asia')">Asia</button>
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Europe')">Europe</button>
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Latin America and the Caribbean')">LAmer&Carr</button>
-                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'North America')">North America</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'North America')">NAmerica</button>
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_reg', 'Oceania')">Oceania</button>                        
                       </div>  
                   </div>
-                  
+                  <div class="datatext">              
+                      Primary Rent Source
+                      <div class="btn-group btn-group-xs">
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Oil')">Oil</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Gas')">Gas</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Minerals')">Mineral</button>
+                        <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Coal')">Coal</button>
+                      </div>  
+                  </div>                  
+                  <div id="legend" style="padding-top: 6px"></div>
+
+         <!--         
             </div> <!-- 6 -->
-            <div class="col-md-6 text-left mycol">
-            Click on a statistic to color countries according to their relative average value for that statistic, across all years for which we have reported data from each country.  
+            </div>  
+         <!--
+         <div class="row">            
+            <div class="col-md-6 text-left mycol medtext">
+            Click on a statistic to color countries according to their relative average value for that statistic, across all years with reported data for each country.  
             Darker colors indicate higher average values.
             All statistics are given as % GDP, unless noted.
+            </div>
+            <div class="col-md-6 text-left mycol">            
               <div id="legend" style="padding-top: 6px"></div>
             </div> <!-- 6 -->
-          </div>  <!-- third row -->
+ 
+         </div>  <!-- third row -->
 
-        <!--
-          <div class="row">
-            <div class="col-md-12 text-left mycol">
-               Compare Statistics across country groups.
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-4 text-left">
-              <div id="incomeCompare"></div>
-            </div>
-            <div class="col-md-4 text-left">
-              <div id="regionCompare"></div>
-            </div>
-            <div class="col-md-4 text-left">
-              <div id="rentCompare"></div>
-            </div>            
-          </div>
-        -->  
-          
         </div>  <!-- end first column -->            
         
-        <div class="col-md-4 text-left">
-          <h3 ng-bind='current_selection_name'></h3>
+        <div class="col-md-4 text-center">
+          <h4 ng-bind='current_selection_name'></h4>
           <div id='chart2'></div> 
         </div>
         
       </div> <!-- end big row -->
       
       <div class="row">
-        <div class="col-md-12 text-left mycol">
-           Compare <span ng-bind='current_statistic_name'></span> between groups of countries. Click on a country group to add or remove its line from the graph.
+        <div class="col-md-12 text-left mycol medtext">
+           <h5 style="display:inline;">Compare <span ng-bind='current_statistic_name'></span></h5> across groups of countries.  
+           Yearly values are the average of all countries within the group reporting data for that year.  Click the group name to add/remove its graph line.
         </div>
       </div>
       
       <div class="row">
-        <div class="col-md-4 text-left">
+        <div class="col-md-4 text-center mycol">
+          <div class="datatext">by Income</div>
           <div id="incomeCompare"></div>
         </div>
-        <div class="col-md-4 text-left">
+        <div class="col-md-4 text-center mycol">
+          <div class="datatext">by Region</div>
           <div id="regionCompare"></div>
         </div>
-        <div class="col-md-4 text-left">
+        <div class="col-md-4 text-center mycol">
+          <div class="datatext">by Primary Rent Source</div>
           <div id="rentCompare"></div>
         </div>            
       </div>
   
       <div class="row">
-        <div class="col-md-12 text-left mycol">
-           Compare <span ng-bind='current_statistic_name'></span> between countries. 
-           Data is for the currently selected statistic.
-           The currently selected country or group of countries is highlighted in the country list.
-           Click on a year to sort countries by values for that year.
+        <div class="col-md-12 text-left mycol medtext">
+           <h5 style="display:inline;">Compare <span ng-bind='current_statistic_name'></span></h5> between countries.  
+           The currently selected country or group of countries is highlighted.
+           Click a year to sort countries by values for that year.
            Hover over a square to see actual values.
         </div>
       </div>
