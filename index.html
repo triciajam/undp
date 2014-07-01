@@ -20,14 +20,26 @@
     
     <style>
     
+        text {
+          cursor: default;
+        }
+        .legend:hover {
+          opacity:.5;
+        }
+        .heatrowlabel:hover {
+          opacity:.5;
+        }
+    
     /*-------------------------------------------------------------------------        
       These override Bootstrap Styles
       -----------------------------------------------------------------------*/  
 
         .mybtn {
           margin-bottom: 5;
-          margin-left: 5;
-          margin-right: 5;
+          padding-left: 2px !important;
+          padding-right: 2px !important;
+          margin-left: 2px !important;
+          margin-right: 2px !important;
           background-color: #eee !important;
           border: 2px !important;
           border-color: #eee !important;
@@ -39,17 +51,17 @@
           padding-left: 0px; padding-right: 0px; padding-top: 0px;
         }
         .mycol {
-          padding-left: 2px; padding-right: 2px; padding-top: 2px;
+          padding-left: 1px; padding-right: 1px; padding-top: 1px;
         }
-        
         h2 {
            margin-top:5px; margin-bottom:5px;
         }
         h3 {
            margin-top:5px; margin-bottom:5px;
         }
-        h5 {
-           margin-top:5px; margin-bottom:2px;
+        h4 {
+           margin-top:2px; margin-bottom:2px; font-family: Consolas, courier;
+
         }
         .jumbotron {
           padding-top: 0;
@@ -70,12 +82,13 @@
         .datatext {
           font-family: Consolas, courier;
           font-size: 11px;
+          display: inline
         }         
         
         .btnsmalltext {
           font-family: Consolas, courier !important;
           font-size: 9px !important;
-        }
+        }        
         
         .legend {
           
@@ -181,7 +194,7 @@
         .statunselected {
           text-anchor: start;
           font-family: Consolas, courier;
-          font-size: 12px;
+          font-size: 11px;
           fill: #bebebe;          
         }
         .heatcountrylabel, .heatrowlabel {
@@ -240,36 +253,23 @@
     
     <!-- Set up our Bootstrap Layout Grid -->
     <div class="container">
-    
-      <div class="row">
-        
-        <div class="col-md-8 text-left"> 
-        
-          <div class="row">
-            <div class="col-md-12 text-left">
-                <div id='chart1'  style="height:320px;"></div>
-            </div>
-          </div>   
-          <!--
-          <div class="row">
-            <div class="col-md-12 text-left" style="padding-left: 0px;padding-right: 0px;">                 
-             Click a country on the map to select it and view its data. Click a button to select a country group and view its data. Click on the legend to fill the map by the statistic.
-            </div>
-          </div>  
-          -->
-          <div class="row">
-            <div class="col-md-6 text-left mycol medtext" style="">  
-              <h5 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Select</h5> 
+      <div class="row" style="padding-bottom:3px;">
+            <div class="col-md-12 text-left mycol medtext">
+              <h6 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Select</h6> 
               a country by clicking on the map, or  
-              a group of countries by clicking its group on the right.<br>
-              <h5 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Choose</h5>
-              a statistic name on the right to color countries according to their average value for that statistic across all years for which there is reported data.  
+              a group of countries by clicking its group.                
+              <h6 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Choose</h6>
+              a statistic to color countries according to their average value for that statistic across all years for which there is reported data.  
               Darker colors indicate higher average values.
-              All statistics are given as % GDP, unless noted. Government Take is Government Resource Revenue / Total Rents.
-              <p>[PLACE LEGEND HERE]</p>
+              Government Take is Government Resource Revenue / Total Rents.
+              All other statistics are given as %GDP, unless noted. <br>               
             </div>
-            <div class="col-md-6 text-left mycol" style="padding-left:10px;">   
-                  <div class="datatext" >              
+      </div>  
+      <div class="row">        
+        <div class="col-md-8 text-left"> 
+          <div class="row">
+            <div class="col-md-12 text-left mycol">
+                  <div class="datatext">              
                     Income
                      <div class="btn-group btn-group-xs">
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('class_income', 'Low income')">Low</button>
@@ -290,7 +290,7 @@
                       </div>  
                   </div>
                   <div class="datatext">              
-                      Primary Rent Source
+                      Rent
                       <div class="btn-group btn-group-xs">
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Oil')">Oil</button>
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Gas')">Gas</button>
@@ -298,24 +298,13 @@
                         <button class="btn btn-mini mybtn btnsmalltext" ng-click="selectGroup('prim_rent', 'Coal')">Coal</button>
                       </div>  
                   </div>                  
-                  <div id="legend" style="padding-top: 6px"></div>
-
-         <!--         
-            </div> <!-- 6 -->
-            </div>  
-         <!--
-         <div class="row">            
-            <div class="col-md-6 text-left mycol medtext">
-            Click on a statistic to color countries according to their relative average value for that statistic, across all years with reported data for each country.  
-            Darker colors indicate higher average values.
-            All statistics are given as % GDP, unless noted.
             </div>
-            <div class="col-md-6 text-left mycol">            
-              <div id="legend" style="padding-top: 6px"></div>
-            </div> <!-- 6 -->
- 
-         </div>  <!-- third row -->
-
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-left mycol">
+                <div id='chart1'  style="height: 320px;"></div>
+            </div>
+          </div>  
         </div>  <!-- end first column -->            
         
         <div class="col-md-4 text-center">
@@ -616,7 +605,7 @@
                   bindto: '#chart2',      
                   
                   size: {
-                    height: 200,
+                    height: 150,
                   },   
                   data: {
                     x: 'x',
@@ -664,7 +653,7 @@
       // Create the data map
       // -------------------------------------------------------------------------      
           
-          console.log("width " + $("#chart1").parent().width());
+          console.log("p width " + $("#chart1").parent().width());
           
           $scope.chart1 = new Datamap({
               element: document.getElementById('chart1'),
@@ -693,8 +682,8 @@
               },
               "setProjection":   function(element) {
               var projection = d3.geo.equirectangular()
-                     .scale(114)
-                     .center([55, -33])
+                     .scale(125)
+                     .center([42, -26])
                      .rotate([-10,0])
               
                        var path = d3.geo.path()
@@ -704,20 +693,43 @@
                },
          }); // chart1 
           
-        
+        $scope.chart1.addPlugin('legendPlugin', function( layer, data, options ) {
+          var self = this;
+          options = options || {};
+          data = data || {};
           
+          var className = 'mylegend';
+          console.log("calling new legend plug in");
+          $scope.doLegend(this, layer);
+  
+        });
+        $scope.chart1.addPlugin('groupSelectPlugin', function( layer, data, options ) {
+          var self = this;
+          options = options || {};
+          data = data || {};
+          
+          var className = 'mylegend';
+          console.log("calling new legend plug in");
+          $scope.doGroup(this, layer);
+  
+        });
+        
+        
         //console.log($scope.current_statistic);
         //$scope.updateGroupStat($scope.current_statistic);
         //$scope.selectStatistic($scope.current_statistic);
         $scope.current_statistic = "calc_govt_take";
         $scope.current_statistic_name = varnames[$scope.current_statistic];
 
+        console.log("adding legend plug in");
+        $scope.chart1.legendPlugin();
+          
         
       // -------------------------------------------------------------------------      
       // Set up other charts
       // -------------------------------------------------------------------------      
         
-        $scope.doLegend();
+        //$scope.doLegend();
         
       // -------------------------------------------------------------------------      
       // Lien charts to compare levels of different factors
@@ -840,7 +852,92 @@
       // highlight or fill by a different variable
       // -------------------------------------------------------------------------                
 
+      $scope.doLegend = function(map, layer) {
+        
+          console.log("in do legend2");
+        
+          var resourceStatNames = d3.keys($scope.country_resource_stat_data_json[$scope.current_country_id]);
+          var resourceStatObjs = [];  
+          
+          resourceStatNames.forEach(function(stat, index) {
+            var statObj = {};
+            statObj.variable = stat;
+            statObj.name = varnames[stat];
+            statObj.color = varcolors[stat]; 
+            statObj.selected = false;
+            statObj.order = varlookup[stat].order;
+            resourceStatObjs.push(statObj);
+          });
+          resourceStatObjs.sort(function(a, b) { return d3.ascending(a.order, b.order); });
+          console.log("resourceStatObjs");
+          console.log(resourceStatObjs);
+        
+          //var width = $("#legend").width()
+          //console.log("width: " + width);
+          
+          var labelStartCoodinates = map.projection([-168, 12]);
+ 
+          
+        
+          //var resourceStatObjs = [2,4,5,6,7];  
+                  
+          //var svg = d3.selectAll("#legend").append("svg")
+          //var svg = layer.append("svg")
+          /*
+          var svg = layer.append("div")
+            .attr("id", "legend")          
+              .attr("x", labelStartCoodinates[0])
+              .attr("y", labelStartCoodinates[1])
+          
+            //.attr("width", $("#legend").width())
+            .attr("width", 400)
+            .attr("height", 300);            
+          */
+          //layer
+          //    .attr("x", labelStartCoodinates[0])
+          //    .attr("y", labelStartCoodinates[1]);
+          layer.attr("transform", function(d, i) { return "translate(" + labelStartCoodinates[0] + "," + labelStartCoodinates[1] + ")" });  
+          /*
+          layer.append("text")
+              .attr("x", 0)
+              .attr("y", 0)
+              .attr("class", "medtext")              
+                .text("Text that describes what to do");  
+          */
+          var legend = layer.selectAll("g")
+            .data(resourceStatObjs)
+              //.sort(function(a,b) {  console.log("this is a: " + a.order); return d3.descending(a.order, b.order); })
+              .enter()
+              .append("g")
+              .attr("class", "legend")
+              .attr("transform", function(d, i) { return "translate(0," + i * 14 + ")"; });
+              //.attr("transform", function(d, i) { return "translate(" + labelStartCoodinates[0] + "," + labelStartCoodinates[1] + i * 14 + ")"; });
+  
+          //var legend = layer.
+  
+          legend.append("rect")
+            .attr("x", 0)
+            .attr("width", 10)
+            .attr("height", 10)
+            .style("fill", function(d,i) { return d.color; });
+  
+          legend.append("text")
+              .attr("x", 14)
+              .attr("y", 5)
+              .attr("dy", ".35em")              
+              .attr("class", "statunselected")      
+              .style("fill", function(d,i) { return ($scope.current_statistic == d.variable) ? d.color : "#bebebe"; })
+              .text(function(d) { return d.name; })
+              .on("click", function(d, i) { 
+                  legend.selectAll(".statunselected").style("fill", "#bebebe");
+                  d3.select(this).style("fill", function(d) { return d.color; });
+                  $scope.selectStatistic(d.variable);
+              })
+      }
+
+      /*
       $scope.doLegend = function() {
+
           var resourceStatNames = d3.keys($scope.country_resource_stat_data_json[$scope.current_country_id]);
           var resourceStatObjs = [];  
           
@@ -862,7 +959,8 @@
                   
           //var svg = d3.selectAll("#legend").append("svg")
           var svg = d3.selectAll("#legend").append("svg")
-            .attr("width", $("#legend").width())
+            //.attr("width", $("#legend").width())
+            .attr("width", 200)
             .attr("height", 90);            
           
           var legend = svg.selectAll("g")
@@ -889,7 +987,9 @@
                   d3.select(this).style("fill", function(d) { return d.color; });
                   $scope.selectStatistic(d.variable);
               })
+              
       }
+      */
 
       $scope.updateLevelsCompare = function(element, factor, stat) {
           var chartData = [];
@@ -1086,7 +1186,8 @@
             this.rowlabels.forEach(function(row, rindex) {
               var entry = new Object();
               entry.ccode = ccode;
-              entry.row = rindex;            
+              entry.row = rindex;     
+              entry.name = $scope.country_data_json[ccode].name;
               entry.value = $scope.country_resource_stat_data_json[ccode][whichstat][rindex];
               this.chartData.push(entry);              
             }, this);  
@@ -1141,9 +1242,23 @@
             .on("click", function(d, i) { 
               container.selectAll(".heatrowlabel").style("fill", "#bebebe");
               d3.select(this).style("fill", "#000000");
-              //chart.currentRowSelection = i;
+              chart.currentRowSelection = i;
               chart.updateChart(null,i);              
-            }); 
+              });
+            /*  
+            .on("mouseover", function(d, i) { 
+              //container.selectAll(".heatrowlabel").style("fill", "#bebebe");
+              d3.select(this).style("fill", "#000000");
+              //chart.currentRowSelection = i;
+              //chart.updateChart(null,i);              
+            })  
+            .on("mouseout", function(d, i) { 
+              //container.selectAll(".heatrowlabel").style("fill", "#bebebe");
+              d3.select(this).style("fill", function (d,i) { return (chart.currentRowSelection == i) ? "#000000" : "#bebebe"; });
+              //chart.currentRowSelection = i;
+              //chart.updateChart(null,i);              
+            });  
+            */
         this.svg = container.append("g")
             .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");            
               
@@ -1157,7 +1272,9 @@
               .attr("y", 0)
               .attr("class", "heatcountrylabel")              
               .attr("transform", "rotate(-90)")              
-              .style("text-anchor", "middle");      
+              .style("text-anchor", "middle")
+                .append("title")
+                .text(function(d) {return d.values[0].name; });
         this.countryg
               .selectAll("rect")
               .data(function(d) {return d.values}) 
@@ -1314,16 +1431,18 @@
         [ {
            "variable": "calc_gov_resrev_gdp",
           "values": {
-           "name": "Government Resource Revenue",
+           "name": "Govt Resource Revenue",
           "source": "Calculated: avg of REV$rev_gov_resrev_gdp and REV2$rev2_gov_resrev_gdp",
           "color": "1f77b4",
+          "order": 4
           } 
           },{
            "variable": "calc_govt_take",
           "values": {
            "name": "Government Take",
           "source": "Calculated: calc_gov_resrev_gdp / calc_rent_total_gdp",
-          "color": "8c564b", //#a6a6a6 ff7878 8c564b
+          "color": "8c564b", //#a6a6a6 ff7878 8c564b,
+          "order": 1
           } 
           },{
            "variable": "econ_gdpcon",
@@ -1372,7 +1491,8 @@
           "values": {
            "name": "Total Rents",
           "source": "Calculated from RENT: sum of RENT$rent_min, RENT$rent_oil, RENT$rent_gas",
-          "color": "d62728" 
+          "color": "d62728",
+          "order": 2
           } 
           },{
            "variable": "rev_gov_resrev_gdp",
@@ -1384,30 +1504,34 @@
           },{
            "variable": "rev_gov_resrev_govtrev",
           "values": {
-           "name": "Government Resource Revenue (%GovtRev)",
+           "name": "Govt Resource Revenue(%GovtRev)",
           "source": "Resource_Revenue",
-          "color": "2ca02c" 
+          "color": "2ca02c",
+          "order": 6
           } 
           },{
            "variable": "rev2_gov_nonresrev_gdp",
           "values": {
-           "name": "Government Non-Resource Revenue",
+           "name": "Govt Non-Resource Revenue",
           "source": "Resource_Revenue2",
-          "color": "9467bd" //9467bd 1f77b4
+          "color": "9467bd", //9467bd 1f77b4
+          "order": 5
           } 
           },{
            "variable": "rev2_gov_resrev_gdp",
           "values": {
-           "name": "Government Resource Revenue",
+           "name": "Govt Resource Revenue",
           "source": "Resource_Revenue2",
           "color": "" 
           } 
           },{
            "variable": "rev2_gov_rev_gdp",
           "values": {
-           "name": "Total Government Revenue",
+           "name": "Total Govt Revenue",
           "source": "Resource_Revenue2",
-          "color": "bcbd22" //8c564b bcbd22
+          "color": "bcbd22", //8c564b bcbd22
+          "order": 3
+
            }
            }
          ];
