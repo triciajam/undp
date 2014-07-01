@@ -29,6 +29,9 @@
         .heatrowlabel:hover {
           opacity:.5;
         }
+        .mybtn:hover {
+          opacity:.7;
+        }
     
     /*-------------------------------------------------------------------------        
       These override Bootstrap Styles
@@ -53,12 +56,6 @@
         .mycol {
           padding-left: 1px; padding-right: 1px; padding-top: 1px;
         }
-        h2 {
-           margin-top:5px; margin-bottom:5px;
-        }
-        h3 {
-           margin-top:5px; margin-bottom:5px;
-        }
         h4 {
            margin-top:2px; margin-bottom:2px; font-family: Consolas, courier;
 
@@ -69,6 +66,11 @@
           margin-bottom: 10;
           
         }
+        .jumbotron .container {
+          padding-left: 0px !important;
+          
+        }
+
         h1 {
           font-size: 50px !important;
         }
@@ -147,7 +149,20 @@
         #chart2 .c3-line-calc_govt_take {
           stroke-width: 0px;
         } 
-
+        
+        .c3-axis-y-label {
+          font-family: Consolas, courier !important;
+        }
+        .c3-axis-y2-label {
+          font-family: Consolas, courier !important;
+        }
+        .c3-axis-y text {
+          font-family: Consolas, courier !important;
+        }        
+        .c3-axis-y2 text {
+          font-family: Consolas, courier !important;
+        }
+        
         .c3-axis-y path {
           stroke-width: 0px !important;
         }
@@ -167,8 +182,7 @@
         }
         div[id*='Compare'] .c3-axis-x path {
           stroke-width: 0px !important;
-        }
-        
+        }        
         div[id*='Compare'] .c3-legend-item {
           font-family: Consolas, courier !important;
           font-size: 11px !important;
@@ -253,16 +267,17 @@
     
     <!-- Set up our Bootstrap Layout Grid -->
     <div class="container">
-      <div class="row" style="padding-bottom:3px;">
+      <div class="row" style="padding-bottom:4px;">
             <div class="col-md-12 text-left mycol medtext">
               <h6 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Select</h6> 
               a country by clicking on the map, or  
-              a group of countries by clicking its group.                
+              a group of countries by clicking its button.                
               <h6 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Choose</h6>
-              a statistic to color countries according to their average value for that statistic across all years for which there is reported data.  
+              a statistic to color countries according to the average value of reported data for that statistic from 2000 to 2012.  
               Darker colors indicate higher average values.
               Government Take is Government Resource Revenue / Total Rents.
-              All other statistics are given as %GDP, unless noted. <br>               
+              All other statistics are given as %GDP, unless noted. 
+              See below for sources and notes on calculations.<br>               
             </div>
       </div>  
       <div class="row">        
@@ -310,6 +325,7 @@
         <div class="col-md-4 text-center">
           <h4 ng-bind='current_selection_name'></h4>
           <div id='chart2'></div> 
+          <div id='chart3'></div>           
         </div>
         
       </div> <!-- end big row -->
@@ -461,7 +477,7 @@
       
       // array of years
       // this is necessary for the c3 charts
-      var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012];
+      var xaxis = ["x",2000, 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011];
       
       // -------------------------------------------------------------------------      
       // This function is called when the JSON data has been loaded.
@@ -495,23 +511,53 @@
           console.log("country resource stat json data: ");
           console.log($scope.country_resource_stat_data_json);  
 
-
           // this put the same resource data into array format
           // this is only necessary because c3 chart expects time series
           // data to come in this format.
+          $scope.country_gov_take_stat_data_arr = [];
+          $scope.country_gov_revenue_stat_data_arr = [];          
+          var gov_take_stats = ["calc_govt_take", "calc_gov_resrev_gdp", "calc_rent_total_gdp"];
+          var gov_revenue_stats = ["calc_gov_resrev_gdp", "rev2_gov_nonresrev_gdp", "rev2_gov_rev_gdp"];          
+
+          $scope.raw_data.forEach(function(countryObj, index) {
+            $scope.country_gov_take_stat_data_arr[countryObj.country.ccode] = [];
+            $scope.country_gov_take_stat_data_arr[countryObj.country.ccode].push(xaxis);
+            $scope.country_gov_revenue_stat_data_arr[countryObj.country.ccode] = [];
+            $scope.country_gov_revenue_stat_data_arr[countryObj.country.ccode].push(xaxis);
+           
+            gov_take_stats.forEach(function(statname, index) {
+                //console.log(countryObj.resourceStats);
+                console.log("current stat:" + statname);
+                var tmp=[];
+                tmp.push(statname);
+                $scope.country_gov_take_stat_data_arr[countryObj.country.ccode].push(tmp.concat(countryObj.resourceStats[statname]));              
+            });
+            gov_revenue_stats.forEach(function(statname, index) {
+                //console.log(countryObj.resourceStats);
+                //console.log(statname);
+                var tmp=[];
+                tmp.push(statname);
+                $scope.country_gov_revenue_stat_data_arr[countryObj.country.ccode].push(tmp.concat(countryObj.resourceStats[statname]));              
+            });                                 
+          });
+          
+          console.log("country_gov_take_stat_data_arr: ");
+          console.log($scope.country_gov_take_stat_data_arr);  
+          console.log("country_gov_revenue_stat_data_arr: ");
+          console.log($scope.country_gov_revenue_stat_data_arr);  
+ 
           $scope.raw_data.forEach(function(countryObj, index) {
                        
-            var statData = Object();
+            //var statData = Object();
             $scope.country_resource_stat_data_arr[countryObj.country.ccode] = [];
             $scope.country_resource_stat_data_arr[countryObj.country.ccode].push(xaxis);
-            
+                                
             for (var statname in countryObj.resourceStats) {
               //console.log(countryObj.resourceStats);
               //console.log(statname);
               var tmp=[];
               tmp.push(statname);
-              statData[statname] = tmp.concat(countryObj.resourceStats[statname]);
-              $scope.country_resource_stat_data_arr[countryObj.country.ccode].push(statData[statname]);            
+              $scope.country_resource_stat_data_arr[countryObj.country.ccode].push(tmp.concat(countryObj.resourceStats[statname]));              
             }
 
           });
@@ -536,15 +582,16 @@
           
           $scope.group_resource_stat_data_json = {};
           $scope.group_resource_stat_data_arr = [];
-          
-                    
+          $scope.group_gov_take_stat_data_arr = [];
+          $scope.group_gov_revenue_stat_data_arr = [];
+                              
           // this calculates average data for groups of countries we are interested in
           // and stores it in an object
           var resourceStats = d3.keys($scope.country_resource_stat_data_json[$scope.current_country_id]);
           
           lookupfactors.forEach(function(currentFactor, index) {
-              console.log("in lookup loop");
-              console.log(currentFactor);
+              //console.log("in lookup loop");
+              //console.log(currentFactor);
               
               // have to make a copy of currentFactor explicitly or Javascript will point to same ref
               $scope.group_resource_stat_data_json[currentFactor.factor] = new Object();
@@ -553,7 +600,9 @@
               $scope.group_resource_stat_data_json[currentFactor.factor]["color"] = currentFactor.color;              
               $scope.group_resource_stat_data_json[currentFactor.factor].levels = [];
               
-              $scope.group_resource_stat_data_arr[currentFactor.factor] = [];  
+              $scope.group_resource_stat_data_arr[currentFactor.factor] = []; 
+              $scope.group_gov_take_stat_data_arr[currentFactor.factor] = [];
+              $scope.group_gov_revenue_stat_data_arr[currentFactor.factor] = [];
               
               currentFactor.levels.forEach(function(currentLevel, index) {
                 console.log("currentLevel.level");
@@ -565,6 +614,13 @@
                 
                 $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level] = [];  
                 $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level].push(xaxis);  
+                
+                
+                $scope.group_gov_take_stat_data_arr[currentFactor.factor][currentLevel.level] = [];  
+                $scope.group_gov_take_stat_data_arr[currentFactor.factor][currentLevel.level].push(xaxis);  
+
+                $scope.group_gov_revenue_stat_data_arr[currentFactor.factor][currentLevel.level] = [];  
+                $scope.group_gov_revenue_stat_data_arr[currentFactor.factor][currentLevel.level].push(xaxis);  
                 
                 var countries = getCountriesInGroup($scope.country_data_json, currentFactor.factor, currentLevel.level); 
                 //console.log(countries);
@@ -584,7 +640,10 @@
                     tmp.push(d3.mean(currentYear));
                   });
                   $scope.group_resource_stat_data_json[currentFactor.factor].levels[currentLevel.level].stats[currentStat] = tmp;
-                  $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp);                  
+                  $scope.group_resource_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp);  
+                  
+                  if (gov_take_stats.indexOf(currentStat) != -1) $scope.group_gov_take_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp); 
+                  if (gov_revenue_stats.indexOf(currentStat) != -1) $scope.group_gov_revenue_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp); 
                 });
               });                        
           });
@@ -593,6 +652,10 @@
           console.log($scope.group_resource_stat_data_json);
           console.log("$scope.group_resource_stat_data_arr");
           console.log($scope.group_resource_stat_data_arr);
+          console.log("$scope.group_gov_take_stat_data_arr");
+          console.log($scope.group_gov_take_stat_data_arr);
+          console.log("$scope.group_gov_revenue_stat_data_arr");
+          console.log($scope.group_gov_revenue_stat_data_arr);
                     
           $scope.current_selection_name = $scope.country_data_json[$scope.current_country_id]["name"];
 
@@ -600,6 +663,7 @@
       // Create the c3 line chart for resource data
       // -------------------------------------------------------------------------      
 
+                
           $scope.chart2 = c3.generate({
               
                   bindto: '#chart2',      
@@ -609,7 +673,7 @@
                   },   
                   data: {
                     x: 'x',
-                    columns: $scope.country_resource_stat_data_arr[$scope.current_country_id],
+                    columns: $scope.country_gov_take_stat_data_arr[$scope.current_country_id],
                     axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', calc_rent_total_gdp : 'y', calc_govt_take: 'y2' },
                     type: 'line',
                     types: {
@@ -638,7 +702,8 @@
                             position: 'outer-middle'
                           },
                         },
-                    x: { min: 2000, max: 2011,  
+                    x: { min: 2000, max: 2011,
+                         padding: {left:0, right:0}
                     }
                 
                   }, // axis
@@ -648,7 +713,67 @@
                   },
                   
           });// c3.generate
-          
+ 
+ 
+       // -------------------------------------------------------------------------      
+      // Create the c3 line chart for resource data
+      // -------------------------------------------------------------------------      
+
+          $scope.chart3 = c3.generate({
+              
+                  bindto: '#chart3',      
+                  
+                  size: {
+                    height: 150,
+                  },   
+                  data: {
+                    x: 'x',
+                    columns: $scope.country_gov_revenue_stat_data_arr[$scope.current_country_id],
+                    axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', calc_rent_total_gdp : 'y', calc_govt_take: 'y2' },
+                    type: 'bar',
+                    types: {
+                        rev2_gov_rev_gdp: 'line',
+                    },
+                    groups: [
+                      ['calc_gov_resrev_gdp', 'rev2_gov_nonresrev_gdp']
+                    ],
+                    names: varnames, 
+                    colors: varcolors, 
+                    labels:false,
+                  }, // data  
+                  axis: {
+                    y: {
+                      max: 100,
+                      min: 0,
+                      padding: {top:0, bottom:5},
+                      label: {
+                        text: 'Percent',
+                        position: 'outer-middle'
+                      },                      
+                    },
+                    x: { min: 2000, max: 2011,  
+                        padding: {left:0, right:0}                    
+                    }
+                    /*
+                    y2: { max: 1.4, 
+                          min: 0, 
+                          padding: {top:0, bottom:.2},
+                          show: true,
+                          label: {
+                            text: 'Government Take Ratio',
+                            position: 'outer-middle'
+                          },
+                        },
+                    */
+                  }, // axis
+              
+                 legend: {
+                    show: false
+                  },
+                  
+          });// c3.generate
+ 
+ 
       // -------------------------------------------------------------------------      
       // Create the data map
       // -------------------------------------------------------------------------      
@@ -829,7 +954,8 @@
           if ($scope.group_resource_stat_data_json != null) {
             $scope.current_selection_name = newValue.level;          
           }
-          if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.group_resource_stat_data_arr[newValue.factor][newValue.level] })
+          if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.group_gov_take_stat_data_arr[newValue.factor][newValue.level] })
+          if ($scope.chart3 != null) $scope.chart3.load({ columns: $scope.group_gov_revenue_stat_data_arr[newValue.factor][newValue.level] })
         } else {
           countries = new Array(newValue);
           if ($scope.chart1 != null) $scope.selectOnMap(countries);
@@ -838,7 +964,8 @@
             //console.log($scope.country_data_json[newValue]);
             $scope.current_selection_name = $scope.country_data_json[newValue]["name"];          
           }    
-          if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_resource_stat_data_arr[newValue] });          
+          if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_gov_take_stat_data_arr[newValue] });          
+          if ($scope.chart3 != null) $scope.chart3.load({ columns: $scope.country_gov_revenue_stat_data_arr[newValue] });          
         }
         
         if ($scope.heatmap != null) $scope.heatmap.selectCountries(countries);
