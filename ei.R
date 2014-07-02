@@ -122,6 +122,21 @@ out.ts <- merge(out.ts, rent[c(1,3, 8)], by=c("ccode", "year"), all.x=T, all.y=F
 out.ts$calc_govt_take <- out.ts$calc_gov_resrev_gdp / out.ts$calc_rent_total_gdp
 str(out.ts)
 
+# -----------------------------------------------------------------------------
+# PROD table
+
+prod <- read.csv("raw/Production_Total.csv")
+#!! change one of the COG to CDO
+prod$ccode <- as.character(prod$ccode)
+prod$ccode <- ifelse(prod$country == "Congo", "COD", prod$ccode)
+prod$ccode <- as.factor(prod$ccode)
+# for some reason LBR has data for the years 2004-2006 that doesn't look quite right
+# and no other country has it.  So deleting those years for LBR
+table(prod$year)
+prod[which(prod$ccode == "LBR"),]
+prod <- prod[-which(prod$ccode == "LBR" & prod$year < 2007),]
+out.ts <- merge(out.ts, prod[c(2:4)], by=c("ccode", "year"), all.x=T, all.y=F)
+str(out.ts)
 
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
@@ -200,18 +215,23 @@ out.no.ts$prim_prod <- ifelse(out.no.ts$prim_prod == "prod_fuels", "Fuels",
 # merge with non-time-series data set
 rent <- read.csv("raw/Rent.csv")
 str(rent)
-rent$max.rent.source= names(rent[,c(4:7)])[apply(rent[,c(4:7)],1,which.max)] 
+rent$calc_rent_min <- rowSums(rent[,c(4,5)], na.rm=TRUE)
+rent$max.rent.source= names(rent[,c(6:8)])[apply(rent[,c(6:8)],1,which.max)] 
 a <- table(rent$ccode, rent$max.rent.source)
 a <- dcast(as.data.frame(a), Var1 ~ Var2)
-a$prim_rent <- names(a[,2:5])[apply(a[2:5],1,which.max)]
+a$prim_rent <- names(a[,2:4])[apply(a[2:4],1,which.max)]
 a$ccode <- a$Var1
-out.no.ts <- merge(out.no.ts, a[,c(6,7)], by=c("ccode"), all.x=T, all.y=F)
+out.no.ts <- merge(out.no.ts, a[,c(5,6)], by=c("ccode"), all.x=T, all.y=F)
 str(out.no.ts)
+
 out.no.ts$prim_rent <- ifelse(out.no.ts$prim_rent == "rent_gas", "Gas", 
-                              ifelse(out.no.ts$prim_rent == "rent_min", "Minerals", 
+                              ifelse(out.no.ts$prim_rent == "calc_rent_min", "Minerals", 
                                      ifelse(out.no.ts$prim_rent == "rent_oil", "Oil", NA
                                             )))
 
+
+# -----------------------------------------------------------------------------
+# OPEC classifier
 out.no.ts$class_opec <- ifelse(out.no.ts$class_opec == "1", "OPEC", "Non-OPEC") 
 
 # -----------------------------------------------------------------------------
@@ -223,7 +243,7 @@ out.no.ts$class_opec <- ifelse(out.no.ts$class_opec == "1", "OPEC", "Non-OPEC")
 tmpByCountry <- split(out.ts, out.ts$ccode)
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:16])), .na="null", digits=14))
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],stat=(x[,3:16])), .na="null", digits=14))
-jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:17)])), .na="null", digits=14))
+jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14))
 jsonString <- paste("[", paste(jsonString, collapse=","), "]")
 
 

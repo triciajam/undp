@@ -28,7 +28,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -60,7 +61,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          505356,          687174,          845824,         1092239,         1821830, null ] 
 } 
 },{
  "country": {
@@ -92,7 +94,8 @@
 "rev2_gov_rev_gdp": [       52.416277,       45.822127,        41.08894,        37.92629,       37.957605,       40.669998,       46.419209,       45.822218,        50.93911, null, null, null, null ],
 "calc_gov_resrev_gdp": [     45.07709145,      36.0275527,      28.2441427,     27.86940645,     28.68077675,     33.83820465,      38.8298222,      37.6091948,      41.0893491,      24.2859453,      33.1069487,       39.696834, null ],
 "calc_rent_total_gdp": [    140.48482749,   101.421520836,    84.306504208,    54.684762932,    56.614696012,    65.566940974,    62.915404842,    58.907586034,    70.908286524,    44.439034837,    46.704758727,    46.404032811, null ],
-"calc_govt_take": [ 0.32086804144888, 0.35522591658093, 0.33501736272111, 0.50963751062897, 0.50659596836696, 0.51608637138369, 0.61717511470384, 0.63844399901726, 0.57947175308055, 0.54650028717049, 0.70885600530596, 0.8554608639659, null ] 
+"calc_govt_take": [ 0.32086804144888, 0.35522591658093, 0.33501736272111, 0.50963751062897, 0.50659596836696, 0.51608637138369, 0.61717511470384, 0.63844399901726, 0.57947175308055, 0.54650028717049, 0.70885600530596, 0.8554608639659, null ],
+"prod_total": [ null, null, null, null, null, null, null,        83238402,        94056502,        89753402,        92786202,        86107401, null ] 
 } 
 },{
  "country": {
@@ -124,7 +127,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          769563,          830889,          825644,         1026938,         1181900, null ] 
 } 
 },{
  "country": {
@@ -156,7 +160,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -188,7 +193,8 @@
 "rev2_gov_rev_gdp": [       29.799999,            24.8, null, null, null, null, null, null,       38.599998,       25.299999, null, null, null ],
 "calc_gov_resrev_gdp": [     22.20422265,     19.38875275,      16.9639541,      20.0768494,     21.99848175,     27.09160665,     32.66805815,      29.9739758,     31.54396085,     17.71117595,      22.1253622,      28.4008504, null ],
 "calc_rent_total_gdp": [    22.825170934,    18.933210172,    16.391184712,    20.387462829,    23.028394833,    28.192135625,    28.497160169,    26.427456805, null, null, null, null, null ],
-"calc_govt_take": [ 0.97279545963553, 1.0240605039432, 1.0349437455598, 0.98476448827374, 0.95527638420008, 0.96096326331432, 1.1463618815442, 1.1341982704264, null, null, null, null, null ] 
+"calc_govt_take": [ 0.97279545963553, 1.0240605039432, 1.0349437455598, 0.98476448827374, 0.95527638420008, 0.96096326331432, 1.1463618815442, 1.1341982704264, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       183900150,       186204723,       168579120,       175677000,       195098000, null ] 
 } 
 },{
  "country": {
@@ -220,7 +226,8 @@
 "rev2_gov_rev_gdp": [      24.5982869,      23.6354805,       23.039969,       26.020768,      29.0321968,      29.4179403,       29.903291,      31.5254978,      33.4086727,      33.9254429, null, null, null ],
 "calc_gov_resrev_gdp": [       0.3639469,       0.3425005,        2.315189,        1.920908,       0.8733068,       0.8841703,        0.920761,       0.7668678,       0.7097427,       0.7683229, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        76599843,        74657433,        71734350,        69683630,        66446167, null ] 
 } 
 },{
  "country": {
@@ -252,7 +259,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          163064,          240396,          190906,          188411,          195411, null ] 
 } 
 },{
  "country": {
@@ -284,7 +292,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -316,7 +325,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -348,7 +358,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null,       1.4117855,       1.1607226,       0.8339539,       0.7256371,       0.8988174,       0.9525833,       0.8025091,       0.9972289,       1.3169744, null, null, null ],
 "calc_rent_total_gdp": [ null,     3.541816705,     3.355729788,     3.679446137,     4.580453386,     5.930841716,     7.292779705,     8.210045829,    10.938510859,     7.970483749, null, null, null ],
-"calc_govt_take": [ null, 0.39860490183102, 0.3458927486208, 0.2266520201543, 0.15842036559479, 0.15154971975988, 0.1306200568964, 0.097747213196464, 0.091166787952631, 0.16523142653233, null, null, null ] 
+"calc_govt_take": [ null, 0.39860490183102, 0.3458927486208, 0.2266520201543, 0.15842036559479, 0.15154971975988, 0.1306200568964, 0.097747213196464, 0.091166787952631, 0.16523142653233, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       723639155,       759901102,       804017730,       850442322,       874128967, null ] 
 } 
 },{
  "country": {
@@ -380,7 +391,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         5808983,         5725729,         5429779,         5789024,         5805620, null ] 
 } 
 },{
  "country": {
@@ -412,7 +424,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       5.4241661,        2.797543,      10.9409936,      11.3143978,      10.1259045,       9.7520516,      14.2283158,      15.1803477,      38.4153865,      27.3592399,      34.4911028, null, null ],
 "calc_rent_total_gdp": [     55.77505491,    44.835683308,    39.484011215,    43.379547907,    48.173138217,    65.020829162,    68.468575717,    62.636559367,    63.504731216,    42.412161542,    45.789747725, null, null ],
-"calc_govt_take": [ 0.097250753204144, 0.062395458117192, 0.27709934384386, 0.2608233221853, 0.21019814931689, 0.14998350106706, 0.20780797104367, 0.24235602742889, 0.60492164543358, 0.64508006442696, 0.75324946114889, null, null ] 
+"calc_govt_take": [ 0.097250753204144, 0.062395458117192, 0.27709934384386, 0.2608233221853, 0.21019814931689, 0.14998350106706, 0.20780797104367, 0.24235602742889, 0.60492164543358, 0.64508006442696, 0.75324946114889, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        56163755,        64224472,        69581700,        71943479,        66447650, null ] 
 } 
 },{
  "country": {
@@ -444,7 +457,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,             141,             218,             104,             174,             179, null ] 
 } 
 },{
  "country": {
@@ -476,7 +490,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -508,7 +523,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           15000,           15000,           15000,           15000,           15000, null ] 
 } 
 },{
  "country": {
@@ -540,7 +556,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,             651,             655,             662,           18672,           23054, null ] 
 } 
 },{
  "country": {
@@ -572,7 +589,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        14565543,        16013617,        17219755,        17971755,        18850380, null ] 
 } 
 },{
  "country": {
@@ -604,7 +622,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        30925339,        31324993,        29375131,        32111948,        40212390, null ] 
 } 
 },{
  "country": {
@@ -636,7 +655,8 @@
 "rev2_gov_rev_gdp": [        36.20001,            33.8,            32.1,       31.200004,       31.600004,       32.999996,       30.900002,       29.299999,       32.099997,       23.499999, null, null, null ],
 "calc_gov_resrev_gdp": [      25.5168649,       22.483837,     21.65612535,     22.81310665,        22.34132,      25.0029044,     23.76848865,      23.4757907,      27.6631808,     19.65843965,      21.9827031,      24.2608815, null ],
 "calc_rent_total_gdp": [    29.485779309,    25.603049254,    22.488413703,    26.520322371,    29.213525604,     37.09338379,     35.91567518,     33.72368856,     40.79180577,    24.738088213,    25.069023982, null, null ],
-"calc_govt_take": [ 0.86539564149188, 0.8781702826466, 0.96299034854162, 0.86021226781716, 0.76475945775408, 0.67405294004858, 0.66178593416046, 0.69612167892705, 0.67815533727474, 0.79466284867031, 0.87688707449416, null, null ] 
+"calc_govt_take": [ 0.86539564149188, 0.8781702826466, 0.96299034854162, 0.86021226781716, 0.76475945775408, 0.67405294004858, 0.66178593416046, 0.69612167892705, 0.67815533727474, 0.79466284867031, 0.87688707449416, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        11890000,        12464200,        12545200,        12809500,        13243348, null ] 
 } 
 },{
  "country": {
@@ -668,7 +688,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          578000,           10244,           10430,           11833,            8430, null ] 
 } 
 },{
  "country": {
@@ -700,7 +721,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        13501875,        13943484,        13508463,        13493124,        16488659, null ] 
 } 
 },{
  "country": {
@@ -732,7 +754,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         8597750,         8735920,         6458282,         9505083,         9740930, null ] 
 } 
 },{
  "country": {
@@ -764,7 +787,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -796,7 +820,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -828,7 +853,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null,      10.2209463,       9.8949801,      14.0081654,      13.5379232,      10.7747033,      11.8835753, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null,    37.175248735,    35.522353642,    39.222057969,    15.939941219,    17.791848366,    20.292660807, null ],
-"calc_govt_take": [ null, null, null, null, null, null, 0.27493955381063, 0.27855643237279, 0.35715018857684, 0.84930822604685, 0.60559774781974, 0.58560951730395, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, 0.27493955381063, 0.27855643237279, 0.35715018857684, 0.84930822604685, 0.60559774781974, 0.58560951730395, null ],
+"prod_total": [ null, null, null, null, null, null, null,        14008764,        14663500,        14155153,        15131535,        16361959, null ] 
 } 
 },{
  "country": {
@@ -860,7 +886,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       0.4850949,       0.4898699,       0.5764382,       1.0299892,       0.8500488,       1.1545079,       1.2687186,        0.948582,        1.181597,       0.8181418,       0.7535457, null, null ],
 "calc_rent_total_gdp": [     2.480388452,     2.580035375,      3.09411369,     3.563722956,      4.06386534,     5.340552018,     5.747459473,     5.331325773,     6.769283523,      4.10282149,     4.849380764, null, null ],
-"calc_govt_take": [ 0.19557214903531, 0.1898694509179, 0.1863015576522, 0.28902055875749, 0.20917248207836, 0.21617763409266, 0.22074424464585, 0.17792609950868, 0.17455274195346, 0.19940955315606, 0.15539008724455, null, null ] 
+"calc_govt_take": [ 0.19557214903531, 0.1898694509179, 0.1863015576522, 0.28902055875749, 0.20917248207836, 0.21617763409266, 0.22074424464585, 0.17792609950868, 0.17455274195346, 0.19940955315606, 0.15539008724455, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       361530621,       369081696,       340687280,       394117996,       416539096, null ] 
 } 
 },{
  "country": {
@@ -892,7 +919,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           65800,           51119,           55670,           54544,           53730, null ] 
 } 
 },{
  "country": {
@@ -924,7 +952,8 @@
 "rev2_gov_rev_gdp": [       49.099998,       42.200001,       40.799999,       43.200002,      46.2000009, null,       52.800001, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [      40.8570963,      37.0068628,      36.3726718,      38.6244186,     43.51806405,      48.4212633,     48.59561985,     43.38700485,      64.9265045,      36.7803002,      43.2959397,      59.4526933, null ],
 "calc_rent_total_gdp": [     50.88206835,     48.74715001,      42.1978165,     53.79362015,     53.19220364,     67.45045848,      64.7641683,     58.81548349,      71.1864143,     44.72442493,     44.60335907, null, null ],
-"calc_govt_take": [ 0.80297632594175, 0.75915951583648, 0.86195625311561, 0.71801114132677, 0.81812861795549, 0.71787893501654, 0.75034731589381, 0.73767998281229, 0.91206313927235, 0.82237614586585, 0.9706878720065, null, null ] 
+"calc_govt_take": [ 0.80297632594175, 0.75915951583648, 0.86195625311561, 0.71801114132677, 0.81812861795549, 0.71787893501654, 0.75034731589381, 0.73767998281229, 0.91206313927235, 0.82237614586585, 0.9706878720065, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        19679000,        18637000,        17322150,        18219930,        18311210, null ] 
 } 
 },{
  "country": {
@@ -956,7 +985,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          356473,          428226,          413228,          420986,          469700, null ] 
 } 
 },{
  "country": {
@@ -988,7 +1018,8 @@
 "rev2_gov_rev_gdp": [        47.25122,        37.06016,        36.10252,        39.29018,        37.14709,        40.40014,        39.75344,        37.27042,       32.731075,        33.53307, null, null, null ],
 "calc_gov_resrev_gdp": [      26.0791577,     18.27008375,     19.33243795,      20.2060756,      19.6336491,       21.706906,     23.07152035,     19.74010195,      19.1683818,       19.080553,       8.8393661,      10.7075277, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1104405,         1133385,         1033463,         1410000,         1232052, null ] 
 } 
 },{
  "country": {
@@ -1020,7 +1051,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,               0,               0,               0,               0,               0, null ] 
 } 
 },{
  "country": {
@@ -1052,7 +1084,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null,       0.3193672,       0.3367198,       0.3880221,        0.414894,       0.5745981,       0.6293848,       0.6797978,       0.3498399, null, null, null ],
 "calc_rent_total_gdp": [ null, null,     2.535197318,     3.710332722,     4.278571303,     6.178835227,     6.323033268,     5.983665472,     7.583507287,     3.207057258, null, null, null ],
-"calc_govt_take": [ null, null, 0.12597331092633, 0.090751915051569, 0.090689642060641, 0.067147607074391, 0.090873806232835, 0.10518382134582, 0.089641609650108, 0.10908439477572, null, null, null ] 
+"calc_govt_take": [ null, null, 0.12597331092633, 0.090751915051569, 0.090689642060641, 0.067147607074391, 0.090873806232835, 0.10518382134582, 0.089641609650108, 0.10908439477572, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       435052532,       425598841,       399226451,       410463250,       416125122, null ] 
 } 
 },{
  "country": {
@@ -1084,7 +1117,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          641000,          835000,          735000,          893000,          778000, null ] 
 } 
 },{
  "country": {
@@ -1116,7 +1150,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -1148,7 +1183,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       1.2182143,       0.7449399,       0.5590953,       1.1443458,       3.7709272,       5.1322225,       8.8125494,       8.5965051,       6.0179775,       2.6542922,       4.7344161,       4.4569767, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        19454708,        21737403,        23350022,        23396157,        27470931, null ] 
 } 
 },{
  "country": {
@@ -1180,7 +1216,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,      3225870848,      3450557975,      3648652879,      4003039688,      4428140083, null ] 
 } 
 },{
  "country": {
@@ -1212,7 +1249,8 @@
 "rev2_gov_rev_gdp": [       17.131495,       17.808288,       18.513988,       17.578702,       18.432446,       18.143501,        19.02323,       19.722717,       20.564803,       19.492611, null, null, null ],
 "calc_gov_resrev_gdp": [        3.486245,        3.586758,        3.797178,       2.1314778,      3.20199945,       3.1237789,      3.75662205,       3.6324241,       4.7967113,       4.1276041,       4.7312397,        4.477993, null ],
 "calc_rent_total_gdp": [ null, null, null,     2.768252108,     3.336536504,     6.552773137,     9.616488854,     7.480159098,     8.696533507,     5.228254515, null,     6.612421271, null ],
-"calc_govt_take": [ null, null, null, 0.76997242911519, 0.95967763162827, 0.4767109794114, 0.39064383134364, 0.48560786641172, 0.55156589647347, 0.78948033003324, null, 0.67720927274236, null ] 
+"calc_govt_take": [ null, null, null, 0.76997242911519, 0.95967763162827, 0.4767109794114, 0.39064383134364, 0.48560786641172, 0.55156589647347, 0.78948033003324, null, 0.67720927274236, null ],
+"prod_total": [ null, null, null, null, null, null, null,         3794268,         4353822,         4009607,         3316905,         3057212, null ] 
 } 
 },{
  "country": {
@@ -1244,7 +1282,8 @@
 "rev2_gov_rev_gdp": [       17.234162,       16.701972,       16.444653,       16.574456,       15.307679,       17.769088,       47.634996,       20.275623,       20.831044,       18.384417, null, null, null ],
 "calc_gov_resrev_gdp": [      6.11935615,      5.15047405,        5.310973,        4.520662,      4.33171295,      5.41623905,       7.2390113,      6.81862015,       7.8098789,        5.038963,       5.2223075, null, null ],
 "calc_rent_total_gdp": [     10.99306686,     7.908275423,     7.476359445,     6.741243702,     7.517739819,     9.539113389,    10.905573132,    10.416240361,     12.18240443,     6.644025973,     7.579311237, null, null ],
-"calc_govt_take": [ 0.55665595669815, 0.65127651409568, 0.71036886857438, 0.67059762261062, 0.57619883825352, 0.56779271082423, 0.66379008350865, 0.65461432471643, 0.64107861012787, 0.75842012365354, 0.68902138158758, null, null ] 
+"calc_govt_take": [ 0.55665595669815, 0.65127651409568, 0.71036886857438, 0.67059762261062, 0.57619883825352, 0.56779271082423, 0.66379008350865, 0.65461432471643, 0.64107861012787, 0.75842012365354, 0.68902138158758, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         4287001,         4389701,         3779401,         3424577,         3216901, null ] 
 } 
 },{
  "country": {
@@ -1276,7 +1315,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       0.6257458,       0.6181815,       2.0536839,       2.0029445,       2.5417235,       3.5829092,          4.1819,       4.3471792,       5.1493045,       4.2006104,       5.0211858,       5.8558499, null ],
 "calc_rent_total_gdp": [     5.217616574,     4.169620611,     3.476998075,     4.781231833,     7.735736212,    10.143206521,    16.632832343,    15.577991148,    18.825465709,    15.453876347,    21.924216019,    26.431442449, null ],
-"calc_govt_take": [ 0.11992943351149, 0.14825845266813, 0.59064855823942, 0.41891808846743, 0.32856905022914, 0.3532324016653, 0.2514244064848, 0.27905903647648, 0.27352866482013, 0.27181597067816, 0.22902464542625, 0.22154863138094, null ] 
+"calc_govt_take": [ 0.11992943351149, 0.14825845266813, 0.59064855823942, 0.41891808846743, 0.32856905022914, 0.3532324016653, 0.2514244064848, 0.27905903647648, 0.27352866482013, 0.27181597067816, 0.22902464542625, 0.22154863138094, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1430034,         1577092,         1595866,         1651452,         1696386, null ] 
 } 
 },{
  "country": {
@@ -1308,7 +1348,8 @@
 "rev2_gov_rev_gdp": [       26.581893,       30.846551,       27.336861,       30.194904,       30.368926,       38.798389,       44.426853,       39.493417,       47.302414,       29.507754, null, null, null ],
 "calc_gov_resrev_gdp": [       20.335342,     21.03321235,      18.8845088,      20.6052919,       22.342454,       32.043057,     38.58259925,     33.58060525,      42.7129764,      21.5916215,      29.5650389,       32.803126, null ],
 "calc_rent_total_gdp": [    73.418425712,    64.218784402,    58.250952568,    55.272356745,    58.667492661,    71.372653555,    75.789549577,    62.915333508,    65.087902833,    53.665327303,    64.207470931,    71.596102433, null ],
-"calc_govt_take": [ 0.27697872574618, 0.32752429909503, 0.3241922744174, 0.37279560911547, 0.38083192218733, 0.44895426194722, 0.50907545255697, 0.53374278379578, 0.65623525326344, 0.40233839212592, 0.46046104092422, 0.45816915844961, null ] 
+"calc_govt_take": [ 0.27697872574618, 0.32752429909503, 0.3241922744174, 0.37279560911547, 0.38083192218733, 0.44895426194722, 0.50907545255697, 0.53374278379578, 0.65623525326344, 0.40233839212592, 0.46046104092422, 0.45816915844961, null ],
+"prod_total": [ null, null, null, null, null, null, null,        11500000,        12900000,        13900000,        15100000,        15200000, null ] 
 } 
 },{
  "country": {
@@ -1340,7 +1381,8 @@
 "rev2_gov_rev_gdp": [       23.380605,       24.503149,       24.360203,       25.076695,       25.142479,       25.694624,       27.230589,       27.186006,       26.600544,       26.700667, null, null, null ],
 "calc_gov_resrev_gdp": [        2.489055,        2.107739,        1.914133,       2.1546868,       2.2856648,       2.5316246,       2.8936585,        2.763563,      2.88822985,       3.8653763,       2.2045615,       3.5513223, null ],
 "calc_rent_total_gdp": [ null, null, null,     6.351851176,     7.615455922,     8.460823089,     9.483689181,     8.757026112,    11.817303301,     7.415989004,     9.391734361,    12.045117255, null ],
-"calc_govt_take": [ null, null, null, 0.33922186466543, 0.30013499170772, 0.29921729521699,  0.305119499888, 0.31558236376765, 0.24440684785975, 0.5212219567633, 0.23473422642304, 0.2948350127954, null ] 
+"calc_govt_take": [ null, null, null, 0.33922186466543, 0.30013499170772, 0.29921729521699,  0.305119499888, 0.31558236376765, 0.24440684785975, 0.5212219567633, 0.23473422642304, 0.2948350127954, null ],
+"prod_total": [ null, null, null, null, null, null, null,       106438356,       114268814,       118147310,       126177259,       144250066, null ] 
 } 
 },{
  "country": {
@@ -1372,7 +1414,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -1404,7 +1447,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,            1600,            1600,            1600,            1600,            1600, null ] 
 } 
 },{
  "country": {
@@ -1436,7 +1480,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           38713,           37059,           36200,           35000,           30900, null ] 
 } 
 },{
  "country": {
@@ -1468,7 +1513,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         4186478,         4274510,         4071670,         4338549,         4302494, null ] 
 } 
 },{
  "country": {
@@ -1500,7 +1546,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -1532,7 +1579,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -1564,7 +1612,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          487667,          440959,          372732,          405700,          499285, null ] 
 } 
 },{
  "country": {
@@ -1596,7 +1645,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        66948780,        65063942,        60109337,        62559105,        62357897, null ] 
 } 
 },{
  "country": {
@@ -1628,7 +1678,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       253351469,       241073592,       232526885,       232353958,       236002187, null ] 
 } 
 },{
  "country": {
@@ -1660,7 +1711,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -1692,7 +1744,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -1724,7 +1777,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        23118270,        22564118,        20092034,        19306854,        17202991, null ] 
 } 
 },{
  "country": {
@@ -1756,7 +1810,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          415600,          480312,               0,               0,          147024, null ] 
 } 
 },{
  "country": {
@@ -1788,7 +1843,8 @@
 "rev2_gov_rev_gdp": [       38.272249,        34.99089,        35.44893,         37.0778,        36.01719,       40.756699,       42.718936,       39.627886,        47.21404,        36.22987, null, null, null ],
 "calc_gov_resrev_gdp": [     29.51106235,       23.689017,     22.28739805,       25.714255,      25.5710002,     31.14928665,     32.86090965,     29.95624645,      37.0287113,      24.0446795,      24.1090843,      27.6146588, null ],
 "calc_rent_total_gdp": [    32.258348779,    27.604237164,    24.332013406,    32.138728147,     32.08840206,    42.809456823,    40.790932834,    37.106222373,    41.067704613,     25.18239114,    24.846551011, null, null ],
-"calc_govt_take": [ 0.9148348711888, 0.85816597137826, 0.91597015331679, 0.80010182364358, 0.79689228999894, 0.72762629945972, 0.80559348283915, 0.80731059467259, 0.90165037585954, 0.9548211433269, 0.97031915171351, null, null ] 
+"calc_govt_take": [ 0.9148348711888, 0.85816597137826, 0.91597015331679, 0.80010182364358, 0.79689228999894, 0.72762629945972, 0.80559348283915, 0.80731059467259, 0.90165037585954, 0.9548211433269, 0.97031915171351, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       157350836,       158091996,       144841994,       143280733,       140079840, null ] 
 } 
 },{
  "country": {
@@ -1820,7 +1876,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       8.9725988,       6.3514301,       5.6356016,       5.8559818,       6.4798449,       5.9866131,       7.7496845,       7.2916994,       9.7859639,        4.934464,       7.5735902,      11.5393736, null ],
 "calc_rent_total_gdp": [    22.368794425,    13.934271807,    11.726087228,    13.236157618,    19.678732801,    25.681403484,    27.924423617,    26.830817913,    30.532724905,    17.390742689,    20.614580865,    25.725727679, null ],
-"calc_govt_take": [ 0.40112125086062, 0.45581356442389, 0.48060375898817, 0.44242309354464, 0.32928161409208, 0.23311082292406, 0.27752352586723, 0.27176582628393, 0.32050738774375, 0.28374084351907, 0.36738996779016, 0.44855382689212, null ] 
+"calc_govt_take": [ 0.40112125086062, 0.45581356442389, 0.48060375898817, 0.44242309354464, 0.32928161409208, 0.23311082292406, 0.27752352586723, 0.27176582628393, 0.32050738774375, 0.28374084351907, 0.36738996779016, 0.44855382689212, null ],
+"prod_total": [ null, null, null, null, null, null, null,        27001179,        26506004,        26676805,        26700006,        27363806, null ] 
 } 
 },{
  "country": {
@@ -1852,7 +1909,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        82754802,        88937956,        92521478,        91894367,        91695675, null ] 
 } 
 },{
  "country": {
@@ -1884,7 +1942,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,            8505,            8500,            8475,            8800,            9012, null ] 
 } 
 },{
  "country": {
@@ -1916,7 +1975,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        39210346,        33398036,        25686166,        23376227,        21457560, null ] 
 } 
 },{
  "country": {
@@ -1948,7 +2008,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        16544000,        16117000,        14939000,        17993000,        18734000, null ] 
 } 
 },{
  "country": {
@@ -1980,7 +2041,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           44181,           96738,          148275,          145706,          148813, null ] 
 } 
 },{
  "country": {
@@ -2012,7 +2074,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1863001,         1915415,         1516241,         1767182,         2000868, null ] 
 } 
 },{
  "country": {
@@ -2044,7 +2107,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,               0,               1,               1,               2,               2, null ] 
 } 
 },{
  "country": {
@@ -2076,7 +2140,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        15948257,        12864906,        13477290,        15329008,        14988007, null ] 
 } 
 },{
  "country": {
@@ -2108,7 +2173,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2140,7 +2206,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2172,7 +2239,8 @@
 "rev2_gov_rev_gdp": [        33.46914,          33.971,        31.70893,        31.12214,        30.11118,        31.37585,        31.70534,         29.5538,        31.91611,        32.39922, null, null, null ],
 "calc_gov_resrev_gdp": [        22.57907,        21.79246,        17.71883,        17.14433,        16.23098,        19.51401,        19.79165,        17.26722,        20.81137,        16.87865, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        13967300,        14538600,        12979800,        14299300,        14501300, null ] 
 } 
 },{
  "country": {
@@ -2204,7 +2272,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       0.4024452,       0.5019454,        0.477325,        0.388853,       0.4068631,       0.6594158,       0.6758069,        0.552854,        0.805216,       0.5810867,        0.561048, null, null ],
 "calc_rent_total_gdp": [     2.204482637,     1.813314027,     1.433678351,     1.629001268,     1.578615123,     2.058238399,     1.910136204,     1.702895847,     2.461418663,     1.391735831,     1.533467983, null, null ],
-"calc_govt_take": [ 0.18255766375537, 0.27681107217288, 0.33293730052286, 0.23870638263984, 0.25773419630416, 0.32037872790653, 0.35380037223775, 0.32465520482299, 0.32713492105345, 0.41752657872038, 0.36586874080174, null, null ] 
+"calc_govt_take": [ 0.18255766375537, 0.27681107217288, 0.33293730052286, 0.23870638263984, 0.25773419630416, 0.32037872790653, 0.35380037223775, 0.32465520482299, 0.32713492105345, 0.41752657872038, 0.36586874080174, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       160366472,       154829951,       166076889,       135302404,       130316990, null ] 
 } 
 },{
  "country": {
@@ -2236,7 +2305,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          190853,          197363,          323333,          266716,          222836, null ] 
 } 
 },{
  "country": {
@@ -2268,7 +2338,8 @@
 "rev2_gov_rev_gdp": [        19.85294,        24.93438,        19.58083,        24.93782,        28.71113, null,      27.3455355,      28.8481084,      27.7302142,      27.8095536, null, null, null ],
 "calc_gov_resrev_gdp": [             1.5,             0.8,             0.7,             1.2,             1.2, null,      0.63517515,       0.4135198,      0.44460275,      0.48974875,       0.9456389,       2.7884183, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1415932,         1323534,         1044992,         1130234,         1095995, null ] 
 } 
 },{
  "country": {
@@ -2300,7 +2371,8 @@
 "rev2_gov_rev_gdp": [       13.239184,       14.666532,       13.830761,       13.926011,       12.593883,        15.24225,       15.885227,        15.09885,        16.13158,        16.82047, null, null, null ],
 "calc_gov_resrev_gdp": [      2.69271425,      2.81474185,      2.29323075,      1.54733095,      2.09671275,      3.55583685,       4.5370266,        3.749233,        3.575771,      3.28681425,       3.8051991,       4.4685494, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        16515515,        17682318,        14741618,        16427325,        14415019, null ] 
 } 
 },{
  "country": {
@@ -2332,7 +2404,8 @@
 "rev2_gov_rev_gdp": [       15.701418,       11.945031,       14.382316,       12.580524,       17.634003,       15.743168,        17.14356,        17.81753,       16.295919, null, null, null, null ],
 "calc_gov_resrev_gdp": [        4.322098,        3.329339,        3.422286,        3.034301,        1.706623,        1.790278,         2.26162,         2.19084,        1.808249, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2364,7 +2437,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null,        17.08246,      15.4378677,      15.9754797, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null,         0.03124,       0.0296677,       0.0224097, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2396,7 +2470,8 @@
 "rev2_gov_rev_gdp": [            33.2,           49.38,           49.51,           50.29,           53.78,           63.93, null,           37.66, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [      14.9957355,     22.48064945,     22.60873415,      23.1875221,      23.6978317,      28.4331775,       33.439619,     31.18542205,      34.5958723,      37.1389139,      26.3746714,      25.3760862, null ],
 "calc_rent_total_gdp": [     64.19408067,    73.569200563,    79.047688672,    78.911694657,     79.51518991,     75.07370837,     74.27804397,      63.9897362,     59.61883487,     46.24574345,       45.643482,     41.05321505, null ],
-"calc_govt_take": [ 0.23359997282441, 0.3055714793414, 0.28601385479862, 0.29384139069358, 0.29802898951537, 0.37873681901882, 0.45019520187562, 0.48735037682496, 0.58028427384462, 0.80307745382348, 0.57784091494159, 0.61812664779345, null ] 
+"calc_govt_take": [ 0.23359997282441, 0.3055714793414, 0.28601385479862, 0.29384139069358, 0.29802898951537, 0.37873681901882, 0.45019520187562, 0.48735037682496, 0.58028427384462, 0.80307745382348, 0.57784091494159, 0.61812664779345, null ],
+"prod_total": [ null, null, null, null, null, null, null,        17348600,        17229600,        15212600,        13566400,        12473850, null ] 
 } 
 },{
  "country": {
@@ -2428,7 +2503,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        68419660,        71342368,        67137731,        62827921,        64637278, null ] 
 } 
 },{
  "country": {
@@ -2460,7 +2536,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2492,7 +2569,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,               2,               2,               0,               0,               0, null ] 
 } 
 },{
  "country": {
@@ -2524,7 +2602,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1462929,         1032478,          789595,          732055,          681903, null ] 
 } 
 },{
  "country": {
@@ -2556,7 +2635,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,               3,               2,               1,               1,               1, null ] 
 } 
 },{
  "country": {
@@ -2588,7 +2668,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2620,7 +2701,8 @@
 "rev2_gov_rev_gdp": [         27.4265,        27.12106,        27.74912,       24.965535,       27.511569,        28.48687,        29.72734,        28.26995,        27.67508,        28.85046, null, null, null ],
 "calc_gov_resrev_gdp": [        15.83574,        15.24542,        16.44962,        18.13638,        18.38729,        15.38406,        15.97273,        14.79049,        12.49094,        10.63588, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         2242907,         2109208,         1448320,         1010010,         1827566, null ] 
 } 
 },{
  "country": {
@@ -2652,7 +2734,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2684,7 +2767,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           70457,           71561,           81460,           81360,           71950, null ] 
 } 
 },{
  "country": {
@@ -2716,7 +2800,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         3638981,         3364951,         3236530,         3137910,         2896148, null ] 
 } 
 },{
  "country": {
@@ -2748,7 +2833,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2780,7 +2866,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        13482530,        12941331,        12705328,        12302136,        12745124, null ] 
 } 
 },{
  "country": {
@@ -2812,7 +2899,8 @@
 "rev2_gov_rev_gdp": [       14.610007,       19.300449,      17.8706263,      18.3421166,       19.307522,       19.383722,       20.345661,       18.519112,       20.372444,       15.627491, null, null, null ],
 "calc_gov_resrev_gdp": [      6.12418085,      6.32577925,      2.60376855,      2.46204105,      2.85635975,      5.00037895,       6.0277159,      4.26457185,      5.83257385,      3.13668375,       3.2879846,       3.5887868, null ],
 "calc_rent_total_gdp": [    12.232251365,    10.892427627,     7.706975391,     8.949273501,    11.206550125,    14.754867087,    13.339526601,    13.275601951,    16.127110538,     8.212664338,     8.834646863,     9.358734662, null ],
-"calc_govt_take": [ 0.5006585188008, 0.58075017494904, 0.33784570702543, 0.27511071705708, 0.25488305661775, 0.33889691587975, 0.45186880166708, 0.32123378403032, 0.36166266959334, 0.38193253990505, 0.37216932957109, 0.38346923271282, null ] 
+"calc_govt_take": [ 0.5006585188008, 0.58075017494904, 0.33784570702543, 0.27511071705708, 0.25488305661775, 0.33889691587975, 0.45186880166708, 0.32123378403032, 0.36166266959334, 0.38193253990505, 0.37216932957109, 0.38346923271282, null ],
+"prod_total": [ null, null, null, null, null, null, null,       303331635,       296860041,       347411850,       459382353,       545787270, null ] 
 } 
 },{
  "country": {
@@ -2844,7 +2932,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -2876,7 +2965,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       751155297,       777594388,       833365119,       842641066,       829508898, null ] 
 } 
 },{
  "country": {
@@ -2908,7 +2998,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1572910,         1453307,         1166405,         1003204,          979806, null ] 
 } 
 },{
  "country": {
@@ -2940,7 +3031,8 @@
 "rev2_gov_rev_gdp": [       24.190214,       19.929277,       22.855627,       24.110875,       24.453861,        30.25914,        29.85592,        30.92909,        27.15878,        25.66816, null, null, null ],
 "calc_gov_resrev_gdp": [     16.40479535,       11.827864,      15.8917846,     16.53004065,     17.22141055,      20.6597196,     20.08824605,     20.37891055,     16.70509605,      13.6991671,      15.0307979,      17.0400824, null ],
 "calc_rent_total_gdp": [    41.908920634,    30.488739025,    29.286265612,    35.131678389,    38.712193546,    51.547176009,    53.186089582,    46.424719257,    54.609598863,    31.139900231, null, null, null ],
-"calc_govt_take": [ 0.39143922348339, 0.38794205264775, 0.54263608786941, 0.47051667919104, 0.44485752349674, 0.40079246235318, 0.37769736801253, 0.43896680208631, 0.30590036180102, 0.43992328165401, null, null, null ] 
+"calc_govt_take": [ 0.39143922348339, 0.38794205264775, 0.54263608786941, 0.47051667919104, 0.44485752349674, 0.40079246235318, 0.37769736801253, 0.43896680208631, 0.30590036180102, 0.43992328165401, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       340283551,       348255076,       352072590,       371150360,       381178800, null ] 
 } 
 },{
  "country": {
@@ -2972,7 +3064,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null,      67.2160012,      73.5288482,      66.1155596,      65.9426822,      71.6086609,      60.6579864,      61.7371678,      61.7467854, null ],
 "calc_rent_total_gdp": [ null, null, null, null,    97.200338797,   107.352821724,     93.86595701,    84.933268598,    86.717288689,     71.77414601,    74.594588365,    78.505094454, null ],
-"calc_govt_take": [ null, null, null, null, 0.69152023575122, 0.68492701932922, 0.70436142885068, 0.77640579820512, 0.82577144630081, 0.84512306689861, 0.82763601426303, 0.78653220952661, null ] 
+"calc_govt_take": [ null, null, null, null, 0.69152023575122, 0.68492701932922, 0.70436142885068, 0.77640579820512, 0.82577144630081, 0.84512306689861, 0.82763601426303, 0.78653220952661, null ],
+"prod_total": [ null, null, null, null, null, null, null,       106655115,       120946129,       122858139,       124168093,       138578452, null ] 
 } 
 },{
  "country": {
@@ -3004,7 +3097,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          450800,          766200,          809600,          830800,          785900, null ] 
 } 
 },{
  "country": {
@@ -3036,7 +3130,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         5680546,         6196300,         5257106,         6028121,         6687224, null ] 
 } 
 },{
  "country": {
@@ -3068,7 +3163,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        27683691,        25827713,        25879088,        24712782,        25122526, null ] 
 } 
 },{
  "country": {
@@ -3100,7 +3196,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        14814435,        14893374,         7993377,         8706043,        10287421, null ] 
 } 
 },{
  "country": {
@@ -3132,7 +3229,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         3464889,         3863293,         3083412,         4012504,         4353643, null ] 
 } 
 },{
  "country": {
@@ -3164,7 +3262,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        10494351,        10651413,        10038855,        10016689,         9526388, null ] 
 } 
 },{
  "country": {
@@ -3196,7 +3295,8 @@
 "rev2_gov_rev_gdp": [        21.85469,         25.6538,       22.451065,       25.360376,       24.550081,        28.08377,        27.45243,        29.31645,        27.85454,       23.664373, null, null, null ],
 "calc_gov_resrev_gdp": [             3.3,             6.6,       4.4920793,        5.982748,      6.98539485,      10.3253906,      9.55267875,       9.3983437,     11.60457785,       9.1720591,      11.2240598,      11.0968094, null ],
 "calc_rent_total_gdp": [ null, null,    37.264410271,    39.823886855,    48.180528845,    52.216249083,    48.025945996,    42.468187989,    51.471254902,     34.82843974,    37.261818718,    38.198461146, null ],
-"calc_govt_take": [ null, null, 0.12054609927628, 0.15023013754994, 0.14498377285298, 0.19774286321462, 0.19890662332389, 0.22130314819258, 0.2254574494462, 0.26334969836349, 0.30122146975553, 0.29050409537668, null ] 
+"calc_govt_take": [ null, null, 0.12054609927628, 0.15023013754994, 0.14498377285298, 0.19774286321462, 0.19890662332389, 0.22130314819258, 0.2254574494462, 0.26334969836349, 0.30122146975553, 0.29050409537668, null ],
+"prod_total": [ null, null, null, null, null, null, null,       216175689,       234764464,       233707660,       250301544,       259173778, null ] 
 } 
 },{
  "country": {
@@ -3228,7 +3328,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          103125,          160777,           36367,           54065,          126652, null ] 
 } 
 },{
  "country": {
@@ -3260,7 +3361,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       0.1494846,       0.6232802,       0.9070317,       1.1876487,       1.0429172,       0.9705726,       0.7413877,       0.4798527,        0.764767,        1.376235,       2.1495281,       2.7789796, null ],
 "calc_rent_total_gdp": [     2.064583674, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ 0.07240423426888, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ 0.07240423426888, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          478861,          575868,          694135,          645518,          912519, null ] 
 } 
 },{
  "country": {
@@ -3292,7 +3394,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           76651,           78000,           30000,           70000,          100000, null ] 
 } 
 },{
  "country": {
@@ -3324,7 +3427,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3356,7 +3460,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3388,7 +3493,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         5742763,         5439161,         5133362,         4629000,         4453341, null ] 
 } 
 },{
  "country": {
@@ -3420,7 +3526,8 @@
 "rev2_gov_rev_gdp": [       68.199997,       71.600003,       61.200003,       54.299998,       56.399998,       71.400004,       67.300007,       69.699996,       59.799999, null, null, null, null ],
 "calc_gov_resrev_gdp": [        64.89093,     57.31828665,     52.33623325,     46.27156945,      51.2950532,      62.9814756,     58.97614145,     61.97927265,     55.49299395,      63.5138121,      56.8350338,      57.6999247, null ],
 "calc_rent_total_gdp": [ null, null, null,    44.570716906,    51.666348233,    61.780475115,    60.282457408, null,    63.671027026, null, null, null, null ],
-"calc_govt_take": [ null, null, null,  1.038160762538, 0.99281360023113, 1.0194398065532,  0.978330081185, null, 0.87155801534879, null, null, null, null ] 
+"calc_govt_take": [ null, null, null,  1.038160762538, 0.99281360023113, 1.0194398065532,  0.978330081185, null, 0.87155801534879, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       138641400,       144282100,       122351200,       125366788,       143998600, null ] 
 } 
 },{
  "country": {
@@ -3452,7 +3559,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1009528,          836114,         1392180,         1240834,         1386805, null ] 
 } 
 },{
  "country": {
@@ -3484,7 +3592,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           83500,          105000,          120000,          125000,          130000, null ] 
 } 
 },{
  "country": {
@@ -3516,7 +3625,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,               0,               1,               1,               1,               0, null ] 
 } 
 },{
  "country": {
@@ -3548,7 +3658,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [      28.4319191,      25.6859451,      36.4480146,      42.7505407,      45.8065509,      62.2264818,      62.3455314,      63.5053513,       60.416144,      55.6242742,      51.8062341,      32.6454109, null ],
 "calc_rent_total_gdp": [    35.817024924,    35.101526167,    45.872856403,    54.219177944,    58.066341109,    70.420442395,    68.736827535, null,    62.760371123, null, null, null, null ],
-"calc_govt_take": [ 0.79381018273655, 0.7317614903066, 0.79454425684328, 0.78847637166603, 0.78886580461499, 0.88364230163397, 0.90701787725444, null, 0.96264797226253, null, null, null, null ] 
+"calc_govt_take": [ 0.79381018273655, 0.7317614903066, 0.79454425684328, 0.78847637166603, 0.78886580461499, 0.88364230163397, 0.90701787725444, null, 0.96264797226253, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        97619700,        98426100,        90223600,        91381900,        26052000, null ] 
 } 
 },{
  "country": {
@@ -3580,7 +3691,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3612,7 +3724,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3644,7 +3757,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          193823,          184552,          231611,          248359,          247889, null ] 
 } 
 },{
  "country": {
@@ -3676,7 +3790,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null,       0.3137831,        1.374335,       0.6109807,       2.1969038,        0.463017,       0.4490387,       1.8061412, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,               0,               0,               0,               0,               0, null ] 
 } 
 },{
  "country": {
@@ -3708,7 +3823,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          196668,          201580,          184522,          184970,          184400, null ] 
 } 
 },{
  "country": {
@@ -3740,7 +3856,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3772,7 +3889,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          346100,          349100,          200000,          188500,          230700, null ] 
 } 
 },{
  "country": {
@@ -3804,7 +3922,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3836,7 +3955,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3868,7 +3988,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         9661029,         9285396,         7142254,         9801338,        10885403, null ] 
 } 
 },{
  "country": {
@@ -3900,7 +4021,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -3932,7 +4054,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          331300,          380400,          136000,          142300,          157900, null ] 
 } 
 },{
  "country": {
@@ -3964,7 +4087,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          107153,          130147,          234947,          316888,          421806, null ] 
 } 
 },{
  "country": {
@@ -3996,7 +4120,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -4028,7 +4153,8 @@
 "rev2_gov_rev_gdp": [            18.1,            18.4,            19.7,            20.6,            19.3,            20.8,            21.4,            21.2,            22.7,              22, null, null, null ],
 "calc_gov_resrev_gdp": [      6.63376525,      6.26425995,        6.259499,      7.38029455,      7.86754665,      8.27845795,      8.30146195,      7.79233305,      8.67422105,       7.6160986,       7.4468475,       7.7928359, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null,     8.199632188, null,     8.431871169,    10.140739709, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, 1.0096133290119, null, 0.92415229002178, 0.85538346303293, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, 1.0096133290119, null, 0.92415229002178, 0.85538346303293, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       249345486,       233729394,       223453390,       223205059,       232697250, null ] 
 } 
 },{
  "country": {
@@ -4060,7 +4186,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -4092,7 +4219,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         6910958,         8027696,         7714557,         6994784,         8504884, null ] 
 } 
 },{
  "country": {
@@ -4124,7 +4252,8 @@
 "rev2_gov_rev_gdp": [       19.611868,       18.978771,       21.316946,       22.917333,       22.962421,       23.532174,       57.186511,       22.185669,       20.687507,        24.51697, null, null, null ],
 "calc_gov_resrev_gdp": [        2.173128,        2.199631,        2.564156,        2.676183,        2.701391,        2.757524,        2.728721,        2.617849,        3.247827,         3.59091, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,              53,              49,              50,              42,              42, null ] 
 } 
 },{
  "country": {
@@ -4156,7 +4285,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,            9000,            9000,            9000,            9000,            9000, null ] 
 } 
 },{
  "country": {
@@ -4188,7 +4318,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null,       5.2836632,       5.9144641,       6.3552937,       6.9859189,       5.4709197,       5.2187087,       4.5613786,       4.8026226, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        13672589,        12046236,        11297113,        11663151,        12734751, null ] 
 } 
 },{
  "country": {
@@ -4220,7 +4351,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         2006628,         2544544,         1083903,         2092294,         2234123, null ] 
 } 
 },{
  "country": {
@@ -4252,7 +4384,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       2.4319624,       1.1926331,       1.4703892,       2.2524699,       3.3815118,       3.6535349,       9.6644495,      12.4378721,      10.2150514,       7.8123034,      10.7478406,       9.5607883, null ],
 "calc_rent_total_gdp": [ null,     7.039718423, null, null, null,    20.858438866, null, null,    32.356060338,    29.561912268,    47.874250056,    45.834599146, null ],
-"calc_govt_take": [ null, 0.16941488683744, null, null, null, 0.17515859760509, null, null, 0.31570751486092, 0.26426921672644, 0.22450149271117, 0.20859325658212, null ] 
+"calc_govt_take": [ null, 0.16941488683744, null, null, null, 0.17515859760509, null, null, 0.31570751486092, 0.26426921672644, 0.22450149271117, 0.20859325658212, null ],
+"prod_total": [ null, null, null, null, null, null, null,        10104821,        11626496,        16214941,        28279805,        35706754, null ] 
 } 
 },{
  "country": {
@@ -4284,7 +4417,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -4316,7 +4450,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         2946796,         3322196,         3859106,         4124146,         4569472, null ] 
 } 
 },{
  "country": {
@@ -4348,7 +4483,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       2.5162033,       1.7129123,       1.7726904, null, null, null,       9.7063024,       2.9903532,       5.2295214,       5.8302876,        5.877945,       8.4608368, null ],
 "calc_rent_total_gdp": [     11.33781762,     11.90184607,      10.3436442, null, null, null,      21.7335508,     29.18171393,     44.45422746,     37.38120964,     51.31862917,     57.96218057, null ],
-"calc_govt_take": [ 0.22193012661991, 0.14391988351434, 0.17137967680675, null, null, null, 0.44660453734969, 0.10247352870271, 0.11763833720214, 0.15596840380899, 0.11453823095174, 0.14597167871871, null ] 
+"calc_govt_take": [ 0.22193012661991, 0.14391988351434, 0.17137967680675, null, null, null, 0.44660453734969, 0.10247352870271, 0.11763833720214, 0.15596840380899, 0.11453823095174, 0.14597167871871, null ],
+"prod_total": [ null, null, null, null, null, null, null,         8568142,         8021534,         7474035,         8011953,         7757061, null ] 
 } 
 },{
  "country": {
@@ -4380,7 +4516,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -4412,7 +4549,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           60630,           64500,           67396,           80996,           81993, null ] 
 } 
 },{
  "country": {
@@ -4444,7 +4582,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       3.6978011,       5.4631728,       4.5775019,       4.3095536,       5.2445632,       6.0462678,       7.9709048,       8.0102308,       8.6508435,       9.6428623,        7.379224,       7.5613417, null ],
 "calc_rent_total_gdp": [    11.570403573,    10.613866204,     8.906297056,    11.885218233,    13.779680035,    18.473758199,    17.049957251,    14.929776108,     18.29660721,    10.268444901,     9.676325982,       9.6952394, null ],
-"calc_govt_take": [ 0.31959136746353, 0.51472033799909, 0.51396241010356, 0.36259776770731, 0.38060123215336, 0.3272895387538, 0.46750291995791, 0.5365271884893, 0.47281134697322, 0.93907718188768, 0.76260597397472, 0.77990252618208, null ] 
+"calc_govt_take": [ 0.31959136746353, 0.51472033799909, 0.51396241010356, 0.36259776770731, 0.38060123215336, 0.3272895387538, 0.46750291995791, 0.5365271884893, 0.47281134697322, 0.93907718188768, 0.76260597397472, 0.77990252618208, null ],
+"prod_total": [ null, null, null, null, null, null, null,        84303918,        85278384,        84138781,        85770425,        87534501, null ] 
 } 
 },{
  "country": {
@@ -4476,7 +4615,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       2.5554441,       3.4271795,       4.8812624,       2.2528423,       1.5021784,       1.3582292,       1.9353841,       2.4660789,       2.3875773,       1.6408273,       1.6598333,       2.2296963, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1092265,         1096935,         1112416,         1146803,         1092467, null ] 
 } 
 },{
  "country": {
@@ -4508,7 +4648,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          126831,          103469,           93713,          131556,          132800, null ] 
 } 
 },{
  "country": {
@@ -4540,7 +4681,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       0.5863853,       0.6093926,       0.6013032,       0.4551894,       0.4664662,       0.4017551,       0.5875373,       0.8343064,       1.5599968,       1.7553246,       1.6971737,       1.9528567, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          180934,          196498,          249934,          260369,          260223, null ] 
 } 
 },{
  "country": {
@@ -4572,7 +4714,8 @@
 "rev2_gov_rev_gdp": [       42.120229,        45.78605,        32.94585,       31.967063,       35.356009,       37.948485,       33.866479,       28.389392,       32.840931,       19.931073, null, null, null ],
 "calc_gov_resrev_gdp": [      33.9605826,      35.4645685,     20.70619965,     24.08891085,      28.7380767,      31.4681261,     28.31229745,     21.08280095,     26.14301815,      11.7719419,      13.9941772,      23.0806258, null ],
 "calc_rent_total_gdp": [    44.951782575,    37.790899505,    26.299069374,    32.900774207,    36.263306503,    42.152513059,    37.561123225,    33.922070937,    36.212962957,    24.493778861,    27.015710315,    35.029597909, null ],
-"calc_govt_take": [ 0.75548911866483, 0.9384420314025, 0.78733583137625, 0.73216851063872, 0.79248362797867, 0.74653024971381, 0.75376599577182, 0.62150689411489, 0.72192430597415, 0.48060946278664, 0.51800145311115, 0.65888925873368, null ] 
+"calc_govt_take": [ 0.75548911866483, 0.9384420314025, 0.78733583137625, 0.73216851063872, 0.79248362797867, 0.74653024971381, 0.75376599577182, 0.62150689411489, 0.72192430597415, 0.48060946278664, 0.51800145311115, 0.65888925873368, null ],
+"prod_total": [ null, null, null, null, null, null, null,       141553307,       131749302,       120311921,       146704284,       149528084, null ] 
 } 
 },{
  "country": {
@@ -4604,7 +4747,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           73306,           79937,           67408,           50342,           59714, null ] 
 } 
 },{
  "country": {
@@ -4636,7 +4780,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        63369695,        72875090,        66662820,        76143430,        71154890, null ] 
 } 
 },{
  "country": {
@@ -4668,7 +4813,8 @@
 "rev2_gov_rev_gdp": [            54.7,            54.3,            55.6,            55.1,            56.2,              57,            58.8,            58.7,            59.8,            56.5, null, null, null ],
 "calc_gov_resrev_gdp": [     13.59567675,      15.9315179,      12.5025394,     12.33724325,      15.7153249,     17.26667615,      18.4053584,      16.3354145,      18.5714916,     13.38569975,       8.5657452,       8.0348371, null ],
 "calc_rent_total_gdp": [    19.256879571,    16.110338548, null,    15.309692059,    16.408285822,    20.281536969,     19.43528788,    17.555969395,    21.614192734,    12.825312233,    13.076487489,    13.480159252, null ],
-"calc_govt_take": [ 0.70601660564334, 0.98890025510841, null, 0.80584529084289, 0.95776762243678, 0.85134948975474, 0.9470072434039, 0.93047636006089, 0.85922670481171, 1.0436938693436, 0.65504939359331, 0.59604912299592, null ] 
+"calc_govt_take": [ 0.70601660564334, 0.98890025510841, null, 0.80584529084289, 0.95776762243678, 0.85134948975474, 0.9470072434039, 0.93047636006089, 0.85922670481171, 1.0436938693436, 0.65504939359331, 0.59604912299592, null ],
+"prod_total": [ null, null, null, null, null, null, null,       196451714,       199287129,       195527541,       188651460,       178933996, null ] 
 } 
 },{
  "country": {
@@ -4700,7 +4846,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           41415,           39185,           21491,           25000,           25000, null ] 
 } 
 },{
  "country": {
@@ -4732,7 +4879,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        11993298,        12806191,        12445606,        13678854,        12641586, null ] 
 } 
 },{
  "country": {
@@ -4764,7 +4912,8 @@
 "rev2_gov_rev_gdp": [       49.599996,       46.700004,       45.400006,       45.799998,       45.399998,       48.099996,       48.900005,            47.5,       46.400004,       40.199997, null, null, null ],
 "calc_gov_resrev_gdp": [     42.41087565,     38.85132165,      37.1922335,      36.5467024,     38.03113535,      41.5386058,     42.18708845,     37.30878555,     40.49510285,      30.7910256,      33.9480641,      37.3113457, null ],
 "calc_rent_total_gdp": [    48.687085149,    40.004612499,    37.317074647,    42.211888855,    47.610163315,    57.439282266,    58.035525026,    53.145737388,    54.504026966,    39.183726916,    42.123657675,    45.275421028, null ],
-"calc_govt_take": [ 0.87109087595216, 0.97117105311222, 0.99665458377483, 0.86579168550215, 0.79880287530999, 0.72317417908594, 0.72691835614652, 0.70200899232276, 0.7429745122367, 0.78581156065139, 0.80591444270871, 0.82409715587019, null ] 
+"calc_govt_take": [ 0.87109087595216, 0.97117105311222, 0.99665458377483, 0.86579168550215, 0.79880287530999, 0.72317417908594, 0.72691835614652, 0.70200899232276, 0.7429745122367, 0.78581156065139, 0.80591444270871, 0.82409715587019, null ],
+"prod_total": [ null, null, null, null, null, null, null,        54117944,        55851490,        59525395,        64105631,        65433757, null ] 
 } 
 },{
  "country": {
@@ -4796,7 +4945,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -4828,7 +4978,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           20620,           21370,           19840,           28012,           16832, null ] 
 } 
 },{
  "country": {
@@ -4860,7 +5011,8 @@
 "rev2_gov_rev_gdp": [       18.169118,       17.377518,       17.275787,       17.618029,       17.574442,       18.397117,       20.073551,        20.92828,       21.023399,       18.939062, null, null, null ],
 "calc_gov_resrev_gdp": [        2.638028,        1.273848,        1.039257,        1.568149,        1.895862,        2.756887,        4.184941,         4.68544,        4.084459,        2.592682, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        16517192,        18164511,        19099701,        23790372,        30475517, null ] 
 } 
 },{
  "country": {
@@ -4892,7 +5044,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null,       0.1266771,       0.0838189,       0.1403588,       0.1316011,       0.0753991, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null,     3.069782164,      2.16893349,     1.945194948,     2.812304454,     3.348553205, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, 0.041265827095346, 0.038645214519695, 0.072156675167347, 0.046794755743042, 0.022516918616498, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, 0.041265827095346, 0.038645214519695, 0.072156675167347, 0.046794755743042, 0.022516918616498, null ],
+"prod_total": [ null, null, null, null, null, null, null,         8088716,         8611112,        10204525,        12214907,        14803544, null ] 
 } 
 },{
  "country": {
@@ -4924,7 +5077,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -4956,7 +5110,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         2882087,         2258145,         2084803,         1842641,         1722192, null ] 
 } 
 },{
  "country": {
@@ -4988,7 +5143,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       158666411,       157237514,       147185631,       145920970,       152000060, null ] 
 } 
 },{
  "country": {
@@ -5020,7 +5176,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           35000,           45000,           45000,           45000,           45000, null ] 
 } 
 },{
  "country": {
@@ -5052,7 +5209,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1438559,         1503649,         1460137,         1375171,         1502416, null ] 
 } 
 },{
  "country": {
@@ -5084,7 +5242,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           74500,           70500,           70500,           70500,           70500, null ] 
 } 
 },{
  "country": {
@@ -5116,7 +5275,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5148,7 +5308,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5180,7 +5341,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [      31.1819906,       23.751145,      25.6590107,      21.2180907,      28.5648597,      26.2211318,      23.2478395,      21.9829318,      19.8629531,      21.6616218,       19.148345,      18.1307466, null ],
 "calc_rent_total_gdp": [     48.00109215,     44.67244303,     38.77202503,     43.42784443,     48.16584513,     56.23069866,     48.26404186,     41.21560207,     46.98714702,     28.10141997,     28.63309344,     28.58640654, null ],
-"calc_govt_take": [ 0.6496100235086, 0.53167329541502, 0.66179186359614, 0.48858263582943, 0.59305218506814, 0.46631346266114, 0.48168032771551, 0.53336432554508, 0.42273162683287, 0.77083726812115, 0.6687487344015, 0.63424364215314, null ] 
+"calc_govt_take": [ 0.6496100235086, 0.53167329541502, 0.66179186359614, 0.48858263582943, 0.59305218506814, 0.46631346266114, 0.48168032771551, 0.53336432554508, 0.42273162683287, 0.77083726812115, 0.6687487344015, 0.63424364215314, null ],
+"prod_total": [ null, null, null, null, null, null, null,       104668100,       122992717,       129967654,       160359710,       190596637, null ] 
 } 
 },{
  "country": {
@@ -5212,7 +5374,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        53420306,        52708269,        49350399,        46156989,        50623979, null ] 
 } 
 },{
  "country": {
@@ -5244,7 +5407,8 @@
 "rev2_gov_rev_gdp": [       36.169234,       36.917012,       36.993883,       36.374979,         36.6473,        40.95952,        39.47587,        39.85473,        38.62899,       34.323429, null, null, null ],
 "calc_gov_resrev_gdp": [        6.301024,       5.4333265,      5.04524515,       5.3170948,       7.7834508,      12.6792238,      12.8454396,     10.70116505,      12.5271976,       8.8232729,       9.8016354,      11.7267972, null ],
 "calc_rent_total_gdp": [    42.176263592,    32.475833972,    25.117101119,    31.961677835,    31.278942305,    37.914970645,    33.015868576,    27.193224861,    31.028486818,    19.537175367,    20.949952779,    21.728259574, null ],
-"calc_govt_take": [ 0.14939739709885, 0.16730367893507, 0.20086892695525, 0.16635843798467, 0.24883996153399, 0.33441206954151, 0.38906865558999, 0.39352320678036, 0.40373214696157, 0.45161456220039, 0.4678595461955, 0.53970255464143, null ] 
+"calc_govt_take": [ 0.14939739709885, 0.16730367893507, 0.20086892695525, 0.16635843798467, 0.24883996153399, 0.33441206954151, 0.38906865558999, 0.39352320678036, 0.40373214696157, 0.45161456220039, 0.4678595461955, 0.53970255464143, null ],
+"prod_total": [ null, null, null, null, null, null, null,      1423003564,      1414754343,      1342681742,      1436954290,      1478461713, null ] 
 } 
 },{
  "country": {
@@ -5276,7 +5440,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,            5854,            5225,            4544,            4039,            6493, null ] 
 } 
 },{
  "country": {
@@ -5308,7 +5473,8 @@
 "rev2_gov_rev_gdp": [            41.8,            42.8,            35.5,            41.4,            48.5,            53.9,            56.6,            50.4, null,            41.1, null, null, null ],
 "calc_gov_resrev_gdp": [     30.34006175,      26.7979895,     23.49072105,     28.70910625,     35.15116765,      42.6616894,     45.25947735,     39.13604265,      55.0554715,      30.7766758,      39.6496241,      48.5211569, null ],
 "calc_rent_total_gdp": [     43.17216586,    36.914683243,    32.980656298,    41.163515705,    49.138769857,    59.225111948,      61.6073275,    59.967525748,     69.85947081,     47.20265615,    50.364765012,    58.652563875, null ],
-"calc_govt_take": [ 0.70276904449009, 0.72594391027537, 0.7122575378048, 0.69744057955946, 0.71534488454421, 0.7203310892423, 0.73464438706581, 0.65262060026389, 0.78808887129616, 0.65201152456756, 0.78724926226804, 0.8272640391886, null ] 
+"calc_govt_take": [ 0.70276904449009, 0.72594391027537, 0.7122575378048, 0.69744057955946, 0.71534488454421, 0.7203310892423, 0.73464438706581, 0.65262060026389, 0.78808887129616, 0.65201152456756, 0.78724926226804, 0.8272640391886, null ],
+"prod_total": [ null, null, null, null, null, null, null,       559431227,       585350247,       533009154,       544404955,       607619015, null ] 
 } 
 },{
  "country": {
@@ -5340,7 +5506,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       4.4694222,       4.3898834,       5.4052506,       9.1764926,      10.4687945,      13.9448954,      11.5189928,       11.886476,      15.4481099,       7.8626651,       8.3085939,       8.7926643, null ],
 "calc_rent_total_gdp": [     12.75704742,     11.48688543,    12.131071501,    13.334691154,    16.893097796,    20.088747155,    20.743605509,    24.358086594,    27.530622849,    16.825786021,    17.566943986,    14.348699509, null ],
-"calc_govt_take": [ 0.35034926600594, 0.38216481105793, 0.44557074777396, 0.6881668644607, 0.61970839371325, 0.69416451371529, 0.55530330997677, 0.48798890479878, 0.56112460603343, 0.46729853156261, 0.4729675182332, 0.61278475408067, null ] 
+"calc_govt_take": [ 0.35034926600594, 0.38216481105793, 0.44557074777396, 0.6881668644607, 0.61970839371325, 0.69416451371529, 0.55530330997677, 0.48798890479878, 0.56112460603343, 0.46729853156261, 0.4729675182332, 0.61278475408067, null ],
+"prod_total": [ null, null, null, null, null, null, null,        24150778,        23145554,        23798051,        24312854,        16754217, null ] 
 } 
 },{
  "country": {
@@ -5372,7 +5539,8 @@
 "rev2_gov_rev_gdp": [       18.797519,       18.582168,        19.54653,       20.011734,       20.382585,       20.807208,       21.169616,       23.615572,       21.723978,       21.652674, null, null, null ],
 "calc_gov_resrev_gdp": [        2.833329,        2.352138,         3.10412,        2.531614,        2.771105,        2.730468,        3.471896,        3.975342,        3.346128,        3.016664, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          612800,          497586,          610450,          690575,          864004, null ] 
 } 
 },{
  "country": {
@@ -5404,7 +5572,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5436,7 +5605,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,               0,               0,               0,               0,               2, null ] 
 } 
 },{
  "country": {
@@ -5468,7 +5638,8 @@
 "rev2_gov_rev_gdp": [      20.0057106,      19.2317035,      20.5632681,      20.2772681,      21.5357301,      22.6085614,      20.4548634,       43.387011,      16.0351727,      19.7389679, null, null, null ],
 "calc_gov_resrev_gdp": [       0.1141006,       0.0630478,       0.0887261,       0.1107907,        0.233945,      0.26484765,        0.325976,       0.3461877,       0.3034414,       0.2998623,       0.3184028,       2.0680189, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         1256367,         1038825,          811848,         1163932,         1618437, null ] 
 } 
 },{
  "country": {
@@ -5500,7 +5671,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           32342,           27482,           30000,           30000,           30000, null ] 
 } 
 },{
  "country": {
@@ -5532,7 +5704,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5564,7 +5737,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,            1500,            1505,            1004,            1503,            1503, null ] 
 } 
 },{
  "country": {
@@ -5596,7 +5770,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        38280117,        40194735,        39754272,        39427118,        43214321, null ] 
 } 
 },{
  "country": {
@@ -5628,7 +5803,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5660,7 +5836,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5692,7 +5869,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         6015204,         6137810,         4187713,         3887813,         4053113, null ] 
 } 
 },{
  "country": {
@@ -5724,7 +5902,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         4583390,         4479595,         3920733,         3975991,         3963010, null ] 
 } 
 },{
  "country": {
@@ -5756,7 +5935,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         4638086,         4583839,         4473081,         4476134,         4273724, null ] 
 } 
 },{
  "country": {
@@ -5788,7 +5968,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        16289413,        15705705,        11722484,        16649083,        17195644, null ] 
 } 
 },{
  "country": {
@@ -5820,7 +6001,8 @@
 "rev2_gov_rev_gdp": [       26.450998,       26.831422,       26.737322,       27.498055,       31.267502,       33.238341,        40.87987,        39.75237,        39.70433,        37.25514, null, null, null ],
 "calc_gov_resrev_gdp": [        17.94613,        18.06416,        18.12653,        18.44546,        22.03673,        23.69847,        30.57413,        27.48303,         28.7825,        23.85868, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          241283,          174807,          129647,          145903,          121050, null ] 
 } 
 },{
  "country": {
@@ -5852,7 +6034,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5884,7 +6067,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5916,7 +6100,8 @@
 "rev2_gov_rev_gdp": [              26,            30.3,            26.5,            29.9,            27.1,            23.8,            25.5,            22.7, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [     12.00073915,     18.01884225,     12.57451995,      15.0301309,      11.1557634,       7.0783066,       5.9069766,       4.3531791,       5.3718575,       5.0870292,       5.8511788,       4.4890756, null ],
 "calc_rent_total_gdp": [    28.534350116,    22.830102373,    23.968460053,    28.457958779,    25.176816589,    29.699669968,    28.524189498,    24.538833517,    27.775012948,    14.413695833,    18.489431035, null, null ],
-"calc_govt_take": [ 0.42057166542128, 0.78925805743692, 0.52462777843027, 0.52815210734971, 0.44309666238241, 0.23832946991083, 0.20708657122104, 0.17739959387166, 0.19340612046004, 0.35293024488232, 0.31646072769486, null, null ] 
+"calc_govt_take": [ 0.42057166542128, 0.78925805743692, 0.52462777843027, 0.52815210734971, 0.44309666238241, 0.23832946991083, 0.20708657122104, 0.17739959387166, 0.19340612046004, 0.35293024488232, 0.31646072769486, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        26492300,        25729888,        26742037,        27912200,        25613200, null ] 
 } 
 },{
  "country": {
@@ -5948,7 +6133,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -5980,7 +6166,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null,       2.8298974,       4.6487082,      12.2463495,      16.7698179,       20.755286,        8.486826,      15.9844095,      22.7497757, null ],
 "calc_rent_total_gdp": [ null, null, null, null,     47.86587079,    59.785146757,    55.560000436,    49.937526272,    51.040043275,    32.489409686,    36.608199069,    36.783633569, null ],
-"calc_govt_take": [ null, null, null, null, 0.059121402228646, 0.077756908733451, 0.2204166559377, 0.33581595148823, 0.40664710819644, 0.26121822717072, 0.43663468584926, 0.6184754874019, null ] 
+"calc_govt_take": [ null, null, null, null, 0.059121402228646, 0.077756908733451, 0.2204166559377, 0.33581595148823, 0.40664710819644, 0.26121822717072, 0.43663468584926, 0.6184754874019, null ],
+"prod_total": [ null, null, null, null, null, null, null,         7510825,         6624130,         6154700,         6363340,         5971220, null ] 
 } 
 },{
  "country": {
@@ -6012,7 +6199,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          267781,          300787,          259033,          248179,          309041, null ] 
 } 
 },{
  "country": {
@@ -6044,7 +6232,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        62416343,        64878276,        66314885,        72965459,        76742049, null ] 
 } 
 },{
  "country": {
@@ -6076,7 +6265,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          673515,          665135,          609037,          616303,          582419, null ] 
 } 
 },{
  "country": {
@@ -6108,7 +6298,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,        63942000,        61482000,        39742000,        44842000,        58512000, null ] 
 } 
 },{
  "country": {
@@ -6140,7 +6331,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [       1.9654224,       1.1387669,       3.1974544,        4.484801,      24.3909353,       42.878104,      56.5949604,      69.6197178,      75.2665651,      62.8192905,      65.9604085,      58.8125149, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -6172,7 +6364,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -6204,7 +6397,8 @@
 "rev2_gov_rev_gdp": [            26.7,            27.7,            23.1,            25.2,            26.8,            30.2,              37,              32,            37.7,            33.5, null, null, null ],
 "calc_gov_resrev_gdp": [      6.48724845,      9.03625955,      5.68588005,       9.4713544,     10.13954745,     16.22962065,     20.87618825,     18.04964085,     17.88696315,      15.9751744,      17.3188798,      19.1147152, null ],
 "calc_rent_total_gdp": [     34.10208106,    29.136437541,     26.64565935,     41.48648298,      44.2196291,      62.1691133,     63.61943336,     54.59478634,     60.62861423,    38.726128714,     36.69120792,     37.63745122, null ],
-"calc_govt_take": [ 0.19023028062675, 0.31013604656659, 0.21338860394911, 0.22829976704861, 0.22929969464624, 0.26105600978549,  0.328141687963, 0.33061107222936, 0.29502510286882, 0.41251668913203, 0.47201716110741, 0.50786423045147, null ] 
+"calc_govt_take": [ 0.19023028062675, 0.31013604656659, 0.21338860394911, 0.22829976704861, 0.22929969464624, 0.26105600978549,  0.328141687963, 0.33061107222936, 0.29502510286882, 0.41251668913203, 0.47201716110741, 0.50786423045147, null ],
+"prod_total": [ null, null, null, null, null, null, null,        37525000,        37400620,        38048230,        40843687,        38884766, null ] 
 } 
 },{
  "country": {
@@ -6236,7 +6430,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         9904700,         9765600,        10107500,        10977200,         8333500, null ] 
 } 
 },{
  "country": {
@@ -6268,7 +6463,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       101032773,       106821087,        97538613,       100625688,       100927468, null ] 
 } 
 },{
  "country": {
@@ -6300,7 +6496,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -6332,7 +6529,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          695536,          649260,          723188,          744391,          605765, null ] 
 } 
 },{
  "country": {
@@ -6364,7 +6562,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null,       0.7004931,         0.00174,       0.0687732,       0.1044396,       0.1431484,       0.1555523,       0.1018298,       0.1723723,       0.2363517, null ],
 "calc_rent_total_gdp": [ null, null, null, null,     1.333251835,     2.168067039,     3.798445521,     3.495228685,      3.82806854,     4.162889499,      5.70539681,     6.187102497, null ],
-"calc_govt_take": [ null, null, null, null, 0.0013050797713697, 0.031720974842051, 0.027495352881224, 0.040955374569433, 0.040634669514042, 0.02446132668774, 0.030212149258029, 0.038200708670109, null ] 
+"calc_govt_take": [ null, null, null, null, 0.0013050797713697, 0.031720974842051, 0.027495352881224, 0.040955374569433, 0.040634669514042, 0.02446132668774, 0.030212149258029, 0.038200708670109, null ],
+"prod_total": [ null, null, null, null, null, null, null,          132789,          163573,          275464,          323600,          324454, null ] 
 } 
 },{
  "country": {
@@ -6396,7 +6595,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           12355,            5925,            7033,           29237,           28502, null ] 
 } 
 },{
  "country": {
@@ -6428,7 +6628,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       139642430,       135481061,       126989926,       133305535,       142465982, null ] 
 } 
 },{
  "country": {
@@ -6460,7 +6661,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,           22708,           24862,           22422,           18062,           64452, null ] 
 } 
 },{
  "country": {
@@ -6492,7 +6694,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,      1931757721,      1973719892,      1892538116,      1940407248,      2005265844, null ] 
 } 
 },{
  "country": {
@@ -6524,7 +6727,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null,       2.9922813,       3.9316983,       6.9740961,       3.5863078,       4.6118425,       6.6400099, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null,     92.80230392,    73.220030408,    88.330599979,    33.010602366,     27.85922669,    27.886468042, null ],
-"calc_govt_take": [ null, null, null, null, null, null, 0.032243610057133, 0.053697031783401, 0.078954474459112, 0.10864108931541, 0.1655409373461, 0.23810867299507, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, 0.032243610057133, 0.053697031783401, 0.078954474459112, 0.10864108931541, 0.1655409373461, 0.23810867299507, null ],
+"prod_total": [ null, null, null, null, null, null, null,        57570090,        58978008,        58138142,        53800114,        52266823, null ] 
 } 
 },{
  "country": {
@@ -6556,7 +6760,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -6588,7 +6793,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [      19.1472512,      13.5672629,      14.5427156,      18.4675585,      17.2120333,      18.3244772,      17.8785362,      16.2698488,       15.521533,       4.5946519,      10.5151742,      12.6232371, null ],
 "calc_rent_total_gdp": [    28.194469085,    22.384327586,    26.990857199,    32.931034524,     39.69621177,    47.848437744,    44.726608328,    34.722704423,    35.696555096,    19.081773578,    19.963733705,    32.444404983, null ],
-"calc_govt_take": [ 0.67911373476391, 0.60610544801379, 0.53880154649326, 0.56079496945475, 0.43359385020733, 0.38296918486744, 0.39972930808634, 0.46856513829675, 0.43481879296916, 0.24078746565242, 0.52671380791692, 0.38907284959038, null ] 
+"calc_govt_take": [ 0.67911373476391, 0.60610544801379, 0.53880154649326, 0.56079496945475, 0.43359385020733, 0.38296918486744, 0.39972930808634, 0.46856513829675, 0.43481879296916, 0.24078746565242, 0.52671380791692, 0.38907284959038, null ],
+"prod_total": [ null, null, null, null, null, null, null,       202405312,       202214711,       197006412,       187003607,       185613207, null ] 
 } 
 },{
  "country": {
@@ -6620,7 +6826,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -6652,7 +6859,8 @@
 "rev2_gov_rev_gdp": [       20.358162,       21.385846,       22.509252,        23.42386,       24.574763,       25.360721,       26.898528,       25.945754,       26.699668,       24.403079, null, null, null ],
 "calc_gov_resrev_gdp": [       5.3287021,       5.4604762,       4.9480923,       5.8314304,       6.8705466,       8.0136568,        8.694704,       6.9620741,       6.0959048,       3.7608186,       3.7114188,       4.2093576, null ],
 "calc_rent_total_gdp": [    10.025035827,     8.631808089,      8.23371817,     9.009467001,    14.735788949,     17.49704017,    16.671388391,    15.867514386,    18.973396443,    10.332557481,    11.971728366,    12.936918507, null ],
-"calc_govt_take": [ 0.53153945701106, 0.63259935157254, 0.60095478104031, 0.6472558697815, 0.46624898224172, 0.4580007088136, 0.52153448747519, 0.43876274069382, 0.32128695662442, 0.36397751543271, 0.31001528655967, 0.32537559834843, null ] 
+"calc_govt_take": [ 0.53153945701106, 0.63259935157254, 0.60095478104031, 0.6472558697815, 0.46624898224172, 0.4580007088136, 0.52153448747519, 0.43876274069382, 0.32128695662442, 0.36397751543271, 0.31001528655967, 0.32537559834843, null ],
+"prod_total": [ null, null, null, null, null, null, null,        66964194,        63888127,        70256579,        71355556,        71908350, null ] 
 } 
 },{
  "country": {
@@ -6684,7 +6892,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -6716,7 +6925,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
 } 
 },{
  "country": {
@@ -6748,7 +6958,8 @@
 "rev2_gov_rev_gdp": [        37.77601,        33.27598,        30.22736,        31.11592,        32.00965,        34.94741,         38.5549,        33.16635,        36.71452,        25.00406, null, null, null ],
 "calc_gov_resrev_gdp": [      26.7357739,     21.94233465,     19.51152795,     20.76746445,      21.3302635,     24.67109825,      26.5019519,      20.7372217,     25.93085985,      13.4355524,      16.4339701,      16.0572254, null ],
 "calc_rent_total_gdp": [     38.28194129,     30.91685408,     29.05514768,     30.84952621,     33.27076682,     39.71942441,     38.52485849,     32.71277196,     33.41827195,    20.377650172,    23.556936956,     23.09966428, null ],
-"calc_govt_take": [ 0.69839127795183, 0.70972080772586, 0.67153428937588, 0.67318584760852, 0.64111126790074, 0.62113433455971, 0.68791821537461, 0.63391820556683, 0.7759485555925, 0.65932785608721, 0.6976276300563, 0.69512808521215, null ] 
+"calc_govt_take": [ 0.69839127795183, 0.70972080772586, 0.67153428937588, 0.67318584760852, 0.64111126790074, 0.62113433455971, 0.68791821537461, 0.63391820556683, 0.7759485555925, 0.65932785608721, 0.6976276300563, 0.69512808521215, null ],
+"prod_total": [ null, null, null, null, null, null, null,        16884000,        15134000,        15209000,        19323000,        18476000, null ] 
 } 
 },{
  "country": {
@@ -6780,7 +6991,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,       287904730,       298822589,       297803500,       307797826,       306243114, null ] 
 } 
 },{
  "country": {
@@ -6812,7 +7024,8 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null,       0.1223221,       0.7197648,       1.5528142,       1.9354629,       0.9844113,       1.9314687,       5.6796532, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,          696628,          713343,          845238,         1040637,          988628, null ] 
 } 
 },{
  "country": {
@@ -6844,6 +7057,7 @@
 "rev2_gov_rev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_gov_resrev_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "calc_rent_total_gdp": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
-"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ] 
+"calc_govt_take": [ null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"prod_total": [ null, null, null, null, null, null, null,         2540932,         1954485,         1779762,         2763402,         3301564, null ] 
 } 
 } ]
