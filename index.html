@@ -82,11 +82,20 @@
           font-size: 10px !important;
         }  
         .medtext {
-          font-size: 12px !important;
+          font-size: 13px !important;
         } 
         .datatext {
           font-family: Consolas, courier;
           font-size: 11px;
+          display: inline
+        }         
+        .sourcetext {
+          font-size: 13px;
+          display: inline
+        }         
+        .sourcedatatext {
+          font-family: Consolas, courier;
+          font-size: 13px;
           display: inline
         }         
         
@@ -281,9 +290,9 @@
             <div class="col-md-12 text-left mycol medtext">
               <h6 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Select</h6> 
               a country by clicking on the map, or  
-              a group of countries by clicking its button.                
+              a group of countries by clicking its button.  Data presented for a group respresents the average values for a country in that group.                
               <h6 style="display:inline;padding-top:0px;margin-top:0px;margin-bottom:2px">Choose</h6>
-              a statistic to color countries according to the average value of reported data for that statistic from 2000 to 2012.  
+              a statistic to color countries according to the average value of reported data for that statistic from 2000 to 2011.  
               Darker colors indicate higher average values.
               Government Take is Government Resource Revenue / Total Rents.
               All other statistics are given as %GDP, unless noted. 
@@ -331,8 +340,8 @@
           </div>  
         </div>  <!-- end first column -->            
         
-        <div class="col-md-4 text-center">
-          <h4 ng-bind='current_selection_name'></h4>
+        <div class="col-md-4 mycol">
+          <h4 class="text-center" ng-bind='current_selection_name'></h4>
           <div id='chart2'></div> 
           <div id='chart3'></div>           
         </div>
@@ -376,7 +385,11 @@
           <div id="rentCompare"></div>
         </div>            
       </div>
-  
+      <div class="row">
+        <div class="col-md-12 text-left mycol">  
+          <div id=datasources></div>
+        </div>
+      </div>  
     </div> <!-- end container -->
 
  
@@ -397,6 +410,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <script> 
+    $(function(){
+      $("#datasources").load("datasources.html"); 
+    });
+    </script> 
     
     <script>
     
@@ -695,10 +714,10 @@
                       min: 0,
                       padding: {top:0, bottom:0},
                       label: {
-                        text: 'Percent',
-                        position: 'outer-middle'
+                        text: 'GDP',
                       },                      
-                      tick: { format: function (d) { return d3.round(d,2) + "%"; } }
+                      tick: { format: function (d) { return d3.round(d,2) + "%"; } },
+                      ticks: 5
                     },
                     y2: { max: 1.4, 
                           min: 0, 
@@ -708,7 +727,8 @@
                             text: 'Government Take Ratio',
                             position: 'outer-middle'
                           },
-                          tick: { format: d3.format(".1f") }
+                          tick: { format: d3.format(".1f") },
+                          ticks: 5
                         },
                     x: { min: 2000, max: 2011,
                          padding: {left:.5, right:.5}
@@ -721,8 +741,11 @@
                   },
                   
           });// c3.generate
- 
- 
+ /*
+ r: function (d) {
+ +            return d.id === 'data2' ? 10 : 2.5;
+ +          } 
+ */
        // -------------------------------------------------------------------------      
       // Create the c3 line chart for resource data
       // -------------------------------------------------------------------------      
@@ -748,7 +771,6 @@
                     ],
                     names: varnames, 
                     colors: varcolors, 
-                    labels:false,
                   }, // data  
                   axis: {
                     y: {
@@ -756,10 +778,10 @@
                       min: 0,
                       padding: {top:0, bottom:5},
                       label: {
-                        text: 'Percent',
-                        position: 'outer-middle'
+                        text: 'GDP',
                       },
-                      tick: { format: function (d) { return d3.round(d,2) + "%"; } }
+                      tick: { format: function (d) { return d3.round(d,2) + "%"; } },
+                      ticks: 5                      
                     },
                     x: { min: 2000, max: 2011,  
                         padding: {left:.5, right:.5}                    
@@ -769,9 +791,10 @@
                           show: true,
                           label: {
                             text: 'Total Production',
-                            position: 'outer-middle'
+                            position: 'outer-top'
                           },
-                          tick: { format: d3.format(".2s") }
+                          tick: { format: d3.format(".2s") },
+                          ticks: 5                          
                         },
                   }, // axis
               
@@ -1229,6 +1252,7 @@
                             bottom: 0,
                             left: 0,
                         },
+                        ticks: 6
                         //tick: { format: function(d) { console.log("stat to format" + stat); return (stat=="calc_govt_take") ? d3.round(d,1) : d3.round(d,2) + "%" } },                        
                      } 
                 },  
@@ -1654,7 +1678,7 @@
           },{
            "variable": "rev2_gov_nonresrev_gdp",
           "values": {
-           "name": "Govt Non-Resource Revenue",
+           "name": "Govt Non-Resource Tax Revenue",
           "source": "Resource_Revenue2",
           "color": "9467bd", //9467bd 1f77b4
           "order": 5
