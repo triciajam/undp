@@ -647,9 +647,11 @@
                   });                          
                   var byyears = d3.transpose(timeseries);
                   var tmp=[];
+                  var avg;
                   tmp.push(currentStat);
                   byyears.forEach(function(currentYear, index){
-                    tmp.push(d3.mean(currentYear));
+                    avg = d3.mean(currentYear)
+                    tmp.push((typeof avg === 'undefined') ? null : avg);
                   });
                   //console.log(tmp);
                   $scope.group_resource_stat_data_json[currentFactor.factor].levels[currentLevel.level].stats[currentStat] = tmp;
