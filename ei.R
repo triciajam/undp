@@ -21,8 +21,6 @@ library(RJSONIO)
 # turn off scientific notation
 options(scipen=999)
 
-
-
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 # Step 1 Create a Base *Time Series* Data Set, merging data from 
@@ -138,6 +136,38 @@ prod <- prod[-which(prod$ccode == "LBR" & prod$year < 2007),]
 out.ts <- merge(out.ts, prod[c(2:4)], by=c("ccode", "year"), all.x=T, all.y=F)
 str(out.ts)
 
+# -------------------------------------
+# Add this to show production pie chart
+
+proden <- read.csv("raw/Production_Energy.csv")
+head(proden)
+summary(proden)
+prodmin <- read.csv("raw/Production_Mineral.csv")
+head(prodmin)
+summary(prodmin)
+str(prodmin)
+# get an idea of what the data is
+levels(prodmin$prod2_unit)
+table(prodmin$prod2_unit)
+aggregate(prodmin$prod2_volume, by=list(prodmin$prod2_min), FUN=mean)
+prodmin[prodmin$prod2_unit == "Kilograms",]
+
+# Convert everything to Metric Tons
+# http://www.extension.iastate.edu/agdm/wholefarm/pdf/c6-89.pdf
+#1 metric ton = 1000kg
+#1 billion cubic meters NG = .90 million metric tons oil equivalent
+#1 million cubic meters NG = .90 thousand metric tons oil equivalent
+#1 million cubic meters NG = 900 metric tons oil equivalent
+# 1 metric ton = 1000 kg
+# 1 metric ton = carets / 5000000 
+prodmin$calc_volume <- prodmin$prod2_volume
+prodmin$calc_volume <- ifelse(prodmin$prod2_unit == "Kilograms", prodmin$prod2_volume/1000, prodmin$calc_volume)
+prodmin$calc_volume <- ifelse(prodmin$prod2_unit == "Million Cubic Meters", prodmin$prod2_volume*900, prodmin$calc_volume)
+prodmin$calc_volume <- ifelse(grepl("Carets", prodmin$prod2_unit), prodmin$prod2_volume/5000000, prodmin$calc_volume)
+avgs <- aggregate(prodmin$calc_volume, by=list(prodmin$prod2_min), FUN=mean, na.rm=TRUE)
+avgs[order(avgs$x),]
+
+
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 # Step 2 
@@ -177,7 +207,7 @@ str(out.no.ts)
 # This makes a flag indicating whether or not we have any resource data at all
 # for a given country.  This uses the ouput from Step 1.
 tmpByCountry <- split(out.ts, out.ts$ccode)
-tmpDataFlag <- lapply(tmpByCountry, function(x) all(is.na(melt(x[,c(10:17)])$value)))
+tmpDataFlag <- lapply(tmpByCountry, function(x) all(is.na(melt(x[,c(10:17)], measure.vars=names(x[,c(10:17)]))$value)))
 tmpDataFlag <- as.data.frame(unlist(tmpDataFlag))
 colnames(tmpDataFlag) = c("haveResourceStats")
 tmpDataFlag$haveResourceStats <- ifelse(tmpDataFlag=="TRUE", 0,1) 
@@ -244,6 +274,7 @@ tmpByCountry <- split(out.ts, out.ts$ccode)
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:16])), .na="null", digits=14))
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],stat=(x[,3:16])), .na="null", digits=14))
 jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14))
+#jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14, asIs=FALSE))
 jsonString <- paste("[", paste(jsonString, collapse=","), "]")
 
 

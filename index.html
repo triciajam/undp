@@ -315,6 +315,11 @@
           // take data out of raw data and puts into associative arrays
           // where it is easier to access          
           $scope.raw_data.forEach(function(countryObj, index) {
+            // have to do this because these are stored in the JSON as array of length 1
+            // but we just want regular associative array
+            d3.keys(countryObj.country).forEach(function(key, index) {
+              countryObj.country[key] = countryObj.country[key][0];                
+            });            
             $scope.country_data_json[countryObj.country.ccode] = countryObj.country;
             $scope.country_macro_stat_data_json[countryObj.country.ccode] = countryObj.macroStats;
             $scope.country_resource_stat_data_json[countryObj.country.ccode] = countryObj.resourceStats;            
