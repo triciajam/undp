@@ -137,11 +137,16 @@ out.ts <- merge(out.ts, prod[c(2:4)], by=c("ccode", "year"), all.x=T, all.y=F)
 str(out.ts)
 
 # -------------------------------------
-# Add this to show production pie chart
+# EXPORT Data
 
-proden <- read.csv("raw/Production_Energy.csv")
-head(proden)
-summary(proden)
+exp <- read.csv("raw/Exports.csv")
+exp$year <- as.factor(exp$year)
+out.ts <- merge(out.ts, exp[c(1,3,4,5,7:13)], by=c("ccode", "year"), all.x=T, all.y=F)
+
+
+# -------------------------------------
+# PRODMIN: Mineral Production Data
+
 prodmin <- read.csv("raw/Production_Mineral.csv")
 head(prodmin)
 summary(prodmin)
@@ -166,6 +171,21 @@ prodmin$calc_volume <- ifelse(prodmin$prod2_unit == "Million Cubic Meters", prod
 prodmin$calc_volume <- ifelse(grepl("Carets", prodmin$prod2_unit), prodmin$prod2_volume/5000000, prodmin$calc_volume)
 avgs <- aggregate(prodmin$calc_volume, by=list(prodmin$prod2_min), FUN=mean, na.rm=TRUE)
 avgs[order(avgs$x),]
+
+# DIamonds are not unique in prodmin (they are all diamonds, but have 3
+# different units), and they need to be unique
+prodmin$prod2_min2 <- as.character(prodmin$prod2_min)
+prodmin$prod2_min2 <- ifelse(grepl("Diamond", prodmin$prod2_min2), paste(prodmin$prod2_min2, prodmin$prod2_unit), prodmin$prod2_min2)
+prodmin$prod2_min2 <- as.factor(prodmin$prod2_min2)
+prodmin$year <- as.factor(prodmin$year)
+
+# but there are still duplicates
+# !!not sure which ones to keep, just randomly take one set out and ask UNDP folks
+prodmin[duplicated(prodmin[,c("ccode","year","prod2_min2")]),]
+prodmin <- prodmin[!duplicated(prodmin[,c("ccode","year","prod2_min2")]),]
+prodmin <- dcast(prodmin[,c("ccode", "year", "prod2_min2", "calc_volume")], ccode + year ~ prod2_min2, value.var="calc_volume")
+
+out.ts <- merge(out.ts, prodmin, by=c("ccode", "year"), all.x=T, all.y=F)
 
 
 # -----------------------------------------------------------------------------
@@ -273,8 +293,10 @@ out.no.ts$class_opec <- ifelse(out.no.ts$class_opec == "1", "OPEC", "Non-OPEC")
 tmpByCountry <- split(out.ts, out.ts$ccode)
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(ccode=x[1,1],stat=(x[,3:16])), .na="null", digits=14))
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],stat=(x[,3:16])), .na="null", digits=14))
-jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14))
+#jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14))
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14, asIs=FALSE))
+jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)]), exportStats=(x[,c(19:27)])), .na="null", digits=14))
+
 jsonString <- paste("[", paste(jsonString, collapse=","), "]")
 
 
