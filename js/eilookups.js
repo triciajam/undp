@@ -21,6 +21,7 @@
 
   //console.log("Loading Lookup Data");
   
+  
   var var_lookup_data = 
     [ {
        "variable": "calc_gov_resrev_gdp",
@@ -126,18 +127,83 @@
       "color": "bcbd22", //8c564b bcbd22
       "order": 3
        }
-       },{
-       "variable": "prod_total",
-      "values": {
-       "name": "Total Production (metric tons)",
-      "source": "Production_Total",
-      "color": "e377c2", 
-      "order": 7
-       }
-       }
+       },
+       {
+          "variable": "prod_total",
+          "values": {
+            "name": "Total Production (metric tons)",
+            "source": "Production_Total",
+            "color": "e377c2", 
+            "order": 7
+          }
+       },
+       {
+        "variable": "exp_fuels",
+          "values": {
+            "name": "Fuels",
+            "source": "Exports",
+            "color": "", 
+            "order": ""
+          }
+       },
+       {
+        "variable": "exp_sitc27",
+          "values": {
+            "name": "Crude Materials",
+            "source": "Exports",
+            "color": "", 
+            "order": ""
+          }
+       },
+       {
+        "variable": "exp_sitc28",
+          "values": {
+            "name": "Mineral Ores",
+            "source": "Exports",
+            "color": "", 
+            "order": ""
+          }
+       },
+       {
+        "variable": "exp_sitc68",
+          "values": {
+            "name": "Non-Ferrous Metals",
+            "source": "Exports",
+            "color": "", 
+            "order": ""
+          }
+       },
+       {
+        "variable": "exp_sitc667",
+          "values": {
+            "name": "Precious Stones",
+            "source": "Exports",
+            "color": "", 
+            "order": ""
+          }
+       },    
+       {
+        "variable": "exp_sitc971",
+          "values": {
+            "name": "Non-Monetary Gold",
+            "source": "Exports",
+            "color": "", 
+            "order": ""
+          }
+       },    
+       {
+        "variable": "exp_eishare",
+          "values": {
+            "name": "EI% of Total Exports",
+            "source": "Exports",
+            "color": "", 
+            "order": ""
+          }
+       }      
      ];
 
-    
+
+
     // now do a little processing on the constants to get them into an easy
     // format for c3
     var varnames = {};
@@ -150,7 +216,7 @@
       varnames[item.variable] = item.values.name;
       varcolors[item.variable] = "#".concat(item.values.color);
       varlookup[item.variable] = item.values;
-      
+      /*
       if (varcolors[item.variable] != "#") {            
         var baseColor = d3.rgb(varcolors[item.variable]);
         var darkest = baseColor.darker().darker().darker();
@@ -159,7 +225,9 @@
         varlookup[item.variable]["lightColor"] = lightest.toString();
         varlookup[item.variable]["darkColor"] = darkest.toString();
       }
+      */
     }); 
+  
   
     // This is a "manual"" color override
     // I tried to use the d3 default from lighter() and darker() above

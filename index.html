@@ -1,4 +1,4 @@
-<html lang="en" ng-app="eimodule" ng-init="current_country_id='AGO'">
+<html lang="en" ng-app="eimodule" ng-init="current_country_id='RUS'">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,9 @@
 
     <!-- Load c3.css Style -->
     <link href="css/c3.css" rel="stylesheet" type="text/css">
+    <link href="https://rawgit.com/masayuki0812/c3/master/c3.css" rel="stylesheet" type="text/css">
+    
+    
 
     <!-- Bootstrap Style -->
     <link href="css/bootstrap.min.css" rel="stylesheet">  
@@ -33,7 +36,10 @@
     <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
     <script src='http://datamaps.github.io/scripts/datamaps.all.min.js' type='text/javascript'></script>
     <!-- Load c3.js -->
-    <script src="js/c3.min.js"></script>
+    <!-- <script src="js/c3.min.js"></script>  -->
+    <script src="https://rawgit.com/masayuki0812/c3/master/c3.js"></script>
+    
+    
     
     <!--
     <script src="http://c3js.org/js/c3.min-631d1d50.js"></script>
@@ -165,6 +171,14 @@
         </div>            
       </div>
       <div class="row">
+        <div class="col-md-6 text-left mycol">  
+          <div id="pie"></div>
+        </div>
+        <div class="col-md-6 text-left mycol">  
+          <div id="expChart"></div>
+        </div>
+      </div>  
+      <div class="row">
         <div class="col-md-12 text-left mycol">  
           <div id=datasources></div>
         </div>
@@ -189,7 +203,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    
+
+    <script src="js/LayerPie.js" type='text/javascript'></script>
+
     <script> 
     $(function(){
       $("#datasources").load("datasources.html"); 
@@ -268,7 +284,8 @@
       // where the time series data is in an array format, not a JS object one
       // this is the format the c3 charts expect
       // same data as "country_resource_stat_data_json"
-      $scope.country_resource_stat_data_arr = [];
+      $scope.country_resource_stat_data_arr = [];      
+      $scope.country_export_stat_data_json = [];
             
       $scope.group_resource_stat_data_json = {};
       $scope.group_resource_stat_data_arr = [];
@@ -322,7 +339,9 @@
             });            
             $scope.country_data_json[countryObj.country.ccode] = countryObj.country;
             $scope.country_macro_stat_data_json[countryObj.country.ccode] = countryObj.macroStats;
-            $scope.country_resource_stat_data_json[countryObj.country.ccode] = countryObj.resourceStats;            
+            $scope.country_resource_stat_data_json[countryObj.country.ccode] = countryObj.resourceStats;
+            $scope.country_export_stat_data_json[countryObj.country.ccode] = countryObj.exportStats;
+            
           });           
           console.log("$scope.country_data_json: ");
           console.log($scope.country_data_json);  
@@ -330,20 +349,26 @@
           console.log($scope.country_macro_stat_data_json);  
           console.log("$scope.country_resource_stat_data_json: ");
           console.log($scope.country_resource_stat_data_json);  
+          console.log("$scope.country_export_stat_data_json: ");
+          console.log($scope.country_export_stat_data_json);  
 
           // this put the same resource data into array format
           // this is only necessary because c3 chart expects time series
           // data to come in this format.
           $scope.country_gov_take_stat_data_arr = [];
           $scope.country_gov_revenue_stat_data_arr = [];          
+          $scope.country_export_stat_data_arr = [];          
           var gov_take_stats = ["calc_govt_take", "calc_gov_resrev_gdp", "calc_rent_total_gdp"];
           var gov_revenue_stats = ["calc_gov_resrev_gdp", "rev2_gov_nonresrev_gdp", "rev2_gov_rev_gdp","prod_total"];          
+          var export_stats = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971", "exp_eishare"];          
 
           $scope.raw_data.forEach(function(countryObj, index) {
             $scope.country_gov_take_stat_data_arr[countryObj.country.ccode] = [];
             $scope.country_gov_take_stat_data_arr[countryObj.country.ccode].push(xaxis);
             $scope.country_gov_revenue_stat_data_arr[countryObj.country.ccode] = [];
             $scope.country_gov_revenue_stat_data_arr[countryObj.country.ccode].push(xaxis);
+            $scope.country_export_stat_data_arr[countryObj.country.ccode] = [];
+            $scope.country_export_stat_data_arr[countryObj.country.ccode].push(xaxis);
            
             gov_take_stats.forEach(function(statname, index) {
                 //console.log(countryObj.resourceStats);
@@ -353,18 +378,23 @@
                 $scope.country_gov_take_stat_data_arr[countryObj.country.ccode].push(tmp.concat(countryObj.resourceStats[statname]));              
             });
             gov_revenue_stats.forEach(function(statname, index) {
-                //console.log(countryObj.resourceStats);
-                //console.log(statname);
                 var tmp=[];
                 tmp.push(statname);
                 $scope.country_gov_revenue_stat_data_arr[countryObj.country.ccode].push(tmp.concat(countryObj.resourceStats[statname]));              
             });                                 
+            export_stats.forEach(function(statname, index) {
+                var tmp=[];
+                tmp.push(statname);
+                $scope.country_export_stat_data_arr[countryObj.country.ccode].push(tmp.concat(countryObj.exportStats[statname]));              
+            });                                 
           });
           
-          console.log("$scope.country_gov_take_stat_data_arr: ");
+          console.log("GOV TAKE: $scope.country_gov_take_stat_data_arr: ");
           console.log($scope.country_gov_take_stat_data_arr);  
-          console.log("$scope.country_gov_revenue_stat_data_arr: ");
+          console.log("GOV REV: $scope.country_gov_revenue_stat_data_arr: ");
           console.log($scope.country_gov_revenue_stat_data_arr);  
+          console.log("EXPORT: $scope.country_export_stat_data_arr: ");
+          console.log($scope.country_export_stat_data_arr);  
  
           $scope.raw_data.forEach(function(countryObj, index) {
                        
@@ -596,7 +626,83 @@
                   
           });// c3.generate
  
+       // -------------------------------------------------------------------------      
+      // Create the c3 line chart for export data
+      // -------------------------------------------------------------------------      
+        var expcolumns = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971","exp_eishare"];
+        var pastels = d3.scale.ordinal().domain(expcolumns).range(colorbrewer.Pastel1[6]);
+        var expcolors = {};
+        expcolumns.forEach(function(col) {
+          expcolors[col] = pastels(col);
+        });
+        expcolors["exp_eishare"] = "black";
+        
+          $scope.expChart = c3.generate({
+              
+                  bindto: '#expChart',      
+
+                  size: {
+                    width: 300,
+                    height: 200,                    
+                  },   
+                  data: {
+                    x: 'x',
+                    columns: $scope.country_export_stat_data_arr[$scope.current_country_id],
+                    axes: { 
+                        exp_fuels : 'y',
+                        exp_sitc27 : 'y',
+                        exp_sitc28 : 'y',
+                        exp_sitc68 : 'y', 
+                        exp_sitc667 : 'y', 
+                        exp_sitc971: 'y',
+                        exp_eishare: 'y2'
+                    },
+                    type: 'bar',
+                    types: {
+                        exp_eishare: 'line',
+                    },    
+                    groups: [
+                      ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971"]
+                    ],
+                    names: varnames, 
+                    colors: expcolors
+                  }, // data  
+                  bar: {
+                      width: { ratio: 1.2 }
+                  }, 
+                  axis: {
+                    y: {
+                      padding: {top:0, bottom:5},
+                      label: {
+                        text: 'Current US$',
+                      },
+                      tick: { format: function (d) { return d3.format("$,")(d3.round(d,0)); } },
+                      ticks: 7                      
+                    },
+                    x: { min: 2000, max: 2011,  
+                        padding: {left:.5, right:.5}                    
+                    },
+                    y2: { min: 0, 
+                          max: 100,
+                          padding: {top:0, bottom: 0},
+                          show: true,
+                          label: {
+                            text: 'EI% of Total Exports',
+                            position: 'outer-top'
+                          },
+                          tick: { format: function (d) { return d3.round(d,2) + "%"; } },
+                          ticks: 5                          
+                        }, 
+                  }, // axis
+              
+                 legend: {
+                    show: false
+                  },                  
+                  
+          });// c3.generate
  
+
+   
       // -------------------------------------------------------------------------      
       // Create the data map
       // -------------------------------------------------------------------------      
@@ -697,7 +803,20 @@
         $scope.heatmap.setupChart();
         $scope.heatmap.drawChart();
         $scope.heatmap.selectCountries(new Array($scope.current_country_id));
-        
+
+      // -------------------------------------------------------------------------      
+      // Pie Chart for Exports
+      // -------------------------------------------------------------------------  
+        //$scope.exportTotals = $scope.getExportTotals();
+        var expdata = $scope.setupExportData($scope.current_country_id);     
+        /*
+        expdata = d3.nest()
+            .key(function(d) { return d.ring; })
+            .entries(expdata);
+        console.log(expdata);  
+        */
+        $scope.lp = new LayerPie("#pie", expdata);
+
         $scope.initDone = true;
           
       }).error(function(err){
@@ -767,7 +886,9 @@
     $scope.$watch('current_selection', function(newValue, oldValue) {
         console.log('WATCH current_selection newValue:');
         console.log(newValue);
-        
+
+        if (!$scope.initDone) return;
+
         var countries;
         
         if ($scope.current_country_id == null) {
@@ -794,6 +915,8 @@
           }    
           if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_gov_take_stat_data_arr[newValue] });          
           if ($scope.chart3 != null) $scope.chart3.load({ columns: $scope.country_gov_revenue_stat_data_arr[newValue] });          
+          if ($scope.lp != null) $scope.lp.update($scope.setupExportData(newValue));
+          $scope.expChart.load({ columns: $scope.country_export_stat_data_arr[newValue] });
         }
         
         if ($scope.heatmap != null) $scope.heatmap.selectCountries(countries);
@@ -806,6 +929,81 @@
       // on the datamap to
       // highlight or fill by a different variable
       // -------------------------------------------------------------------------                
+
+      $scope.getExportTotals = function() {
+        var exportPieChunks = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971"];
+        var totals = {};
+        exportPieChunks.forEach(function(chunk, index) {
+          var chunkData = d3.values($scope.country_export_stat_data_json).map(function(countryObj) { return countryObj[chunk]; });
+          //console.log("chunkData");          
+          //console.log(chunkData);
+          var chunkDataByYears = d3.transpose(chunkData);
+          //console.log("chunkDataByYears");          
+          //console.log(chunkDataByYears);
+          var yearlyChunkSum = chunkDataByYears.map(function(yearData) { return d3.sum(yearData); });
+          //console.log("yearlyChunkSum");          
+          //console.log(yearlyChunkSum);
+          totals[chunk] = yearlyChunkSum;
+        });
+        return(totals);
+      };  
+
+      $scope.setupExportData = function(ccode) {
+        
+        var labels = [ "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007","2008", "2009","2010","2011","2012"];
+        var exportPieChunks = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971"];
+
+        if ($scope.exportTotals == null) $scope.exportTotals = $scope.getExportTotals();
+          console.log("$scope.exportTotals");          
+          console.log($scope.exportTotals);
+
+        var data = new Object();
+        exportPieChunks.forEach(function(key, index) {
+          data[key] = $scope.country_export_stat_data_json[ccode][key];       
+        });
+          console.log("small export obj");          
+          console.log(data)
+        
+        //vals = d3.values($scope.country_export_stat_data_json[ccode]);        
+
+        //var data = $scope.country_export_stat_data_json[ccode];
+        //keys = d3.keys($scope.country_export_stat_data_json[ccode]);
+        keys = d3.keys(data);
+        // we are not using total exports, total ei exports, or ei share in the pie,
+        // get rid of those first 3
+        //keys = keys.slice(3);
+        //vals = d3.values($scope.country_export_stat_data_json[ccode]);
+        vals = d3.values(data);
+        console.log(keys);
+        console.log(vals);        
+        // now each array is the data for one single year
+        // each entry in that array corresponds to keys above
+        var ringData = d3.transpose(vals);
+        console.log("export data by years");
+        console.log(ringData);
+        
+        var outData = [];
+        
+        ringData.forEach(function(ringEl, ringIndex) {
+          keys.forEach(function(chunkEl, chunkIndex) {
+            var tmp = {};
+            tmp["ring"] = labels[ringIndex];
+            tmp["chunk"] = keys[chunkIndex]; // or chunkEl
+            tmp["value"] = ringData[ringIndex][chunkIndex];
+            tmp["arcvalue"] = ringData[ringIndex][chunkIndex]; //starts the same
+            tmp["total"] = $scope.exportTotals[chunkEl][ringIndex];  
+            tmp["dispvalue"] = (labels[ringIndex] + " " + varnames[keys[chunkIndex]] + " " + d3.format("$,")(d3.round(ringData[ringIndex][chunkIndex],0)));             
+            outData.push(tmp);
+          });        
+        });        
+        
+        var outdata2 = d3.nest()
+                    .key(function(d) { return d.ring; })
+                    .entries(outData);
+        
+        console.log(outdata2);
+        return(outdata2);        
+      }
 
       $scope.doLegend = function(map, layer) {
         

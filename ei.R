@@ -141,7 +141,7 @@ str(out.ts)
 
 exp <- read.csv("raw/Exports.csv")
 exp$year <- as.factor(exp$year)
-out.ts <- merge(out.ts, exp[c(1,3,4,5,7:13)], by=c("ccode", "year"), all.x=T, all.y=F)
+out.ts <- merge(out.ts, exp[c(1,3,4,6,8:13)], by=c("ccode", "year"), all.x=T, all.y=F)
 
 
 # -------------------------------------
@@ -298,7 +298,6 @@ tmpByCountry <- split(out.ts, out.ts$ccode)
 jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)]), exportStats=(x[,c(19:27)])), .na="null", digits=14))
 
 jsonString <- paste("[", paste(jsonString, collapse=","), "]")
-
 
 # -----------------------------------------------------------------------------
 # Write the file.

@@ -234,4 +234,9 @@
       fill: #bebebe;          
     }
     
+    .piepath {
+      stroke: #ffffff; 
+      stroke-width: 2;
+      stroke-opacity: 1;
+    }
 
