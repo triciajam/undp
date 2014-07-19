@@ -295,7 +295,11 @@ tmpByCountry <- split(out.ts, out.ts$ccode)
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],stat=(x[,3:16])), .na="null", digits=14))
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14))
 #jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)])), .na="null", digits=14, asIs=FALSE))
-jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],macroStats=(x[,4:9]), resourceStats=(x[,c(10,12,14:18)]), exportStats=(x[,c(19:27)])), .na="null", digits=14))
+jsonString <- lapply(tmpByCountry, function(x) toJSON(list(country=out.no.ts[which(out.no.ts$ccode == x[1,1]),],
+                                                           macroStats=(x[,4:9]), 
+                                                           resourceStats=(x[,c(10,12,14:18)]), 
+                                                           exportStats=(x[,c(19:26)]),
+                                                           prodStats=(x[,c(27:86)])), .na="null", digits=14))
 
 jsonString <- paste("[", paste(jsonString, collapse=","), "]")
 

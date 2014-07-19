@@ -171,11 +171,14 @@
         </div>            
       </div>
       <div class="row">
-        <div class="col-md-6 text-left mycol">  
+        <div class="col-md-4 text-left mycol">  
           <div id="pie"></div>
         </div>
-        <div class="col-md-6 text-left mycol">  
+        <div class="col-md-4 text-left mycol">  
           <div id="expChart"></div>
+        </div>
+        <div class="col-md-4 text-left mycol">  
+          <div id="prodpie"></div>
         </div>
       </div>  
       <div class="row">
@@ -286,6 +289,7 @@
       // same data as "country_resource_stat_data_json"
       $scope.country_resource_stat_data_arr = [];      
       $scope.country_export_stat_data_json = [];
+      $scope.country_prod_stat_data_json = [];
             
       $scope.group_resource_stat_data_json = {};
       $scope.group_resource_stat_data_arr = [];
@@ -341,7 +345,7 @@
             $scope.country_macro_stat_data_json[countryObj.country.ccode] = countryObj.macroStats;
             $scope.country_resource_stat_data_json[countryObj.country.ccode] = countryObj.resourceStats;
             $scope.country_export_stat_data_json[countryObj.country.ccode] = countryObj.exportStats;
-            
+            $scope.country_prod_stat_data_json[countryObj.country.ccode] = countryObj.prodStats;            
           });           
           console.log("$scope.country_data_json: ");
           console.log($scope.country_data_json);  
@@ -351,6 +355,8 @@
           console.log($scope.country_resource_stat_data_json);  
           console.log("$scope.country_export_stat_data_json: ");
           console.log($scope.country_export_stat_data_json);  
+          console.log("$scope.country_prod_stat_data_json: ");
+          console.log($scope.country_prod_stat_data_json);  
 
           // this put the same resource data into array format
           // this is only necessary because c3 chart expects time series
@@ -809,13 +815,14 @@
       // -------------------------------------------------------------------------  
         //$scope.exportTotals = $scope.getExportTotals();
         var expdata = $scope.setupExportData($scope.current_country_id);     
-        /*
-        expdata = d3.nest()
-            .key(function(d) { return d.ring; })
-            .entries(expdata);
-        console.log(expdata);  
-        */
         $scope.lp = new LayerPie("#pie", expdata);
+        
+      // -------------------------------------------------------------------------      
+      // Pie Chart for Production
+      // -------------------------------------------------------------------------  
+        var proddata = $scope.setupProdData($scope.current_country_id);     
+        $scope.lp_prod = new LayerPie("#prodpie", proddata);        
+        
 
         $scope.initDone = true;
           
@@ -916,6 +923,7 @@
           if ($scope.chart2 != null) $scope.chart2.load({ columns: $scope.country_gov_take_stat_data_arr[newValue] });          
           if ($scope.chart3 != null) $scope.chart3.load({ columns: $scope.country_gov_revenue_stat_data_arr[newValue] });          
           if ($scope.lp != null) $scope.lp.update($scope.setupExportData(newValue));
+          $scope.lp_prod.update($scope.setupProdData(newValue))
           $scope.expChart.load({ columns: $scope.country_export_stat_data_arr[newValue] });
         }
         
@@ -929,6 +937,40 @@
       // on the datamap to
       // highlight or fill by a different variable
       // -------------------------------------------------------------------------                
+
+
+      $scope.getProdScales = function(low, high) {
+        var prodstats = d3.keys($scope.country_prod_stat_data_json[$scope.current_country_id]);
+        var cscales = {};
+        prodstats.forEach(function(chunk, index) {
+          var chunkData = d3.values($scope.country_prod_stat_data_json).map(function(countryObj) { return countryObj[chunk]; });
+          //console.log("numcountries " + chunkData.length);
+          //console.log("prod chunkData");          
+          //console.log(chunkData);
+          var chunkDataByYears = d3.transpose(chunkData).slice(low, high);
+          //console.log("prod chunkDataByYears");          
+          //console.log(chunkDataByYears);
+          //console.log(colorbrewer.Greys[9]);
+          //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.linear().domain(d3.extent(yearData)).range(["blue", "red"]); });
+          var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.quantile().domain(yearData).range(colorbrewer.Greys[5]); });
+          //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { 
+          //    return (yearData.every(function(el) { el == null; })) ? d3.scale.ordinal().range("white") : d3.scale.quantile().domain(yearData).range(colorbrewer.Greys[5]) });
+          //console.log("yearlyChunkScales");          
+          //console.log(yearlyChunkScales);
+          //yearlyChunkScales.forEach(function(scale) { console.log(scale(2000)); });
+          
+          //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.sum(yearData); });
+          //console.log("yearlyChunkSum");          
+          //console.log(yearlyChunkSum);
+          cscales[chunk] = yearlyChunkScales;
+        });
+        console.log("brewer sclaes");
+        
+        console.log(cscales);
+        return(cscales);
+      };  
+
+
 
       $scope.getExportTotals = function() {
         var exportPieChunks = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971"];
@@ -947,15 +989,83 @@
         });
         return(totals);
       };  
+      
+      $scope.setupProdData = function(ccode) {
+        
+        var data = $scope.country_prod_stat_data_json[$scope.current_country_id];
+        var keys = d3.keys(data); // these are the chunks
+        var vals = d3.values(data); // this is the array of values for each chunk
 
+        console.log(keys);
+        console.log(vals);        
+       
+        // now each array is the data for one single year
+        // each entry in that array corresponds to keys above
+        var ringData = d3.transpose(vals);        
+        
+        ringData = ringData.slice(7,12);   
+        if ($scope.prodScales == null) $scope.prodScales = $scope.getProdScales(7,12);
+        
+        var labels = ["2007","2008", "2009","2010","2011"];
+        console.log("prod data by years");
+        console.log(ringData);
+
+        var outData = [];
+        
+        console.log("$scope.prodScales");
+        console.log($scope.prodScales);
+        
+        ringData.forEach(function(ringEl, ringIndex) {
+          keys.forEach(function(chunkEl, chunkIndex) {
+            var tmp = {};
+            tmp["ring"] = labels[ringIndex];
+            tmp["chunk"] = keys[chunkIndex]; // or chunkEl
+            tmp["value"] = ringData[ringIndex][chunkIndex];
+            tmp["arcvalue"] = ringData[ringIndex][chunkIndex]; //starts the same
+            tmp["color"] = (ringData[ringIndex][chunkIndex] != null) ? $scope.prodScales[chunkEl][ringIndex](ringData[ringIndex][chunkIndex]) : "#ffffff";  
+            tmp["total"] = null;  
+            tmp["dispvalue"] = (labels[ringIndex] + " " + keys[chunkIndex] + " " + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
+            outData.push(tmp);
+          });        
+        });        
+        
+        var outdata2 = d3.nest()
+                    .key(function(d) { return d.ring; })
+                    .entries(outData);
+        
+        console.log(outdata2);
+        return(outdata2);        
+      }
+
+ 
       $scope.setupExportData = function(ccode) {
         
         var labels = [ "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007","2008", "2009","2010","2011","2012"];
         var exportPieChunks = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971"];
 
         if ($scope.exportTotals == null) $scope.exportTotals = $scope.getExportTotals();
-          console.log("$scope.exportTotals");          
-          console.log($scope.exportTotals);
+        //  console.log("$scope.exportTotals");          
+        //  console.log($scope.exportTotals);
+          var totals = {};
+          var cscales = {};
+        /*  
+        if ($scope.exportTotals == null) {
+          exportPieChunks.forEach(function(chunk, index) {
+            var chunkData = d3.values($scope.country_export_stat_data_json).map(function(countryObj) { return countryObj[chunk]; });
+            //console.log("chunkData");          
+            //console.log(chunkData);
+            var chunkDataByYears = d3.transpose(chunkData);
+            cscales[chunk] = chunkDataByYears.map(function(yearData) { d3.scale.quantile(yearData).range
+            //console.log("chunkDataByYears");          
+            //console.log(chunkDataByYears);
+            var yearlyChunkSum = chunkDataByYears.map(function(yearData) { return d3.sum(yearData); });
+            //console.log("yearlyChunkSum");          
+            //console.log(yearlyChunkSum);
+            totals[chunk] = yearlyChunkSum;
+          });         
+        }
+        */
+
 
         var data = new Object();
         exportPieChunks.forEach(function(key, index) {
@@ -969,12 +1079,9 @@
         //var data = $scope.country_export_stat_data_json[ccode];
         //keys = d3.keys($scope.country_export_stat_data_json[ccode]);
         keys = d3.keys(data);
-        // we are not using total exports, total ei exports, or ei share in the pie,
-        // get rid of those first 3
-        //keys = keys.slice(3);
-        //vals = d3.values($scope.country_export_stat_data_json[ccode]);
         vals = d3.values(data);
-        console.log(keys);
+         var color = d3.scale.ordinal().domain(keys).range(colorbrewer.Pastel1[6]);
+       console.log(keys);
         console.log(vals);        
         // now each array is the data for one single year
         // each entry in that array corresponds to keys above
@@ -991,6 +1098,7 @@
             tmp["chunk"] = keys[chunkIndex]; // or chunkEl
             tmp["value"] = ringData[ringIndex][chunkIndex];
             tmp["arcvalue"] = ringData[ringIndex][chunkIndex]; //starts the same
+            tmp["color"] = color(chunkEl);  
             tmp["total"] = $scope.exportTotals[chunkEl][ringIndex];  
             tmp["dispvalue"] = (labels[ringIndex] + " " + varnames[keys[chunkIndex]] + " " + d3.format("$,")(d3.round(ringData[ringIndex][chunkIndex],0)));             
             outData.push(tmp);
