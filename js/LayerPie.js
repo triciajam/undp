@@ -5,7 +5,7 @@ LayerPie = function(element,data) {
   
   this.width = 270;
   this.height = 250;
-  var cwidth = 8;
+  //var cwidth = 8;
   
   var equalchunks = false;
 
@@ -18,11 +18,11 @@ LayerPie = function(element,data) {
   console.log(data);
   */
 
-  var color = d3.scale.category20();
+  //var color = d3.scale.category20();
   var radius = d3.scale.ordinal().domain(data.map(function(el, ind) { return ind; })).rangeRoundBands([15, 100],.08);
-  console.log("rad: " + radius(1));
-  console.log("rad: " + radius.rangeBand());
-  console.log(data.map(function(el, ind) { return ind; }));
+  //console.log("rad: " + radius(1));
+  //console.log("rad: " + radius.rangeBand());
+  //console.log(data.map(function(el, ind) { return ind; }));
 
   var pie = d3.layout.pie()
       .value(function(el) { return el.arcvalue ; })
@@ -42,18 +42,18 @@ LayerPie = function(element,data) {
       });
     
   var txt = svg.append("text")
-        .attr("x", -100)
+        .attr("x", -120)
         .attr("y", -110)
-        .attr("width", 50)
+        .attr("width", 80)
         .attr("height", 50)
         .attr("class", "datatext")
-        .text("hello");
+        .text("mouse over a pie chunk to see data");
         
   var gs, path;
   var obj = this;
   
   var labels;
-   var hole = 0;
+   //var hole = 0;
 
 
   this.update = function(newdata) {
@@ -76,6 +76,7 @@ LayerPie = function(element,data) {
     console.log(labels);
     chunks = data[0].values.map(function(el) { return el.chunk; }); 
     console.log(chunks);
+    var color = d3.scale.ordinal().domain(chunks).range(colorbrewer.Pastel1[6]);
     
     
     gs = svg.selectAll("g")
@@ -90,8 +91,9 @@ LayerPie = function(element,data) {
       //.data(function(d) { return pie(d.values.map(function(el) { console.log("chunk"); console.log(el); return (el.value == null) ? 0 : el.value; })); })
       .enter().append("path")
       .attr("class", "piepath")      
-      .attr("fill", function(d, i,j) { return d3.scale.linear().domain([0, data[j].values[i].total]).range(["white", color(i)])(data[j].values[i].value); })      
+      //.attr("fill", function(d, i,j) { return d3.scale.linear().domain([0, data[j].values[i].total]).range(["white", color(i)])(data[j].values[i].value); })      
       //.attr("fill", function(d, i) { return color(i); })
+      .attr("fill", function(d, i,j) { return data[j].values[i].color; })
       //.attr("d", function(d, i, j) { return arc.innerRadius(hole + 2+cwidth*j).outerRadius(hole + cwidth*(j+1))(d); })
       .attr("d", function(d, i, j) { return arc.innerRadius(radius(j)).outerRadius(radius(j) + radius.rangeBand())(d); })
       .on("mouseover", function(d,i,j){
