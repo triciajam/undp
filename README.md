@@ -1,15 +1,24 @@
-undp/qmss extractive industries data dive, april 2014
-====
+### What is the relationship between extractive industry profitability and fiscal revenue from natural resources?
+#### undp/qmss extractive industries data dive, april 2014
 
-Visualization: What is the relationship between extractive industry profitability and fiscal revenue from natural resources?
-====
+######Goal
+Visualize the relationship between EI profitability and fiscal revenue in a useful way.
+
+######Components
+* data: .csv files provided by UNDP (/raw)
+* R script: used to process .csv files into a .json file used by the web page (ei.R)
+* JSON file: contains the data used by the web page, with an entry for each country (eidata.json)
+* index.html: web page that reads in eidata.json and displays the data 
+
+######Additional Libraries
+* D3.js  - Javscript visualization library
+* c3.js  - chart library wrapper for D3
+* Bootstrap.js - Javascript library for HTML layout and styling
+* Angular.js - library user as a "controller" to wire the different visualizations together.* 
 
 
 
-working directory at the end of united nations development program hackathon; got to work with some new data sets
-
-used R, primarily exploring with ggplot, Python for json encoding and reshaping payloads, MySQL - sailing with localhost, and Sublime 2. 
-
+#### History
+Forked from a repository originally started by bhtucker.
 [regcoeff_2.html](https://github.com/bhtucker/undp/blob/master/regcoeffs_2.html) = [bht.atwebpages.com/undp/](http://bht.atwebpages.com/undp/)
-------
 
