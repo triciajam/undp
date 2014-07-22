@@ -1,11 +1,10 @@
-undp
+undp/qmss extractive industries data dive, april 2014
 ====
 
-datamaps + c3 angular interface
+Visualization: What is the relationship between extractive industry profitability and fiscal revenue from natural resources?
 ====
 
-joins, subsets, and regression coefficients from undp prepared files
----
+
 
 working directory at the end of united nations development program hackathon; got to work with some new data sets
 
