@@ -5,10 +5,10 @@
 Visualize the relationship between EI profitability and fiscal revenue in a useful way.
 
 ######Components
-* data: .csv files provided by UNDP (/raw)
-* R script: used to process .csv files into a .json file used by the web page (ei.R)
-* JSON file: contains the data used by the web page, with an entry for each country (eidata.json)
-* index.html: web page that reads in eidata.json and displays the data 
+* the data: .csv files provided by UNDP (/raw)
+* an R script: used to process .csv files into a .json file used by the web page (ei.R)
+* a JSON file: contains the data used by the web page, with an entry for each country (eidata.json)
+* the web page: web page that reads in eidata.json and displays the data (index.html)
 
 ######Additional Libraries
 * D3.js  - Javscript visualization library
