@@ -1,5 +1,5 @@
 
-LayerPie = function(element,data, width, height, innerRad) {
+Sunburst = function(element,data, width, height, innerRad) {
   this.element = element;
   var data = data;
   // 270, 250

@@ -207,7 +207,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
-    <script src="js/LayerPie.js" type='text/javascript'></script>
+    <script src="js/Sunburst.js" type='text/javascript'></script>
 
     <script> 
     $(function(){
@@ -816,13 +816,13 @@
       // -------------------------------------------------------------------------  
         //$scope.exportTotals = $scope.getExportTotals();
         var expdata = $scope.setupExportData($scope.current_country_id);     
-        $scope.lp = new LayerPie("#pie", expdata, 170,190,10);
+        $scope.lp = new Sunburst("#pie", expdata, 170,190,10);
         
       // -------------------------------------------------------------------------      
       // Pie Chart for Production
       // -------------------------------------------------------------------------  
         var proddata = $scope.setupProdData($scope.current_country_id);     
-        $scope.lp_prod = new LayerPie("#prodpie", proddata, 180,190,22);        
+        $scope.lp_prod = new Sunburst("#prodpie", proddata, 180,190,22);        
         
 
         $scope.initDone = true;
