@@ -26,7 +26,7 @@ Sunburst = function(element,data, width, height, innerRad) {
   //var outer_radius = d3.min(new Array(center_x, center_y - label_height));
   console.log("outer_radius" + outer_radius);
   
-  var equalchunks = true;
+  var equalchunks = false;
 
   //var radius = d3.scale.ordinal().domain(data.map(function(el, ind) { return ind; })).rangeRoundBands([innerRad, outer_radius],.07);
   var data = d3.nest()
@@ -83,6 +83,10 @@ Sunburst = function(element,data, width, height, innerRad) {
   // then it calls update
   //!! add setEqualChunks method that take a boolean and sets the private variable.
 
+  this.setCountry = function() {
+    
+  }
+ 
   this.update = function(newdata) {
        
     flatdata = newdata;
@@ -169,6 +173,6 @@ Sunburst = function(element,data, width, height, innerRad) {
   };
     
  
-  this.update(flatdata);
+  this.changeChunks(flatdata);
 }
   

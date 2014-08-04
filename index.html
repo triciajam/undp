@@ -992,6 +992,13 @@
       $scope.getProdScales = function(low, high) {
         var prodstats = d3.keys($scope.country_prod_stat_data_json[$scope.current_country_id]);
         var cscales = {};
+        
+          var color = d3.scale.linear()
+                       .domain([0,1])
+                       .range([varlookup["prod_total"].lightColor, varlookup["prod_total"].darkColor]); 
+          var buckets = d3.range(0, 1, 1/6);
+          buckets = buckets.map(function (input) { return color(input); });        
+        
         prodstats.forEach(function(chunk, index) {
           var chunkData = d3.values($scope.country_prod_stat_data_json).map(function(countryObj) { return countryObj[chunk]; });
           //console.log("numcountries " + chunkData.length);
@@ -1002,7 +1009,10 @@
           //console.log(chunkDataByYears);
           //console.log(colorbrewer.Greys[9]);
           //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.linear().domain(d3.extent(yearData)).range(["blue", "red"]); });
-          var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.quantile().domain(yearData).range(colorbrewer.Greys[5]); });
+          
+          //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.quantile().domain(yearData).range(colorbrewer.Greys[5]); });
+          var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.quantile().domain(yearData).range(buckets); });
+          
           //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { 
           //    return (yearData.every(function(el) { el == null; })) ? d3.scale.ordinal().range("white") : d3.scale.quantile().domain(yearData).range(colorbrewer.Greys[5]) });
           //console.log("yearlyChunkScales");          
