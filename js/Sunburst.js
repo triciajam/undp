@@ -1,103 +1,105 @@
 
 Sunburst = function(element,data, width, height, innerRad) {
-  this.element = element;
-  var data = data;
+  var element = element;
+  var flatdata = data;
   // 270, 250
   var width = width;
   var height = height;
   var innerRad = innerRad; //15, 100
-  //var cwidth = 8;
+
+  var margin = { left: 20, right: 0, top: 0, bottom: 0, cols: 3 };
+  width = width - margin.left - margin.right;
+  height = height - margin.top - margin.bottom;
+  var text_width = 160;
+  var pie_width = width - text_width;
   var label_height = 20;
   
-  var center_x = width / 2;
-  var center_y = label_height + (height - label_height) / 2;
-  var outer_radius = d3.min(new Array(center_x, center_y - label_height));
+  console.log("width " + width);
+  console.log("pie_width " + pie_width);
+  console.log("height " + height);
+  
+  
+  var outer_radius = d3.min(new Array(pie_width, height)) / 2;
+  
+  var center_x = outer_radius;
+  var center_y = center_x;  
+  //var outer_radius = d3.min(new Array(center_x, center_y - label_height));
   console.log("outer_radius" + outer_radius);
   
-  var equalchunks = false;
+  var equalchunks = true;
 
-  /*
-  data = d3.nest()
-    .key(function(d) { return d.ring; })
-    .entries(data);
-    
-  console.log("nested data");
-  console.log(data);
-  */
-
-  //var color = d3.scale.category20();
+  //var radius = d3.scale.ordinal().domain(data.map(function(el, ind) { return ind; })).rangeRoundBands([innerRad, outer_radius],.07);
+  var data = d3.nest()
+            .key(function(d) { return d.ring; })
+            .entries(flatdata);  
   var radius = d3.scale.ordinal().domain(data.map(function(el, ind) { return ind; })).rangeRoundBands([innerRad, outer_radius],.07);
-  //console.log("rad: " + radius(1));
-  //console.log("rad: " + radius.rangeBand());
-  //console.log(data.map(function(el, ind) { return ind; }));
 
   var pie = d3.layout.pie()
       .value(function(el) { return el.arcvalue ; })
-    //.value(function(el) { return ( (equalchunks) ? el.propvalue : el.value ); })
-    //.value(function(el) { return (el.value == null) ? 0 : el.value; })
-    .sort(null);
+      .sort(null);
 
   var arc = d3.svg.arc();
 
-  var cont = d3.select(this.element).append("svg")
-    .attr("width", width)
-    .attr("height", height);
+  var cont = d3.select(element).append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom);
     
-  var txt = cont      
-        .append("text")
-        .attr("x", 0)
+  var txt_svg = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + margin.top + ")")            
+      .append("text")
+      .attr("x", 0)
         .attr("y", label_height)
         .attr("width", width)
         .attr("height", label_height)
-        .attr("class", "datatext")
+        .attr("class", "pietext")
         .text("mouse over a pie chunk to see data");
-  var svg = cont.append("g")
-//      .attr("width", width)
-//      .attr("height", height - label_height)        
-    //.attr("transform", "translate(" + this.width / 2 + "," + this.height / 2 + ")")
-    .attr("transform", "translate(" + center_x + "," + center_y + ")")
-    .on("click", function(d){
-      obj.changeChunks();  
-      });
+  var txt_svg2 = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + label_height) + ")")            
+      .append("text")
+      .attr("x", 0)
+        .attr("y", label_height)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("mouse over a pie chunk to see data");
+        
+  var pie_svg = cont.append("g")
+      .attr("transform", "translate(" + (margin.left + center_x) + "," + (margin.top + center_y) + ")")
+      .on("click", function(d){
+        obj.changeChunks();  
+       });
   
-/*
-// originals below
-  var svg = d3.select(this.element).append("svg")
-    .attr("width", this.width)
-    .attr("height", this.height)
-    .append("g")
-    //.attr("transform", "translate(" + this.width / 2 + "," + this.height / 2 + ")")
-    .attr("transform", "translate(" + center_x + "," + center_y + ")")
-    .on("click", function(d){
-      obj.changeChunks();  
-      });
-  var txt = svg.append("text")
-        .attr("x", -(center_x))
-        .attr("y", -(80))
-        .attr("width", center_x)
-        .attr("height", 50)
-        .attr("class", "datatext")
-        .text("mouse over a pie chunk to see data");
-*/        
+
   var gs, path;
   var obj = this;
   
   var labels;
    //var hole = 0;
 
+  //!! add setNewCountry method that 
+  // nests the data, does the roll-up, 
+  // Creates the new pie that checks equalcunks and then either points
+  // the pie to value (actial value) or arcvalue (which I will always make one)
+  // then it calls update
+  //!! add setEqualChunks method that take a boolean and sets the private variable.
 
   this.update = function(newdata) {
+       
+    flatdata = newdata;
     
-    data = newdata;
+    /*
+    d3.nest().key(function(d) { return d.ring; })
+             .rollup()
+    */
+    data = d3.nest()
+            .key(function(d) { return d.ring; })
+            .entries(flatdata);      
+            
+            
     
     console.log("in update function for pie");
-    svg.selectAll("g").remove();
+    pie_svg.selectAll("g").remove();
     
-  /*
-  data = d3.nest()
-      .key(function(d) { return d.ring; })
-      .entries(data);
-    */
     console.log("nested data");
     console.log(data);
       
@@ -109,7 +111,7 @@ Sunburst = function(element,data, width, height, innerRad) {
     var color = d3.scale.ordinal().domain(chunks).range(colorbrewer.Pastel1[6]);
     
     
-    gs = svg.selectAll("g")
+    gs = pie_svg.selectAll("g")
         .data(data, function(d) { return d.key; })
         .enter().append("g");
         
@@ -127,13 +129,17 @@ Sunburst = function(element,data, width, height, innerRad) {
       //.attr("d", function(d, i, j) { return arc.innerRadius(hole + 2+cwidth*j).outerRadius(hole + cwidth*(j+1))(d); })
       .attr("d", function(d, i, j) { return arc.innerRadius(radius(j)).outerRadius(radius(j) + radius.rangeBand())(d); })
       .on("mouseover", function(d,i,j){
-        //console.log("mouse");
-        //console.log(d);        
+        console.log("mouse pie");
+        console.log(d);        
         //txt.text(labels[j] + " " + varnames[chunks[i]] + " " + d3.format("$,")(d3.round(data[j].values[i].value,0)))
-        txt.text(data[j].values[i].dispvalue);
+        //txt_svg2.text(data[j].values[i].dispvalue);
+        txt_svg.text(d.data.chunk);
+        txt_svg2.text(d.data.ring + " " + d3.format(",")(d.data.value));
       })  
       .on("mouseout", function(d,i,j){
-        txt.text("");
+        //txt_svg.text("");
+        //txt_svg2.text("");
+        
         //console.log("mouse");  
       });
   };  
@@ -144,6 +150,12 @@ Sunburst = function(element,data, width, height, innerRad) {
     equalchunks = (equalchunks) ? false : true;
     console.log(equalchunks);
     
+    flatdata.forEach(function(chunkObj) {
+      chunkObj.arcvalue = (equalchunks) ? 1 : chunkObj.value;  
+    })
+    this.update(flatdata);
+    
+    /*
     data.forEach(function(ringObj, ringIndex) {
       console.log("ringObj");
       console.log(ringObj);
@@ -153,9 +165,10 @@ Sunburst = function(element,data, width, height, innerRad) {
         });
     });
     this.update(data);
+    */
   };
     
  
-  this.update(data);
+  this.update(flatdata);
 }
   

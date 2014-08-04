@@ -123,30 +123,52 @@
                 <div id='chart1'  style="height: 320px;"></div>
             </div>
           </div>  
+          
+          <div class="row">
+            <div class="col-md-12 text-left mycol medtext">
+               <h5 style="display:inline;">Compare <span ng-bind='current_statistic_name'></span></h5> between countries.  
+               The currently selected country or group of countries is highlighted.
+               Click a year to sort countries by values for that year.
+               Hover over a square to see actual values.
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12 text-left mycol">
+              <div id="heat2"></div>          
+            </div>
+          </div>
+          
         </div>  <!-- end first column -->            
         
         <div class="col-md-4 mycol">
-          <h4 class="text-center" ng-bind='current_selection_name'></h4>
-          <div id='chart2'></div> 
-          <div id='chart3'></div>           
-        </div>
+          <div class="row">
+            <div class="col-md-12 text-left mycol">
+              <h4 class="text-center" ng-bind='current_selection_name'></h4>          
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-left mycol">
+               <div id='chart2'></div>           
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mycol">
+              <div id='chart3'></div>         
+            </div>
+            <div class="col-md-6 mycol">
+              <div id='expChart'></div>         
+            </div>            
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-left mycol">
+               <div id='prodpie'></div>           
+            </div>
+          </div>
+        </div> <!-- end second column -->
         
-      </div> <!-- end big row -->
+      </div> <!-- end  row -->
 
-      <div class="row">
-        <div class="col-md-12 text-left mycol medtext">
-           <h5 style="display:inline;">Compare <span ng-bind='current_statistic_name'></span></h5> between countries.  
-           The currently selected country or group of countries is highlighted.
-           Click a year to sort countries by values for that year.
-           Hover over a square to see actual values.
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12 text-left mycol">
-          <div id="heat2"></div>          
-        </div>
-      </div>
 
 
       <div class="row">
@@ -175,10 +197,10 @@
           <div id="pie"></div>
         </div>
         <div class="col-md-4 text-left mycol">  
-          <div id="expChart"></div>
+          <!--<div id="expChart"></div>-->
         </div>
         <div class="col-md-4 text-left mycol">  
-          <div id="prodpie"></div>
+          <!-- <div id="prodpie"></div> -->
         </div>
       </div>  
       <div class="row">
@@ -544,7 +566,7 @@
                       min: 0,
                       padding: {top:0, bottom:0},
                       label: {
-                        text: 'GDP',
+                        text: 'of GDP',
                       },                      
                       tick: { format: function (d) { return d3.round(d,2) + "%"; } },
                       ticks: 5
@@ -601,27 +623,35 @@
                     ],
                     names: varnames, 
                     colors: varcolors, 
-                  }, // data  
+                  }, // data 
+                  bar: {
+                      width: { ratio: .8 }
+                  }, 
                   axis: {
                     y: {
                       max: 100,
                       min: 0,
                       padding: {top:0, bottom:5},
                       label: {
-                        text: 'GDP',
+                        text: 'of GDP',
                       },
                       tick: { format: function (d) { return d3.round(d,2) + "%"; } },
                       ticks: 5                      
                     },
-                    x: { min: 2000, max: 2011,  
-                        padding: {left:.5, right:.5}                    
+                    x: { 
+                          min: 2000, max: 2011,  
+                          padding: {left:.5, right:.5},
+                          tick: {
+                            count: 2,
+                          //format: '%Y'
+                          },  
                     },
                     y2: { min: 0, 
                           padding: {top:0, bottom: 0},
                           show: true,
                           label: {
-                            text: 'Total Production',
-                            position: 'outer-top'
+                            text: 'Prod. (metric tons)',
+                            position: 'inner-top'
                           },
                           tick: { format: d3.format(".2s") },
                           ticks: 5                          
@@ -647,12 +677,11 @@
         
           $scope.expChart = c3.generate({
               
-                  bindto: '#expChart',      
-
+                  bindto: '#expChart',            
                   size: {
-                    width: 300,
-                    height: 200,                    
-                  },   
+                    //width: 250,
+                    height: 150,                    
+                  },
                   data: {
                     x: 'x',
                     columns: $scope.country_export_stat_data_arr[$scope.current_country_id],
@@ -684,11 +713,15 @@
                       label: {
                         text: 'Current US$',
                       },
-                      tick: { format: function (d) { return d3.format("$,")(d3.round(d,0)); } },
+                      tick: { format: function (d) { return d3.format("$,.1s")(d3.round(d,0)); } },
                       ticks: 7                      
                     },
                     x: { min: 2000, max: 2012,  
-                        padding: {left:.5, right:.5}                    
+                        padding: {left:.5, right:.5},
+                        tick: {
+                            count: 2,
+                          //format: '%Y'
+                          },  
                     },
                     y2: { min: 0, 
                           max: 100,
@@ -699,7 +732,7 @@
                             position: 'outer-top'
                           },
                           tick: { format: function (d) { return d3.round(d,2) + "%"; } },
-                          ticks: 5                          
+                          ticks: 5                         
                         }, 
                   }, // axis
               
@@ -817,15 +850,16 @@
       // Pie Chart for Exports
       // -------------------------------------------------------------------------  
         //$scope.exportTotals = $scope.getExportTotals();
-        var expdata = $scope.setupExportData($scope.current_country_id);     
-        $scope.lp = new Sunburst("#pie", expdata, 170,190,10);
+        //var expdata = $scope.setupExportData($scope.current_country_id);     
+        //$scope.lp = new Sunburst("#pie", expdata, 170,190,10);
         
       // -------------------------------------------------------------------------      
       // Pie Chart for Production
       // -------------------------------------------------------------------------  
         var proddata = $scope.setupProdData($scope.current_country_id);     
-        $scope.lp_prod = new Sunburst("#prodpie", proddata, 180,190,22);        
-        
+        $scope.lp_prod = new Sunburst("#prodpie", proddata, 400,200,20);        
+        //$scope.lp_prod = new Sunburst("#prodpie", 400,200,20);        
+        //$scope.lp_prod.setCountry(proddata);        
 
         $scope.initDone = true;
           
@@ -1038,19 +1072,22 @@
             tmp["chunk"] = keys[chunkIndex]; // or chunkEl
             tmp["value"] = ringData[ringIndex][chunkIndex];
             tmp["arcvalue"] = ringData[ringIndex][chunkIndex]; //starts the same
+            //tmp["arcvalue"] = 1; //starts the same
             tmp["color"] = (ringData[ringIndex][chunkIndex] != null) ? $scope.prodScales[chunkEl][ringIndex](ringData[ringIndex][chunkIndex]) : "#ffffff";  
             tmp["total"] = null;  
-            tmp["dispvalue"] = (labels[ringIndex] + " " + keys[chunkIndex] + " " + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
+            //tmp["dispvalue"] = (labels[ringIndex] + " " + keys[chunkIndex] + " " + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
+            //tmp["dispvalue"] = (keys[chunkIndex] + "<br>" + labels[ringIndex] + "\n" + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
             outData.push(tmp);
           });        
         });        
         
+        /*
         var outdata2 = d3.nest()
                     .key(function(d) { return d.ring; })
                     .entries(outData);
-        
-        console.log(outdata2);
-        return(outdata2);        
+        */
+        //console.log(outdata2);
+        return(outData);        
       }
 
  
