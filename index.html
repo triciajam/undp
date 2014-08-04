@@ -389,7 +389,8 @@
           $scope.country_gov_revenue_stat_data_arr = [];          
           $scope.country_export_stat_data_arr = [];          
           var gov_take_stats = ["calc_govt_take", "calc_gov_resrev_gdp", "calc_rent_total_gdp"];
-          var gov_revenue_stats = ["calc_gov_resrev_gdp", "rev2_gov_nonresrev_gdp", "rev2_gov_rev_gdp","prod_total"];          
+          //var gov_revenue_stats = ["calc_gov_resrev_gdp", "rev2_gov_nonresrev_gdp", "rev2_gov_rev_gdp","prod_total"];          
+          var gov_revenue_stats = ["calc_gov_resrev_gdp", "rev2_gov_nonresrev_gdp", "rev2_gov_rev_gdp"];          
           var export_stats = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971", "exp_eishare"];          
 
           $scope.raw_data.forEach(function(countryObj, index) {
@@ -612,10 +613,10 @@
                   data: {
                     x: 'x',
                     columns: $scope.country_gov_revenue_stat_data_arr[$scope.current_country_id],
-                    axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', calc_rent_total_gdp : 'y', calc_govt_take: 'y2', prod_total : 'y2' },
+                    axes: { rev_gov_resrev_govtrev : 'y',calc_gov_resrev_gdp : 'y',rev2_gov_nonresrev_gdp : 'y',rev2_gov_rev_gdp : 'y', calc_rent_total_gdp : 'y' },
                     type: 'bar',
                     types: {
-                        prod_total: 'area',
+                        //prod_total: 'area',
                         rev2_gov_rev_gdp: 'line'
                     },
                     groups: [
@@ -646,6 +647,7 @@
                           //format: '%Y'
                           },  
                     },
+                    /*
                     y2: { min: 0, 
                           padding: {top:0, bottom: 0},
                           show: true,
@@ -656,6 +658,7 @@
                           tick: { format: d3.format(".2s") },
                           ticks: 5                          
                         },
+                      */  
                   }, // axis
               
                  legend: {
@@ -859,7 +862,7 @@
         var proddata = $scope.setupProdData($scope.current_country_id);     
         $scope.lp_prod = new Sunburst("#prodpie", proddata, 400,200,20);        
         //$scope.lp_prod = new Sunburst("#prodpie", 400,200,20);        
-        $scope.lp_prod.setCountry(proddata);        
+        $scope.lp_prod.setCountry($scope.current_selection_name, "none", proddata);        
 
         $scope.initDone = true;
           
@@ -960,7 +963,7 @@
           if ($scope.chart3 != null) $scope.chart3.load({ columns: $scope.country_gov_revenue_stat_data_arr[newValue] });          
           if ($scope.lp != null) $scope.lp.update($scope.setupExportData(newValue));
           //$scope.lp_prod.update($scope.setupProdData(newValue))
-          $scope.lp_prod.setCountry($scope.setupProdData(newValue))
+          $scope.lp_prod.setCountry($scope.current_selection_name, "none", $scope.setupProdData(newValue))
           $scope.expChart.load({ columns: $scope.country_export_stat_data_arr[newValue] });
         }
         
@@ -1084,7 +1087,7 @@
             tmp["value"] = ringData[ringIndex][chunkIndex];
             tmp["arcvalue"] = ringData[ringIndex][chunkIndex]; //starts the same
             //tmp["arcvalue"] = 1; //starts the same
-            tmp["color"] = (ringData[ringIndex][chunkIndex] != null) ? $scope.prodScales[chunkEl][ringIndex](ringData[ringIndex][chunkIndex]) : "#ffffff";  
+            tmp["color"] = (ringData[ringIndex][chunkIndex] != null) ? $scope.prodScales[chunkEl][ringIndex](ringData[ringIndex][chunkIndex]) : "#eee";  
             tmp["total"] = null;  
             //tmp["dispvalue"] = (labels[ringIndex] + " " + keys[chunkIndex] + " " + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
             //tmp["dispvalue"] = (keys[chunkIndex] + "<br>" + labels[ringIndex] + "\n" + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
@@ -1182,7 +1185,14 @@
           //console.log("in do legend2");
         
           var resourceStatNames = d3.keys($scope.country_resource_stat_data_json[$scope.current_country_id]);
+          
+          resourceStatNames = resourceStatNames.filter(function(name) { return name != "prod_total"; });
+          
           var resourceStatObjs = [];  
+          console.log("resourceStatObjs");
+          console.log(resourceStatNames);
+          
+          
           
           resourceStatNames.forEach(function(stat, index) {
             var statObj = {};

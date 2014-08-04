@@ -13,7 +13,7 @@ Sunburst = function(element,data, width, height, innerRad) {
   height = height - margin.top - margin.bottom;
   var text_width = 160;
   var pie_width = width - text_width;
-  var label_height = 20;
+  var label_height = 16;
   
   console.log("width " + width);
   console.log("pie_width " + pie_width);
@@ -134,8 +134,8 @@ Sunburst = function(element,data, width, height, innerRad) {
       //.attr("d", function(d, i, j) { return arc.innerRadius(hole + 2+cwidth*j).outerRadius(hole + cwidth*(j+1))(d); })
       .attr("d", function(d, i, j) { return arc.innerRadius(radius(j)).outerRadius(radius(j) + radius.rangeBand())(d); })
       .on("mouseover", function(d,i,j){
-        console.log("mouse pie");
-        console.log(d);        
+        //console.log("mouse pie");
+        //console.log(d);        
         //txt.text(labels[j] + " " + varnames[chunks[i]] + " " + d3.format("$,")(d3.round(data[j].values[i].value,0)))
         //txt_svg2.text(data[j].values[i].dispvalue);
         txt_svg.text(d.data.chunk);
@@ -149,7 +149,7 @@ Sunburst = function(element,data, width, height, innerRad) {
       });
   };
   
-  this.setCountry = function(newdata) {
+  this.setCountry = function(name, subname, newdata) {
     flatdata = newdata;
     flatdata.forEach(function(chunkObj) {
       chunkObj.arcvalue = (equalchunks) ? 1 : chunkObj.value;  
@@ -158,7 +158,10 @@ Sunburst = function(element,data, width, height, innerRad) {
             .key(function(d) { return d.ring; })
             .entries(flatdata);   
     radius = d3.scale.ordinal().domain(data.map(function(el, ind) { return ind; })).rangeRoundBands([innerRad, outer_radius],.07);
-            
+    
+    txt_svg.text("Production (mtons)");
+    txt_svg2.text("2007-2011")
+    
     update();        
      
   }
