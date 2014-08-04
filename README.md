@@ -1,14 +1,17 @@
-### What is the relationship between extractive industry profitability and fiscal revenue from natural resources?
-#### undp/qmss extractive industries data dive, april 2014
+### UNDP/QMSS Extractive Industries Data Dive, April 2014
+#### What is the relationship between extractive industry profitability and fiscal revenue from natural resources?
+
 
 ######Goal
 Visualize the relationship between EI profitability and fiscal revenue in a useful way.
 
 ######Components
-* the data: .csv files provided by UNDP (/raw)
-* an R script: used to process .csv files into a .json file used by the web page (ei.R)
-* a JSON file: contains the data used by the web page, with an entry for each country (eidata.json)
-* the web page: web page that reads in eidata.json and displays the data (index.html)
+* /raw folder : .csv files provided by UNDP.  Not checked into Github.
+* ei.R : an R script used to process .csv files into a .json file used by the web page 
+* eidata.json : a JSON file containing the data used by the web page, with an entry for each country 
+* index.html : the web page that reads in eidata.json and displays the data 
+* js/Sunburst.js : custom Sunburst class
+* js/Heatmap.js : custom Heatmap class
 
 ######Additional Libraries
 * D3.js  - Javscript visualization library
