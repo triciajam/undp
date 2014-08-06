@@ -860,9 +860,9 @@
       // Pie Chart for Production
       // -------------------------------------------------------------------------  
         var proddata = $scope.setupProdData($scope.current_country_id);     
-        $scope.lp_prod = new Sunburst("#prodpie", proddata, 400,200,20);        
-        //$scope.lp_prod = new Sunburst("#prodpie", 400,200,20);        
-        $scope.lp_prod.setCountry($scope.current_selection_name, "none", proddata);        
+        $scope.lp_prod = new Sunburst("#prodpie", 400,200,38, $scope.chunkProdLeaders);        
+        //$scope.lp_prod = new Sunburst("#prodpie", 400,200,25);        
+        $scope.lp_prod.setCountry($scope.current_country_id, "none", proddata);        
 
         $scope.initDone = true;
           
@@ -963,7 +963,7 @@
           if ($scope.chart3 != null) $scope.chart3.load({ columns: $scope.country_gov_revenue_stat_data_arr[newValue] });          
           if ($scope.lp != null) $scope.lp.update($scope.setupExportData(newValue));
           //$scope.lp_prod.update($scope.setupProdData(newValue))
-          $scope.lp_prod.setCountry($scope.current_selection_name, "none", $scope.setupProdData(newValue))
+          $scope.lp_prod.setCountry($scope.current_country_id, "none", $scope.setupProdData(newValue))
           $scope.expChart.load({ columns: $scope.country_export_stat_data_arr[newValue] });
         }
         
@@ -1015,7 +1015,9 @@
           //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.linear().domain(d3.extent(yearData)).range(["blue", "red"]); });
           
           //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.quantile().domain(yearData).range(colorbrewer.Greys[5]); });
-          var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.quantile().domain(yearData).range(buckets); });
+          //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.quantile().domain(yearData).range(buckets); });
+          var yearlyChunkScales = chunkDataByYears.map(function(yearData) { return d3.scale.linear().domain(d3.extent(yearData))
+                      .range([varlookup["prod_total"].lightColor, varlookup["prod_total"].darkColor]); });
           
           //var yearlyChunkScales = chunkDataByYears.map(function(yearData) { 
           //    return (yearData.every(function(el) { el == null; })) ? d3.scale.ordinal().range("white") : d3.scale.quantile().domain(yearData).range(colorbrewer.Greys[5]) });
@@ -1034,6 +1036,63 @@
         return(cscales);
       };  
 
+      $scope.getChunkProdTotals = function(low, high) {
+        var prodstats = d3.keys($scope.country_prod_stat_data_json[$scope.current_country_id]);
+        var totals = {};
+        prodstats.forEach(function(chunk, index) {
+          // time series data for all countries for one stat
+          var chunkData = d3.values($scope.country_prod_stat_data_json).map(function(countryObj) { return countryObj[chunk]; });
+          //transpose so we get this by years
+          var chunkDataByYears = d3.transpose(chunkData).slice(low, high); 
+          // get a sum for each mineral for each year
+          var yearlyChunkSum = chunkDataByYears.map(function(yearData) { return d3.sum(yearData); });
+          totals[chunk] = yearlyChunkSum;
+        });
+        console.log("yearly chunk totals for all countries");
+        console.log(totals);
+        return(totals);
+
+      }
+      $scope.getChunkProdLeaders = function(low, high) {
+        var prodstats = d3.keys($scope.country_prod_stat_data_json[$scope.current_country_id]);
+        var leaders = {};        
+        var ccodes = d3.keys($scope.country_prod_stat_data_json);
+        years = d3.range(low, high);
+        
+        prodstats.forEach(function(chunk, chunkIndex) {
+          leaders[chunk] = [];
+          years.forEach(function(year, yearIndex) {
+          // time series data for all countries for one stat
+            leaders[chunk][yearIndex] = [];          
+            var map = d3.map();
+            ccodes.forEach(function(key) { 
+              map.set(key, $scope.country_prod_stat_data_json[key][chunk][year]);
+            });
+            var sorted = map.entries().sort(function(a, b) { return d3.descending(a.value, b.value);});
+            leaders[chunk][yearIndex].push(sorted[0]);
+            leaders[chunk][yearIndex].push(sorted[1]);
+            leaders[chunk][yearIndex].push(sorted[2]);
+          });
+          //leaders[chunk] = yearLeaders;
+        });  
+        console.log("leaders");
+        //console.log(leaders);
+        return(leaders);
+      }
+
+      $scope.getCountryProdTotals = function(low, high) {
+        var countries = d3.keys($scope.country_prod_stat_data_json);
+        var totals = {};
+        countries.forEach(function(ccode, index) {
+          // time series data for all countries for one stat
+          var countryProdData = d3.transpose(d3.values($scope.country_prod_stat_data_json[ccode])).slice(low, high);
+          var yearlyCountryTotals = countryProdData.map(function(yearData) { return d3.sum(yearData); });
+          totals[ccode] = yearlyCountryTotals;
+        });
+        console.log("yearly production toals for each country");
+        console.log(totals);
+        return(totals);
+      }
 
 
       $scope.getExportTotals = function() {
@@ -1053,9 +1112,13 @@
         });
         return(totals);
       };  
-      
+
+
+
       $scope.setupProdData = function(ccode) {
         
+        //$scope.getChunkProdLeaders(7,12);
+               
         var data = $scope.country_prod_stat_data_json[$scope.current_country_id];
         var keys = d3.keys(data); // these are the chunks
         var vals = d3.values(data); // this is the array of values for each chunk
@@ -1069,6 +1132,10 @@
         
         ringData = ringData.slice(7,12);   
         if ($scope.prodScales == null) $scope.prodScales = $scope.getProdScales(7,12);
+        if ($scope.chunkProdTotals == null) $scope.chunkProdTotals = $scope.getChunkProdTotals(7,12);
+        if ($scope.countryProdTotals == null) $scope.countryProdTotals = $scope.getCountryProdTotals(7,12);
+        if ($scope.chunkProdLeaders == null) $scope.chunkProdLeaders = $scope.getChunkProdLeaders(7,12);
+        
         
         var labels = ["2007","2008", "2009","2010","2011"];
         console.log("prod data by years");
@@ -1088,19 +1155,24 @@
             tmp["arcvalue"] = ringData[ringIndex][chunkIndex]; //starts the same
             //tmp["arcvalue"] = 1; //starts the same
             tmp["color"] = (ringData[ringIndex][chunkIndex] != null) ? $scope.prodScales[chunkEl][ringIndex](ringData[ringIndex][chunkIndex]) : "#eee";  
-            tmp["total"] = null;  
+            tmp["pctOfAllChunkProd"] = tmp["value"] / $scope.chunkProdTotals[chunkEl][ringIndex]; 
+            tmp["pctOfAllCountryProd"] = tmp["value"] / $scope.countryProdTotals[ccode][ringIndex];             
+            
+            //tmp["ringTotalThisYear"] = $scope.prodTotals[chunkEl][ringEl];  
+            
             //tmp["dispvalue"] = (labels[ringIndex] + " " + keys[chunkIndex] + " " + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
             //tmp["dispvalue"] = (keys[chunkIndex] + "<br>" + labels[ringIndex] + "\n" + d3.format(",")(d3.round(ringData[ringIndex][chunkIndex],1)));             
             outData.push(tmp);
           });        
         });        
         
-        /*
-        var outdata2 = d3.nest()
-                    .key(function(d) { return d.ring; })
+        
+        var colorData = d3.nest()
+                    .key(function(d) { return d.chunk; })
+                    .rollup(function(leaves) { return { "max": d3.max(leaves, function(d) {return d.value;}), 
+                                                        "min": d3.min(leaves, function(d) {return d.value;}) } })
                     .entries(outData);
-        */
-        //console.log(outdata2);
+        //console.log(colorData);
         return(outData);        
       }
 

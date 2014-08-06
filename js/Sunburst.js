@@ -1,7 +1,8 @@
 
-Sunburst = function(element,data, width, height, innerRad) {
+Sunburst = function(element, width, height, innerRad, leaders) {
   var element = element;
   var flatdata;
+  var leaders = leaders;
   //var flatdata = data;
   // 270, 250
   var width = width;
@@ -19,7 +20,7 @@ Sunburst = function(element,data, width, height, innerRad) {
   console.log("pie_width " + pie_width);
   console.log("height " + height);
   
-  
+  var ccode;
   var outer_radius = d3.min(new Array(pie_width, height)) / 2;
   
   var center_x = outer_radius;
@@ -58,6 +59,60 @@ Sunburst = function(element,data, width, height, innerRad) {
         .text("mouse over a pie chunk to see data");
   var txt_svg2 = cont.append("g")
       .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + label_height) + ")")            
+      .append("text")
+      .attr("x", 0)
+        .attr("y", label_height)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("mouse over a pie chunk to see data");
+  var txt_svg3 = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 2*label_height) + ")")            
+      .append("text")
+      .attr("x", 0)
+        .attr("y", label_height)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("mouse over a pie chunk to see data");
+  var txt_svg4 = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 3*label_height) + ")")            
+      .append("text")
+      .attr("x", 0)
+        .attr("y", label_height)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("mouse over a pie chunk to see data");
+  var txt_svg5 = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 4*label_height) + ")")            
+      .append("text")
+      .attr("x", 0)
+        .attr("y", label_height)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("mouse over a pie chunk to see data");
+  var txt_svg6 = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 5*label_height) + ")")            
+      .append("text")
+      .attr("x", 0)
+        .attr("y", label_height)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("mouse over a pie chunk to see data");
+   var txt_svg7 = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 6*label_height) + ")")            
+      .append("text")
+      .attr("x", 0)
+        .attr("y", label_height)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("mouse over a pie chunk to see data");
+   var txt_svg8 = cont.append("g")
+      .attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 7*label_height) + ")")            
       .append("text")
       .attr("x", 0)
         .attr("y", label_height)
@@ -138,8 +193,18 @@ Sunburst = function(element,data, width, height, innerRad) {
         //console.log(d);        
         //txt.text(labels[j] + " " + varnames[chunks[i]] + " " + d3.format("$,")(d3.round(data[j].values[i].value,0)))
         //txt_svg2.text(data[j].values[i].dispvalue);
-        txt_svg.text(d.data.chunk);
-        txt_svg2.text(d.data.ring + " " + d3.format(",")(d.data.value));
+        txt_svg.text(d.data.ring);
+        txt_svg2.text(d.data.chunk); //d3.format(",")(d.data.value) + "mt");
+        txt_svg3.text(d3.format(",")(d.data.value) + " mt");
+        txt_svg4.text(d3.format("%")(d.data.pctOfAllCountryProd) + " " + ccode + " Total Prod")
+        txt_svg5.text(d3.format("%")(d.data.pctOfAllChunkProd) + " of " + d.data.chunk)
+        txt_svg6.text("#1 " + leaders[d.data.chunk][j][0].key + " " + d3.format(",")(leaders[d.data.chunk][j][0].value));
+        txt_svg7.text("#2 " + leaders[d.data.chunk][j][1].key + " " + d3.format(",")(leaders[d.data.chunk][j][1].value));
+        txt_svg8.text("#3 " + leaders[d.data.chunk][j][2].key + " " + d3.format(",")(leaders[d.data.chunk][j][2].value));
+        
+        //txt_svg5.text("of " + ccode + " Total Prod");
+        //txt_svg7.text("of All " + d.data.chunk + " Prod");        
+        //txt_svg6.text(d.data.ring + " " + d3.format("%")(d.data.pctOfAllChunkProd));
       })  
       .on("mouseout", function(d,i,j){
         //txt_svg.text("");
@@ -150,6 +215,7 @@ Sunburst = function(element,data, width, height, innerRad) {
   };
   
   this.setCountry = function(name, subname, newdata) {
+    ccode = name;
     flatdata = newdata;
     flatdata.forEach(function(chunkObj) {
       chunkObj.arcvalue = (equalchunks) ? 1 : chunkObj.value;  
@@ -159,8 +225,15 @@ Sunburst = function(element,data, width, height, innerRad) {
             .entries(flatdata);   
     radius = d3.scale.ordinal().domain(data.map(function(el, ind) { return ind; })).rangeRoundBands([innerRad, outer_radius],.07);
     
-    txt_svg.text("Production (mtons)");
-    txt_svg2.text("2007-2011")
+    txt_svg.text(ccode);
+    txt_svg2.text("Mineral Production");
+    txt_svg3.text("2007(inner)-2011(outer)");
+    txt_svg4.text("Point at square to see data")
+    txt_svg5.text("All data in metric tons.");
+    txt_svg6.text("");
+    txt_svg7.text("");
+    txt_svg8.text("");
+    
     
     update();        
      
