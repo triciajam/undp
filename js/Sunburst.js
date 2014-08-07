@@ -198,9 +198,9 @@ Sunburst = function(element, width, height, innerRad, leaders) {
         txt_svg3.text(d3.format(",")(d.data.value) + " mt");
         txt_svg4.text(d3.format("%")(d.data.pctOfAllCountryProd) + " " + ccode + " Total Prod")
         txt_svg5.text(d3.format("%")(d.data.pctOfAllChunkProd) + " of " + d.data.chunk)
-        txt_svg6.text("#1 " + leaders[d.data.chunk][j][0].key + " " + d3.format(",")(leaders[d.data.chunk][j][0].value));
-        txt_svg7.text("#2 " + leaders[d.data.chunk][j][1].key + " " + d3.format(",")(leaders[d.data.chunk][j][1].value));
-        txt_svg8.text("#3 " + leaders[d.data.chunk][j][2].key + " " + d3.format(",")(leaders[d.data.chunk][j][2].value));
+        txt_svg6.text("1: " + leaders[d.data.chunk][j][0].key + " " + d3.format(",")(leaders[d.data.chunk][j][0].value));
+        txt_svg7.text("2: " + leaders[d.data.chunk][j][1].key + " " + d3.format(",")(leaders[d.data.chunk][j][1].value));
+        txt_svg8.text("3: " + leaders[d.data.chunk][j][2].key + " " + d3.format(",")(leaders[d.data.chunk][j][2].value));
         
         //txt_svg5.text("of " + ccode + " Total Prod");
         //txt_svg7.text("of All " + d.data.chunk + " Prod");        

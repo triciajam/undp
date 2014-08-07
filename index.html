@@ -318,9 +318,9 @@
       $scope.group_resource_stat_data_arr = [];
       $scope.group_gov_take_stat_data_arr = [];
       $scope.group_gov_revenue_stat_data_arr = [];
-                            
-       
-      
+      $scope.group_export_stat_data_arr = [];                      
+      $scope.group_prod_stat_data_json = {};                      
+             
       // name of the currently selected country
       $scope.current_country_name = "";
       $scope.current_statistic_name = "";
@@ -392,6 +392,7 @@
           //var gov_revenue_stats = ["calc_gov_resrev_gdp", "rev2_gov_nonresrev_gdp", "rev2_gov_rev_gdp","prod_total"];          
           var gov_revenue_stats = ["calc_gov_resrev_gdp", "rev2_gov_nonresrev_gdp", "rev2_gov_rev_gdp"];          
           var export_stats = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971", "exp_eishare"];          
+          //var expcolumns = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971","exp_eishare"];
 
           $scope.raw_data.forEach(function(countryObj, index) {
             $scope.country_gov_take_stat_data_arr[countryObj.country.ccode] = [];
@@ -451,6 +452,8 @@
           // to use with the charting library.
           
           var resourceStats = d3.keys($scope.country_resource_stat_data_json[$scope.current_country_id]);
+          var exportStats = d3.keys($scope.country_export_stat_data_json[$scope.current_country_id]);
+          var prodStats = d3.keys($scope.country_prod_stat_data_json[$scope.current_country_id]);
           
           factor_lookup_data.forEach(function(currentFactor, index) {
               //console.log("in lookup loop");
@@ -466,7 +469,14 @@
               $scope.group_resource_stat_data_arr[currentFactor.factor] = []; 
               $scope.group_gov_take_stat_data_arr[currentFactor.factor] = [];
               $scope.group_gov_revenue_stat_data_arr[currentFactor.factor] = [];
+              $scope.group_export_stat_data_arr[currentFactor.factor] = [];
               
+              $scope.group_prod_stat_data_json[currentFactor.factor] = new Object();
+              $scope.group_prod_stat_data_json[currentFactor.factor]["factor"] = currentFactor.factor;
+              $scope.group_prod_stat_data_json[currentFactor.factor]["name"] = currentFactor.name;
+              $scope.group_prod_stat_data_json[currentFactor.factor]["color"] = currentFactor.color;              
+              $scope.group_prod_stat_data_json[currentFactor.factor].levels = [];
+
               currentFactor.levels.forEach(function(currentLevel, index) {
                 
                 $scope.group_resource_stat_data_json[currentFactor.factor].levels[currentLevel.level] = currentLevel;
@@ -482,6 +492,12 @@
                 $scope.group_gov_revenue_stat_data_arr[currentFactor.factor][currentLevel.level] = [];  
                 $scope.group_gov_revenue_stat_data_arr[currentFactor.factor][currentLevel.level].push(xaxis);  
                 
+                $scope.group_export_stat_data_arr[currentFactor.factor][currentLevel.level] = [];  
+                $scope.group_export_stat_data_arr[currentFactor.factor][currentLevel.level].push(xaxis2);  
+
+                $scope.group_prod_stat_data_json[currentFactor.factor].levels[currentLevel.level] = currentLevel;
+                $scope.group_prod_stat_data_json[currentFactor.factor].levels[currentLevel.level].stats = [];                
+
                 var countries = getCountriesInGroup($scope.country_data_json, currentFactor.factor, currentLevel.level); 
                 
                 resourceStats.forEach(function(currentStat, sindex) {
@@ -505,9 +521,45 @@
                   if (gov_take_stats.indexOf(currentStat) != -1) $scope.group_gov_take_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp); 
                   if (gov_revenue_stats.indexOf(currentStat) != -1) $scope.group_gov_revenue_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp); 
                 });
-              });
+                exportStats.forEach(function(currentStat, sindex) {
+                  //console.log(currentFactor.factor + "," + currentLevel.level+ "," + currentStat);
+                  var timeseries = [];
+                  countries.forEach(function(currentCountry, iindex) {
+                    timeseries.push($scope.country_export_stat_data_json[currentCountry][currentStat])
+                  });                          
+                  var byyears = d3.transpose(timeseries);
+                  var tmp=[];
+                  var rollup;
+                  tmp.push(currentStat);
+                  byyears.forEach(function(currentYear, index){
+                    if (currentStat == "exp_eishare") {
+                      rollup = d3.mean(currentYear);                      
+                    } else {
+                      rollup = d3.sum(currentYear);
+                    }
+                    tmp.push((typeof rollup === 'undefined') ? null : rollup);
+                  });
+                 if (export_stats.indexOf(currentStat) != -1) $scope.group_export_stat_data_arr[currentFactor.factor][currentLevel.level].push(tmp);                
+                }); // exportStats
               
-          });
+                prodStats.forEach(function(currentStat, sindex) {
+                  //console.log(currentFactor.factor + "," + currentLevel.level+ "," + currentStat);
+                  var timeseries = [];
+                  countries.forEach(function(currentCountry, iindex) {
+                    timeseries.push($scope.country_prod_stat_data_json[currentCountry][currentStat])
+                  });                          
+                  var byyears = d3.transpose(timeseries);
+                  var tmp=[];
+                  var rollup;
+                  tmp.push(currentStat);
+                  byyears.forEach(function(currentYear, index){
+                    rollup = d3.sum(currentYear);
+                    tmp.push((typeof rollup === 'undefined') ? null : rollup);
+                  });
+                 $scope.group_prod_stat_data_json[currentFactor.factor].levels[currentLevel.level].stats[currentStat] = tmp;
+                 });//prodStats 
+              });//level              
+          });//factor
           
           console.log("$scope.group_resource_stat_data_json");
           console.log($scope.group_resource_stat_data_json);
@@ -517,6 +569,10 @@
           console.log($scope.group_gov_take_stat_data_arr);
           console.log("$scope.group_gov_revenue_stat_data_arr");
           console.log($scope.group_gov_revenue_stat_data_arr);
+          console.log("$scope.group_export_stat_data_arr");
+          console.log($scope.group_export_stat_data_arr);
+          console.log("$scope.group_prod_stat_data_json");
+          console.log($scope.group_prod_stat_data_json);
           
            
           // this creates the default fill keys for the map, based
@@ -670,10 +726,9 @@
        // -------------------------------------------------------------------------      
       // Create the c3 line chart for export data
       // -------------------------------------------------------------------------      
-        var expcolumns = ["exp_fuels", "exp_sitc27", "exp_sitc28", "exp_sitc68", "exp_sitc667", "exp_sitc971","exp_eishare"];
-        var pastels = d3.scale.ordinal().domain(expcolumns).range(colorbrewer.Pastel1[6]);
+        var pastels = d3.scale.ordinal().domain(export_stats).range(colorbrewer.Pastel1[6]);
         var expcolors = {};
-        expcolumns.forEach(function(col) {
+        export_stats.forEach(function(col) {
           expcolors[col] = pastels(col);
         });
         expcolors["exp_eishare"] = "black";
@@ -716,7 +771,7 @@
                       label: {
                         text: 'Current US$',
                       },
-                      tick: { format: function (d) { return d3.format("$,.1s")(d3.round(d,0)); } },
+                      tick: { format: function (d) { return d3.format("$,.2s")(d3.round(d,0)); } },
                       ticks: 7                      
                     },
                     x: { min: 2000, max: 2012,  
@@ -951,6 +1006,7 @@
           //console.log($scope.group_gov_revenue_stat_data_arr[newValue.factor][newValue.level]);
             $scope.chart3.load({ columns: $scope.group_gov_revenue_stat_data_arr[newValue.factor][newValue.level] });
           }
+          $scope.expChart.load({ columns: $scope.group_export_stat_data_arr[newValue.factor][newValue.level] });
         } else {
           countries = new Array(newValue);
           if ($scope.chart1 != null) $scope.selectOnMap(countries);
