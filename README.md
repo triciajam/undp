@@ -1,6 +1,6 @@
 ### UNDP/QMSS Extractive Industries Data Dive, April 2014
 #### What is the relationship between extractive industry profitability and fiscal revenue from natural resources?
-
+[Latest Visualization](http://www.columbia.edu/~taj6/undp/index.html)
 
 ######Goal
 Visualize the relationship between EI profitability and fiscal revenue in a useful way.
