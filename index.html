@@ -162,7 +162,7 @@
               Government Receipts  
             </div>          
             <div class="col-md-6 text-center mycol datatext">
-              Export Data 
+              Exports By Type 
             </div>          
           </div>
           <div class="row">
@@ -578,7 +578,7 @@
                   //tmp2.push(currentStat2);
                   byyears.forEach(function(currentYear, index){
                     rollup = d3.sum(currentYear);
-                    tmp2.push((typeof rollup === 'undefined') ? null : rollup);
+                    tmp2.push((typeof rollup === 'undefined' || rollup == 0) ? null : rollup);
                   });
                   //console.log(tmp);
                  $scope.group_prod_stat_data_json[currentFactor.factor].levels[currentLevel.level].pstats[currentStat2] = tmp2;
@@ -1537,7 +1537,7 @@
                      } 
                 },  
                 legend: {
-                  position: 'bottom'
+                  position: 'right'
                 },
                
             });  

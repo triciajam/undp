@@ -95,7 +95,7 @@
       display: inline
     }         
     .sourcetext {
-      font-size: 13px;
+      font-size: 10px;
       display: inline
     }         
     .pietext {
@@ -105,7 +105,8 @@
     }         
     .sourcedatatext {
       font-family: Consolas, courier;
-      font-size: 13px;
+      font-size: 10px;
+      font-weight: bold;
       display: inline
     }             
     .btnsmalltext {
