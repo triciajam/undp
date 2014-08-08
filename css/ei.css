@@ -36,6 +36,11 @@
     .mybtn:hover {
       opacity:.7;
     }
+    
+    .piepath:hover {
+      opacity:.5;
+    }
+
         
 /*-------------------------------------------------------------------------        
   These override / are applied to Bootstrap elements
@@ -86,7 +91,7 @@
     } 
     .datatext {
       font-family: Consolas, courier;
-      font-size: 11px;
+      font-size: 10px;
       display: inline
     }         
     .sourcetext {
