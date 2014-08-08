@@ -175,7 +175,11 @@ avgs[order(avgs$x),]
 # DIamonds are not unique in prodmin (they are all diamonds, but have 3
 # different units), and they need to be unique
 prodmin$prod2_min2 <- as.character(prodmin$prod2_min)
-prodmin$prod2_min2 <- ifelse(grepl("Diamond", prodmin$prod2_min2), paste(prodmin$prod2_min2, prodmin$prod2_unit), prodmin$prod2_min2)
+#prodmin$prod2_unit <- as.character(prodmin$prod2_unit)
+
+#prodmin$prod2_min2 <- ifelse(grepl("Diamond", prodmin$prod2_min2), paste(prodmin$prod2_min2, prodmin$prod2_unit), prodmin$prod2_min2)
+prodmin$prod2_min2 <- ifelse(grepl("Diamond", prodmin$prod2_min2) & prodmin$prod2_unit == "Carets (Gem Grade)", "Diamond(Gems)", prodmin$prod2_min2)
+prodmin$prod2_min2 <- ifelse(grepl("Diamond", prodmin$prod2_min2) & prodmin$prod2_unit == "Carets (Industrial Grade)", "Diamond(Indus.)", prodmin$prod2_min2)
 prodmin$prod2_min2 <- as.factor(prodmin$prod2_min2)
 prodmin$year <- as.factor(prodmin$year)
 
@@ -307,3 +311,8 @@ jsonString <- paste("[", paste(jsonString, collapse=","), "]")
 # Write the file.
 writeLines(jsonString, "eidata.json")
 
+#with library(jsonlite)
+#> tmpByCountry <- split(out.ts, out.ts$ccode)
+#> jsonString2 <- lapply(tmpByCountry, function(x) toJSON(x, na=c("null"), digits=14, data.frame=c("rows"), pretty=TRUE))
+#> jsonString2 <- paste("[", paste(jsonString2, collapse=","), "]")
+#> detach(package:jsonlite)
