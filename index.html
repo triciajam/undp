@@ -1435,7 +1435,7 @@
           
           var color = d3.scale.linear()
                        .domain([0,1])
-                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
+                       .range(["#d7d7d7", "#3f3f3f"]); 
           var buckets = d3.range(0, 1, 1/levelnames.length);
           buckets = buckets.map(function (input) { return color(input); });
           var colorScale = d3.scale.ordinal()
@@ -1464,7 +1464,7 @@
 
       $scope.setupLevelsCompare = function(element, factor, stat) {
           
-          //$scope.groupCompareChart = {};
+          //$scope.groupCompareChart = {}; //#d7d7d7
           var chartData = [];
           chartData.push(xaxis);
           var levelnames = d3.keys($scope.group_resource_stat_data_json[factor].levels);
@@ -1472,7 +1472,8 @@
           // set up colors
           var color = d3.scale.linear()
                        .domain([0,1])
-                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
+                       .range(["#d7d7d7", "#3f3f3f"]); 
+//                       .range([varlookup[stat].lightColor, varlookup[stat].darkColor]); 
           var buckets = d3.range(0, 1, 1/levelnames.length);
           buckets = buckets.map(function (input) { return color(input); });
           var colorScale = d3.scale.ordinal()
