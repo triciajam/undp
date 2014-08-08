@@ -159,7 +159,7 @@ Sunburst = function(element, width, height, innerRad, leaders) {
         .attr("width", width)
         .attr("height", label_height)
         .attr("class", "pietext")
-        .text("each ring = one year");
+        .text("Each ring = one year");
    var txt_svg10 = txttopright.append("g")
       //.attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 7*label_height) + ")")            
       //.attr("transform", "translate(0," + (pie_width - label_height) + ")")            
@@ -169,7 +169,7 @@ Sunburst = function(element, width, height, innerRad, leaders) {
         .attr("width", width)
         .attr("height", label_height)
         .attr("class", "pietext")
-        .text("each chunk = one mineral");
+        .text("Each chunk = one mineral");
   var txt_svg11 = txttopright.append("g")
       //.attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 7*label_height) + ")")            
       //.attr("transform", "translate(0," + (pie_width - label_height) + ")")            
@@ -179,13 +179,23 @@ Sunburst = function(element, width, height, innerRad, leaders) {
         .attr("width", width)
         .attr("height", label_height)
         .attr("class", "pietext")
-        .text("fill shows relative prod.");
-  var txt_svg11 = txttopright.append("g")
+        .text("Fill shows relative prod.");
+  var txt_svg11a = txttopright.append("g")
       //.attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 7*label_height) + ")")            
       //.attr("transform", "translate(0," + (pie_width - label_height) + ")")            
       .append("text")
-      .attr("x", 0)
+      .attr("x", 5)
         .attr("y", label_height*5)
+        .attr("width", width)
+        .attr("height", label_height)
+        .attr("class", "pietext")
+        .text("'07-'11 for that mineral");
+  var txt_svg12 = txttopright.append("g")
+      //.attr("transform", "translate(" + (margin.cols + pie_width) + "," + (margin.top + 7*label_height) + ")")            
+      //.attr("transform", "translate(0," + (pie_width - label_height) + ")")            
+      .append("text")
+      .attr("x", 5)
+        .attr("y", label_height*6)
         .attr("width", width)
         .attr("height", label_height)
         .attr("class", "pietext")
